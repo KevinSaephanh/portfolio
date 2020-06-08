@@ -1,0 +1,19 @@
+{
+    "socials": [
+        {
+            "icon": "fa fa-linkedin-square",
+            "title": "LinkedIn",
+            "link": "/home"
+        },
+        {
+            "icon": "fa fa-github-square",
+            "title": "Github",
+            "link": "/home"
+        },
+        {
+            "icon": "fa fa-facebook-official",
+            "title": "Facebook",
+            "link": "/home"
+        }
+    ]
+}

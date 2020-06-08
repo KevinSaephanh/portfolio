@@ -1,0 +1,32 @@
+{
+    "skills": [
+        {
+            "tech": "Java",
+            "proficiency": 80
+        },
+        {
+            "tech": "JavaScript",
+            "proficiency": 80
+        },
+        {
+            "tech": "Spring Boot",
+            "proficiency": 70
+        },
+        {
+            "tech": "Node.js",
+            "proficiency": 55
+        },
+        {
+            "tech": "React",
+            "proficiency": 70
+        },
+        {
+            "tech": "Angular",
+            "proficiency": 50
+        },
+        {
+            "tech": "AWS",
+            "proficiency": 40
+        }
+    ]
+}

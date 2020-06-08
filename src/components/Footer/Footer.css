@@ -1,0 +1,13 @@
+footer {
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 25px;
+}
+
+footer i {
+    margin: 0 10px;
+    font-size: 1.7rem !important;
+    cursor: pointer;
+}

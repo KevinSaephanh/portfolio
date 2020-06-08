@@ -2,26 +2,22 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: rgba(0, 0, 0, 0.932);
+    background: black;
     color: white;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.App {
+    height: 100vh;
+    width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+h1,
+h2,
+p {
+    z-index: 1000;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+i:hover {
+    color: rgb(0, 255, 200);
+    transition: ease-in 0.3s;
 }

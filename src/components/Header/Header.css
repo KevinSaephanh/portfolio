@@ -1,6 +1,8 @@
 header {
     display: flex;
     width: 100vw;
+    z-index: 1000;
+    position: fixed;
 }
 
 header img {
@@ -10,19 +12,14 @@ header img {
     cursor: pointer;
 }
 
-ul {
+header ul {
     list-style-type: none;
     display: flex;
     margin-left: auto;
 }
 
-ul i {
-    margin: auto 10px;
+header ul i {
+    margin: auto 12px;
     font-size: 2rem !important;
     cursor: pointer;
-}
-
-ul i:hover {
-    color: rgb(0, 255, 200);
-    transition: ease-in 0.3s;
 }

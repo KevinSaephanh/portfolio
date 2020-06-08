@@ -27,13 +27,13 @@ const Header = ({ currentPage, handleNavClick }) => {
     const getNavs = () => {
         return (
             <ul>
-                {Navs.navs.map((nav, i) => {
+                {Navs.navs.map((nav, key) => {
                     return (
                         <i
                             id={nav.id}
                             className={nav.icon}
                             title={nav.title}
-                            key={i}
+                            key={key}
                             aria-hidden="true"
                         />
                     );

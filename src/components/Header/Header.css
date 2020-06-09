@@ -6,9 +6,9 @@ header {
 }
 
 header img {
-    height: 50px;
-    width: 55px;
-    margin: auto 0;
+    height: 45px;
+    width: 50px;
+    margin: auto 10px;
     cursor: pointer;
 }
 
@@ -16,10 +16,11 @@ header ul {
     list-style-type: none;
     display: flex;
     margin-left: auto;
+    padding-right: 5px;
 }
 
 header ul i {
     margin: auto 12px;
-    font-size: 2rem !important;
+    font-size: 2.1rem !important;
     cursor: pointer;
 }

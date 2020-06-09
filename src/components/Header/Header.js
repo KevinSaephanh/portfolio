@@ -1,6 +1,6 @@
 import React from "react";
 import usePrevious from "../../hooks/usePrevious";
-import Cactuar from "../../assets/cactuar.png";
+import Tonberry from "../../assets/tonberry.png";
 import Navs from "./Navs.json";
 import "./Header.css";
 
@@ -44,7 +44,7 @@ const Header = ({ currentPage, handleNavClick }) => {
 
     return (
         <header>
-            <img src={Cactuar} alt="" title="Final Fantasy Cactuar UwU" />
+            <img src={Tonberry} alt="" title="Final Fantasy Tonberry UwU" />
             {getNavs()}
         </header>
     );

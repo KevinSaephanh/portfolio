@@ -10,6 +10,10 @@ const Home = () => {
                 I'm a Full Stack Developer
             </h1>
             <div className="circle" />
+            <div className="tonberry">
+                <div className="eye eye1" />
+                <div className="eye eye2" />
+            </div>
         </div>
     );
 };

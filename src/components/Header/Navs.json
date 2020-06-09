@@ -4,7 +4,7 @@
             "icon": "fa fa-home",
             "title": "Home",
             "id": "home-link",
-            "link": "/home"
+            "link": "/"
         },
         {
             "icon": "fa fa-user",

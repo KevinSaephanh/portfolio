@@ -3,6 +3,7 @@ header {
     width: 100vw;
     z-index: 1000;
     position: fixed;
+    background-color: transparent;
 }
 
 header img {
@@ -20,13 +21,51 @@ header ul {
 }
 
 header ul i {
-    margin: 0 12px;
-    font-size: 2.1rem !important;
+    margin: -10px 12px;
+    font-size: 2.2rem !important;
     cursor: pointer;
 }
 
 header a {
     color: white;
+}
+
+.tonberry {
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    margin-left: 25px;
+    background: green;
+    border-radius: 80% 25% 55% 50% / 55% 25% 80% 50%;
+    transform: rotate(-170deg);
+    display: flex;
+}
+
+.tonberry:hover {
+    background: #006994;
+    transition: ease-in 0.3s;
+    cursor: pointer;
+}
+
+.eye {
+    height: 7px;
+    width: 7px;
+    background: yellow;
+    border-radius: 50%;
+}
+
+.eye1 {
+    position: absolute;
+    z-index: 10000;
+    margin: 12px;
+    top: 10px;
+}
+
+.eye2 {
+    position: relative;
+    margin: 12px;
+    top: 10px;
+    left: 22px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -36,6 +75,22 @@ header a {
     }
 
     header ul i {
-        font-size: 1.7rem !important;
+        font-size: 1.8rem !important;
+    }
+
+    .tonberry {
+        height: 35px;
+        width: 35px;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+
+    .eye1,
+    .eye2 {
+        top: 7px;
+    }
+
+    .eye2 {
+        left: 16px;
     }
 }

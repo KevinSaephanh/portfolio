@@ -1,14 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import usePrevious from "../../hooks/usePrevious";
-import Tonberry from "../../assets/tonberry.png";
 import Navs from "./Navs.json";
 import "./Header.css";
 
 const Header = ({ currentPage, handleNavClick }) => {
     const [open, setOpen] = React.useState(false);
     const prevPage = usePrevious(currentPage);
-    const history = useHistory();
 
     // React.useEffect(() => {
     //     console.log(prevPage);
@@ -49,7 +46,10 @@ const Header = ({ currentPage, handleNavClick }) => {
     return (
         <header>
             <a href="/">
-                <img src={Tonberry} alt="" title="Final Fantasy Tonberry UwU" />
+                <div className="tonberry">
+                    <div className="eye eye1" />
+                    <div className="eye eye2" />
+                </div>
             </a>
             {getNavs()}
         </header>

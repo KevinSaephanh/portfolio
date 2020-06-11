@@ -1,5 +1,5 @@
 import React from "react";
-import Me from "../../assets/Me";
+import Me from "../../assets/me.jpg";
 import Skills from "./Skills.json";
 import "./About.css";
 
@@ -11,8 +11,11 @@ const About = () => {
                     return (
                         <li className="skill" key={key}>
                             <h3>{skill.tech}</h3>
-                            <div style={{ width: skill.proficiency }} />
-                            <h3>{skill.proficiency}</h3>
+                            <div
+                                className="proficiency"
+                                style={{ width: skill.proficiency * 5 }}
+                            />
+                            <h3>{skill.proficiency}%</h3>
                         </li>
                     );
                 })}
@@ -21,12 +24,12 @@ const About = () => {
     };
 
     return (
-        <div>
+        <div className="about">
             <img src={Me} alt="" />
             <p>
-                I'm a Full Stack Developer from California <br />
-                My work mainly involves concentration on full stack apps, but I
-                like to occasionally dabble in pure front-end projects.
+                I'm a Full Stack Developer from California. My work mainly
+                involves concentration on full stack apps, but I like to
+                occasionally dabble in pure front-end projects.
             </p>
             {getSkills()}
         </div>

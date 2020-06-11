@@ -1,0 +1,50 @@
+.about {
+    min-height: 100vh;
+    margin-top: 120px;
+}
+
+.about img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-bottom: 25px;
+}
+
+.about ul {
+    list-style-type: none;
+}
+
+.about ul li {
+    display: flex;
+    height: 27px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 13px;
+    border: 2px solid white;
+    padding-right: 10px;
+}
+
+.proficiency {
+    background: rgb(9, 139, 161);
+}
+
+.about ul li h3 {
+    margin: auto 0;
+    width: 17%;
+    text-align: right;
+}
+
+.about ul li h3:first-child {
+    background: rgb(22, 190, 196);
+    height: 100%;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.about p {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 30px;
+}

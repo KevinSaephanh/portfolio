@@ -1,9 +1,11 @@
 footer {
     width: 100vw;
-    position: fixed;
     left: 0;
     bottom: 0;
     padding-bottom: 25px;
+    position: fixed;
+    background-color: transparent;
+    z-index: 1000;
 }
 
 footer i {

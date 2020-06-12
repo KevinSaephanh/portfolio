@@ -1,9 +1,9 @@
 footer {
-    width: 100vw;
+    max-width: 100vw;
     left: 0;
     bottom: 0;
     padding-bottom: 25px;
-    position: fixed;
+    margin-top: 30px;
     background-color: transparent;
     z-index: 1000;
 }

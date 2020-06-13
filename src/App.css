@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: black;
-    color: white;
+    font-weight: bold;
+    color: #444444;
 }
 
 .App {
@@ -19,6 +19,6 @@ p {
 }
 
 i:hover {
-    color: rgb(16, 212, 170);
+    color: #006994;
     transition: ease-in 0.3s;
 }

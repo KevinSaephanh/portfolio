@@ -4,6 +4,8 @@ header {
     z-index: 1000;
     position: fixed;
     background-color: transparent;
+    top: 0;
+    left: 0;
 }
 
 header img {
@@ -21,13 +23,17 @@ header ul {
 }
 
 header ul i {
-    margin: -10px 12px;
+    margin: -8px 12px;
     font-size: 2.2rem !important;
     cursor: pointer;
 }
 
 header a {
-    color: white;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+header a:last-child {
+    margin-right: 12px;
 }
 
 .tonberry {
@@ -75,22 +81,26 @@ header a {
     }
 
     header ul i {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
+    }
+
+    header ul a:last-child {
+        margin-right: 0;
     }
 
     .tonberry {
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         margin-top: 10px;
         margin-left: 12px;
     }
 
     .eye1,
     .eye2 {
-        top: 7px;
+        top: 4px;
     }
 
     .eye2 {
-        left: 16px;
+        left: 14px;
     }
 }

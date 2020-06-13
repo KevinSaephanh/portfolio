@@ -1,9 +1,11 @@
 .home {
     display: flex;
     width: 100%;
-    height: 65vh;
-    padding-top: 150px;
+    height: 100vh;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    background: black;
 }
 
 .home::after {
@@ -21,6 +23,7 @@
     color: rgb(4, 155, 4);
     line-height: 60px;
     text-shadow: 1px 1px #40eaf7;
+    margin-top: 225px;
 }
 
 .circle {
@@ -29,7 +32,7 @@
     width: 120px;
     border-radius: 50%;
     margin: 0 -65px;
-    margin-top: 25px;
+    margin-top: 225px;
     -webkit-box-shadow: -1px 1px 3px 3px whitesmoke;
     -moz-box-shadow: -1px 1px 3px 3px whitesmoke;
     box-shadow: -1px 1px 3px 3px whitesmoke;

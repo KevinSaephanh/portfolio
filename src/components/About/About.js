@@ -76,10 +76,10 @@ const About = () => {
                             I'm a Full Stack Developer from California. I began
                             my programming journey in 2016 in college starting
                             with C++. In 2019, my interest in programming led me
-                            to the world of web apps and full stack development.
-                            Ever since, I've been passionate about creating fun
-                            and sometimes useful web apps that showcase my
-                            interests and artistic sense.
+                            to the world of web development and I haven't turned
+                            back since. The main purposes of my web apps are to
+                            showcase my interests and experiment different
+                            designs.
                         </p>
                     </div>
                 ) : (

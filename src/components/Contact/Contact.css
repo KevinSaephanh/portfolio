@@ -1,0 +1,15 @@
+.contact {
+    margin-top: 100px;
+}
+
+input,
+textarea {
+    border: none;
+    border-bottom: 1.2px solid rgb(104, 103, 103);
+}
+
+input:focus,
+textarea:focus {
+    outline: none !important;
+    border-bottom-color: rgb(14, 180, 14);
+}

@@ -2,15 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
 
 const Routes = () => {
     return (
         <BrowserRouter basename="/">
             <Switch>
                 <Route path="/about" component={About} />
-                <Route path="/s" />
-                <Route path="/b" />
-                <Route path="/v" />
+                <Route path="/work" />
+                <Route path="/contact" component={Contact} />
                 <Route exact path="/" component={Home} />
             </Switch>
         </BrowserRouter>

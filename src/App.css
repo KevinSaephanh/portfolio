@@ -19,7 +19,17 @@ p {
     z-index: 1000;
 }
 
-i:hover {
+i:hover,
+a:hover {
     color: #006994;
     transition: ease-in 0.3s;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li,
+a {
+    text-decoration: none;
 }

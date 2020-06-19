@@ -1,0 +1,21 @@
+.work {
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects {
+    margin-top: 150px;
+}
+
+.projects a {
+    color: black;
+}
+
+.project {
+    height: 250px;
+    width: 350px;
+    border: 1px solid black;
+}

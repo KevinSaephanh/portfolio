@@ -1,27 +1,27 @@
 {
     "projs": [
         {
-            "pic": "fa fa-home",
+            "pic": "pathfinder.png",
             "title": "Pathfinder",
             "stack": "React",
             "link": "https://kevinsaephanh.github.io/Pathfinder/"
         },
         {
-            "pic": "fa fa-home",
+            "pic": "sortVisualizer.png",
             "title": "Sort Visualizer",
-            "stack": "React",
+            "stack": "React (TypeScript)",
             "link": "https://kevinsaephanh.github.io/Sort_Visualizer/"
         },
         {
-            "pic": "fa fa-home",
+            "pic": "algoProToday.png",
             "title": "AlgoProToday",
-            "stack": "NodeJS, React, MongoDB, ExpressJS",
+            "stack": "NodeJS | React | MongoDB | ExpressJS",
             "link": "https://algopt.herokuapp.com/"
         },
         {
-            "pic": "fa fa-home",
+            "pic": "quizme.png",
             "title": "QuizMe",
-            "stack": "Django, React, PostgreSQL",
+            "stack": "Django | React | PostgreSQL",
             "link": "https://hiquizme.herokuapp.com/"
         }
     ]

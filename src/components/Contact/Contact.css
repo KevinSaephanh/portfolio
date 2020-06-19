@@ -92,18 +92,6 @@ form {
     z-index: 1000;
 }
 
-/* .antenna::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    background-color: black;
-    left: 0;
-    top: 27px;
-    width: 300px;
-    height: 5px;
-} */
-
 .contact .eye1,
 .contact .eye2 {
     height: 35px;
@@ -141,4 +129,73 @@ form {
     transform: rotate(-45deg) scale(4.3, 1.3);
     margin-top: 70px;
     margin-left: 90px;
+}
+
+@media only screen and (max-width: 650px) {
+    .contact {
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .slime {
+        height: 100px;
+        width: 110px;
+        margin-top: 130px;
+        margin-bottom: -70px;
+    }
+
+    .slime::after {
+        height: 30px;
+        width: 50px;
+    }
+
+    form {
+        margin: 0 auto;
+        margin-top: 0;
+        width: 90vw;
+    }
+
+    input,
+    textarea {
+        font-size: 1rem;
+    }
+
+    .contact .eye1,
+    .contact .eye2 {
+        height: 30px;
+        width: 30px;
+        font-size: 3rem;
+        line-height: 45px;
+    }
+
+    .contact .eye1 {
+        top: 50px;
+        left: 20px;
+    }
+
+    .contact .eye2 {
+        top: 15px;
+        left: 60px;
+    }
+
+    .contact .mouth {
+        margin-top: 45px;
+        margin-left: 65px;
+        transform: rotate(-45deg) scale(3, 1.2);
+    }
+
+    .antenna {
+        width: 10px;
+        transform: rotate(-200deg) scale(4, 1.2);
+        right: 15px;
+        top: 5px;
+    }
+
+    .antenna::after {
+        height: 20px;
+        width: 5px;
+        left: 25px;
+        top: 0;
+    }
 }

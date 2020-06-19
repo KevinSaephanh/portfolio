@@ -1,0 +1,28 @@
+{
+    "projs": [
+        {
+            "pic": "fa fa-home",
+            "title": "Pathfinder",
+            "stack": "React",
+            "link": "https://kevinsaephanh.github.io/Pathfinder/"
+        },
+        {
+            "pic": "fa fa-home",
+            "title": "Sort Visualizer",
+            "stack": "React",
+            "link": "https://kevinsaephanh.github.io/Sort_Visualizer/"
+        },
+        {
+            "pic": "fa fa-home",
+            "title": "AlgoProToday",
+            "stack": "NodeJS, React, MongoDB, ExpressJS",
+            "link": "https://algopt.herokuapp.com/"
+        },
+        {
+            "pic": "fa fa-home",
+            "title": "QuizMe",
+            "stack": "Django, React, PostgreSQL",
+            "link": "https://hiquizme.herokuapp.com/"
+        }
+    ]
+}

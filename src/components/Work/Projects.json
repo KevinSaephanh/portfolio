@@ -3,25 +3,56 @@
         {
             "pic": "pathfinder.png",
             "title": "Pathfinder",
-            "stack": "React",
+            "stack": [
+                {
+                    "name": "React"
+                }
+            ],
             "link": "https://kevinsaephanh.github.io/Pathfinder/"
         },
         {
             "pic": "sortVisualizer.png",
             "title": "Sort Visualizer",
-            "stack": "React (TypeScript)",
+            "stack": [
+                {
+                    "name": "React"
+                }
+            ],
             "link": "https://kevinsaephanh.github.io/Sort_Visualizer/"
         },
         {
             "pic": "algoProToday.png",
             "title": "AlgoProToday",
-            "stack": "NodeJS | React | MongoDB | ExpressJS",
+            "stack": [
+                {
+                    "name": "NodeJS"
+                },
+                {
+                    "name": "React"
+                },
+                {
+                    "name": "MongoDB"
+                },
+                {
+                    "name": "ExpressJS"
+                }
+            ],
             "link": "https://algopt.herokuapp.com/"
         },
         {
             "pic": "quizme.png",
             "title": "QuizMe",
-            "stack": "Django | React | PostgreSQL",
+            "stack": [
+                {
+                    "name": "Django"
+                },
+                {
+                    "name": "React"
+                },
+                {
+                    "name": "PostgreSQL"
+                }
+            ],
             "link": "https://hiquizme.herokuapp.com/"
         }
     ]

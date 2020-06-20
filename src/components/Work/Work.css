@@ -2,12 +2,16 @@
     width: 100%;
     min-height: 100%;
     justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .projects {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
     margin-top: 150px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .projects a {
@@ -15,7 +19,43 @@
 }
 
 .project {
-    height: 250px;
-    width: 350px;
+    height: 270px;
+    width: 370px;
     border: 1px solid black;
+    border-radius: 1%;
+}
+
+/* .project-info {
+    visibility: hidden;
+} */
+
+.project-info h3:first-child {
+    font-size: 1.8rem;
+}
+
+.project-info h3 {
+    font-size: 1rem;
+}
+
+.project img:hover {
+    opacity: 0.2;
+}
+
+.stack {
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stack-item {
+    width: 75px;
+    height: 25px;
+    line-height: 30px;
+    font-size: 0.8rem;
+    margin: 2px 3px;
+    padding: 0 5px;
+    background: rgba(0, 0, 0, 0.719);
+    color: white;
 }

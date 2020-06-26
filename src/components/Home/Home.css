@@ -20,7 +20,7 @@
 
 .home h1 {
     font-size: 2.4rem;
-    color: rgb(4, 155, 4);
+    color: rgb(5, 165, 112);
     line-height: 60px;
     text-shadow: 1px 1px #40eaf7;
     margin-top: 225px;
@@ -31,7 +31,7 @@
     height: 170px;
     width: 120px;
     border-radius: 50%;
-    margin: 0 -65px;
+    margin: 0 -125px;
     margin-top: 225px;
     -webkit-box-shadow: -1px 1px 3px 3px whitesmoke;
     -moz-box-shadow: -1px 1px 3px 3px whitesmoke;
@@ -70,7 +70,7 @@
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 550px) {
     .home::after {
         height: 35%;
         box-shadow: 0px -100px 0px 85px rgb(240, 167, 72);

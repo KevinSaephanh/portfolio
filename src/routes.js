@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Work from "./components/Work/Work";
@@ -12,7 +12,7 @@ const Routes = () => {
                 <Route path="/about" component={About} />
                 <Route path="/work" component={Work} />
                 <Route path="/contact" component={Contact} />
-                <Route exact path="/" component={Home} />
+                <Route component={Home} />
             </Switch>
         </BrowserRouter>
     );

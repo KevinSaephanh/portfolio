@@ -1,27 +1,33 @@
 import React from "react";
 import Projects from "./Projects.json";
 import "./Work.css";
+import algoProToday from "../../assets/algoProToday.png";
 
 const Work = () => {
-    const [projects, setProjects] = React.useState(Projects.projs);
+    const { projs } = Projects;
 
     const getProjects = () => {
         return (
             <ul className="projects">
-                {projects.map((proj, key) => {
+                {projs.map((proj, key) => {
                     return (
                         <li
                             className="project"
                             key={key}
                             title={`${proj.title} - click to visit`}
                         >
-                            <a href={proj.link}>
-                                <img src={proj.pic} alt="" />
-                                <div className="project-info">
-                                    <h3>{proj.title}</h3>
-                                    {getStack(proj)}
-                                </div>
-                            </a>
+                            <img
+                                src={require(`../../assets/${proj.pic}`)}
+                                id={proj.pic}
+                                alt=""
+                            />
+                            <div className="project-info">
+                                <h3>{proj.title}</h3>
+                                {getStack(proj)}
+                                <a href={proj.link}>
+                                    <button type="button">Visit</button>
+                                </a>
+                            </div>
                         </li>
                     );
                 })}
@@ -43,7 +49,12 @@ const Work = () => {
         );
     };
 
-    return <div className="work">{getProjects()}</div>;
+    return (
+        <div className="work">
+            <h1>My Favorite Projects</h1>
+            {getProjects()}
+        </div>
+    );
 };
 
 export default Work;

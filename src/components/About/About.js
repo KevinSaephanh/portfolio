@@ -3,16 +3,18 @@ import Me from "../../assets/me.jpg";
 import Skills from "./Skills.json";
 import "./About.css";
 
-const skills = Skills.skills;
+const { skills } = Skills;
 
 const About = () => {
     const [slideIndex, setSlideIndex] = React.useState(1);
 
     React.useEffect(() => {
         colorActiveDot();
-        skills.forEach((s) => {
-            animateLoad(s, s.proficiency, 0);
-        });
+        if (slideIndex === 2) {
+            skills.forEach((s) => {
+                animateLoad(s, s.proficiency, 0);
+            });
+        }
     }, [slideIndex]);
 
     const colorActiveDot = () => {
@@ -35,8 +37,14 @@ const About = () => {
                     return (
                         <li className="skill" key={key}>
                             <h3>{skill.tech}</h3>
-                            <div id={`${skill.tech}`} className="proficiency">
-                                {skill.proficiency}%
+                            <div className="proficiency">
+                                <div
+                                    id={`${skill.tech}`}
+                                    className="progress"
+                                />
+                                <div className="proficiency-num">
+                                    {skill.proficiency}%
+                                </div>
                             </div>
                         </li>
                     );
@@ -46,14 +54,12 @@ const About = () => {
     };
 
     const animateLoad = (skill, goal, iterator) => {
-        if (slideIndex === 2 && iterator < goal) {
+        if (iterator < goal) {
             const skillStyle = document.getElementById(`${skill.tech}`).style;
             iterator++;
 
             setTimeout(() => {
-                skillStyle.background = `linear-gradient(90deg, rgb(33, 203, 209) ${iterator}%, gray ${
-                    100 - iterator
-                }%`;
+                skillStyle.width = `${iterator}%`;
                 animateLoad(skill, goal, iterator);
             }, 10);
         }
@@ -64,22 +70,32 @@ const About = () => {
         else setSlideIndex(2);
     };
 
-    console.log(slideIndex);
-
     return (
         <div className="about">
+            <div id="clouds" />
             <div className="carousel">
                 {slideIndex === 1 ? (
                     <div className="slides info">
                         <img src={Me} alt="" />
+                        <div className="sword">
+                            <div className="handle">
+                                <div className="handle-line" />{" "}
+                                <div className="handle-line" />
+                                <div className="handle-line" />
+                                <div className="handle-line" />
+                            </div>
+                            <div className="guard" />
+                            <div className="blade" />
+                        </div>
                         <p>
                             I'm a Full Stack Developer from California. I began
                             my programming journey in 2016 in college starting
                             with C++. In 2019, my interest in programming led me
-                            to the world of web development and I haven't turned
-                            back since. The main purposes of my web apps are to
-                            showcase my interests and experiment different
-                            designs.
+                            to the world of web development. The freedom,
+                            practicality, and creativeness that web development
+                            offers are what motivate me to continue creating web
+                            apps that not only showcase my interests, but also
+                            allow me to experiment with different designs.
                         </p>
                     </div>
                 ) : (

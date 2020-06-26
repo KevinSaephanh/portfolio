@@ -6,6 +6,9 @@
             "stack": [
                 {
                     "name": "React"
+                },
+                {
+                    "name": "JavaScript"
                 }
             ],
             "link": "https://kevinsaephanh.github.io/Pathfinder/"
@@ -16,6 +19,9 @@
             "stack": [
                 {
                     "name": "React"
+                },
+                {
+                    "name": "TypeScript"
                 }
             ],
             "link": "https://kevinsaephanh.github.io/Sort_Visualizer/"
@@ -35,6 +41,9 @@
                 },
                 {
                     "name": "ExpressJS"
+                },
+                {
+                    "name": "JavaScript"
                 }
             ],
             "link": "https://algopt.herokuapp.com/"
@@ -51,6 +60,12 @@
                 },
                 {
                     "name": "PostgreSQL"
+                },
+                {
+                    "name": "JavaScript"
+                },
+                {
+                    "name": "Python"
                 }
             ],
             "link": "https://hiquizme.herokuapp.com/"

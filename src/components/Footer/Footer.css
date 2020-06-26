@@ -8,8 +8,7 @@ footer {
     margin-right: auto;
     left: 0;
     right: 0;
-    padding-bottom: 15px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     position: relative;
     margin-top: -80px;
 }
@@ -18,7 +17,7 @@ footer i {
     margin: 0 10px;
     font-size: 1.7rem !important;
     cursor: pointer;
-    color: green;
+    color: rgb(5, 165, 112);
 }
 
 @media only screen and (max-width: 700px) {

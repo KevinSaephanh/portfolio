@@ -7,7 +7,7 @@ import Contact from "./components/Contact/Contact";
 
 const Routes = () => {
     return (
-        <BrowserRouter basename="/dev">
+        <BrowserRouter basename="/">
             <Switch>
                 <Route path="/about" component={About} />
                 <Route path="/work" component={Work} />

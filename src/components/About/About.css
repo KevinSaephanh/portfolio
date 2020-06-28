@@ -46,7 +46,7 @@
 .blade {
     margin: 0 auto;
     height: 400px;
-    width: 17px;
+    width: 18px;
     background: rgb(209, 208, 208);
     position: relative;
     z-index: -1;
@@ -119,6 +119,7 @@
 .info {
     width: 60vw;
     margin: 50px auto;
+    margin-bottom: 15px;
     display: flex;
 }
 

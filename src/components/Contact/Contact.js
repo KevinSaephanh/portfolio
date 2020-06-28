@@ -8,6 +8,7 @@ const Contact = () => {
         email: "",
         message: "",
     });
+    const [submitMessage, setSubmitMessage] = React.useState("");
 
     const sendEmail = async (e) => {
         e.preventDefault();
@@ -19,8 +20,12 @@ const Contact = () => {
             message,
         });
 
-        if (res.data) console.log("SUCCESS");
-        else console.log("BAD");
+        if (res.status === 200) {
+            setSubmitMessage("Message sent successfully!");
+            setTimeout(() => {
+                window.location.reload();
+            }, 2500);
+        }
     };
 
     const handleInput = (e) => {
@@ -67,6 +72,7 @@ const Contact = () => {
                     onChange={handleInput}
                     required
                 />
+                <span className="submitMessage">{submitMessage}</span>
                 <button type="input" onClick={sendEmail}>
                     Send
                 </button>

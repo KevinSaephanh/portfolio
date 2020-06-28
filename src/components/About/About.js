@@ -11,6 +11,7 @@ const About = () => {
     React.useEffect(() => {
         colorActiveDot();
         if (slideIndex === 2) {
+            toggleButtons("none");
             skills.forEach((s) => {
                 animateLoad(s, s.proficiency, 0);
             });
@@ -63,11 +64,21 @@ const About = () => {
                 animateLoad(skill, goal, iterator);
             }, 10);
         }
+        if (iterator >= goal)
+            setTimeout(() => {
+                toggleButtons("inline-block");
+            }, 1000);
     };
 
     const changeSlide = () => {
         if (slideIndex !== 1) setSlideIndex(1);
         else setSlideIndex(2);
+    };
+
+    const toggleButtons = (display) => {
+        document.querySelectorAll(".slider").forEach((el) => {
+            el.style.display = display;
+        });
     };
 
     return (
@@ -104,17 +115,17 @@ const About = () => {
                         {getSkills()}
                     </div>
                 )}
-                <a className="prev" onClick={changeSlide}>
+                <a className="slider prev" onClick={changeSlide}>
                     &#10094;
                 </a>
-                <a className="next" onClick={changeSlide}>
+                <a className="slider next" onClick={changeSlide}>
                     &#10095;
                 </a>
             </div>
 
             <div>
-                <span id="dot1" className="dot" onClick={changeSlide} />
-                <span id="dot2" className="dot" onClick={changeSlide} />
+                <span id="dot1" className="slider dot" onClick={changeSlide} />
+                <span id="dot2" className="slider dot" onClick={changeSlide} />
             </div>
         </div>
     );

@@ -1,7 +1,8 @@
 .about {
     height: 80vh;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 100px;
+    margin-bottom: 25px;
 }
 
 .sword {
@@ -72,7 +73,7 @@
 .skills ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 35px;
+    margin-top: 25px;
     width: 600px;
 }
 
@@ -197,7 +198,7 @@
 @media only screen and (max-width: 600px) {
     .about {
         margin-top: 90px;
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
 
     .sword {

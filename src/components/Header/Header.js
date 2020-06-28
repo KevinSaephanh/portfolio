@@ -1,28 +1,8 @@
 import React from "react";
-import usePrevious from "../../hooks/usePrevious";
 import Navs from "./Navs.json";
 import "./Header.css";
 
-const Header = ({ currentPage, handleNavClick }) => {
-    const [open, setOpen] = React.useState(false);
-    const prevPage = usePrevious(currentPage);
-
-    // React.useEffect(() => {
-    //     console.log(prevPage);
-    //     const prevPageStyle = document.getElementById(prevPage).style;
-    //     prevPageStyle.color = "white";
-    //     prevPageStyle.borderBottom = "none";
-
-    //     console.log(currentPage);
-    //     const currentPageStyle = document.getElementById(currentPage).style;
-    //     currentPageStyle.color = "turquoise";
-    //     prevPageStyle.borderBottom = "2px solid turquoise";
-    // }, [currentPage]);
-
-    const toggle = () => {
-        setOpen(!open);
-    };
-
+const Header = () => {
     const getNavs = () => {
         return (
             <ul>

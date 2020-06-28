@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer");
+const validator = require("email-validator");
 require("dotenv").config();
 
 // Set up transporter to receive messages
@@ -21,7 +22,6 @@ transporter.verify((error, success) => {
 // Route messages to send email
 router.post("/", async (req, res, next) => {
     const { name, email, message } = req.body;
-    console.log(req.body);
     const content = `Name: ${name} \nEmail: ${email}\n Message: ${message}`;
     const mail = {
         from: email,
@@ -30,9 +30,13 @@ router.post("/", async (req, res, next) => {
         text: content,
     };
 
+    // Validate email format
+    if (!validator.validate(email))
+        res.status(400).json({ message: "Invalid email" });
+
     transporter.sendMail(mail, (err, data) => {
-        if (err) res.json({ message: "Failed to send email" });
-        else res.json({ message: "Email successfully sent" });
+        if (err) res.status(400).json({ message: "Failed to send email" });
+        else res.status(200).json({ message: "Email successfully sent" });
     });
 });
 

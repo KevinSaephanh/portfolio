@@ -1,6 +1,8 @@
 import React from "react";
-import axios from "axios";
+import * as emailjs from "emailjs-com";
 import "./Contact.css";
+
+const emailPattern = new RegExp("/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+.)+[A-Za-z]+$/");
 
 const Contact = () => {
     const [inputs, setInputs] = React.useState({
@@ -13,19 +15,31 @@ const Contact = () => {
     const sendEmail = async (e) => {
         e.preventDefault();
 
-        const { name, email, message } = inputs;
-        const res = await axios.post("/api/email", {
-            name,
-            email,
-            message,
-        });
-
-        if (res.status === 200) {
-            setSubmitMessage("Message sent successfully!");
+        // Check if email is using valid format
+        if (!emailPattern.test(inputs.email)) {
+            setSubmitMessage("Failed to send message 😞");
             setTimeout(() => {
-                window.location.reload();
-            }, 2500);
+                setSubmitMessage("");
+            }, 2000);
+            return;
         }
+
+        emailjs
+            .sendForm(
+                "gmail",
+                process.env.REACT_APP_TEMPLATE_ID,
+                ".myForm",
+                process.env.REACT_APP_USER_ID
+            )
+            .then((res) => {
+                setSubmitMessage("Message sent successfully UwU");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
     };
 
     const handleInput = (e) => {

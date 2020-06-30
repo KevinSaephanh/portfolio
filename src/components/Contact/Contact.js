@@ -2,7 +2,11 @@ import React from "react";
 import * as emailjs from "emailjs-com";
 import "./Contact.css";
 
-const emailPattern = new RegExp("/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+.)+[A-Za-z]+$/");
+const emailPattern = new RegExp(
+    "/[a-z0-9._%+!$&*=^|~#%'`?{}/-]+@([a-z0-9-]+.){1,}([a-z]{5,100})/"
+);
+const namePattern = new RegExp("/^([a-zA-Z]){3,30}$/");
+const messagePattern = new RegExp("/^(w{10,300})$/");
 
 const Contact = () => {
     const [inputs, setInputs] = React.useState({
@@ -16,7 +20,7 @@ const Contact = () => {
         e.preventDefault();
 
         // Check if email is using valid format
-        if (!emailPattern.test(inputs.email)) {
+        if (!validateForm()) {
             setSubmitMessage("Failed to send message 😞");
             setTimeout(() => {
                 setSubmitMessage("");
@@ -42,6 +46,15 @@ const Contact = () => {
             });
     };
 
+    const validateForm = () => {
+        const { name, email, message } = inputs;
+        return (
+            namePattern.test(name) &&
+            emailPattern.test(email) &&
+            messagePattern.test(message)
+        );
+    };
+
     const handleInput = (e) => {
         const { name } = e.target;
         const { value } = e.target;
@@ -65,6 +78,7 @@ const Contact = () => {
                     name="name"
                     placeholder="Name"
                     title="Name"
+                    minLength="3"
                     maxLength="100"
                     required
                     onChange={handleInput}
@@ -74,6 +88,7 @@ const Contact = () => {
                     placeholder="Email"
                     type="email"
                     title="Email"
+                    minLength="5"
                     maxLength="100"
                     required
                     onChange={handleInput}
@@ -82,6 +97,7 @@ const Contact = () => {
                     name="message"
                     placeholder="Speak your mind :3"
                     title="Message"
+                    minLength="10"
                     maxLength="300"
                     onChange={handleInput}
                     required

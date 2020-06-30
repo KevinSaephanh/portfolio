@@ -6,12 +6,14 @@ const Footer = () => {
     const getSocials = () => {
         return Socials.socials.map((social, key) => {
             return (
-                <i
-                    className={social.icon}
-                    title={social.title}
-                    key={key}
-                    aria-hidden="true"
-                />
+                <a href={social.link}>
+                    <i
+                        className={social.icon}
+                        title={social.title}
+                        key={key}
+                        aria-hidden="true"
+                    />
+                </a>
             );
         });
     };

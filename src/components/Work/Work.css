@@ -114,6 +114,12 @@
 
     .project {
         width: 90%;
+        margin-left: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .project {
         margin-left: 5px;
     }
 }

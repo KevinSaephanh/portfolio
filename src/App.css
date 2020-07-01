@@ -33,3 +33,9 @@ li,
 a {
     text-decoration: none;
 }
+
+a:focus,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

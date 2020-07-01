@@ -79,8 +79,8 @@
 
 .skill {
     display: inline-flex;
-    height: 27px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 32px;
     width: 100%;
     margin-top: 15px;
     color: white;
@@ -192,10 +192,11 @@
     .info p {
         font-size: 1.1rem;
         line-height: 22px;
+        margin-bottom: -35px;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     .about {
         margin-top: 90px;
         margin-bottom: 35px;
@@ -213,7 +214,7 @@
     }
 
     .info img {
-        margin: 15px auto;
+        margin: 25px auto;
         margin-top: -20px;
     }
 
@@ -248,7 +249,8 @@
     }
 
     .skill {
-        height: 22px;
+        height: 25px;
+        line-height: 27px;
     }
 
     .skill h3 {
@@ -271,5 +273,30 @@
 
     .sword {
         transform: rotate(-40deg);
+    }
+}
+
+@media only screen and (max-height: 550px) {
+    .about {
+        margin-top: 30px !important;
+    }
+
+    .info {
+        margin-bottom: -45px;
+    }
+
+    .info img {
+        margin-top: 25px;
+        margin-bottom: 70px;
+        height: 150px;
+        width: 150px;
+    }
+
+    .info p {
+        font-size: 12px !important;
+    }
+
+    .skills {
+        margin-bottom: 10px;
     }
 }

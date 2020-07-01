@@ -29,3 +29,10 @@ footer i {
         font-size: 1.5rem !important;
     }
 }
+
+@media only screen and (max-height: 550px) {
+    footer {
+        margin-top: -35px !important;
+        margin-bottom: 0;
+    }
+}

@@ -2,12 +2,6 @@ import React from "react";
 import * as emailjs from "emailjs-com";
 import "./Contact.css";
 
-const emailPattern = new RegExp(
-    "/[a-z0-9._%+!$&*=^|~#%'`?{}/-]+@([a-z0-9-]+.){1,}([a-z]{5,100})/"
-);
-const namePattern = new RegExp("/^([a-zA-Z]){3,30}$/");
-const messagePattern = new RegExp("/^(w{10,300})$/");
-
 const Contact = () => {
     const [inputs, setInputs] = React.useState({
         name: "",
@@ -16,7 +10,7 @@ const Contact = () => {
     });
     const [submitMessage, setSubmitMessage] = React.useState("");
 
-    const sendEmail = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
 
         // Check if email is using valid format
@@ -49,9 +43,14 @@ const Contact = () => {
     const validateForm = () => {
         const { name, email, message } = inputs;
         return (
-            namePattern.test(name) &&
-            emailPattern.test(email) &&
-            messagePattern.test(message)
+            name.length > 1 &&
+            name.length <= 50 &&
+            email.length >= 5 &&
+            email.length <= 100 &&
+            email.includes("@") &&
+            email.includes(".") &&
+            message.length >= 5 &&
+            message.length <= 300
         );
     };
 
@@ -73,8 +72,9 @@ const Contact = () => {
                 <div className="eye2">+</div>
                 <div className="mouth">w</div>
             </div>
-            <form onSubmit={sendEmail} className="myForm">
+            <form className="myForm" onSubmit="return false;">
                 <input
+                    type="text"
                     name="name"
                     placeholder="Name"
                     title="Name"
@@ -94,6 +94,7 @@ const Contact = () => {
                     onChange={handleInput}
                 />
                 <textarea
+                    type="text"
                     name="message"
                     placeholder="Speak your mind :3"
                     title="Message"
@@ -103,7 +104,11 @@ const Contact = () => {
                     required
                 />
                 <span className="submitMessage">{submitMessage}</span>
-                <button type="input" onClick={sendEmail}>
+                <button
+                    type="input"
+                    onClick={sendEmail}
+                    disabled={submitMessage !== ""}
+                >
                     Send
                 </button>
             </form>

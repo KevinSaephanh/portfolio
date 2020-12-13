@@ -1,6 +1,7 @@
 import React from "react";
 import Me from "../../assets/me.jpg";
 import Skills from "./Skills.json";
+import aws from "../../assets/awsCert.png";
 import "./About.css";
 
 const { skills } = Skills;
@@ -18,6 +19,7 @@ const About = () => {
         }
     }, [slideIndex]);
 
+    // Toggle between dots depending on which is active
     const colorActiveDot = () => {
         const dot1Style = document.getElementById("dot1").style;
         const dot2Style = document.getElementById("dot2").style;
@@ -31,20 +33,18 @@ const About = () => {
         }
     };
 
+    // Return tech stack for proficiency bars
     const getSkills = () => {
         return (
-            <ul className="skills">
-                {skills.map((skill, key) => {
+            <ul>
+                {skills.map((tech, key) => {
                     return (
-                        <li className="skill" key={key}>
-                            <h3>{skill.tech}</h3>
+                        <li className="tech" key={key}>
+                            <h3>{tech.tech}</h3>
                             <div className="proficiency">
-                                <div
-                                    id={`${skill.tech}`}
-                                    className="progress"
-                                />
+                                <div id={`${tech.tech}`} className="progress" />
                                 <div className="proficiency-num">
-                                    {skill.proficiency}%
+                                    {tech.proficiency}%
                                 </div>
                             </div>
                         </li>
@@ -54,6 +54,21 @@ const About = () => {
         );
     };
 
+    // Returns AWS cert info
+    const getCert = () => {
+        return (
+            <div className="aws">
+                <img className="aws-cert" src={aws} alt="" />
+                <ul>
+                    <li>AWS Certified Solutions Architect - Associate</li>
+                    <li>Issue Date: Sep 28, 2020</li>
+                    <li>Expiration Date: Sep 28, 2023</li>
+                </ul>
+            </div>
+        );
+    };
+
+    // Animate loading for tech stack bars
     const animateLoad = (skill, goal, iterator) => {
         if (iterator < goal) {
             const skillStyle = document.getElementById(`${skill.tech}`).style;
@@ -85,6 +100,7 @@ const About = () => {
         <div className="about">
             <div id="clouds" />
             <div className="carousel">
+                {/* Transition to slide using slide index */}
                 {slideIndex === 1 ? (
                     <div className="slides info">
                         <img src={Me} alt="" />
@@ -111,10 +127,18 @@ const About = () => {
                     </div>
                 ) : (
                     <div className="slides skills">
-                        <h2>Languages / Technologies</h2>
-                        {getSkills()}
+                        <div className="stack">
+                            <h2>Tech Stack</h2>
+                            {getSkills()}
+                        </div>
+                        <div className="certificates">
+                            <h2>Certificates</h2>
+                            {getCert()}
+                        </div>
                     </div>
                 )}
+
+                {/* Slider buttons on sides */}
                 <a className="slider prev" onClick={changeSlide}>
                     &#10094;
                 </a>
@@ -123,6 +147,7 @@ const About = () => {
                 </a>
             </div>
 
+            {/* Dot sliders at bottom */}
             <div>
                 <span id="dot1" className="slider dot" onClick={changeSlide} />
                 <span id="dot2" className="slider dot" onClick={changeSlide} />

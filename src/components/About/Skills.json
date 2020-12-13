@@ -26,6 +26,10 @@
         },
         {
             "tech": "AWS",
+            "proficiency": 50
+        },
+        {
+            "tech": "Docker",
             "proficiency": 40
         }
     ]

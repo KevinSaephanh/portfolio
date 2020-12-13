@@ -26,7 +26,7 @@ const Header = () => {
     return (
         <header>
             <a href="/">
-                <div className="tonberry">
+                <div className="tonberry" title="Tonberry from Final Fantasy">
                     <div className="eye eye1" />
                     <div className="eye eye2" />
                 </div>

@@ -107,11 +107,11 @@ form {
     border-radius: 50%;
     background: black;
     color: yellow;
-    font-size: 3.2rem;
-    padding-left: 3px;
+    font-size: 3.5rem;
     vertical-align: middle;
     line-height: 50px;
     transform: rotate(-310deg);
+    padding: 0 5px 10px 3px;
 }
 
 .contact .eye1 {

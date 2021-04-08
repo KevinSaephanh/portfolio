@@ -1,41 +1,48 @@
+html,
 body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-weight: bold;
-    color: #444444;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  color: #66fcf1;
+  background-color: #0b0c10;
 }
 
 .App {
-    min-height: 100vh;
-    max-width: 100vw;
-    overflow: hidden;
-    font-family: "League Spartan Bold", arial;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  font-family: "League Spartan Bold", arial;
 }
 
 h1,
 h2,
 p {
-    z-index: 1000;
+  z-index: 1000;
 }
 
 i:hover,
 a:hover {
-    color: #006994;
-    transition: ease-in 0.3s;
+  color: #006994;
+  transition: ease-in 0.3s;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 li,
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:focus,
 button:focus {
-    outline: none !important;
-    box-shadow: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }

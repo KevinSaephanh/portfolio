@@ -1,106 +1,102 @@
 header {
-    display: flex;
-    width: 100vw;
-    z-index: 1000;
-    position: fixed;
-    background-color: transparent;
-    top: 0;
-    left: 0;
+  display: flex;
+  width: 100vw;
+  z-index: 1000;
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  left: 0;
 }
 
 header img {
-    height: 45px;
-    width: 50px;
-    margin: auto 10px;
-    cursor: pointer;
+  height: 45px;
+  width: 50px;
+  margin: auto 10px;
+  cursor: pointer;
 }
 
 header ul {
-    list-style-type: none;
-    display: flex;
-    margin-left: auto;
-    padding-right: 5px;
+  list-style-type: none;
+  display: flex;
+  margin-left: auto;
+  padding-right: 5px;
 }
 
 header ul i {
-    margin: -8px 12px;
-    font-size: 2.2rem !important;
-    cursor: pointer;
-}
-
-header a {
-    color: rgba(0, 0, 0, 0.726);
+  margin: -8px 12px;
+  font-size: 2.2rem !important;
+  cursor: pointer;
 }
 
 header a:last-child {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .tonberry {
-    height: 40px;
-    width: 40px;
-    margin-top: 10px;
-    margin-left: 25px;
-    background: green;
-    border-radius: 80% 25% 55% 50% / 55% 25% 80% 50%;
-    transform: rotate(-170deg);
-    display: flex;
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  margin-left: 25px;
+  background: green;
+  border-radius: 80% 25% 55% 50% / 55% 25% 80% 50%;
+  transform: rotate(-170deg);
+  display: flex;
 }
 
 .tonberry:hover {
-    background: #006994;
-    transition: ease-in 0.3s;
-    cursor: pointer;
+  background: #006994;
+  transition: ease-in 0.3s;
+  cursor: pointer;
 }
 
 header .eye {
-    height: 7px;
-    width: 7px;
-    background: yellow;
-    border-radius: 50%;
+  height: 7px;
+  width: 7px;
+  background: yellow;
+  border-radius: 50%;
 }
 
 header .eye1 {
-    position: absolute;
-    z-index: 10000;
-    margin: 12px;
-    top: 10px;
+  position: absolute;
+  z-index: 10000;
+  margin: 12px;
+  top: 10px;
 }
 
 header .eye2 {
-    position: relative;
-    margin: 12px;
-    top: 10px;
-    left: 22px;
+  position: relative;
+  margin: 12px;
+  top: 10px;
+  left: 22px;
 }
 
 @media only screen and (max-width: 700px) {
-    header img {
-        height: 35px;
-        width: 40px;
-    }
+  header img {
+    height: 35px;
+    width: 40px;
+  }
 
-    header ul i {
-        font-size: 2rem !important;
-    }
+  header ul i {
+    font-size: 2rem !important;
+  }
 
-    header ul a:last-child {
-        margin-right: 0;
-    }
+  header ul a:last-child {
+    margin-right: 0;
+  }
 
-    .tonberry {
-        height: 30px;
-        width: 30px;
-        margin-top: 10px;
-        margin-left: 12px;
-    }
+  .tonberry {
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 12px;
+  }
 
-    header .eye1,
-    header .eye2 {
-        top: 4px;
-    }
+  header .eye1,
+  header .eye2 {
+    top: 4px;
+  }
 
-    header .eye2 {
-        left: 14px;
-    }
+  header .eye2 {
+    left: 14px;
+  }
 }

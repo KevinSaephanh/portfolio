@@ -5,22 +5,40 @@ import Footer from "./components/Footer/Footer";
 
 import "font-awesome/css/font-awesome.min.css";
 import "./App.css";
+import Loader from "./pages/Loader/Loader";
 
 const App = () => {
-    const [currentPage, setCurrentPage] = React.useState("Home");
+  const [currentPage, setCurrentPage] = React.useState("Home");
+  const [loading, setLoading] = React.useState(true);
 
-    const handleNavClick = (e) => {
-        const { name } = e.target;
-        setCurrentPage(name);
-    };
+  React.useEffect(() => {
+    toggleLoading();
+  }, []);
 
-    return (
+  const handleNavClick = (e) => {
+    const { name } = e.target;
+    setCurrentPage(name);
+  };
+
+  const toggleLoading = () => {
+    setTimeout(() => {
+      setLoading(!loading);
+    }, 2000);
+  };
+
+  return (
+    <div>
+      {loading ? (
+        <Loader />
+      ) : (
         <div className="App">
-            <Header currentPage={currentPage} handleNavClick={handleNavClick} />
-            <Routes />
-            <Footer />
+          <Header currentPage={currentPage} handleNavClick={handleNavClick} />
+          <Routes />
+          <Footer />
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default App;

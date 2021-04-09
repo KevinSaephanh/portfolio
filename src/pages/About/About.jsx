@@ -1,6 +1,7 @@
 import React from "react";
 import Me from "../../assets/me.jpg";
 import Resume from "../../assets/Resume.pdf";
+import "./About.css";
 
 const About = () => {
   const technologies = [
@@ -21,7 +22,7 @@ const About = () => {
   };
 
   return (
-    <div>
+    <div className="about">
       <img src={Me} alt="" />
       <p>
         I'm a <strong>Full Stack Developer</strong> from the awesome state of
@@ -31,12 +32,11 @@ const About = () => {
         both the industry and personal projects.
       </p>
       <p>Here are some of the languages/technologies I've worked with:</p>
-      {technologies.map((tech, i) => {
-        return <li key={i}>{tech}</li>;
-      })}
-      <a href="#" onClick={openPDF(Resume)}>
-        Resume
-      </a>
+      <ul>
+        {technologies.map((tech, i) => {
+          return <li key={i}>{tech}</li>;
+        })}
+      </ul>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const App = () => {
   const toggleLoading = () => {
     setTimeout(() => {
       setLoading(!loading);
-    }, 2000);
+    }, 1500);
   };
 
   return (
@@ -33,7 +33,9 @@ const App = () => {
       ) : (
         <div className="App">
           <Header currentPage={currentPage} handleNavClick={handleNavClick} />
-          <Routes />
+          <div className="content">
+            <Routes />
+          </div>
           <Footer />
         </div>
       )}

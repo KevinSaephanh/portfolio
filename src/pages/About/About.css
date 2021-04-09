@@ -1,0 +1,33 @@
+.about {
+  text-align: left;
+}
+
+.about img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  z-index: 1000;
+}
+
+.about ul {
+  width: 70%;
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.about li::before {
+  content: "\2B9A";
+  margin: 0 0.7em;
+}
+
+@media only screen and (max-width: 700px) {
+  .about ul {
+    width: 90vw;
+  }
+}

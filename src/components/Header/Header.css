@@ -1,40 +1,39 @@
 header {
   display: flex;
+  justify-content: space-between;
   width: 100vw;
   z-index: 1000;
-  position: fixed;
-  background-color: transparent;
+  position: relative;
   top: 0;
   left: 0;
 }
 
-header img {
-  height: 45px;
-  width: 50px;
-  margin: auto 10px;
-  cursor: pointer;
-}
-
 header ul {
-  list-style-type: none;
-  display: flex;
-  margin-left: auto;
-  padding-right: 5px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 header ul i {
-  margin: -8px 12px;
-  font-size: 2.2rem !important;
+  margin-right: 7px;
+  font-size: 1.4rem !important;
   cursor: pointer;
 }
 
-header a:last-child {
+header ul a {
+  margin: 0 auto;
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+
+header ul a:last-child {
   border: 3px solid #66fcf1;
   border-radius: 5px;
-  padding: 10px;
-  color: #66fcf1;
+  padding: 7px;
   margin-right: 12px;
-  font-size: 1rem;
 }
 
 .tonberry {
@@ -76,15 +75,6 @@ header .eye2 {
 }
 
 @media only screen and (max-width: 700px) {
-  header img {
-    height: 35px;
-    width: 40px;
-  }
-
-  header ul i {
-    font-size: 2rem !important;
-  }
-
   header ul a:last-child {
     margin-right: 0;
   }

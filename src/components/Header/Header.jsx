@@ -1,31 +1,27 @@
 import React from "react";
-import Navs from "./Navs.json";
 import Resume from "../../assets/Resume.pdf";
+import { Constants } from "../../constants/Constants";
 import "./Header.css";
 
 const Header = () => {
-  const openPDF = (pdf) => {
-    window.open(pdf, "_blank", "fullscreen=yes");
-    return false;
-  };
-
   const getNavs = () => {
     return (
       <ul>
-        {Navs.navs.map((nav, key) => {
+        {Constants.navs.map((nav, key) => {
           return (
             <a href={nav.link}>
-              <i
+              {/* <i
                 id={nav.id}
                 className={nav.icon}
                 title={nav.title}
                 key={key}
                 aria-hidden="true"
-              />
+              /> */}
+              {nav.title}
             </a>
           );
         })}
-        <a href="#" onClick={openPDF(Resume)}>
+        <a href={Resume} target="_blank" rel="noopener noreferrer">
           Resume
         </a>
       </ul>

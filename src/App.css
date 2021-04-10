@@ -26,7 +26,8 @@ body {
 
 h1,
 h2,
-i {
+i,
+a {
   z-index: 1000;
   color: #66fcf1;
 }

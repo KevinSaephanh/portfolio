@@ -1,6 +1,5 @@
 import React from "react";
 import Me from "../../assets/me.jpg";
-import Resume from "../../assets/Resume.pdf";
 import "./About.css";
 
 const About = () => {
@@ -15,11 +14,6 @@ const About = () => {
     "AWS",
     "Docker",
   ];
-
-  const openPDF = (pdf) => {
-    window.open(pdf, "_blank", "fullscreen=yes");
-    return false;
-  };
 
   return (
     <div className="about">

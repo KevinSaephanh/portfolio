@@ -1,39 +1,116 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100vw;
   z-index: 1000;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
-header ul {
+.nav-list {
   margin: 0;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
-header ul i {
+.nav-list i {
   margin-right: 7px;
   font-size: 1.4rem !important;
   cursor: pointer;
+  color: #3500d3;
 }
 
-header ul a {
+.nav-list a {
   margin: 0 auto;
-  margin-right: 15px;
+  margin-right: 18px;
   font-size: 1.1rem;
 }
 
-header ul a:last-child {
+.nav-list a:last-child {
   border: 3px solid #66fcf1;
   border-radius: 5px;
   padding: 7px;
   margin-right: 12px;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #66fcf1;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #66d9fc;
+  transition: 0.2s ease-in;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #66fcf1;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47d3;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+  color: #d1d1d1;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: #ffffff;
 }
 
 .tonberry {
@@ -75,15 +152,20 @@ header .eye2 {
 }
 
 @media only screen and (max-width: 700px) {
-  header ul a:last-child {
+  .nav-list a {
+    display: block;
+    margin-right: 0;
+  }
+
+  .nav-list a:last-child {
     margin-right: 0;
   }
 
   .tonberry {
     height: 30px;
     width: 30px;
-    margin-top: 10px;
-    margin-left: 12px;
+    margin-top: 13px;
+    margin-left: 15px;
   }
 
   header .eye1,

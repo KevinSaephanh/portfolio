@@ -6,7 +6,7 @@ const Footer = () => {
   const getSocials = () => {
     return Constants.socials.map((social, key) => {
       return (
-        <a href={social.link}>
+        <a href={social.link} key={key}>
           <i
             className={social.icon}
             title={social.title}

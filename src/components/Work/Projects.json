@@ -1,7 +1,7 @@
 {
     "projs": [
         {
-            "pic": "pathfinder.png",
+            "pic": "pathfinder.PNG",
             "title": "Pathfinder",
             "stack": [
                 {
@@ -14,7 +14,7 @@
             "link": "https://kevinsaephanh.github.io/Pathfinder/"
         },
         {
-            "pic": "sortVisualizer.png",
+            "pic": "sortVisualizer.PNG",
             "title": "Sort Visualizer",
             "stack": [
                 {

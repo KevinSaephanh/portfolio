@@ -9,11 +9,11 @@ body {
   font-weight: bold;
   width: 100%;
   height: 100%;
-  color: rgba(245, 245, 245, 0.842);
+  color: #c5c6c7;
   background-color: #0b0c10be;
 }
 
-.App {
+.app {
   min-height: 100vh;
   max-width: 100vw;
   overflow: hidden;
@@ -30,18 +30,9 @@ body {
 }
 
 h1,
-h2,
-i,
-a {
+h2 {
   z-index: 1000;
   color: #66fcf1;
-}
-
-i:hover,
-a:hover {
-  color: #3500d3;
-  border-color: #3500d3;
-  transition: ease-in 0.3s;
 }
 
 ul {

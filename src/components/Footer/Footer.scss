@@ -8,13 +8,18 @@ footer {
   left: 0;
   right: 0;
   margin-bottom: 20px;
-}
 
-footer i {
-  margin: 0 10px;
-  font-size: 1.8rem !important;
-  cursor: pointer;
-  color: #66fcf1;
+  i {
+    margin: 0 10px;
+    font-size: 1.8rem !important;
+    cursor: pointer;
+    color: #45a29e;
+
+    &:hover {
+      color: #66fcf1;
+      transition: 0.2s ease-in;
+    }
+  }
 }
 
 @media only screen and (max-width: 700px) {

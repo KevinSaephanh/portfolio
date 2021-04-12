@@ -2,32 +2,63 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width: 100vw;
   z-index: 1000;
+  width: 100vw;
 }
 
 .nav-list {
   margin: 0;
-}
 
-.nav-list i {
-  margin-right: 7px;
-  font-size: 1.4rem !important;
-  cursor: pointer;
-  color: #3500d3;
-}
+  i {
+    margin-right: 7px;
+    font-size: 1.4rem !important;
+    cursor: pointer;
+    color: #66fcf1;
+  }
 
-.nav-list a {
-  margin: 0 auto;
-  margin-right: 18px;
-  font-size: 1.1rem;
-}
+  a {
+    margin: 0 auto;
+    margin-right: 18px;
+    font-size: 1.1rem;
+    color: #45a29e;
+    position: relative;
 
-.nav-list a:last-child {
-  border: 3px solid #66fcf1;
-  border-radius: 5px;
-  padding: 7px;
-  margin-right: 12px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #66fcf1;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: #66fcf1;
+    }
+
+    &:not(:last-child):hover::before {
+      transition: 0.2s ease-in;
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    &:last-child {
+      border: 3px solid #45a29e;
+      border-radius: 5px;
+      padding: 7px;
+      margin-right: 12px;
+    }
+
+    &:last-child:hover {
+      color: #66fcf1;
+      border-color: #66fcf1;
+      text-decoration: none;
+    }
+  }
 }
 
 /* Position and sizing of burger button */
@@ -118,47 +149,52 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 40px;
   margin-top: 10px;
   margin-left: 25px;
-  background: green;
+  background: #45a29e;
   border-radius: 80% 25% 55% 50% / 55% 25% 80% 50%;
   transform: rotate(-170deg);
   display: flex;
-}
-
-.tonberry:hover {
-  background: #006994;
-  transition: ease-in 0.3s;
   cursor: pointer;
-}
 
-header .eye {
-  height: 7px;
-  width: 7px;
-  background: yellow;
-  border-radius: 50%;
-}
+  &:hover {
+    background: #66fcf1;
+    transition: ease-in 0.2s;
+  }
 
-header .eye1 {
-  position: absolute;
-  z-index: 10000;
-  margin: 12px;
-  top: 10px;
-}
+  .eye {
+    height: 7px;
+    width: 7px;
+    background: yellow;
+    border-radius: 50%;
+  }
 
-header .eye2 {
-  position: relative;
-  margin: 12px;
-  top: 10px;
-  left: 22px;
+  .eye1 {
+    position: absolute;
+    z-index: 10000;
+    margin: 12px;
+    top: 10px;
+  }
+
+  .eye2 {
+    position: relative;
+    margin: 12px;
+    top: 10px;
+    left: 22px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   .nav-list a {
     display: block;
     margin-right: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  .nav-list a:last-child {
-    margin-right: 0;
+  .bm-burger-button {
+    float: right;
+    position: absolute;
   }
 
   .tonberry {
@@ -166,14 +202,14 @@ header .eye2 {
     width: 30px;
     margin-top: 13px;
     margin-left: 15px;
-  }
 
-  header .eye1,
-  header .eye2 {
-    top: 4px;
-  }
+    .eye1,
+    .eye2 {
+      top: 4px;
+    }
 
-  header .eye2 {
-    left: 14px;
+    .eye2 {
+      left: 14px;
+    }
   }
 }

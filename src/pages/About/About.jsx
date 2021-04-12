@@ -1,12 +1,12 @@
 import React from "react";
 import Me from "../../assets/me.jpg";
 import { Constants } from "../../constants/Constants";
-import "./About.css";
+import "./About.scss";
 
 const About = () => {
   return (
     <div className="about">
-      <img src={Me} alt="" />
+      <img src={Me} alt="" title="ME!" />
       <div className="text-section">
         <p>
           I'm a <strong>Full Stack Developer</strong> from the awesome state of
@@ -15,7 +15,7 @@ const About = () => {
           knowledge of full stack development (frontend, backend, ops, etc.) in
           both the industry and personal projects. <br />
           <br />
-          Here are some of the languages/technologies I've worked with:
+          Here are some of the languages/technologies that I've worked with:
         </p>
         <ul>
           {Constants.technologies.map((tech, i) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Constants } from "../../constants/Constants";
-import "./Footer.css";
+import "./Footer.scss";
 
 const Footer = () => {
   const getSocials = () => {

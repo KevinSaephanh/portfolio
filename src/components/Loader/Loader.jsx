@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loader.css";
+import "./Loader.scss";
 
 // NOTE: All credit for this loader goes to gromper from codepen:
 // https://codepen.io/gromper/pen/QKjRgg

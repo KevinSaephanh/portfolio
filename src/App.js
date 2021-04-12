@@ -1,13 +1,13 @@
 import React from "react";
 import Routes from "./routes";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
+import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
+import { ViewportProvider } from "./hooks/Viewport";
 
 import "font-awesome/css/font-awesome.min.css";
-import "./App.css";
-import { ViewportProvider } from "./hooks/Viewport";
+import "./App.scss";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -33,7 +33,7 @@ const App = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="App">
+        <div className="app">
           <ViewportProvider>
             <Header currentPage={currentPage} handleNavClick={handleNavClick} />
           </ViewportProvider>

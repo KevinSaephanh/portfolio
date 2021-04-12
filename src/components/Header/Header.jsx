@@ -3,7 +3,7 @@ import { slide as Menu } from "react-burger-menu";
 import { useViewport } from "../../hooks/Viewport";
 import { Constants } from "../../constants/Constants";
 import Resume from "../../assets/Resume.pdf";
-import "./Header.css";
+import "./Header.scss";
 
 const Header = () => {
   const width = useViewport().width;

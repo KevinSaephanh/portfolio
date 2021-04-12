@@ -1,24 +1,28 @@
 .about {
   text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
 }
 
 .about img {
-  height: 200px;
-  width: 200px;
+  height: 240px;
+  width: 240px;
   border-radius: 50%;
   border: 2px solid white;
-  margin-bottom: 25px;
-  margin-right: 15px;
   z-index: 1000;
 }
 
 .about ul {
-  width: 70%;
+  width: 100%;
   columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
-  margin-left: 0;
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.about li {
+  margin: 0;
+  padding: 0;
 }
 
 .about li::before {
@@ -26,8 +30,28 @@
   margin: 0 0.7em;
 }
 
+.text-section {
+  width: 60%;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 700px) {
-  .about ul {
-    width: 90vw;
+  .about {
+    display: block;
+  }
+
+  .about img {
+    height: 160px;
+    width: 160px;
+    margin-bottom: 15px;
+  }
+
+  .about li::before {
+    content: "\2B9A";
+    margin: 0 0.2em;
+  }
+
+  .text-section {
+    width: 100%;
   }
 }

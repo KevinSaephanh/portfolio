@@ -26,6 +26,18 @@ export class Constants {
     },
   ];
 
+  static technologies = [
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Spring Boot",
+    "React",
+    "Angular",
+    "AWS",
+    "Docker",
+  ];
+
   static projects = [
     {
       pic: "pathfinder.png",
@@ -106,14 +118,14 @@ export class Constants {
       link: "https://www.linkedin.com/in/kevin-saephanh/",
     },
     {
-      icon: "fa fa-github-square",
+      icon: "fab fa-github",
       title: "Github",
       link: "https://github.com/KevinSaephanh",
     },
     {
-      icon: "fa fa-facebook-official",
-      title: "Facebook",
-      link: "https://www.facebook.com/kevin.saephanh",
+      icon: "fab fa-discord",
+      title: "Discord",
+      link: "https://www.discord.com/users/360657658270973956",
     },
   ];
 }

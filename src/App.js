@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Routes from "./routes";
 import Header from "./components/Header/Header";
 import Loader from "./components/Loader/Loader";
 import Footer from "./components/Footer/Footer";
-import { useEffect, useState } from "react";
 import { ViewportProvider } from "./hooks/Viewport";
 
 import "font-awesome/css/font-awesome.min.css";

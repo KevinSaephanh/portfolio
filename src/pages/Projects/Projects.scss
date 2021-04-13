@@ -1,0 +1,38 @@
+.projects {
+  ul {
+    columns: 2;
+  }
+
+  .project {
+  }
+
+  img {
+    width: 370px;
+    height: 330px;
+  }
+}
+
+.project:hover,
+.project:active {
+  transition: 1s ease-in;
+  background: #444444;
+}
+
+.project:hover .project-info,
+.project:active .project-info {
+  opacity: 1;
+  transition: opacity 1.5s;
+}
+
+.project:hover img,
+.project:active img {
+  display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  .projects {
+    ul {
+      columns: unset;
+    }
+  }
+}

@@ -9,12 +9,44 @@ const Header = () => {
   const width = useViewport().width;
   const breakpoint = 700;
 
+  const highlight = (title, icon) => {
+    const titleStyle = document.getElementsByClassName(title)[0].style;
+    const iconStyle = document.getElementsByClassName(icon)[0].style;
+
+    // Add transition
+    titleStyle.transition = "0.2s ease-in";
+    iconStyle.transition = "0.2s ease-in";
+
+    // Change color
+    titleStyle.color = "#66fcf1";
+    iconStyle.color = "#66fcf1";
+  };
+
+  const unhighlight = (title, icon) => {
+    const titleStyle = document.getElementsByClassName(title)[0].style;
+    const iconStyle = document.getElementsByClassName(icon)[0].style;
+
+    // Add transition
+    titleStyle.transition = "0.2s ease-in";
+    iconStyle.transition = "0.2s ease-in";
+
+    // Change color
+    titleStyle.color = "#45a29e";
+    iconStyle.color = "#45a29e";
+  };
+
   const getNavs = () => {
     return (
       <ul className="nav-list">
         {Constants.navs.map((nav, key) => {
           return (
-            <a href={nav.link} key={key}>
+            <a
+              className={nav.title}
+              href={nav.link}
+              key={key}
+              onMouseEnter={() => highlight(nav.title, nav.icon)}
+              onMouseLeave={() => unhighlight(nav.title, nav.icon)}
+            >
               <i
                 id={nav.id}
                 className={nav.icon}

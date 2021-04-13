@@ -3,6 +3,18 @@ import { Constants } from "../../constants/Constants";
 import "./Footer.scss";
 
 const Footer = () => {
+  // Make icon to move up
+  const jump = (icon) => {
+    const socialIcon = document.getElementsByClassName(icon)[0];
+    socialIcon.style.transform = "translateY(-5px)";
+  };
+
+  // Make icon drop back down to original position
+  const drop = (icon) => {
+    const socialIcon = document.getElementsByClassName(icon)[0];
+    socialIcon.style.transform = "none";
+  };
+
   const getSocials = () => {
     return Constants.socials.map((social, key) => {
       return (
@@ -12,13 +24,20 @@ const Footer = () => {
             title={social.title}
             key={key}
             aria-hidden="true"
+            onMouseEnter={() => jump(social.icon)}
+            onMouseLeave={() => drop(social.icon)}
           />
         </a>
       );
     });
   };
 
-  return <footer>{getSocials()}</footer>;
+  return (
+    <footer>
+      {getSocials()}
+      <p>Designed and built by me, Kevin Saephanh</p>
+    </footer>
+  );
 };
 
 export default Footer;

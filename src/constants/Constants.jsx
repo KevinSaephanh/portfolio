@@ -14,9 +14,9 @@ export class Constants {
     },
     {
       icon: "fa fa-code",
-      title: "Work",
+      title: "Projects",
       id: "work-link",
-      link: "/work",
+      link: "/projects",
     },
     {
       icon: "fa fa-envelope",

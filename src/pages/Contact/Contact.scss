@@ -2,58 +2,63 @@
   display: flex;
 }
 
-input {
-  height: 35px;
-}
-
-textarea {
-  height: 55px;
-}
-
-input,
-textarea {
-  border: none;
-  border-bottom: 1.2px solid rgb(104, 103, 103);
-  width: 80%;
-  margin: 25px auto;
-  padding: 0 0 5px 5px;
-  font-size: 1.1rem;
-}
-
-input:focus,
-textarea:focus {
-  outline: none !important;
-  border-bottom-color: rgb(14, 180, 14);
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
   margin-right: auto;
-  margin-top: 120px;
-}
 
-.contact button {
-  background: rgb(10, 248, 137);
-  height: 50px;
-  width: 140px;
-  border-radius: 30px;
-  font-weight: bolder;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-top: 10px;
-}
+  input {
+    height: 35px;
+  }
 
-.contact button:hover {
-  background: rgb(55, 55, 214);
-  color: white;
-  transition: ease 0.6s;
-}
+  textarea {
+    height: 55px;
+  }
 
-.submitMessage {
-  color: rgb(10, 248, 137);
-  width: 80%;
-  height: 20px;
-  margin: 0 auto;
-  display: inline-block;
+  input,
+  textarea {
+    border: none;
+    border-bottom: 1.2px solid rgb(104, 103, 103);
+    width: 80%;
+    margin: 25px auto;
+    padding: 0 0 5px 5px;
+    font-size: 1.1rem;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none !important;
+    border-bottom-color: rgb(14, 180, 14);
+  }
+
+  button {
+    background: rgb(10, 248, 137);
+    height: 50px;
+    width: 140px;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:hover {
+      background: rgb(55, 55, 214);
+      color: white;
+      transition: ease 0.6s;
+    }
+  }
+
+  .submitMessage {
+    color: rgb(10, 248, 137);
+    width: 80%;
+    height: 20px;
+    margin: 0 auto;
+    display: inline-block;
+  }
 }
 
 .slime {
@@ -145,7 +150,7 @@ form {
 }
 
 @media only screen and (max-width: 700px) {
-  .contact {
+  .contact-content {
     flex-wrap: wrap;
   }
 
@@ -176,9 +181,9 @@ form {
 
     .eye1,
     .eye2 {
-      height: 30px;
-      width: 30px;
-      font-size: 3rem;
+      height: 23px;
+      width: 23px;
+      font-size: 2.4rem;
       line-height: 45px;
     }
 
@@ -202,19 +207,19 @@ form {
 
   form {
     margin: 0 auto;
-  }
 
-  input {
-    font-size: 1rem;
-    height: 25px;
-  }
+    input {
+      font-size: 1rem;
+      height: 25px;
+    }
 
-  input,
-  textarea {
-    margin: 7px auto;
-  }
+    input,
+    textarea {
+      margin: 7px auto;
+    }
 
-  .contact button {
-    margin-top: 5px;
+    button {
+      margin-top: -20px;
+    }
   }
 }

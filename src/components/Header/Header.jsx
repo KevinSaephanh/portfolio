@@ -9,44 +9,12 @@ const Header = () => {
   const width = useViewport().width;
   const breakpoint = 700;
 
-  const highlight = (title, icon) => {
-    const titleStyle = document.getElementsByClassName(title)[0].style;
-    const iconStyle = document.getElementsByClassName(icon)[0].style;
-
-    // Add transition
-    titleStyle.transition = "0.2s ease-in";
-    iconStyle.transition = "0.2s ease-in";
-
-    // Change color
-    titleStyle.color = "#66fcf1";
-    iconStyle.color = "#66fcf1";
-  };
-
-  const unhighlight = (title, icon) => {
-    const titleStyle = document.getElementsByClassName(title)[0].style;
-    const iconStyle = document.getElementsByClassName(icon)[0].style;
-
-    // Add transition
-    titleStyle.transition = "0.2s ease-in";
-    iconStyle.transition = "0.2s ease-in";
-
-    // Change color
-    titleStyle.color = "#45a29e";
-    iconStyle.color = "#45a29e";
-  };
-
   const getNavs = () => {
     return (
       <ul className="nav-list">
         {Constants.navs.map((nav, key) => {
           return (
-            <a
-              className={nav.title}
-              href={nav.link}
-              key={key}
-              onMouseEnter={() => highlight(nav.title, nav.icon)}
-              onMouseLeave={() => unhighlight(nav.title, nav.icon)}
-            >
+            <a className={nav.title} href={nav.link} key={key}>
               <i
                 id={nav.id}
                 className={nav.icon}
@@ -68,9 +36,14 @@ const Header = () => {
   return (
     <header>
       <a href="/">
-        <div className="tonberry" title="Tonberry from Final Fantasy">
+        {/* <div className="tonberry" title="Tonberry from Final Fantasy">
           <div className="eye eye1" />
           <div className="eye eye2" />
+        </div> */}
+        <div className="yeti" title="Yeti from MapleStory">
+          <div className="eye eye1" />
+          <div className="eye eye2" />
+          <div className="mouth">vvvvv</div>
         </div>
       </a>
       <div>{width >= breakpoint ? getNavs() : <Menu>{getNavs()}</Menu>}</div>

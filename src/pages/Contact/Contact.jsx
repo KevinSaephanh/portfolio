@@ -63,6 +63,8 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      {/* <h2>CONTACT ME</h2> */}
+      {/* <div className="contact-content"> */}
       <div
         className="slime"
         title="Poorly drawn Slime from Maplestory using CSS"
@@ -113,6 +115,7 @@ const Contact = () => {
         </button>
       </form>
     </div>
+    // </div>
   );
 };
 

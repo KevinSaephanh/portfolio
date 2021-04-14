@@ -10,9 +10,9 @@ footer {
 
   i {
     margin: 0 10px;
+    margin-bottom: 10px;
     font-size: 1.8rem !important;
     cursor: pointer;
-    color: #45a29e;
 
     &:hover {
       color: #66fcf1;
@@ -20,8 +20,12 @@ footer {
     }
   }
 
-  p {
+  span {
     font-size: 10px;
+
+    &:hover {
+      color: #66fcf1;
+    }
   }
 }
 
@@ -32,8 +36,8 @@ footer {
       margin-bottom: 5px;
     }
 
-    p {
-      font-size: 8px;
+    span {
+      font-size: 7px;
     }
   }
 }

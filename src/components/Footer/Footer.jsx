@@ -34,8 +34,8 @@ const Footer = () => {
 
   return (
     <footer>
-      {getSocials()}
-      <p>Designed and built by me, Kevin Saephanh</p>
+      <div>{getSocials()}</div>
+      <span>Designed and built by me, Kevin Saephanh</span>
     </footer>
   );
 };

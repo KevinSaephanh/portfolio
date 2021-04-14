@@ -8,9 +8,10 @@ body {
   align-items: center;
   font-weight: bold;
   width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
-  color: #c5c6c7;
-  background-color: #0b0c10be;
+  color: #6ac7b7;
+  background-color: #0b0c10;
 }
 
 .app {
@@ -23,6 +24,7 @@ body {
 .content {
   padding: 10px 30px;
   min-height: 500px;
+  max-width: 100%;
   margin-top: 15px;
   display: flex;
   align-items: center;
@@ -31,7 +33,6 @@ body {
 
 h1,
 h2 {
-  z-index: 1000;
   color: #66fcf1;
 }
 
@@ -42,6 +43,12 @@ ul {
 li,
 a {
   text-decoration: none;
+}
+
+a,
+i,
+span {
+  color: #6ac7b7;
 }
 
 a:focus,

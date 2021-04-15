@@ -43,7 +43,9 @@ const Header = () => {
         <div className="yeti" title="Yeti from MapleStory">
           <div className="eye eye1" />
           <div className="eye eye2" />
-          <div className="mouth">vvvvv</div>
+          <div className="cheek cheek1" />
+          <div className="cheek cheek2" />
+          <div className="mouth">vvvv</div>
         </div>
       </a>
       <div>{width >= breakpoint ? getNavs() : <Menu>{getNavs()}</Menu>}</div>

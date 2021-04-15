@@ -1,4 +1,5 @@
 import React from "react";
+import validator from "email-validator";
 import * as emailjs from "emailjs-com";
 import "./Contact.scss";
 
@@ -47,9 +48,8 @@ const Contact = () => {
       name.length <= 50 &&
       email.length >= 5 &&
       email.length <= 100 &&
-      email.includes("@") &&
-      email.includes(".") &&
-      message.length >= 5 &&
+      validator.validate(email) &&
+      message.length >= 1 &&
       message.length <= 300
     );
   };

@@ -13,10 +13,13 @@ form {
 
   input {
     height: 35px;
+    padding-left: 5px;
   }
 
   textarea {
     height: 55px;
+    padding-left: 5px;
+    padding-top: 5px;
   }
 
   input,
@@ -25,7 +28,6 @@ form {
     border-bottom: 1.2px solid rgb(104, 103, 103);
     width: 80%;
     margin: 25px auto;
-    padding: 0 0 5px 5px;
     font-size: 1.1rem;
   }
 
@@ -150,6 +152,10 @@ form {
 }
 
 @media only screen and (max-width: 700px) {
+  .contact {
+    display: block;
+  }
+
   .contact-content {
     flex-wrap: wrap;
   }
@@ -207,6 +213,7 @@ form {
 
   form {
     margin: 0 auto;
+    margin-bottom: 25px;
 
     input {
       font-size: 1rem;

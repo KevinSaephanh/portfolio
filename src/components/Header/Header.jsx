@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { useViewport } from "../../hooks/Viewport";
 import { Constants } from "../../constants/Constants";
@@ -14,7 +15,7 @@ const Header = () => {
       <ul className="nav-list">
         {Constants.navs.map((nav, key) => {
           return (
-            <a className={nav.title} href={nav.link} key={key}>
+            <Link className={nav.title} to={nav.link} key={key}>
               <i
                 id={nav.id}
                 className={nav.icon}
@@ -23,7 +24,7 @@ const Header = () => {
                 aria-hidden="true"
               />
               {nav.title}
-            </a>
+            </Link>
           );
         })}
         <a href={Resume} target="_blank" rel="noopener noreferrer">
@@ -36,10 +37,6 @@ const Header = () => {
   return (
     <header>
       <a href="/">
-        {/* <div className="tonberry" title="Tonberry from Final Fantasy">
-          <div className="eye eye1" />
-          <div className="eye eye2" />
-        </div> */}
         <div className="yeti" title="Yeti from MapleStory">
           <div className="eye eye1" />
           <div className="eye eye2" />

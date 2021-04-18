@@ -8,7 +8,7 @@ const Projects = () => {
 
   const getProjects = () => {
     return (
-      <ul className="projects">
+      <ul className="projects content">
         {Constants.projects.map((proj, key) => {
           return (
             <li

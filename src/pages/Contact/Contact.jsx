@@ -62,60 +62,60 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
-      {/* <h2>CONTACT ME</h2> */}
-      {/* <div className="contact-content"> */}
-      <div
-        className="slime"
-        title="Poorly drawn Slime from Maplestory using CSS"
-      >
-        <div className="antenna">∿∿∿</div>
-        <div className="eye1">+</div>
-        <div className="eye2">+</div>
-        <div className="mouth">w</div>
-      </div>
-      <form className="myForm" onSubmit="return false;">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          title="Name"
-          minLength="3"
-          maxLength="100"
-          required
-          onChange={handleInput}
-        />
-        <input
-          name="email"
-          placeholder="Email"
-          type="email"
-          title="Email"
-          minLength="5"
-          maxLength="100"
-          required
-          onChange={handleInput}
-        />
-        <textarea
-          type="text"
-          name="message"
-          placeholder="Speak your mind :3"
-          title="Message"
-          minLength="10"
-          maxLength="300"
-          onChange={handleInput}
-          required
-        />
-        <span className="submitMessage">{submitMessage}</span>
-        <button
-          type="input"
-          onClick={sendEmail}
-          disabled={submitMessage !== ""}
+    <div>
+      <h2>CONTACT ME</h2>
+      <div className="contact-content">
+        <div
+          className="slime"
+          title="Poorly drawn Slime from Maplestory using CSS"
         >
-          Send
-        </button>
-      </form>
+          <div className="antenna">∿∿∿</div>
+          <div className="eye1">+</div>
+          <div className="eye2">+</div>
+          <div className="mouth">w</div>
+        </div>
+        <form className="myForm" onSubmit="return false;">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            title="Name"
+            minLength="3"
+            maxLength="100"
+            required
+            onChange={handleInput}
+          />
+          <input
+            name="email"
+            placeholder="Email"
+            type="email"
+            title="Email"
+            minLength="5"
+            maxLength="100"
+            required
+            onChange={handleInput}
+          />
+          <textarea
+            type="text"
+            name="message"
+            placeholder="Speak your mind :3"
+            title="Message"
+            minLength="10"
+            maxLength="300"
+            onChange={handleInput}
+            required
+          />
+          <span className="submitMessage">{submitMessage}</span>
+          <button
+            type="input"
+            onClick={sendEmail}
+            disabled={submitMessage !== ""}
+          >
+            Send
+          </button>
+        </form>
+      </div>
     </div>
-    // </div>
   );
 };
 

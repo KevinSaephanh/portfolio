@@ -42,6 +42,7 @@ export class Constants {
     {
       pic: "pathfinder.png",
       title: "Pathfinder",
+      desc: "Dis a project",
       stack: [
         {
           name: "React",
@@ -55,6 +56,7 @@ export class Constants {
     {
       pic: "sortVisualizer.png",
       title: "Sort Visualizer",
+      desc: "Dis one too",
       stack: [
         {
           name: "React",
@@ -68,6 +70,7 @@ export class Constants {
     {
       pic: "algoProToday.png",
       title: "AlgoProToday",
+      desc: "And dis one",
       stack: [
         {
           name: "NodeJS",
@@ -90,6 +93,7 @@ export class Constants {
     {
       pic: "quizme.png",
       title: "QuizMe",
+      desc: "Last one",
       stack: [
         {
           name: "Django",

@@ -4,25 +4,46 @@
     justify-content: space-between;
     align-items: flex-end;
     text-align: left;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+    margin-bottom: 20px;
+    padding-bottom: 17px;
+    border-bottom: 2px solid white;
 
     img {
       height: 250px;
       width: 350px;
     }
 
-    .stack {
-      display: flex;
-    }
-
-    .stack-item {
-      &:not(:last-child) {
-        margin-right: 7px;
-      }
+    i {
+      margin: 0 7px;
+      font-size: 1.7rem !important;
+      cursor: pointer;
 
       &:hover {
         color: #66fcf1;
+        transition: 0.2s ease-in;
+      }
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: 0;
+      margin-bottom: 15px;
+      padding: 0;
+
+      .stack-item {
+        font-size: 14px;
+
+        &:not(:last-child) {
+          margin-right: 7px;
+        }
+
+        &:hover {
+          color: #66fcf1;
+        }
       }
     }
   }

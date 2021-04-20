@@ -3,6 +3,7 @@ import { Constants } from "../../constants/Constants";
 import "./Projects.scss";
 
 const Projects = () => {
+  // Render array of projects
   const getProjects = () => {
     return (
       <ul>
@@ -13,14 +14,26 @@ const Projects = () => {
               key={key}
               title={`${proj.title} - click to visit`}
             >
+              {/* Render project info (title, description, etc.) */}
               <div className="project-info">
                 <h2>{proj.title}</h2>
                 <p>{proj.desc}</p>
                 {getStack(proj)}
-                <a href={proj.link}>
-                  <button type="button">Visit</button>
+
+                {/* Render github and website icons */}
+                <a href={proj.code} key={key}>
+                  <i className="fab fa-github" key={key} aria-hidden="true" />
+                </a>
+                <a href={proj.site} key={key}>
+                  <i
+                    className="fas fa-external-link-alt"
+                    key={key}
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
+
+              {/* Render app image */}
               <img
                 src={require(`../../assets/${proj.pic}`)}
                 id={proj.pic}
@@ -33,6 +46,7 @@ const Projects = () => {
     );
   };
 
+  // Render technologies/languages used to code app
   const getStack = (project) => {
     return (
       <ul className="stack">

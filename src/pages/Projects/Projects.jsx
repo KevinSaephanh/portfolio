@@ -9,11 +9,7 @@ const Projects = () => {
       <ul>
         {Constants.projects.map((proj, key) => {
           return (
-            <li
-              className="project-item"
-              key={key}
-              title={`${proj.title} - click to visit`}
-            >
+            <li className="project-item" key={key}>
               {/* Render project info (title, description, etc.) */}
               <div className="project-info">
                 <h2>{proj.title}</h2>

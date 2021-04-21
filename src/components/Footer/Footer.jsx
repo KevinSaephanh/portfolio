@@ -3,7 +3,7 @@ import { Constants } from "../../constants/Constants";
 import "./Footer.scss";
 
 const Footer = () => {
-  // Make icon to move up
+  // Make icon move up
   const jump = (icon) => {
     const socialIcon = document.getElementsByClassName(icon)[0];
     socialIcon.style.transform = "translateY(-5px)";

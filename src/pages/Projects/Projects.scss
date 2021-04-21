@@ -1,68 +1,109 @@
-.projects {
-  .project-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    text-align: left;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding-bottom: 17px;
-    border-bottom: 2px solid white;
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+  height: 350px;
+  width: 85vw;
+  margin: 0 auto;
+  padding-bottom: 17px;
+  // border-bottom: 2px solid #66fcf1;
 
-    img {
-      height: 250px;
-      width: 350px;
+  img {
+    height: 90%;
+    max-height: 300px;
+    width: 45%;
+    max-width: 500px;
+  }
+}
+
+// Styles for info (text portion) of project item
+.project-info {
+  height: 88%;
+  width: 55%;
+
+  p,
+  a {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  p {
+    width: 80%;
+    max-width: 500px;
+    background: rgba(0, 140, 255, 0.226);
+    border: 1px solid rgb(104, 104, 104);
+    border-radius: 3px;
+    padding: 12px;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  i {
+    margin-right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #66fcf1;
+      transition: 0.2s ease-in;
     }
+  }
 
-    i {
-      margin: 0 7px;
-      font-size: 1.7rem !important;
-      cursor: pointer;
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+
+    .stack-item {
+      font-size: 14px;
+      color: rgba(245, 245, 245, 0.836);
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
 
       &:hover {
         color: #66fcf1;
-        transition: 0.2s ease-in;
-      }
-    }
-
-    .stack {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin: 0;
-      margin-bottom: 15px;
-      padding: 0;
-
-      .stack-item {
-        font-size: 14px;
-
-        &:not(:last-child) {
-          margin-right: 7px;
-        }
-
-        &:hover {
-          color: #66fcf1;
-        }
       }
     }
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .projects {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .project-item {
+    display: block;
+    width: 90vw;
+    text-align: center;
 
     img {
       height: 150px;
       width: 200px;
     }
+  }
 
+  .project-info {
     li {
       display: block;
       text-align: center;
+    }
+
+    i {
+      margin-right: 5px;
+      font-size: 1.1rem;
+    }
+
+    .stack {
+      .stack-item {
+        font-size: 11px;
+
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
     }
   }
 }

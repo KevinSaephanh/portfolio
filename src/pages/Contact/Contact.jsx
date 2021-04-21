@@ -2,7 +2,7 @@ import React from "react";
 import validator from "email-validator";
 import * as emailjs from "emailjs-com";
 import "./Contact.scss";
-
+// Convert to popup modal?
 const Contact = () => {
   const [inputs, setInputs] = React.useState({
     name: "",

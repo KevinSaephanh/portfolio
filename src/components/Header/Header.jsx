@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { slide as Menu } from "react-burger-menu";
+import { NavLink } from "react-router-dom";
 import { useViewport } from "../../hooks/Viewport";
 import { Constants } from "../../constants/Constants";
 import Resume from "../../assets/Resume.pdf";
@@ -15,7 +14,7 @@ const Header = () => {
       <ul className="nav-list">
         {Constants.navs.map((nav, key) => {
           return (
-            <Link className={nav.title} to={nav.link} key={key}>
+            <NavLink className={nav.title} to={nav.link} key={key}>
               <i
                 id={nav.id}
                 className={nav.icon}
@@ -24,7 +23,7 @@ const Header = () => {
                 aria-hidden="true"
               />
               {nav.title}
-            </Link>
+            </NavLink>
           );
         })}
         <a href={Resume} target="_blank" rel="noopener noreferrer">
@@ -45,7 +44,7 @@ const Header = () => {
           <div className="mouth">vvvv</div>
         </div>
       </a>
-      <div>{width >= breakpoint ? getNavs() : <Menu>{getNavs()}</Menu>}</div>
+      <div>{width >= breakpoint ? getNavs() : getNavs()}</div>
     </header>
   );
 };

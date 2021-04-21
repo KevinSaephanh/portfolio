@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch, useLocation } from "react-router-dom";
+import SlideRoutes from "react-slide-routes";
 import { ViewportProvider } from "./hooks/Viewport";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -9,12 +10,14 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 const Routes = () => {
+  const location = useLocation();
+
   return (
-    <BrowserRouter basename="/">
+    <div>
       <ViewportProvider>
         <Header />
       </ViewportProvider>
-      <Switch>
+      <SlideRoutes location={location} duration={500}>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} />
@@ -22,9 +25,9 @@ const Routes = () => {
         <Route path="*">
           <Redirect to="/" />
         </Route>
-      </Switch>
+      </SlideRoutes>
       <Footer />
-    </BrowserRouter>
+    </div>
   );
 };
 

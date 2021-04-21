@@ -10,14 +10,19 @@ const Projects = () => {
         {Constants.projects.map((proj, key) => {
           return (
             <li className="project-item" key={key}>
-              {/* Render project info (title, description, etc.) */}
+              {/* Render project info (title, description, tech stack) */}
               <div className="project-info">
                 <h2>{proj.title}</h2>
                 <p>{proj.desc}</p>
                 {getStack(proj)}
 
                 {/* Render github and website icons */}
-                <a href={proj.code} key={key}>
+                <a
+                  href={proj.code}
+                  key={key}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fab fa-github" key={key} aria-hidden="true" />
                 </a>
                 <a href={proj.site} key={key}>
@@ -33,6 +38,7 @@ const Projects = () => {
               <img
                 src={require(`../../assets/${proj.pic}`)}
                 id={proj.pic}
+                title={proj.title}
                 alt=""
               />
             </li>
@@ -58,8 +64,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="projects content">
-      <h2>Some Of My Projects</h2>
+    <div className="content">
+      <h2>PROJECTS</h2>
       {getProjects()}
     </div>
   );

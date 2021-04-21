@@ -42,7 +42,8 @@ export class Constants {
     {
       pic: "pathfinder.png",
       title: "Pathfinder",
-      desc: "Dis a project",
+      desc:
+        "A visualization of maze generation and pathfinding algorithms. A maze is first generated in real time. Then the maze will be traversed, marking each visited cell. Finally, the optimal path to the escape route will be highlighted.",
       stack: [
         {
           name: "React",
@@ -51,12 +52,14 @@ export class Constants {
           name: "JavaScript",
         },
       ],
-      link: "https://kevinsaephanh.github.io/Pathfinder/",
+      code: "https://github.com/KevinSaephanh/Pathfinder",
+      site: "https://kevinsaephanh.github.io/Pathfinder/",
     },
     {
       pic: "sortVisualizer.png",
       title: "Sort Visualizer",
-      desc: "Dis one too",
+      desc:
+        "This app also produces algorithm visualizations. A graph is displayed containing a random array of bars of varying length. After starting, bars begin moving left and right to imitate how the sorting algorithm works. Once sorting is completed, all bars will be highlighted.",
       stack: [
         {
           name: "React",
@@ -65,35 +68,14 @@ export class Constants {
           name: "TypeScript",
         },
       ],
-      link: "https://kevinsaephanh.github.io/Sort_Visualizer/",
-    },
-    {
-      pic: "algoProToday.png",
-      title: "AlgoProToday",
-      desc: "And dis one",
-      stack: [
-        {
-          name: "NodeJS",
-        },
-        {
-          name: "React",
-        },
-        {
-          name: "MongoDB",
-        },
-        {
-          name: "ExpressJS",
-        },
-        {
-          name: "JavaScript",
-        },
-      ],
-      link: "https://algopt.herokuapp.com/",
+      code: "https://github.com/KevinSaephanh/Sort_Visualizer",
+      site: "https://kevinsaephanh.github.io/Sort_Visualizer/",
     },
     {
       pic: "quizme.png",
       title: "QuizMe",
-      desc: "Last one",
+      desc:
+        "A quizlet-esque app only in the sense that it has a similar quizzing style (flashcard system). Features include user signup/login, quiz creation, and quiz view/attempts.",
       stack: [
         {
           name: "Django",
@@ -111,7 +93,8 @@ export class Constants {
           name: "Python",
         },
       ],
-      link: "https://hiquizme.herokuapp.com/",
+      code: "https://github.com/KevinSaephanh/Quiz_Me_Backend",
+      site: "https://hiquizme.herokuapp.com/",
     },
   ];
 

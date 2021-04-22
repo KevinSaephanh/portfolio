@@ -33,10 +33,17 @@ const Header = () => {
     );
   };
 
+  const toggleNav = () => {
+    const toggleButton = document.getElementById("nav-icon");
+    toggleButton.classList.toggle("open");
+    // const navList = document.getElementsByClassName("nav-list")[0];
+    // navList.style.display = "block";
+  };
+
   return (
     <header>
       <a href="/">
-        <div className="yeti" title="Yeti from MapleStory">
+        <div id="yeti" title="Yeti from MapleStory">
           <div className="eye eye1" />
           <div className="eye eye2" />
           <div className="cheek cheek1" />
@@ -44,7 +51,23 @@ const Header = () => {
           <div className="mouth">vvvv</div>
         </div>
       </a>
-      <div>{width >= breakpoint ? getNavs() : getNavs()}</div>
+      <div>
+        {width >= breakpoint ? (
+          getNavs()
+        ) : (
+          <div>
+            <div id="nav-icon" onClick={() => toggleNav()}>
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            {getNavs()}
+          </div>
+        )}
+      </div>
     </header>
   );
 };

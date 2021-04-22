@@ -14,7 +14,6 @@
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "react-slide-routes": "^0.14.0",
-        "react-spring": "^9.1.1",
         "react-typing-animation": "^1.6.2"
     },
     "scripts": {

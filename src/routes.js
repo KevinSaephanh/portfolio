@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch, useLocation } from "react-router-dom";
+import { Redirect, Route, useLocation } from "react-router-dom";
 import SlideRoutes from "react-slide-routes";
 import { ViewportProvider } from "./hooks/Viewport";
 import Home from "./pages/Home/Home";

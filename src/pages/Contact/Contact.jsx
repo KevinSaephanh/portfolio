@@ -65,10 +65,7 @@ const Contact = () => {
     <div>
       <h2>CONTACT ME</h2>
       <div className="contact-content">
-        <div
-          className="slime"
-          title="Poorly drawn Slime from Maplestory using CSS"
-        >
+        <div id="slime" title="Poorly drawn Slime from Maplestory using CSS">
           <div className="antenna">∿∿∿</div>
           <div className="eye1">+</div>
           <div className="eye2">+</div>

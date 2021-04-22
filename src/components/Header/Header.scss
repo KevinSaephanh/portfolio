@@ -5,11 +5,11 @@ header {
   z-index: 1000;
   width: 100%;
   max-width: 100%;
-  padding-top: 10px;
+  padding-top: 15px;
   margin-bottom: 25px;
 }
 
-.yeti {
+#yeti {
   top: 3px;
   position: relative;
   background: #ffffff;
@@ -182,105 +182,138 @@ header {
   }
 }
 
-/* Position and sizing of burger button */
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+.nav-toggle {
+  position: absolute;
+  display: none;
+  top: 10px;
+  right: 5%;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40px;
+  width: 40px;
+
+  i {
+    height: 100%;
+    width: 100%;
+    font-size: 2.5rem;
+  }
 }
 
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: #66fcf1;
+#nav-icon {
+  width: 45px;
+  height: 33px;
+  position: relative;
+  right: 15px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 7px;
+    width: 50%;
+    background: #6ac7b7;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(even) {
+      left: 50%;
+      border-radius: 0 9px 9px 0;
+    }
+
+    &:nth-child(odd) {
+      left: 0px;
+      border-radius: 9px 0 0 9px;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      top: 0px;
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      top: 15px;
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      top: 30px;
+    }
+  }
 }
 
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: #66d9fc;
-  transition: 0.2s ease-in;
-}
+#nav-icon.open span {
+  &:nth-child(1),
+  &:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
+  &:nth-child(2),
+  &:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
 
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #66fcf1;
-}
+  &:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
 
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-}
+  &:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
 
-/* General sidebar styles */
-.bm-menu {
-  background: #373a47d3;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
+  &:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
 
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
+  &:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
 
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
+  &:nth-child(5) {
+    left: 5px;
+    top: 29px;
+  }
 
-/* Individual item */
-.bm-item {
-  display: inline-block;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
-
-  color: #d1d1d1;
-  margin-bottom: 10px;
-  text-align: left;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.bm-item:hover {
-  color: #ffffff;
+  &:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 29px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   header {
-    padding-top: 5px;
+    padding-top: 10px;
   }
 
-  .nav-list a {
-    display: block;
-    margin-right: 0;
+  .nav-list {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
 
-    &:last-child {
+    a {
+      display: block;
       margin-right: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
-  .bm-burger-button {
-    float: right;
-    position: absolute;
+  .nav-toggle {
+    display: block;
   }
 }

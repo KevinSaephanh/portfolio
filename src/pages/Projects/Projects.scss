@@ -14,12 +14,13 @@
     max-width: 470px;
     margin-left: 0;
     margin-right: auto;
+    border-radius: 3px;
   }
 }
 
 // Styles for info (text portion) of project item
 .project-info {
-  height: 88%;
+  height: 95%;
   width: 55%;
 
   p,
@@ -58,6 +59,7 @@
     .stack-item {
       font-size: 14px;
       color: rgba(245, 245, 245, 0.836);
+      opacity: 0.8;
 
       &:not(:last-child) {
         margin-right: 10px;
@@ -72,33 +74,57 @@
 
 @media only screen and (max-width: 700px) {
   .project-item {
-    display: block;
-    width: 90vw;
-    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 95%;
+    height: auto;
+    padding-bottom: 50px;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 40px;
+    }
 
     img {
-      height: 150px;
-      width: 200px;
+      width: 100%;
     }
   }
 
   .project-info {
-    li {
-      display: block;
+    width: 100%;
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.1rem;
       text-align: center;
     }
 
+    li {
+      display: block;
+    }
+
     i {
-      margin-right: 5px;
-      font-size: 1.1rem;
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+
+    p {
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      border: none;
+      text-align: left;
+      margin-bottom: 10px;
     }
 
     .stack {
+      margin-bottom: 10px;
+
       .stack-item {
-        font-size: 11px;
+        font-size: 13px;
 
         &:not(:last-child) {
-          margin-right: 5px;
+          margin-right: 6px;
         }
       }
     }

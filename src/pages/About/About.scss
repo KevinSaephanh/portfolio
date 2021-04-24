@@ -55,20 +55,20 @@
 
   .about-content {
     width: 100%;
-    display: block;
     margin-top: 0;
+    flex-direction: column;
 
     img {
       height: 180px;
       width: 180px;
-      display: block;
-      margin: 0 auto;
+      margin-right: 0;
       margin-bottom: 30px;
     }
 
     p {
       margin-top: 0;
       font-size: 12px;
+      padding-left: 5px;
     }
 
     ul {

@@ -2,9 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  text-align: left;
   height: 350px;
-  width: 85vw;
+  width: 90%;
   padding-bottom: 20px;
 
   img {
@@ -22,6 +21,7 @@
 .project-info {
   height: 95%;
   width: 55%;
+  text-align: left;
 
   p,
   a {
@@ -72,20 +72,33 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
+  .project-list {
+    padding: 0;
+  }
+
   .project-item {
-    display: flex;
     flex-direction: column-reverse;
-    width: 95%;
+    width: 90vw;
     height: auto;
-    padding-bottom: 50px;
     margin-top: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
 
     &:first-child {
-      margin-top: 40px;
+      margin-top: 20px;
+    }
+
+    &:nth-child(odd) {
+      background: rgba(131, 131, 235, 0.123);
+    }
+
+    &:nth-child(even) {
+      background: rgba(6, 6, 80, 0.582);
     }
 
     img {
+      height: 250px;
       width: 100%;
     }
   }
@@ -94,23 +107,27 @@
     width: 100%;
 
     h2 {
-      margin-bottom: 0;
+      margin-bottom: -5px;
       font-size: 1.1rem;
-      text-align: center;
+      padding-left: 15px;
     }
 
     li {
       display: block;
+      padding-left: 15px;
     }
 
     i {
-      margin-right: 10px;
-      font-size: 1.5rem;
+      margin-right: 0;
+      margin-bottom: 5px;
+      font-size: 1.7rem;
+      padding-left: 15px;
     }
 
     p {
-      width: 100%;
+      width: 95%;
       padding: 0;
+      padding-left: 15px;
       background: transparent;
       border: none;
       text-align: left;
@@ -118,13 +135,16 @@
     }
 
     .stack {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      flex-flow: wrap;
 
       .stack-item {
-        font-size: 13px;
+        font-size: 14px;
+        margin-top: 5px;
 
         &:not(:last-child) {
-          margin-right: 6px;
+          margin-right: 0;
         }
       }
     }

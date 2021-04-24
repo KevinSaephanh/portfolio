@@ -1,4 +1,4 @@
-header {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -128,7 +128,7 @@ header {
 
   i {
     margin-right: 7px;
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
     cursor: pointer;
   }
 
@@ -182,6 +182,10 @@ header {
   }
 }
 
+.nav-list.active {
+  display: block;
+}
+
 .nav-toggle {
   position: absolute;
   display: none;
@@ -201,7 +205,7 @@ header {
 
 #nav-icon {
   width: 45px;
-  height: 33px;
+  height: 30px;
   position: relative;
   right: 15px;
   -webkit-transform: rotate(0deg);
@@ -293,23 +297,39 @@ header {
   }
 }
 
-@media only screen and (max-width: 700px) {
-  header {
+@media only screen and (max-width: 800px) {
+  nav {
     padding-top: 10px;
   }
 
   .nav-list {
     display: none;
-    text-align: center;
-    margin-top: 50px;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    background-color: #0b0c10c9;
+    z-index: 9999;
 
     a {
       display: block;
-      margin-right: 0;
+      right: 40px;
+      padding-top: 50px;
+      font-size: 1.5rem;
+      margin: 0 auto;
 
       &:last-child {
-        margin-right: 0;
+        margin: 0 auto;
+        margin-top: 55px;
+        width: 100px;
       }
+    }
+
+    i {
+      font-size: 1.9rem;
+      margin-right: 10px;
     }
   }
 

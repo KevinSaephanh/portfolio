@@ -15,7 +15,7 @@ footer {
     cursor: pointer;
 
     &:hover {
-      color: #66fcf2cc;
+      color: #66fcf1;
       transition: 0.2s ease-in;
     }
   }
@@ -29,7 +29,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   footer {
     margin-bottom: 5px;
 

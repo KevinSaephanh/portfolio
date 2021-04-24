@@ -1,12 +1,8 @@
 html,
 body {
   margin: 0;
-  padding: 0;
   text-align: center;
   font-weight: bold;
-  width: 100vw;
-  max-width: 100%;
-  min-height: 100vh;
   color: #6ac7b7;
   background-color: #0b0c10c9;
 }
@@ -21,7 +17,7 @@ body {
 }
 
 .content {
-  padding: 10px 10px;
+  padding: 10px;
   min-height: 500px;
   width: 100vw;
   max-width: 100%;
@@ -31,11 +27,13 @@ body {
   justify-content: center;
   flex: 1;
   flex-wrap: wrap;
+  z-index: -1;
 }
 
 h1,
 h2 {
   color: #66fcf1;
+  letter-spacing: 1px;
   flex-basis: 100%;
 }
 
@@ -64,7 +62,7 @@ button:focus {
   box-shadow: none !important;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .content {
     min-height: 60vh;
     padding: 10px 0;
@@ -76,7 +74,7 @@ button:focus {
   }
 
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   h2 {

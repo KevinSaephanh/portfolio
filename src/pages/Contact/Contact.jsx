@@ -2,7 +2,7 @@ import React from "react";
 import validator from "email-validator";
 import * as emailjs from "emailjs-com";
 import "./Contact.scss";
-// Convert to popup modal?
+
 const Contact = () => {
   const [inputs, setInputs] = React.useState({
     name: "",
@@ -65,7 +65,7 @@ const Contact = () => {
     <div>
       <h2>CONTACT ME</h2>
       <div className="contact-content">
-        <div id="slime" title="Poorly drawn Slime from Maplestory using CSS">
+        <div id="slime" title="Slime from Maplestory using HTML and CSS">
           <div className="antenna">∿∿∿</div>
           <div className="eye1">+</div>
           <div className="eye2">+</div>

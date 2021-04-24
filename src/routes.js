@@ -1,13 +1,13 @@
 import React from "react";
 import { Redirect, Route, useLocation } from "react-router-dom";
 import SlideRoutes from "react-slide-routes";
-import { ViewportProvider } from "./hooks/Viewport";
+import { ViewportProvider } from "./hoc/Viewport";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Projects from "./pages/Projects/Projects";
 import Contact from "./pages/Contact/Contact";
-import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
 
 const Routes = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const Routes = () => {
   return (
     <div>
       <ViewportProvider>
-        <Header />
+        <Navbar />
       </ViewportProvider>
       <SlideRoutes location={location} duration={500}>
         <Route exact path="/" component={Home} />

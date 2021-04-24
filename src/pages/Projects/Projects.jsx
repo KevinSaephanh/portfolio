@@ -13,7 +13,7 @@ const Projects = () => {
               {/* Render project info (title, description, tech stack) */}
               <div className="project-info">
                 <h2>{proj.title.toUpperCase()}</h2>
-                <p>{proj.desc}</p>
+                <p title="Project description">{proj.desc}</p>
                 {getStack(proj)}
 
                 {/* Render github and website icons */}

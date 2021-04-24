@@ -31,15 +31,16 @@ footer {
 
 @media only screen and (max-width: 800px) {
   footer {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    width: 100%;
 
     i {
-      font-size: 1.5rem !important;
-      margin-bottom: 5px;
+      font-size: 1.7rem !important;
+      margin-bottom: 7px;
     }
 
     span {
-      font-size: 7px;
+      font-size: 10px;
     }
   }
 }

@@ -1,7 +1,10 @@
 import React from "react";
 import validator from "email-validator";
 import * as emailjs from "emailjs-com";
+import dotenv from "dotenv";
 import "./Contact.scss";
+
+dotenv.config();
 
 const Contact = () => {
   const [inputs, setInputs] = React.useState({
@@ -38,6 +41,10 @@ const Contact = () => {
       })
       .catch((err) => {
         console.error(err);
+        setSubmitMessage("Failed to send message 😞");
+        setTimeout(() => {
+          setSubmitMessage("");
+        }, 2000);
       });
   };
 

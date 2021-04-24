@@ -83,11 +83,7 @@
     height: auto;
     margin-top: 10px;
     margin-bottom: 25px;
-    border-radius: 5px;
-
-    &:first-child {
-      margin-top: 20px;
-    }
+    border-radius: 3px;
 
     &:nth-child(odd) {
       background: rgba(131, 131, 235, 0.123);

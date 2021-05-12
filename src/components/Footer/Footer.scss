@@ -1,12 +1,11 @@
 footer {
   width: 50%;
-  bottom: 0;
   background-color: transparent;
   margin: 0 auto;
   left: 0;
   right: 0;
-  height: 50px;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+  flex: 0;
 
   i {
     margin: 0 10px;
@@ -31,7 +30,7 @@ footer {
 
 @media only screen and (max-width: 800px) {
   footer {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     width: 100%;
 
     i {

@@ -1,9 +1,11 @@
+@use "./_master" as global;
+
 html,
 body {
   margin: 0;
   text-align: center;
   font-weight: bold;
-  color: #6ac7b7;
+  color: global.$base-color;
   background-color: #0b0c10c9;
 }
 
@@ -12,9 +14,8 @@ body {
   max-width: 100%;
   overflow: hidden;
   font-family: "League Spartan Bold", arial;
-  display: flex;
-  flex-direction: column;
   align-items: stretch;
+  @include global.flex-column;
 }
 
 .content {
@@ -22,18 +23,16 @@ body {
   width: 100vw;
   max-width: 100%;
   margin-top: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  flex-wrap: wrap;
   min-height: 70vh;
   z-index: -1;
+  flex: 1;
+  flex-wrap: wrap;
+  @include global.flex-align-center;
 }
 
 h1,
 h2 {
-  color: #66fcf1;
+  color: global.$highlight-color;
   letter-spacing: 1px;
   flex-basis: 100%;
 }
@@ -48,13 +47,13 @@ a {
 }
 
 p {
-  color: rgba(245, 245, 245, 0.836);
+  color: global.$desc-color;
 }
 
 a,
 i,
 span {
-  color: #6ac7b7;
+  color: global.$base-color;
 }
 
 a:focus,

@@ -1,3 +1,5 @@
+@use "../../master" as global;
+
 footer {
   width: 50%;
   background-color: transparent;
@@ -14,7 +16,7 @@ footer {
     cursor: pointer;
 
     &:hover {
-      color: #66fcf1;
+      color: global.$highlight-color;
       transition: 0.2s ease-in;
     }
   }
@@ -23,7 +25,7 @@ footer {
     font-size: 10px;
 
     &:hover {
-      color: #66fcf1;
+      color: global.$highlight-color;
     }
   }
 }

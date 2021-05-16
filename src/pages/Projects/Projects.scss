@@ -1,7 +1,7 @@
+@use "../../master" as global;
+
 .project-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  @include global.flex-space-between;
   height: 350px;
   width: 90%;
   padding-bottom: 20px;
@@ -45,7 +45,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #66fcf1;
+      color: global.$highlight-color;
       transition: 0.2s ease-in;
     }
   }
@@ -59,7 +59,7 @@
 
   .stack-item {
     font-size: 14px;
-    color: rgba(245, 245, 245, 0.836);
+    color: global.$desc-color;
     opacity: 0.8;
 
     &:not(:last-child) {
@@ -67,7 +67,7 @@
     }
 
     &:hover {
-      color: #66fcf1;
+      color: global.$highlight-color;
     }
   }
 }

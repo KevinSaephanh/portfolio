@@ -1,7 +1,7 @@
+@use "../../master" as global;
+
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  @include global.flex-space-between;
   z-index: 1000;
   width: 100%;
   max-width: 100%;
@@ -145,18 +145,18 @@ nav {
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #66fcf1;
+      background-color: global.$highlight-color;
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.3s ease-in-out;
     }
 
     &:hover {
-      color: #66fcf1;
+      color: global.$highlight-color;
       transition: 0.2s ease-in;
 
       i {
-        color: #66fcf1;
+        color: global.$highlight-color;
         transition: 0.2s ease-in;
       }
     }
@@ -175,8 +175,8 @@ nav {
     }
 
     &:last-child:hover {
-      color: #66fcf1;
-      border-color: #66fcf1;
+      color: global.$highlight-color;
+      border-color: global.$highlight-color;
       text-decoration: none;
     }
   }
@@ -219,7 +219,7 @@ nav {
     position: absolute;
     height: 7px;
     width: 50%;
-    background: #6ac7b7;
+    background: global.$base-color;
     opacity: 1;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);

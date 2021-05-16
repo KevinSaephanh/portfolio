@@ -1,3 +1,5 @@
+@use "../../_master" as global;
+
 .about h2 {
   margin-top: -50px;
 }
@@ -6,10 +8,8 @@
   width: 80%;
   margin: 0 auto;
   text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: -200px;
+  @include global.flex-align-center;
 
   img {
     height: 300px;
@@ -40,7 +40,7 @@
   li {
     margin: 0;
     padding: 0;
-    color: rgba(245, 245, 245, 0.836);
+    color: global.$desc-color;
     font-size: 14px;
 
     &::before {
@@ -60,7 +60,7 @@
     }
 
     .text-section {
-      width: 70%;
+      width: 80%;
 
       p {
         font-size: 13px;
@@ -92,13 +92,9 @@
   }
 
   .text-section {
-    width: 95%;
-
     p {
       margin-top: 0;
       font-size: 12px;
-      padding-left: 5px;
-      padding-right: 5px;
     }
 
     ul {

@@ -47,7 +47,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className="navbar">
       {/* Yeti logo */}
       <a href="/">
         <div id="yeti" title="Yeti from MapleStory drawn using HTML and CSS">

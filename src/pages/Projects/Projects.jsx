@@ -42,12 +42,7 @@ const Projects = () => {
               </div>
 
               {/* Render app image */}
-              <img
-                src={require(`../../assets/${proj.pic}`)}
-                id={proj.pic}
-                title={proj.title}
-                alt=""
-              />
+              <img src={proj.pic} id={proj.pic} title={proj.title} alt="" />
             </li>
           );
         })}

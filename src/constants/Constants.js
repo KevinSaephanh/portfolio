@@ -1,3 +1,7 @@
+import pathfinder from "../assets/pathfinder.png";
+import sortVisualizer from "../assets/sortVisualizer.png";
+import quizMe from "../assets/quizme.png";
+
 export class Constants {
   static navs = [
     {
@@ -40,7 +44,7 @@ export class Constants {
 
   static projects = [
     {
-      pic: "pathfinder.png",
+      pic: pathfinder,
       title: "Pathfinder",
       desc: "A visualization of maze generation and pathfinding algorithms. A maze is first generated in real time. Then the maze will be traversed, marking each visited cell. Finally, the optimal path to the escape route will be highlighted.",
       stack: [
@@ -55,7 +59,7 @@ export class Constants {
       site: "https://kevinsaephanh.github.io/Pathfinder/",
     },
     {
-      pic: "sortVisualizer.png",
+      pic: sortVisualizer,
       title: "Sort Visualizer",
       desc: "This app also produces algorithm visualizations. A graph is displayed containing a random array of bars of varying length. After starting, bars begin moving left and right to imitate how the sorting algorithm works. Once sorting is completed, all bars will be highlighted.",
       stack: [
@@ -70,7 +74,7 @@ export class Constants {
       site: "https://kevinsaephanh.github.io/Sort_Visualizer/",
     },
     {
-      pic: "quizme.png",
+      pic: quizMe,
       title: "QuizMe",
       desc: "A quizlet-esque app only in the sense that it has a similar quizzing style (flashcard system). Features include user signup/login, quiz creation, and quiz view/attempts.",
       stack: [

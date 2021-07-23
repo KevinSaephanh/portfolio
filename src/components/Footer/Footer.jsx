@@ -15,26 +15,24 @@ const Footer = () => {
     socialIcon.style.transform = "none";
   };
 
-  const getSocials = () => {
-    return Constants.socials.map((social, key) => {
-      return (
-        <a href={social.link} key={key}>
-          <i
-            className={social.icon}
-            title={social.title}
-            key={key}
-            aria-hidden="true"
-            onMouseEnter={() => jump(social.icon)}
-            onMouseLeave={() => drop(social.icon)}
-          />
-        </a>
-      );
-    });
-  };
-
   return (
     <footer>
-      <div>{getSocials()}</div>
+      <div>
+        {Constants.socials.map((social, key) => {
+          return (
+            <a href={social.link} key={key}>
+              <i
+                className={social.icon}
+                title={social.title}
+                key={key}
+                aria-hidden="true"
+                onMouseEnter={() => jump(social.icon)}
+                onMouseLeave={() => drop(social.icon)}
+              />
+            </a>
+          );
+        })}
+      </div>
       <span>Designed and built by me, Kevin Saephanh</span>
     </footer>
   );

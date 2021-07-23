@@ -3,9 +3,11 @@ import { Constants } from "../../constants/Constants";
 import "./Projects.scss";
 
 const Projects = () => {
-  // Render array of projects
-  const getProjects = () => {
-    return (
+  return (
+    <div className="content">
+      <h2>PROJECTS</h2>
+
+      {/* Project List */}
       <ul className="project-list">
         {Constants.projects.map((proj, key) => {
           return (
@@ -14,7 +16,16 @@ const Projects = () => {
               <div className="project-info">
                 <h2>{proj.title.toUpperCase()}</h2>
                 <p title="Project description">{proj.desc}</p>
-                {getStack(proj)}
+                {/* Tech stack used for project */}
+                <ul className="stack">
+                  {proj.stack.map((s, key) => {
+                    return (
+                      <li className="stack-item" key={key}>
+                        {s.name}
+                      </li>
+                    );
+                  })}
+                </ul>
 
                 {/* Render github and website icons */}
                 <a
@@ -41,28 +52,6 @@ const Projects = () => {
           );
         })}
       </ul>
-    );
-  };
-
-  // Render technologies/languages used to code app
-  const getStack = (project) => {
-    return (
-      <ul className="stack">
-        {project.stack.map((s, key) => {
-          return (
-            <li className="stack-item" key={key}>
-              {s.name}
-            </li>
-          );
-        })}
-      </ul>
-    );
-  };
-
-  return (
-    <div className="content">
-      <h2>PROJECTS</h2>
-      {getProjects()}
     </div>
   );
 };

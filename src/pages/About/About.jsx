@@ -1,6 +1,6 @@
 import React from "react";
-import Me from "../../assets/me.jpg";
 import { Constants } from "../../constants/Constants";
+import Me from "../../assets/me.jpg";
 import "./About.scss";
 
 const About = () => {

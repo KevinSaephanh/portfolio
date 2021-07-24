@@ -1,6 +1,5 @@
 import React from "react";
 import { Constants } from "../../constants/Constants";
-import Me from "../../assets/me.jpg";
 import "./About.scss";
 
 const About = () => {
@@ -9,7 +8,11 @@ const About = () => {
       <h2>ABOUT ME</h2>
 
       <div className="about-content">
-        <img src={Me} alt="" title="MEEEEEEE!" />
+        <img
+          src={`${process.env.REACT_APP_S3_URL}/me.jpg`}
+          alt=""
+          title="MEEEEEEE!"
+        />
         <div className="text-section">
           <p>
             I'm a Full Stack Developer from the awesome state of California. I

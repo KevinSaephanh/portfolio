@@ -30,7 +30,11 @@ const Navbar = () => {
             </NavLink>
           );
         })}
-        <a href={Resume} target="_blank" rel="noopener noreferrer">
+        <a
+          href={`${process.env.REACT_APP_S3_URL}/Resume.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Resume
         </a>
       </ul>

@@ -42,7 +42,12 @@ const Projects = () => {
               </div>
 
               {/* Render app image */}
-              <img src={proj.pic} id={proj.pic} title={proj.title} alt="" />
+              <img
+                src={`${process.env.REACT_APP_S3_URL}/${proj.pic}`}
+                id={proj.pic}
+                title={proj.title}
+                alt=""
+              />
             </li>
           );
         })}

@@ -99,10 +99,10 @@ export class Constants {
     {
       icon: "fa fa-linkedin-square",
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/kevin-saephanh/",
+      link: "https://www.linkedin.com/in/kevin-saephanh",
     },
     {
-      icon: "fab fa-github",
+      icon: "fa fa-github-square",
       title: "Github",
       link: "https://github.com/KevinSaephanh",
     },

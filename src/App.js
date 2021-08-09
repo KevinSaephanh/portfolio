@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Routes from "./routes";
 import Loader from "./components/Loader/Loader";
 
-import "font-awesome/css/font-awesome.min.css";
 import "./App.scss";
 
 const App = () => {

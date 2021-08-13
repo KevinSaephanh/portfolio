@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useViewport } from "../../hoc/Viewport";
 import { Constants } from "../../constants/Constants";
-import Resume from "../../assets/Resume.pdf";
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -67,7 +66,7 @@ const Navbar = () => {
         {width >= breakpoint ? (
           getNavs()
         ) : (
-          <div>
+          <div className="responsive-navbar">
             {/* Nav toggle icon */}
             <div id="nav-icon" onClick={() => toggleNav()}>
               <span />

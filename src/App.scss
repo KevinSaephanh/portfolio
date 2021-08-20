@@ -5,8 +5,10 @@ body {
   margin: 0;
   text-align: center;
   font-weight: bold;
-  color: global.$base-color;
+  color: global.$desc-color;
   background-color: #0b0c10c9;
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
 }
 
 .app {
@@ -30,13 +32,6 @@ body {
   @include global.flex-align-center;
 }
 
-h1,
-h2 {
-  color: global.$highlight-color;
-  letter-spacing: 1px;
-  flex-basis: 100%;
-}
-
 ul {
   list-style-type: none;
 }
@@ -44,15 +39,10 @@ ul {
 li,
 a {
   text-decoration: none;
-}
-
-p {
   color: global.$desc-color;
 }
 
-a,
-i,
-span {
+i {
   color: global.$base-color;
 }
 

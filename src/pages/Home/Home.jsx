@@ -1,10 +1,11 @@
 import React from "react";
 import { useTransition, animated } from "react-spring";
+import "./Home.scss";
 
 const items = [
-  { text: "Hello, I'm Kevin Saephanh", y: -50, delay: 400 },
-  { text: "A Full Stack Developer", y: -20, delay: 800 },
-  { text: "I build web applications for a living", y: 0, delay: 1200 },
+  { text: "Hello, I'm Kevin Saephanh", y: 100, delay: 400 },
+  { text: "A Full Stack Developer", y: 120, delay: 800 },
+  { text: "I build web applications for a living", y: 140, delay: 1200 },
 ];
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
     <div className="home content">
       {transition((style, item) =>
         item ? (
-          <animated.div style={style}>
+          <animated.div style={style} className="title-wrapper">
             <h1>{item.text}</h1>
           </animated.div>
         ) : null

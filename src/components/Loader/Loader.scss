@@ -1,3 +1,32 @@
+.loader-wrapper {
+  margin: auto;
+  position: relative;
+  display: block;
+  width: 18rem;
+  height: 2rem;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 18rem;
+    left: 0px;
+    height: 2rem;
+    border: 4px solid white;
+  }
+
+  &::before {
+    transform: perspective(15px) rotateX(3deg);
+    border-bottom: none;
+  }
+
+  &::after {
+    top: 37px;
+    transform: perspective(15px) rotateX(-3deg);
+    border-top: none;
+  }
+}
+
 #ploader {
   margin: auto;
   position: relative;

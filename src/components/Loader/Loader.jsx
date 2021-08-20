@@ -6,18 +6,19 @@ import "./Loader.scss";
 
 const Loader = () => {
   return (
-    <div id="ploader">
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    // <div id="ploader">
+    //   <div>
+    //     <div></div>
+    //     <div></div>
+    //     <div></div>
+    //     <div></div>
+    //     <div></div>
+    //     <div></div>
+    //     <div></div>
+    //     <div></div>
+    //   </div>
+    // </div>
+    <div className="loader-wrapper"></div>
   );
 };
 

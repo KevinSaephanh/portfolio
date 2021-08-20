@@ -1,20 +1,15 @@
 @use "../../_master" as global;
 
-.about h2 {
-  margin-top: -50px;
-}
-
 .about-content {
   width: 80%;
   margin: 0 auto;
   text-align: left;
-  margin-top: -200px;
   @include global.flex-align-center;
 
   img {
     height: 300px;
     width: 300px;
-    border-radius: 50%;
+    border-radius: 2%;
     border: 2px solid #c5c6c7;
     margin-right: 25px;
   }
@@ -26,7 +21,7 @@
   display: inline;
 
   p {
-    margin-top: 55px;
+    margin-top: 25px;
     font-size: 18px;
   }
 
@@ -51,8 +46,6 @@
 
 @media only screen and (max-width: 1250px) {
   .about-content {
-    margin-top: -150px;
-
     img {
       height: 250px;
       width: 250px;
@@ -71,10 +64,6 @@
 @media only screen and (max-width: 850px) {
   .about {
     margin-bottom: 10px;
-  }
-
-  .about h2 {
-    margin-top: -15px;
   }
 
   .about-content {

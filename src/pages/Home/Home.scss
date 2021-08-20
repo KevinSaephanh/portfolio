@@ -1,0 +1,22 @@
+.title-wrapper {
+  letter-spacing: 0.8px;
+  line-height: 1.2rem;
+
+  &:last-child {
+    h1 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .title-wrapper {
+    letter-spacing: 0.5px;
+
+    &:last-child {
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}

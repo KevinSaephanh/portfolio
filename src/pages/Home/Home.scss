@@ -1,6 +1,15 @@
+@use "../../_master" as global;
+
 .title-wrapper {
-  letter-spacing: 0.8px;
-  line-height: 1.2rem;
+  h1 {
+    letter-spacing: 0.8px;
+    line-height: 1.2rem;
+
+    &:hover {
+      color: global.$highlight-color;
+      transition: 0.4s all;
+    }
+  }
 
   &:last-child {
     h1 {
@@ -11,7 +20,9 @@
 
 @media only screen and (max-width: 800px) {
   .title-wrapper {
-    letter-spacing: 0.5px;
+    h1 {
+      letter-spacing: 0.5px;
+    }
 
     &:last-child {
       h1 {

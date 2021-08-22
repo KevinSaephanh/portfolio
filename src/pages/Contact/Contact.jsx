@@ -20,9 +20,7 @@ const Contact = () => {
     // Check if email is using valid format
     if (!validateForm()) {
       setSubmitMessage("Failed to send message 😞");
-      setTimeout(() => {
-        setSubmitMessage("");
-      }, 2000);
+      setTimeout(() => setSubmitMessage(""), 2000);
       return;
     }
 
@@ -35,16 +33,12 @@ const Contact = () => {
       )
       .then((res) => {
         setSubmitMessage("Message sent successfully UwU");
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
+        setTimeout(() => window.location.reload(), 2000);
       })
       .catch((err) => {
         console.error(err);
         setSubmitMessage("Failed to send message 😞");
-        setTimeout(() => {
-          setSubmitMessage("");
-        }, 2000);
+        setTimeout(() => setSubmitMessage(""), 2000);
       });
   };
 
@@ -72,7 +66,7 @@ const Contact = () => {
     <div>
       <h2>CONTACT ME</h2>
       <div className="contact-content">
-        <div id="slime" title="Slime from Maplestory using HTML and CSS">
+        <div id="slime" title="Slime from Maplestory made with CSS">
           <div className="antenna">∿∿∿</div>
           <div className="eye1">+</div>
           <div className="eye2">+</div>

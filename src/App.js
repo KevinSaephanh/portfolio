@@ -5,19 +5,22 @@ import Loader from "./components/Loader/Loader";
 import "./App.scss";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    toggleLoading();
-  }, []);
+    if (progress < 100) {
+      setTimeout(() => setProgress(progress + 1), 80);
+    } else {
+      setTimeout(() => setLoading(false), 1500);
+    }
+  }, [progress]);
 
-  const toggleLoading = () => {
-    setTimeout(() => {
-      setLoading(!loading);
-    }, 1500);
-  };
-
-  return <div className="app">{loading ? <Loader /> : <Routes />}</div>;
+  return (
+    <div className="app">
+      {isLoading ? <Loader progress={progress} /> : <Routes />}
+    </div>
+  );
 };
 
 export default App;

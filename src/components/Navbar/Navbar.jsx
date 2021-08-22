@@ -53,7 +53,7 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Yeti logo */}
       <a href="/">
-        <div id="yeti" title="Yeti from MapleStory drawn using HTML and CSS">
+        <div id="yeti" title="Yeti from MapleStory made with CSS">
           <div className="eye eye1" />
           <div className="eye eye2" />
           <div className="cheek cheek1" />

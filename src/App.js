@@ -10,9 +10,9 @@ const App = () => {
 
   useEffect(() => {
     if (progress < 100) {
-      setTimeout(() => setProgress(progress + 1), 80);
+      setTimeout(() => setProgress(progress + 1), 20);
     } else {
-      setTimeout(() => setLoading(false), 1500);
+      setTimeout(() => setLoading(false), 1000);
     }
   }, [progress]);
 

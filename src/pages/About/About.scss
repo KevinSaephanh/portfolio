@@ -1,39 +1,56 @@
 @use "../../_master" as global;
 
-.about-content {
-  width: 80%;
+.profile-card {
+  width: 70%;
   margin: 0 auto;
-  text-align: left;
-  @include global.flex-align-center;
+  display: flex;
+  margin-bottom: 50px;
 
   img {
     height: 300px;
     width: 300px;
     border-radius: 2%;
-    border: 2px solid #c5c6c7;
-    margin-right: 25px;
+    border: 2px solid global.$desc-color;
+  }
+}
+
+.profile-metadata {
+  text-align: left;
+  margin-left: 70px;
+
+  h2 {
+    margin-top: auto;
+    margin-bottom: 0;
+    letter-spacing: 0.7px;
+
+    &:last-child {
+      letter-spacing: 2px;
+      margin-top: 15px;
+    }
   }
 }
 
 .text-section {
-  width: 60%;
-  margin: 0 auto;
   display: inline;
+  text-align: left;
 
   p {
-    margin-top: 25px;
     font-size: 18px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 25px;
   }
 
   ul {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 5px;
     columns: 3;
-    margin: 0;
     padding: 0;
   }
 
   li {
-    margin: 0;
+    margin-top: 5px;
     padding: 0;
     font-size: 14px;
 
@@ -44,54 +61,43 @@
   }
 }
 
-@media only screen and (max-width: 1250px) {
-  .about-content {
-    img {
-      height: 250px;
-      width: 250px;
-    }
-
-    .text-section {
-      width: 80%;
-
-      p {
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 800px) {
   .about {
     margin-bottom: 10px;
   }
 
-  .about-content {
-    width: 100%;
-    margin-top: 0;
-    flex-direction: column;
+  .profile-card {
+    width: 90%;
+    margin-bottom: 15px;
+    @include global.flex-column;
 
     img {
-      height: 180px;
-      width: 180px;
-      margin-right: 0;
+      height: 200px;
+      width: 200px;
+      margin: 0 auto;
       margin-bottom: 30px;
     }
+  }
+
+  .profile-metadata {
+    margin: 0 auto;
   }
 
   .text-section {
     p {
       margin-top: 0;
-      font-size: 12px;
+      width: 90%;
+      font-size: 13px;
+      letter-spacing: 0.5px;
     }
 
     ul {
-      width: 100%;
+      width: 90%;
     }
 
     li {
       margin-right: -15px;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     li::before {

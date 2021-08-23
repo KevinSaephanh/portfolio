@@ -5,7 +5,7 @@ import "./Projects.scss";
 const Projects = () => {
   return (
     <div className="content">
-      <h2>PROJECTS</h2>
+      <h2 className="title">PROJECTS</h2>
 
       {/* Project List */}
       <ul className="project-list">

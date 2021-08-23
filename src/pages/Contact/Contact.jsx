@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <div>
-      <h2>CONTACT ME</h2>
+      <h2 className="title">CONTACT ME</h2>
       <div className="contact-content">
         <div id="slime" title="Slime from Maplestory made with CSS">
           <div className="antenna">∿∿∿</div>

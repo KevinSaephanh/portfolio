@@ -5,7 +5,11 @@ import "./Home.scss";
 const items = [
   { text: "Hello, I'm Kevin Saephanh", y: 100, delay: 400 },
   { text: "A Full Stack Developer", y: 120, delay: 800 },
-  { text: "I build web applications for a living", y: 140, delay: 1200 },
+  {
+    text: "I build, test, and maintain web applications for a living",
+    y: 140,
+    delay: 1200,
+  },
 ];
 
 const Home = () => {

@@ -7,8 +7,6 @@ body {
   font-weight: bold;
   color: global.$desc-color;
   background-color: #0b0c10c9;
-  scrollbar-color: #6969dd #e0e0e0;
-  scrollbar-width: thin;
 }
 
 .app {
@@ -26,6 +24,10 @@ body {
   margin-top: 15px;
   min-height: 70vh;
   z-index: -1;
+}
+
+.title {
+  margin-bottom: 50px;
 }
 
 ul {
@@ -53,13 +55,17 @@ button:focus {
     padding: 10px 0;
   }
 
+  .title {
+    margin-bottom: 25px;
+  }
+
   p,
   li {
     font-size: 12px;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   h2 {

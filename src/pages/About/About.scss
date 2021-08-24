@@ -1,10 +1,13 @@
 @use "../../_master" as global;
 
-.profile-card {
-  width: 70%;
-  margin: 0 auto;
+.profile-wrapper {
   display: flex;
-  margin-bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profile-card {
+  @include global.flex-column;
 
   img {
     height: 300px;
@@ -16,47 +19,75 @@
 
 .profile-metadata {
   text-align: left;
-  margin-left: 70px;
+  margin-top: 20px;
 
   h2 {
+    font-size: 1.7rem;
     margin-top: auto;
-    margin-bottom: 0;
-    letter-spacing: 0.7px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 
-    &:last-child {
-      letter-spacing: 2px;
-      margin-top: 15px;
+    &:first-child {
+      letter-spacing: 0.7px;
     }
   }
 }
 
+.code-bar-wrapper {
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+// Hexagon shape health bar
+.code-bar-filler {
+  position: relative;
+  width: 250px;
+  height: 20px;
+  background-color: rgb(112, 241, 112);
+  margin-left: 10px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &::before {
+    right: 100%;
+    border-right: 10px solid rgb(112, 241, 112);
+  }
+
+  &::after {
+    left: 100%;
+    width: 0;
+    border-left: 10px solid rgb(112, 241, 112);
+  }
+}
+
 .text-section {
-  display: inline;
   text-align: left;
 
   p {
-    font-size: 18px;
+    font-size: 20px;
     width: 70%;
     margin: 0 auto;
-    margin-top: 25px;
   }
 
   ul {
+    display: flex;
     width: 70%;
-    margin: 0 auto;
-    margin-top: 5px;
-    columns: 3;
-    padding: 0;
   }
+}
 
-  li {
-    margin-top: 5px;
-    padding: 0;
-    font-size: 14px;
-
-    &::before {
-      content: "\2B9A";
-      margin: 0 0.3em;
+@media only screen and (max-width: 1000px) {
+  .text-section {
+    p {
+      width: 85%;
+      font-size: 18px;
     }
   }
 }
@@ -66,14 +97,18 @@
     margin-bottom: 10px;
   }
 
+  .profile-wrapper {
+    @include global.flex-column;
+  }
+
   .profile-card {
     width: 90%;
-    margin-bottom: 15px;
-    @include global.flex-column;
+    margin: 0 auto;
+    margin-bottom: 20px;
 
     img {
-      height: 200px;
-      width: 200px;
+      height: 220px;
+      width: 220px;
       margin: 0 auto;
       margin-bottom: 30px;
     }
@@ -81,27 +116,28 @@
 
   .profile-metadata {
     margin: 0 auto;
+    width: 220px;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+  }
+
+  .code-bar-filler {
+    width: 200px;
   }
 
   .text-section {
     p {
       margin-top: 0;
-      width: 90%;
-      font-size: 13px;
+      width: 100%;
+      font-size: 14px;
       letter-spacing: 0.5px;
     }
 
     ul {
-      width: 90%;
-    }
-
-    li {
-      margin-right: -15px;
-      font-size: 13px;
-    }
-
-    li::before {
-      margin: 0 0.2em;
+      width: 100%;
     }
   }
 }

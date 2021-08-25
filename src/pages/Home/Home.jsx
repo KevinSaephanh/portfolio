@@ -25,7 +25,7 @@ const Home = () => {
     <div className="home content">
       {transition((style, item) =>
         item ? (
-          <animated.div style={style} className="title-wrapper">
+          <animated.div style={style} className="title-container">
             <h1>{item.text}</h1>
           </animated.div>
         ) : null

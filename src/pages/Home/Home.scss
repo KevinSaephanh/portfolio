@@ -1,6 +1,6 @@
 @use "../../_master" as global;
 
-.title-wrapper {
+.title-container {
   h1 {
     letter-spacing: 0.8px;
     line-height: 1.2rem;
@@ -19,7 +19,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .title-wrapper {
+  .title-container {
     h1 {
       letter-spacing: 0.5px;
     }

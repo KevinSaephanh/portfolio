@@ -16,7 +16,7 @@ const About = () => {
     <div className="about content">
       <h2 className="title">ABOUT ME</h2>
 
-      <div className="profile-wrapper">
+      <div className="profile-container">
         <div className="profile-card">
           <img
             src={`${process.env.REACT_APP_S3_URL}/me.jpg`}
@@ -26,7 +26,7 @@ const About = () => {
           <div className="profile-metadata">
             <h2>Kevin Saephanh</h2>
             <h2 title={`I am ${age} years old`}>LV: {age}</h2>
-            <div className="code-bar-wrapper">
+            <div className="code-bar-container">
               <h2>{"</>"}: 100/100</h2>
               <div
                 className="code-bar-filler"
@@ -36,31 +36,47 @@ const About = () => {
           </div>
         </div>
 
-        <div className="text-section">
-          <p>
-            Hi, I'm Kevin, a Full Stack Developer from California. I started off
-            my coding journey pretty late into college (halfway through to be
-            exact) with the introduction to Computer Science using C++. In my
-            courses, I was able learn the basics and foundation of programming
-            by creating beginner-level programs such as payroll systems,
-            calculators, and console games. And despite the missed opportunity
-            to major in Computer Science, my interest in the field never waned.
-            <br />
-            <br />
-            This continued interest eventually motivated me to try and pursue a
-            career in software development. Fortunately for me, I was able to
-            attend a coding bootcamp after college to learn new technologies and
-            network with others. This enabled me to get my foot in the door and
-            kickstart my career as a developer!
-            <br />
-            <br />
-            Technologies I've worked with:
-          </p>
-          <ul>
-            {Constants.technologies.map((tech, i) => {
-              return <li key={i}>{tech}</li>;
-            })}
-          </ul>
+        <div className="bio-container">
+          <div className="bio-content bio-text">
+            <p>
+              Hi, I'm Kevin, a Full Stack Developer from California. I started
+              off my coding journey pretty late into college (halfway through to
+              be exact) with the introduction to Computer Science using C++. In
+              my courses, I was able learn the basics and foundation of
+              programming by creating beginner-level programs such as payroll
+              systems, calculators, and console games. And despite the missed
+              opportunity to major in Computer Science, my interest in the field
+              never waned.
+              <br />
+              <br />
+              This continued interest eventually motivated me to try and pursue
+              a career in software development. Fortunately for me, I was able
+              to attend a coding bootcamp after college to learn new
+              technologies and network with others. This enabled me to get my
+              foot in the door and kickstart my career as a developer!
+            </p>
+          </div>
+
+          <div className="bio-content stats-container">
+            <ul>
+              {Constants.technologies.map((tech, i) => {
+                return (
+                  <li
+                    key={i}
+                    title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
+                  >
+                    <div className="stats-data">
+                      <img src={tech.icon} />
+                      <span>{tech.title}</span>
+                    </div>
+                    <div className="stats-bar">
+                      <div className="stats-filler" />
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 @use "../../master" as global;
 
-.loader-wrapper {
+.loader-container {
   margin: auto;
   position: relative;
   display: block;
@@ -33,7 +33,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .loader-wrapper {
+  .loader-container {
     width: 20rem;
   }
 }

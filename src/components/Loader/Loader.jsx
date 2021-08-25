@@ -8,7 +8,7 @@ const Loader = (props) => {
   };
 
   return (
-    <div className="loader-wrapper">
+    <div className="loader-container">
       <div className="filler" style={fillerStyles} />
       {<div className="loader-text">LOADING...</div>}
     </div>

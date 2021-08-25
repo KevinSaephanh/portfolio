@@ -1,3 +1,10 @@
+import angular from "../assets/tech-logos/angular.png";
+import aws from "../assets/tech-logos/aws.png";
+import django from "../assets/tech-logos/django.png";
+import node from "../assets/tech-logos/node.png";
+import react from "../assets/tech-logos/react.png";
+import springBoot from "../assets/tech-logos/spring-boot.png";
+
 export class Constants {
   static navs = [
     {
@@ -27,15 +34,36 @@ export class Constants {
   ];
 
   static technologies = [
-    "Java",
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Spring Boot",
-    "NodeJS",
-    "React",
-    "Angular",
-    "AWS",
+    {
+      title: "Spring Boot",
+      icon: springBoot,
+      proficiency: 90,
+    },
+    {
+      title: "NodeJS",
+      icon: node,
+      proficiency: 70,
+    },
+    {
+      title: "Django",
+      icon: django,
+      proficiency: 60,
+    },
+    {
+      title: "React",
+      icon: react,
+      proficiency: 80,
+    },
+    {
+      title: "Angular",
+      icon: angular,
+      proficiency: 90,
+    },
+    {
+      title: "AWS",
+      icon: aws,
+      proficiency: 50,
+    },
   ];
 
   static projects = [

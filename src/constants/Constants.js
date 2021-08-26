@@ -38,31 +38,37 @@ export class Constants {
       title: "Spring Boot",
       icon: springBoot,
       proficiency: 90,
+      fillerColor: "rgb(255, 37, 37)",
     },
     {
       title: "NodeJS",
       icon: node,
       proficiency: 70,
+      fillerColor: "rgb(0, 230, 0)",
     },
     {
       title: "Django",
       icon: django,
       proficiency: 60,
-    },
-    {
-      title: "React",
-      icon: react,
-      proficiency: 80,
+      fillerColor: "rgb(45, 212, 196)",
     },
     {
       title: "Angular",
       icon: angular,
       proficiency: 90,
+      fillerColor: "rgb(255, 103, 47)",
+    },
+    {
+      title: "React",
+      icon: react,
+      proficiency: 80,
+      fillerColor: "rgb(156, 54, 252)",
     },
     {
       title: "AWS",
       icon: aws,
       proficiency: 50,
+      fillerColor: "rgba(245, 245, 245, 0.952)",
     },
   ];
 

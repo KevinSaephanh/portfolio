@@ -1,6 +1,13 @@
 import React from "react";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import { Constants } from "../../constants/Constants";
 import "./About.scss";
+
+const progressBarContainerStyles = {
+  height: "25%",
+  width: "100%",
+  border: "2px solid white",
+};
 
 const About = () => {
   // Get the difference (in years) between the current date and date passed in
@@ -69,9 +76,12 @@ const About = () => {
                       <img src={tech.icon} />
                       <span>{tech.title}</span>
                     </div>
-                    <div className="stats-bar">
-                      <div className="stats-filler" />
-                    </div>
+                    <ProgressBar
+                      maxPercent={tech.proficiency}
+                      toggleLoading={() => {}}
+                      progressBarContainerStyles={progressBarContainerStyles}
+                      fillerColor={tech.fillerColor}
+                    />
                   </li>
                 );
               })}

@@ -10,18 +10,17 @@ const ProgressBar = ({
 
   useEffect(() => {
     if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), 20);
-    else setTimeout(() => toggleLoading(), 1000);
+    else setTimeout(() => toggleLoading(), 500);
   }, [progress]);
 
   return (
-    <div className="progress-bar-container" style={progressBarContainerStyles}>
+    <div style={progressBarContainerStyles}>
       <div
         style={{
           height: "100%",
           width: `${progress}%`,
           backgroundColor: fillerColor,
         }}
-        className="progress-bar"
       />
     </div>
   );

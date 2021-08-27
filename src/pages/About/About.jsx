@@ -17,7 +17,7 @@ const About = () => {
     );
   };
 
-  const age = getYearDifference("1993-12-01");
+  const lvl = getYearDifference("1993-12-01");
 
   return (
     <div className="about content">
@@ -32,7 +32,7 @@ const About = () => {
           />
           <div className="profile-metadata">
             <h2>Kevin Saephanh</h2>
-            <h2 title={`I am ${age} years old`}>LV: {age}</h2>
+            <h2 title={`I am ${lvl} years old`}>LV: {lvl}</h2>
             <div className="code-bar-container">
               <h2>{"</>"}: 100/100</h2>
               <div
@@ -54,8 +54,9 @@ const About = () => {
               systems, calculators, and console games. And despite the missed
               opportunity to major in Computer Science, my interest in the field
               never waned.
-              <br />
-              <br />
+            </p>
+            <br />
+            <p>
               This continued interest eventually motivated me to try and pursue
               a career in software development. Fortunately for me, I was able
               to attend a coding bootcamp after college to learn new
@@ -71,10 +72,16 @@ const About = () => {
                   <li
                     key={i}
                     title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
+                    className="stat-item"
                   >
-                    <div className="stats-data">
-                      <img src={tech.icon} />
-                      <span>{tech.title}</span>
+                    <div className="stat-data">
+                      <div className="stat-left">
+                        <img src={tech.icon} />
+                        <span>{tech.title}</span>
+                      </div>
+                      <div className="stat-right">
+                        <span>{tech.proficiency}</span>
+                      </div>
                     </div>
                     <ProgressBar
                       maxPercent={tech.proficiency}

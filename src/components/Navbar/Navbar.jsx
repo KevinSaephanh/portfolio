@@ -10,11 +10,11 @@ const Navbar = () => {
 
   const getNavs = () => {
     return (
-      <ul className="nav-list">
+      <ul className="nav-menu">
         {Constants.navs.map((nav, key) => {
           return (
             <NavLink
-              className={nav.title}
+              className={`${nav.title} nav-item`}
               to={nav.link}
               key={key}
               onClick={() => toggleNav()}
@@ -33,6 +33,7 @@ const Navbar = () => {
           href={`${process.env.REACT_APP_S3_URL}/Resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
+          className="nav-item"
         >
           Resume
         </a>
@@ -41,12 +42,10 @@ const Navbar = () => {
   };
 
   const toggleNav = () => {
-    if (width <= breakpoint) {
-      const toggleButton = document.getElementById("nav-icon");
-      toggleButton.classList.toggle("open");
-      const navList = document.getElementsByClassName("nav-list")[0];
-      navList.classList.toggle("active");
-    }
+    const toggleHamburger = document.getElementById("hamburger");
+    toggleHamburger.classList.toggle("open");
+    const navMenu = document.getElementsByClassName("nav-menu")[0];
+    navMenu.classList.toggle("active");
   };
 
   return (
@@ -63,23 +62,15 @@ const Navbar = () => {
       </a>
 
       <div>
-        {width >= breakpoint ? (
-          getNavs()
-        ) : (
-          <div className="responsive-navbar">
-            {/* Nav toggle icon */}
-            <div id="nav-icon" onClick={() => toggleNav()}>
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-
-            {getNavs()}
-          </div>
-        )}
+        {getNavs()}
+        <div id="hamburger" onClick={() => toggleNav()}>
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
       </div>
     </nav>
   );

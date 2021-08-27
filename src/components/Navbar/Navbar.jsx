@@ -1,13 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useViewport } from "../../hoc/Viewport";
 import { Constants } from "../../constants/Constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
-  const width = useViewport().width;
-  const breakpoint = 800;
-
   const getNavs = () => {
     return (
       <ul className="nav-menu">

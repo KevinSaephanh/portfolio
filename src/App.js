@@ -9,8 +9,8 @@ const progressBarContainerStyles = {
   margin: "auto",
   position: "relative",
   display: "block",
-  width: "22rem",
-  height: "2rem",
+  width: "20rem",
+  height: "1.7rem",
   border: "4px solid white",
 };
 

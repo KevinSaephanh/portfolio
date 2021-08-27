@@ -9,7 +9,7 @@ const ProgressBar = ({
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), 20);
+    if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), 25);
     else setTimeout(() => toggleLoading(), 500);
   }, [progress]);
 

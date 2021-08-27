@@ -1,7 +1,6 @@
 import React from "react";
 import { Redirect, Route, useLocation } from "react-router-dom";
 import SlideRoutes from "react-slide-routes";
-import { ViewportProvider } from "./hoc/Viewport";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Projects from "./pages/Projects/Projects";
@@ -14,9 +13,7 @@ const Routes = () => {
 
   return (
     <div>
-      <ViewportProvider>
-        <Navbar />
-      </ViewportProvider>
+      <Navbar />
       <SlideRoutes location={location} duration={500}>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />

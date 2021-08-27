@@ -3,7 +3,8 @@
 .project-item {
   @include global.flex-space-between;
   height: 350px;
-  width: 90%;
+  width: 80%;
+  margin: 0 auto;
   padding-bottom: 20px;
 
   img {
@@ -75,12 +76,14 @@
 @media only screen and (max-width: 900px) {
   .project-list {
     padding: 0;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .project-item {
     flex-direction: column-reverse;
+    width: 90%;
     height: auto;
-    margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 25px;
     border-radius: 3px;
@@ -96,6 +99,7 @@
     img {
       height: 250px;
       width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -121,7 +125,7 @@
     }
 
     p {
-      width: 95%;
+      width: 90%;
       padding: 0;
       padding-left: 15px;
       background: transparent;

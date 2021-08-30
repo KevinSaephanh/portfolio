@@ -29,7 +29,8 @@ const App = () => {
             maxPercent={100}
             progressBarContainerStyles={progressBarContainerStyles}
             toggleLoading={toggleLoading}
-            fillerColor={"blueviolet"}
+            loadSpeed={15}
+            fillerColor={"#0dba86"}
           />
           <div className="loader-text">LOADING...</div>
         </div>

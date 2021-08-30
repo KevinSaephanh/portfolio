@@ -85,8 +85,9 @@ const About = () => {
                     </div>
                     <ProgressBar
                       maxPercent={tech.proficiency}
-                      toggleLoading={() => {}}
                       progressBarContainerStyles={progressBarContainerStyles}
+                      toggleLoading={() => {}}
+                      loadSpeed={30}
                       fillerColor={tech.fillerColor}
                     />
                   </li>

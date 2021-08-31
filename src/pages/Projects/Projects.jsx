@@ -1,112 +1,75 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTransition, animated } from "react-spring";
 import { Constants } from "../../constants/Constants";
 import "./Projects.scss";
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState(null);
-
   let delay = 0;
   const transition = useTransition(Constants.projects, {
     from: { opacity: 0 },
     enter: (project) => async (next) => {
-      await next({ opacity: 1, delay: (delay += 700) });
+      await next({ opacity: 1, delay: (delay += 500) });
     },
     leave: {},
     config: { duration: 600 },
   });
 
-  useEffect(() => {
-    setActiveProject(Constants.projects[0]);
-
-    // Toggle css for active project
-    if (activeProject) {
-      const currActiveProj = document.getElementById(activeProject.title);
-      currActiveProj.classList.add("active-project");
-    }
-  }, [activeProject]);
-
-  const handleClick = (index) => {};
-
-  const toggleActiveProject = (project) => {
-    const prevActiveProj = document.getElementById(activeProject.title);
-    console.log(prevActiveProj);
-    prevActiveProj.classList.remove("active-project");
-
-    const currActiveProj = document.getElementById(project.title);
-    console.log(currActiveProj);
-    currActiveProj.classList.add("active-project");
-
-    setActiveProject(project);
-  };
-
   return (
     <div className="content">
       <h2 className="title">PROJECTS</h2>
 
-      <div className="projects-container">
-        {activeProject ? (
-          <div className="project-description">
-            <h3>{activeProject.title}</h3>
+      <ul className="project-list">
+        {transition((style, project) =>
+          project ? (
+            <animated.div style={style} className="title-container">
+              <li className="project-item">
+                {/* Render project info (title, description, tech stack) */}
+                <div className="project-info">
+                  <h2>{project.title.toUpperCase()}</h2>
+                  <p title="Project description">{project.desc}</p>
 
-            {/* Project description */}
-            <div className="description-body">
-              <h4>Description</h4>
-              <p>{activeProject.desc}</p>
-            </div>
+                  {/* Tech stack used for project */}
+                  <ul className="stack">
+                    {project.stack.map((s, key) => {
+                      return (
+                        <li className="stack-item" key={key}>
+                          {s.name}
+                        </li>
+                      );
+                    })}
+                  </ul>
 
-            {/* Tech stack */}
-            <div className="description-body">
-              <h4>Tech Stack</h4>
-              <ul className="stack">
-                {activeProject.stack.map((s, key) => {
-                  return (
-                    <li className="stack-item" key={key}>
-                      {s.name}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+                  {/* Render github and website icons */}
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="github"
+                  >
+                    <i className="fab fa-github" aria-hidden="true" />
+                  </a>
+                  {project.site ? (
+                    <a href={project.site} title="website">
+                      <i
+                        className="fas fa-external-link-alt"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  ) : null}
+                </div>
 
-            {/* Project links */}
-            <div className="description-body">
-              <a
-                href={activeProject.code}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="github"
-              >
-                <i className="fab fa-github" aria-hidden="true" />
-              </a>
-              {activeProject.site ? (
-                <a href={activeProject.site} title="website">
-                  <i className="fas fa-external-link-alt" aria-hidden="true" />
-                </a>
-              ) : null}
-            </div>
-          </div>
-        ) : null}
-        <div>
-          <ul className="project-list">
-            {Constants.projects.map((proj, key) => (
-              <li
-                id={proj.title}
-                className="project-item"
-                key={key}
-                onClick={() => toggleActiveProject(proj)}
-              >
-                <h3>{proj.title}</h3>
+                {/* Render app image */}
                 <img
-                  src={`${process.env.REACT_APP_S3_URL}/${proj.pic}`}
-                  title={proj.title}
+                  src={`${process.env.REACT_APP_S3_URL}/${project.pic}`}
+                  id={project.pic}
+                  title={project.title}
                   alt=""
                 />
               </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+            </animated.div>
+          ) : null
+        )}
+      </ul>
     </div>
   );
 };

@@ -197,7 +197,7 @@ nav {
 
   .nav-menu {
     position: fixed;
-    left: -130%;
+    left: -100%;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.877);
     width: 100%;
@@ -217,7 +217,6 @@ nav {
 
   .nav-item {
     display: block;
-    right: 40px;
     font-size: 1.5rem;
     margin: 0 auto;
     padding: 15px 0;

@@ -87,7 +87,7 @@ const About = () => {
                       maxPercent={tech.proficiency}
                       progressBarContainerStyles={progressBarContainerStyles}
                       toggleLoading={() => {}}
-                      loadSpeed={30}
+                      loadSpeed={25}
                       fillerColor={tech.fillerColor}
                     />
                   </li>

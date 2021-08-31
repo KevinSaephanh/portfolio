@@ -3,6 +3,7 @@
 html,
 body {
   margin: 0;
+  padding: 0;
   text-align: center;
   font-weight: bold;
   color: global.$desc-color;
@@ -17,8 +18,8 @@ body {
 }
 
 .content {
-  padding: 10px;
-  width: 100vw;
+  padding: 10px 0;
+  width: 100%;
   margin-top: 15px;
   min-height: 70vh;
   z-index: -1;
@@ -67,10 +68,6 @@ button:focus {
 }
 
 @media only screen and (max-width: 800px) {
-  .content {
-    padding: 10px 0;
-  }
-
   .title {
     margin-bottom: 25px;
   }

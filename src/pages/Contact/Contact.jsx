@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import validator from "email-validator";
 import * as emailjs from "emailjs-com";
 import dotenv from "dotenv";
@@ -7,20 +7,20 @@ import "./Contact.scss";
 dotenv.config();
 
 const Contact = () => {
-  const [inputs, setInputs] = React.useState({
+  const inputs = useRef({
     name: "",
     email: "",
     message: "",
   });
-  const [submitMessage, setSubmitMessage] = React.useState("");
+  const [submitMessage, setSubmitMessage] = React.useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     // Check if email is using valid format
-    if (!validateForm()) {
-      setSubmitMessage("Failed to send message 😞");
-      setTimeout(() => setSubmitMessage(""), 2000);
+    if (!isValidForm()) {
+      setSubmitMessage("Please fill out all fields in the form");
+      setTimeout(() => setSubmitMessage(null), 3000);
       return;
     }
 
@@ -32,18 +32,18 @@ const Contact = () => {
         process.env.REACT_APP_USER_ID
       )
       .then((res) => {
-        setSubmitMessage("Message sent successfully UwU");
-        setTimeout(() => window.location.reload(), 2000);
+        setSubmitMessage("Message sent successfully OwO");
+        setTimeout(() => window.location.reload(), 3000);
       })
       .catch((err) => {
         console.error(err);
         setSubmitMessage("Failed to send message 😞");
-        setTimeout(() => setSubmitMessage(""), 2000);
+        setTimeout(() => setSubmitMessage(null), 3000);
       });
   };
 
-  const validateForm = () => {
-    const { name, email, message } = inputs;
+  const isValidForm = () => {
+    const { name, email, message } = inputs.current;
     return (
       name.length > 1 &&
       name.length <= 50 &&
@@ -56,10 +56,8 @@ const Contact = () => {
   };
 
   const handleInput = (e) => {
-    const { name } = e.target;
-    const { value } = e.target;
-
-    setInputs({ ...inputs, [name]: value });
+    const { name, value } = e.target;
+    inputs.current[name] = value;
   };
 
   return (
@@ -104,11 +102,7 @@ const Contact = () => {
             required
           />
           <span className="submitMessage">{submitMessage}</span>
-          <button
-            type="input"
-            onClick={sendEmail}
-            disabled={submitMessage !== ""}
-          >
+          <button type="input" onClick={sendEmail} disabled={!isValidForm()}>
             Send
           </button>
         </form>

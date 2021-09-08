@@ -50,7 +50,12 @@ form {
     margin: 0 auto;
     margin-top: 10px;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:enabled {
       background: global.$success-color;
       transition: ease 0.6s;
     }

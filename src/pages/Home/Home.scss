@@ -1,34 +1,38 @@
 @use "../../_master" as global;
 
-.title-container {
-  h1 {
-    letter-spacing: 0.8px;
-    line-height: 1.2rem;
-
-    &:hover {
-      color: global.$highlight-color;
-      transition: 0.4s all;
-    }
-  }
-
-  &:last-child {
+.home {
+  .title-container {
     h1 {
-      font-size: 18px;
+      letter-spacing: 0.8px;
+      line-height: 1.2rem;
+
+      &:hover {
+        color: global.$highlight-color;
+        transition: 0.4s all;
+      }
+    }
+
+    &:last-child {
+      h1 {
+        font-size: 18px;
+      }
     }
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .title-container {
-    h1 {
-      letter-spacing: 0.5px;
-    }
-
-    &:last-child {
+  .home {
+    .title-container {
       h1 {
-        font-size: 15px;
-        width: 85%;
-        margin: 0 auto;
+        letter-spacing: 0.5px;
+      }
+
+      &:last-child {
+        h1 {
+          font-size: 15px;
+          width: 85%;
+          margin: 0 auto;
+        }
       }
     }
   }

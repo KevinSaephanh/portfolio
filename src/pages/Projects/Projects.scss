@@ -78,18 +78,18 @@
     padding: 0;
     width: 90%;
     margin: 0 auto;
-  }
 
-  .title-container {
-    width: 90%;
-    margin: 0 auto;
+    .title-container {
+      width: 90%;
+      margin: 0 auto;
 
-    &:nth-child(odd) {
-      background: rgba(131, 131, 235, 0.123);
-    }
+      &:nth-child(odd) {
+        background: rgba(131, 131, 235, 0.123);
+      }
 
-    &:nth-child(even) {
-      background: rgba(6, 6, 80, 0.582);
+      &:nth-child(even) {
+        background: rgba(6, 6, 80, 0.582);
+      }
     }
   }
 

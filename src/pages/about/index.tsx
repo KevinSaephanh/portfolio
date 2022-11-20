@@ -2,34 +2,28 @@ import React from 'react';
 import ProgressBar from '../../components/common/ProgressBar/ProgressBar';
 import config from '../../config/config';
 
-const progressBarContainerStyles = {
-  height: '25%',
-  width: '100%',
-  border: '2px solid white',
-};
-
 const technologies = [
   {
     title: 'Spring Boot',
-    icon: springBoot,
+    icon: 'springBoot',
     proficiency: 90,
     fillerColor: 'rgb(255, 37, 37)',
   },
   {
     title: 'NodeJS',
-    icon: node,
+    icon: 'node',
     proficiency: 90,
     fillerColor: 'rgb(0, 230, 0)',
   },
   {
     title: 'Angular',
-    icon: angular,
+    icon: 'angular',
     proficiency: 90,
     fillerColor: 'rgb(45, 212, 196)',
   },
   {
     title: 'React',
-    icon: react,
+    icon: 'react',
     proficiency: 80,
     fillerColor: 'rgb(156, 54, 252)',
   },
@@ -38,7 +32,7 @@ const technologies = [
 const About = () => {
   // Get the difference (in years) between the current date and date passed in
   const getYearDifference = (dateString) => {
-    return Math.floor((new Date() - new Date(dateString).getTime()) / 3.15576e10);
+    return Math.floor((new Date().getTime() - new Date(dateString).getTime()) / 3.15576e10);
   };
 
   const lvl = getYearDifference('1993-12-01');
@@ -96,7 +90,6 @@ const About = () => {
                     </div>
                     <ProgressBar
                       maxPercent={tech.proficiency}
-                      progressBarContainerStyles={progressBarContainerStyles}
                       toggleLoading={() => {}}
                       loadSpeed={25}
                       fillerColor={tech.fillerColor}

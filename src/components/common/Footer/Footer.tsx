@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.scss';
 
 const socials = [
   {
@@ -19,16 +18,16 @@ const socials = [
   },
 ];
 
-const Footer = () => {
+const Footer: React.FC = () => {
   // Make icon move up
   const jump = (icon) => {
-    const socialIcon = document.getElementsByClassName(icon)[0];
+    const socialIcon: any = document.getElementsByClassName(icon)[0];
     socialIcon.style.transform = 'translateY(-5px)';
   };
 
   // Make icon drop back down to original position
   const drop = (icon) => {
-    const socialIcon = document.getElementsByClassName(icon)[0];
+    const socialIcon: any = document.getElementsByClassName(icon)[0];
     socialIcon.style.transform = 'none';
   };
 

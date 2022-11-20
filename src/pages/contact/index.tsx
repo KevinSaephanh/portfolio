@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import validator from 'email-validator';
 import * as emailjs from 'emailjs-com';
 import config from '../../config/config';
+import { Input } from '../../components/ui/Input/Input';
+import { TextArea } from '../../components/ui/TextArea/TextArea';
 
 const Contact = () => {
   const inputs = useRef({
@@ -9,7 +11,7 @@ const Contact = () => {
     email: '',
     message: '',
   });
-  const [submitMessage, setSubmitMessage] = React.useState(null);
+  const [submitMessage, setSubmitMessage] = React.useState('');
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -17,20 +19,20 @@ const Contact = () => {
     // Check if email is using valid format
     if (!isValidForm()) {
       setSubmitMessage('Please fill out all fields in the form');
-      setTimeout(() => setSubmitMessage(null), 3000);
+      setTimeout(() => setSubmitMessage(''), 3000);
       return;
     }
 
     emailjs
       .sendForm('gmail', config.email.templateId, '.myForm', config.email.userId)
       .then((res) => {
-        setSubmitMessage('Message sent successfully OwO');
+        setSubmitMessage('Message sent successfully!');
         setTimeout(() => window.location.reload(), 3000);
       })
       .catch((err) => {
         console.error(err);
         setSubmitMessage('Failed to send message 😞');
-        setTimeout(() => setSubmitMessage(null), 3000);
+        setTimeout(() => setSubmitMessage(''), 3000);
       });
   };
 
@@ -62,39 +64,39 @@ const Contact = () => {
           <div className="eye2">+</div>
           <div className="mouth">w</div>
         </div>
-        <form className="myForm" onSubmit="return false;">
-          <input
+        <form className="myForm">
+          <Input
             type="text"
             name="name"
             placeholder="Name"
-            title="Name"
-            minLength="3"
-            maxLength="100"
-            required
+            label="Name"
+            minLength={3}
+            maxLength={100}
             onChange={handleInput}
+            required
           />
-          <input
+          <Input
+            type="email"
             name="email"
             placeholder="Email"
-            type="email"
-            title="Email"
-            minLength="5"
-            maxLength="100"
-            required
+            label="Email"
+            minLength={7}
+            maxLength={100}
             onChange={handleInput}
+            required
           />
-          <textarea
+          <TextArea
             type="text"
             name="message"
-            placeholder="Speak your mind :3"
-            title="Message"
-            minLength="10"
-            maxLength="300"
+            placeholder="Speak your mind 😊"
+            label="Message"
+            minLength={5}
+            maxLength={300}
             onChange={handleInput}
             required
           />
           <span className="submitMessage">{submitMessage}</span>
-          <button type="input" onClick={sendEmail} disabled={!isValidForm()}>
+          <button onClick={sendEmail} disabled={!isValidForm()}>
             Send
           </button>
         </form>

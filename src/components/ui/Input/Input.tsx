@@ -15,10 +15,6 @@ export const Input = React.forwardRef<HTMLInputElement, TextAreaProps>(
     return (
       <>
         <input
-          name="message"
-          title="Message"
-          minLength={1}
-          maxLength={300}
           // onChange={handleInput}
           {...props}
         />

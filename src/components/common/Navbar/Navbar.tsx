@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import config from '../../../config/config';
-import './Navbar.scss';
 
 const links = [
   {
@@ -30,7 +29,9 @@ const links = [
   },
 ];
 
-const Navbar = () => {
+const Logo = () => {};
+
+const Navbar: React.FC = () => {
   const getNavs = () => {
     return (
       <ul className="nav-menu">
@@ -47,12 +48,7 @@ const Navbar = () => {
             </NavLink>
           );
         })}
-        <a
-          href={config.s3.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nav-item"
-        >
+        <a href={config.s3.resume} target="_blank" rel="noopener noreferrer" className="nav-item">
           Resume
         </a>
       </ul>
@@ -60,7 +56,7 @@ const Navbar = () => {
   };
 
   const toggleNav = () => {
-    const toggleHamburger = document.getElementById('hamburger');
+    const toggleHamburger: any = document.getElementById('hamburger');
     toggleHamburger.classList.toggle('open');
     const navMenu = document.getElementsByClassName('nav-menu')[0];
     navMenu.classList.toggle('active');

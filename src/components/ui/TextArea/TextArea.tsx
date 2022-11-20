@@ -1,6 +1,6 @@
 import React from 'react';
 
-type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+type TextAreaProps = React.InputHTMLAttributes<HTMLTextAreaElement> & {
   label: string;
   errors?: Record<string, unknown>;
   touched?: Record<string, unknown>;
@@ -15,10 +15,6 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <>
         <textarea
-          name="message"
-          title="Message"
-          minLength={1}
-          maxLength={300}
           // onChange={handleInput}
           {...props}
         />

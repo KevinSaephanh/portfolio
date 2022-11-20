@@ -1,30 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-const ProgressBar = ({
+type ProgressBarProps = {
+  maxPercent: number;
+  loadSpeed: number;
+  fillerColor: string;
+  toggleLoading: Function;
+};
+
+const ProgressBar: React.FC<ProgressBarProps> = ({
   maxPercent,
-  toggleLoading,
   loadSpeed,
-  progressBarContainerStyles,
   fillerColor,
+  toggleLoading,
 }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (progress < maxPercent)
-      setTimeout(() => setProgress(progress + 1), loadSpeed);
+    if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), loadSpeed);
     else setTimeout(() => toggleLoading(), 500);
   }, [progress]);
 
   return (
-    <div style={progressBarContainerStyles}>
-      <div
-        style={{
-          height: "100%",
-          width: `${progress}%`,
-          backgroundColor: fillerColor,
-        }}
-      />
-    </div>
+    <div
+      style={{
+        height: '100%',
+        width: `${progress}%`,
+        backgroundColor: fillerColor,
+      }}
+    />
   );
 };
 

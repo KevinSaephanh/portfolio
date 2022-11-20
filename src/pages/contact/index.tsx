@@ -1,16 +1,13 @@
-import React, { useRef } from "react";
-import validator from "email-validator";
-import * as emailjs from "emailjs-com";
-import dotenv from "dotenv";
-import "./Contact.scss";
-
-dotenv.config();
+import React, { useRef } from 'react';
+import validator from 'email-validator';
+import * as emailjs from 'emailjs-com';
+import config from '../../config/config';
 
 const Contact = () => {
   const inputs = useRef({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [submitMessage, setSubmitMessage] = React.useState(null);
 
@@ -19,25 +16,20 @@ const Contact = () => {
 
     // Check if email is using valid format
     if (!isValidForm()) {
-      setSubmitMessage("Please fill out all fields in the form");
+      setSubmitMessage('Please fill out all fields in the form');
       setTimeout(() => setSubmitMessage(null), 3000);
       return;
     }
 
     emailjs
-      .sendForm(
-        "gmail",
-        process.env.REACT_APP_TEMPLATE_ID,
-        ".myForm",
-        process.env.REACT_APP_USER_ID
-      )
+      .sendForm('gmail', config.email.templateId, '.myForm', config.email.userId)
       .then((res) => {
-        setSubmitMessage("Message sent successfully OwO");
+        setSubmitMessage('Message sent successfully OwO');
         setTimeout(() => window.location.reload(), 3000);
       })
       .catch((err) => {
         console.error(err);
-        setSubmitMessage("Failed to send message 😞");
+        setSubmitMessage('Failed to send message 😞');
         setTimeout(() => setSubmitMessage(null), 3000);
       });
   };

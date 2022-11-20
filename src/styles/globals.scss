@@ -1,7 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 $highlight-color: turquoise;
 $base-color: #05f4b7;
 $desc-color: rgba(245, 245, 245, 0.863);
 $success-color: rgb(14, 180, 14);
+
 @mixin flex-column {
   display: flex;
   flex-direction: column;
@@ -16,4 +21,3 @@ $success-color: rgb(14, 180, 14);
   justify-content: space-between;
   align-items: flex-end;
 }
-//#371BB1

@@ -1,4 +1,4 @@
-@use "../../master" as global;
+@use '../../styles/global' as global;
 
 nav {
   @include global.flex-space-between;
@@ -26,7 +26,7 @@ nav {
   &::before {
     bottom: 100%;
     border: solid transparent;
-    content: " ";
+    content: ' ';
     height: 0;
     width: 0;
     position: absolute;
@@ -142,7 +142,7 @@ nav {
   padding-bottom: 3px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 3px;

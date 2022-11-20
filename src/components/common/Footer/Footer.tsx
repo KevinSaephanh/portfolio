@@ -1,24 +1,41 @@
-import React from "react";
-import { Constants } from "../../constants/Constants";
-import "./Footer.scss";
+import React from 'react';
+import './Footer.scss';
+
+const socials = [
+  {
+    icon: 'fa fa-linkedin-square',
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/kevin-saephanh',
+  },
+  {
+    icon: 'fa fa-github-square',
+    title: 'Github',
+    link: 'https://github.com/KevinSaephanh',
+  },
+  {
+    icon: 'fab fa-discord',
+    title: 'Discord',
+    link: 'https://www.discord.com/users/360657658270973956',
+  },
+];
 
 const Footer = () => {
   // Make icon move up
   const jump = (icon) => {
     const socialIcon = document.getElementsByClassName(icon)[0];
-    socialIcon.style.transform = "translateY(-5px)";
+    socialIcon.style.transform = 'translateY(-5px)';
   };
 
   // Make icon drop back down to original position
   const drop = (icon) => {
     const socialIcon = document.getElementsByClassName(icon)[0];
-    socialIcon.style.transform = "none";
+    socialIcon.style.transform = 'none';
   };
 
   return (
     <footer>
       <div>
-        {Constants.socials.map((social, key) => {
+        {socials.map((social, key) => {
           return (
             <a href={social.link} key={key}>
               <i

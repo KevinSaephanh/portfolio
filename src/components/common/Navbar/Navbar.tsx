@@ -1,13 +1,40 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { Constants } from "../../constants/Constants";
-import "./Navbar.scss";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import config from '../../../config/config';
+import './Navbar.scss';
+
+const links = [
+  {
+    icon: 'fa fa-home',
+    title: 'Home',
+    id: 'home-link',
+    link: '/',
+  },
+  {
+    icon: 'fa fa-user',
+    title: 'About',
+    id: 'about-link',
+    link: '/about',
+  },
+  {
+    icon: 'fa fa-code',
+    title: 'Projects',
+    id: 'work-link',
+    link: '/projects',
+  },
+  {
+    icon: 'fa fa-envelope',
+    title: 'Contact',
+    id: 'contact-link',
+    link: '/contact',
+  },
+];
 
 const Navbar = () => {
   const getNavs = () => {
     return (
       <ul className="nav-menu">
-        {Constants.navs.map((nav, key) => {
+        {links.map((nav, key) => {
           return (
             <NavLink
               className={`${nav.title} nav-item`}
@@ -15,18 +42,13 @@ const Navbar = () => {
               key={key}
               onClick={() => toggleNav()}
             >
-              <i
-                id={nav.id}
-                className={nav.icon}
-                title={nav.title}
-                aria-hidden="true"
-              />
+              <i id={nav.id} className={nav.icon} title={nav.title} aria-hidden="true" />
               {nav.title}
             </NavLink>
           );
         })}
         <a
-          href={`${process.env.REACT_APP_S3_URL}/Resume.pdf`}
+          href={config.s3.resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="nav-item"
@@ -38,10 +60,10 @@ const Navbar = () => {
   };
 
   const toggleNav = () => {
-    const toggleHamburger = document.getElementById("hamburger");
-    toggleHamburger.classList.toggle("open");
-    const navMenu = document.getElementsByClassName("nav-menu")[0];
-    navMenu.classList.toggle("active");
+    const toggleHamburger = document.getElementById('hamburger');
+    toggleHamburger.classList.toggle('open');
+    const navMenu = document.getElementsByClassName('nav-menu')[0];
+    navMenu.classList.toggle('active');
   };
 
   return (

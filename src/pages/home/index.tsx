@@ -1,12 +1,11 @@
-import React from "react";
-import { useTransition, animated } from "react-spring";
-import "./Home.scss";
+import React from 'react';
+import { useTransition, animated } from 'react-spring';
 
 const items = [
   { text: "Hello, I'm Kevin Saephanh", y: 100, delay: 400 },
-  { text: "A Full Stack Developer", y: 120, delay: 800 },
+  { text: 'A Full Stack Developer', y: 120, delay: 800 },
   {
-    text: "I build, test, and maintain web applications for a living",
+    text: 'I build, test, and maintain web applications for a living',
     y: 140,
     delay: 1200,
   },

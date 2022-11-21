@@ -1,5 +1,5 @@
+import Head from 'next/head';
 import * as React from 'react';
-import { Head } from 'next/document';
 import metadata from '../../../data/metadata';
 
 type SeoProps = {

@@ -26,7 +26,7 @@ const socials = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="text-center text-white w-full pb-4">
+    <footer className="text-center themed-text w-full pb-4">
       <ul className="flex items-center justify-center space-x-2 mb-2 w-5/6 md:w-full">
         {socials.map((social, key) => (
           <li className="text-2xl">
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           </li>
         ))}
       </ul>
-      <span className="text-md sm:text-center themed-text">© 2022 Kevin Saephanh</span>
+      <span className="text-md themed-text">© 2022 Kevin Saephanh</span>
     </footer>
   );
 };

@@ -38,16 +38,18 @@ type NavLinkProps = {
   label: string;
   target?: string;
   styles?: string;
+  icon?: string;
 };
 
-const NavLink = ({ href, label, target, styles }: NavLinkProps) => {
+const NavLink = ({ href, label, target, styles, icon }: NavLinkProps) => {
   return (
     <Link
       href={href}
       target={target}
-      className={clsx('link-item themed-text md:text-lg block px-3 py-2 ', styles)}
+      className={clsx('link-item themed-text md:text-lg block py-2 ', styles)}
       aria-current="page"
     >
+      <i className={clsx('pr-2', icon)} aria-hidden="true" />
       {label}
     </Link>
   );
@@ -84,14 +86,8 @@ export const Navbar: React.FC = () => {
         >
           <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 rounded-lg border border-gray-100 dark:border-gray-700">
             {links.map((nav, key) => (
-              <NavLink href={nav.link} label={nav.label} key={key} />
+              <NavLink href={nav.link} label={nav.label} icon={nav.icon} key={key} />
             ))}
-            <NavLink
-              href={config.s3.resume}
-              label={'Resume'}
-              target={'_blank'}
-              styles={'hover:text-teal-300 border-solid border-2 border-teal-300'}
-            />
           </ul>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { ProgressBar } from '../../components/common/ProgressBar/ProgressBar';
 import config from '../../config/config';
@@ -38,24 +39,24 @@ const About = () => {
   const lvl = getYearDifference('1993-12-01');
 
   return (
-    <div className="about content">
-      <h2 className="title">ABOUT ME</h2>
+    <>
+      <span className="themed-text text-lg font-bold">ABOUT ME</span>
 
-      <div className="profile-container">
-        <div className="profile-card">
-          <img src={config.s3.me} alt="" title="MEEEEEEE!" />
-          <div className="profile-metadata">
+      <div className="">
+        <div className="">
+          <Image src="/me.jpg" alt="me" />
+          <div className="">
             <h2>Kevin Saephanh</h2>
             <h2 title={`I am ${lvl} years old`}>LV: {lvl}</h2>
-            <div className="code-bar-container">
+            <div>
               <h2>{'</>'}: 100/100</h2>
-              <div className="code-bar-filler" title="This doesn't signify anything :)" />
+              <div className="" />
             </div>
           </div>
         </div>
 
-        <div className="bio-container">
-          <div className="bio-content bio-text">
+        <div className="">
+          <div className="">
             <p>
               Hi, I'm Kevin, a Full Stack Developer from California. I started off my coding journey
               pretty late into college (halfway through to be exact) with the introduction to
@@ -73,33 +74,28 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bio-content stats-container">
-            <ul>
-              {technologies.map((tech, i) => {
-                return (
-                  <li
-                    key={i}
-                    title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
-                    className="stat-item"
-                  >
-                    <div>
-                      <img src={tech.icon} />
-                      <span>{tech.title}</span>
-                    </div>
-                    <ProgressBar
-                      maxPercent={tech.proficiency}
-                      toggleLoading={() => {}}
-                      loadSpeed={25}
-                      fillerColor={tech.fillerColor}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <ul>
+            {technologies.map((tech, i) => {
+              return (
+                <li
+                  key={i}
+                  title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
+                  className="flex flex-col mb-4"
+                >
+                  <span>{tech.title}</span>
+                  <ProgressBar
+                    maxPercent={tech.proficiency}
+                    toggleLoading={() => {}}
+                    loadSpeed={25}
+                    fillerColor={tech.fillerColor}
+                  />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

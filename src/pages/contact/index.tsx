@@ -17,11 +17,11 @@ const Contact = () => {
     e.preventDefault();
 
     // Check if email is using valid format
-    if (!isValidForm()) {
-      setSubmitMessage('Please fill out all fields in the form');
-      setTimeout(() => setSubmitMessage(''), 3000);
-      return;
-    }
+    // if (!isValidForm()) {
+    //   setSubmitMessage('Please fill out all fields in the form');
+    //   setTimeout(() => setSubmitMessage(''), 3000);
+    //   return;
+    // }
 
     emailjs
       .sendForm('gmail', config.email.templateId, '.myForm', config.email.userId)
@@ -36,18 +36,18 @@ const Contact = () => {
       });
   };
 
-  const isValidForm = () => {
-    const { name, email, message } = inputs.current;
-    return (
-      name.length > 1 &&
-      name.length <= 50 &&
-      email.length >= 5 &&
-      email.length <= 100 &&
-      validator.validate(email) &&
-      message.length >= 1 &&
-      message.length <= 300
-    );
-  };
+  // const isValidForm = () => {
+  //   const { name, email, message } = inputs.current;
+  //   return (
+  //     name.length > 1 &&
+  //     name.length <= 50 &&
+  //     email.length >= 5 &&
+  //     email.length <= 100 &&
+  //     validator.validate(email) &&
+  //     message.length >= 1 &&
+  //     message.length <= 300
+  //   );
+  // };
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -96,9 +96,9 @@ const Contact = () => {
             required
           />
           <span className="submitMessage">{submitMessage}</span>
-          <button onClick={sendEmail} disabled={!isValidForm()}>
+          {/* <button onClick={sendEmail} disabled={!isValidForm()}>
             Send
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

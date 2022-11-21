@@ -11,6 +11,11 @@
     @apply text-black dark:text-white;
   }
 
+  span,
+  h1 {
+    @apply themed-text;
+  }
+
   .link-item {
     @apply rounded md:bg-transparent md:p-0 hover:text-teal-300;
   }

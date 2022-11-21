@@ -26,22 +26,21 @@ const socials = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="text-center themed-text w-full pb-4">
+    <footer className="text-center w-full pb-4">
       <ul className="flex items-center justify-center space-x-2 mb-2 w-5/6 md:w-full">
         {socials.map((social, key) => (
-          <li className="text-2xl">
-            <a href={social.link} key={key}>
+          <li className="text-2xl" key={key}>
+            <a href={social.link}>
               <i
                 className={clsx('hover:text-teal-300', `${social.icon}`)}
                 title={social.title}
-                key={key}
                 aria-hidden="true"
               />
             </a>
           </li>
         ))}
       </ul>
-      <span className="text-md themed-text">© 2022 Kevin Saephanh</span>
+      <span className="text-md">© 2022 Kevin Saephanh</span>
     </footer>
   );
 };

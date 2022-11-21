@@ -7,7 +7,7 @@ type ProgressBarProps = {
   toggleLoading: Function;
 };
 
-const ProgressBar: React.FC<ProgressBarProps> = ({
+export const ProgressBar: React.FC<ProgressBarProps> = ({
   maxPercent,
   loadSpeed,
   fillerColor,
@@ -21,14 +21,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   }, [progress]);
 
   return (
-    <div
-      style={{
-        height: '100%',
-        width: `${progress}%`,
-        backgroundColor: fillerColor,
-      }}
-    />
+    <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div className={`h-full ${fillerColor}`} style={{ width: `${progress}%` }} />
+    </div>
   );
 };
-
-export default ProgressBar;

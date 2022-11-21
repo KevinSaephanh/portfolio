@@ -5,15 +5,13 @@ export const Logo: React.FC = () => {
   return (
     <>
       <Link href="/">
-        <a href="/">
-          <div id="yeti" title="Yeti from MapleStory">
-            <div className="eye eye1" />
-            <div className="eye eye2" />
-            <div className="cheek cheek1" />
-            <div className="cheek cheek2" />
-            <div className="mouth">vvvv</div>
-          </div>
-        </a>
+        <div id="yeti" title="Yeti from MapleStory">
+          <div className="eye eye1" />
+          <div className="eye eye2" />
+          <div className="cheek cheek1" />
+          <div className="cheek cheek2" />
+          <div className="mouth">vvvv</div>
+        </div>
       </Link>
     </>
   );

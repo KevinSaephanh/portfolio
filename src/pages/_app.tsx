@@ -1,4 +1,5 @@
 import '../styles/globals.scss';
+import 'font-awesome/css/font-awesome.min.css';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/common/Layout/Layout';
 import { ThemeProvider } from 'next-themes';

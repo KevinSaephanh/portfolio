@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from '../../components/common/ProgressBar/ProgressBar';
+import { ProgressBar } from '../../components/common/ProgressBar/ProgressBar';
 import config from '../../config/config';
 
 const technologies = [
@@ -82,11 +82,9 @@ const About = () => {
                     title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
                     className="stat-item"
                   >
-                    <div className="stat-data">
-                      <div className="stat-left">
-                        <img src={tech.icon} />
-                        <span>{tech.title}</span>
-                      </div>
+                    <div>
+                      <img src={tech.icon} />
+                      <span>{tech.title}</span>
                     </div>
                     <ProgressBar
                       maxPercent={tech.proficiency}

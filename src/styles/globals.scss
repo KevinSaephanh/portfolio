@@ -12,8 +12,10 @@
   }
 
   span,
-  h1 {
-    @apply themed-text;
+  h1,
+  li,
+  p {
+    @apply themed-text font-semibold;
   }
 
   .link-item {

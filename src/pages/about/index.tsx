@@ -40,19 +40,46 @@ const About = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-row md:flex-col">
         <section className="flex flex-col w-full md:w-1/2 items-center md:items-start justify-between md:justify-start">
           <Image
             src="/me.jpg"
             alt="me"
             height={200}
             width={200}
-            className="rounded border-2 border-slate-100 w-2/5 md:w-3/5 h-2/5 md:h-3/5 mb-4 mx-auto md:mx-0"
+            className="rounded border-2 border-black dark:border-slate-100 w-2/5 h-2/5 mb-4 mx-auto md:mx-0"
           />
-          <span>Kevin Saephanh</span>
-          <span title={`I am ${lvl} years old`}>LV: {lvl}</span>
-          <span>{'</>'}: 100/100</span>
-          <div className="w-4/5 h-4 mt-2 bg-green-500 rounded" />
+
+          <section className="flex flex-col">
+            <span className="text-2xl md:text-3xl">Kevin Saephanh</span>
+            <span className="text-lg md:text-xl" title={`I am ${lvl} years old`}>
+              <strong className="dark:text-teal-300">LV</strong> {lvl}
+            </span>
+            <span className="text-lg md:text-xl">
+              <strong className="dark:text-teal-300">{'</>'}</strong> 100/100
+            </span>
+            <div className="w-4/5 h-4 mt-2 bg-green-500 rounded" />
+
+            <ul className="mt-4 md:mt-6">
+              {technologies.map((tech, key) => {
+                return (
+                  <li
+                    key={key}
+                    title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
+                    className="flex flex-col mb-4 text-teal-300"
+                  >
+                    <span className="pb-1">{tech.title}</span>
+                    <ProgressBar
+                      maxPercent={tech.proficiency}
+                      toggleLoading={() => {}}
+                      loadSpeed={25}
+                      fillerColor={tech.fillerColor}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
         </section>
 
         <section className="flex flex-col w-full md:w-1/2">
@@ -70,25 +97,6 @@ const About = () => {
             learn new technologies and network with others. This enabled me to get my foot in the
             door and kickstart my career as a developer!
           </p>
-          <ul>
-            {technologies.map((tech, key) => {
-              return (
-                <li
-                  key={key}
-                  title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
-                  className="flex flex-col mb-4"
-                >
-                  <span>{tech.title}</span>
-                  <ProgressBar
-                    maxPercent={tech.proficiency}
-                    toggleLoading={() => {}}
-                    loadSpeed={25}
-                    fillerColor={tech.fillerColor}
-                  />
-                </li>
-              );
-            })}
-          </ul>
         </section>
       </div>
     </>

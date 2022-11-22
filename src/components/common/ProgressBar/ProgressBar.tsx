@@ -4,7 +4,7 @@ type ProgressBarProps = {
   maxPercent: number;
   loadSpeed: number;
   fillerColor: string;
-  toggleLoading: Function;
+  toggleLoading?: Function;
 };
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
@@ -17,12 +17,12 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 
   useEffect(() => {
     if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), loadSpeed);
-    else setTimeout(() => toggleLoading(), 500);
+    else setTimeout(() => toggleLoading, 500);
   }, [progress]);
 
   return (
-    <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-      <div className={`h-full ${fillerColor}`} style={{ width: `${progress}%` }} />
+    <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 border-2 border-black dark:border-white">
+      <span className={`h-full ${fillerColor}`} style={{ width: `${progress}%` }} />
     </div>
   );
 };

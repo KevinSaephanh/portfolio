@@ -4,8 +4,9 @@ import * as emailjs from 'emailjs-com';
 import config from '../../config/config';
 import { Input } from '../../components/ui/Input/Input';
 import { TextArea } from '../../components/ui/TextArea/TextArea';
+import { NextPage } from 'next';
 
-const Contact = () => {
+const Contact: NextPage = () => {
   const inputs = useRef({
     name: '',
     email: '',

@@ -27,6 +27,7 @@
   }
 }
 
+// TODO: Replace logo with ThreeJS model
 #yeti {
   top: 15px;
   left: 3px;
@@ -98,15 +99,15 @@
     position: absolute;
     z-index: 10000;
     margin: 12px;
-    top: -4px;
-    left: 10.5px;
+    top: -6px;
+    left: 9px;
   }
 
   .eye2 {
     position: relative;
     margin: 12px;
-    top: -4px;
-    left: -5px;
+    top: -6px;
+    left: -6px;
   }
 
   .cheek {
@@ -120,19 +121,19 @@
     position: absolute;
     z-index: 10000;
     margin: 12px;
-    top: 4px;
-    left: 12px;
+    top: 3px;
+    left: 10px;
   }
 
   .cheek2 {
     position: relative;
     margin: 12px;
-    top: -14px;
+    top: -16px;
     left: -9px;
   }
 
   .mouth {
-    width: 26px;
+    width: 11px;
     height: 5px;
     color: black;
     font-size: 7px;
@@ -142,9 +143,3 @@
     transform: scale(1.5, 1);
   }
 }
-
-// @media only screen and (max-width: 800px) {
-//   #yeti {
-//     top: 20px;
-//   }
-// }

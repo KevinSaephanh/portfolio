@@ -8,12 +8,6 @@ import { Logo } from '../Logo/Logo';
 
 const links = [
   {
-    icon: 'fa fa-home',
-    label: 'Home',
-    id: 'home-link',
-    link: '/',
-  },
-  {
     icon: 'fa fa-user',
     label: 'About',
     id: 'about-link',

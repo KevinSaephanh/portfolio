@@ -8,25 +8,25 @@ const technologies = [
     title: 'React',
     icon: 'react',
     proficiency: 80,
-    fillerColor: 'rgb(156, 54, 252)',
+    color: 'rgb(156, 54, 252)',
   },
   {
     title: 'Angular',
     icon: 'angular',
     proficiency: 90,
-    fillerColor: 'rgb(45, 212, 196)',
+    color: 'rgb(45, 212, 196)',
   },
   {
     title: 'NodeJS',
     icon: 'node',
     proficiency: 90,
-    fillerColor: 'rgb(0, 230, 0)',
+    color: 'rgb(0, 230, 0)',
   },
   {
     title: 'Spring Boot',
     icon: 'springBoot',
     proficiency: 90,
-    fillerColor: 'rgb(255, 37, 37)',
+    color: 'rgb(255, 37, 37)',
   },
 ];
 
@@ -39,34 +39,34 @@ const About: NextPage = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-between mx-0 md:mx-auto w-full md:w-4/5 lg:w-3/5">
-        <section className="flex flex-col w-full md:w-1/3 items-center md:items-start mt-0 mb-auto">
+      <div className='flex flex-col md:flex-row items-center justify-between mx-0 md:mx-auto w-full md:w-4/5 lg:w-3/5'>
+        <section className='flex flex-col w-full md:w-1/3 items-center md:items-start mt-0 mb-auto'>
           <Image
-            src="/me.jpg"
-            alt="me"
+            src='/me.jpg'
+            alt='me'
             height={300}
             width={300}
-            className="rounded border-2 border-black dark:border-slate-100 mb-4"
+            className='rounded border-2 border-black dark:border-slate-100 mb-4'
           />
 
-          <div className="flex flex-col w-4/5 md:w-full mb-4 space-y-2">
-            <span className="text-2xl md:text-3xl">Kevin Saephanh</span>
-            <span className="text-lg md:text-xl">Software Developer</span>
-            <span className="text-lg md:text-xl" title={`I am ${lvl} years old`}>
-              <strong className="dark:text-teal-300">LV</strong> {lvl}
+          <div className='flex flex-col w-4/5 md:w-full mb-4 space-y-2'>
+            <span className='text-2xl md:text-3xl'>Kevin Saephanh</span>
+            <span className='text-lg md:text-xl'>Software Developer</span>
+            <span className='text-lg md:text-xl' title={`I am ${lvl} years old`}>
+              <strong className='dark:text-teal-300'>LV</strong> {lvl}
             </span>
-            <span className="text-lg md:text-xl">
-              <strong className="dark:text-teal-300">{'HP'}</strong> 1000/1000
+            <span className='text-lg md:text-xl'>
+              <strong className='dark:text-teal-300'>{'HP'}</strong> 1000/1000
             </span>
-            <div className="health-bar w-full h-4 mt-2 bg-green-500 rounded" />
-            <span className="text-lg md:text-xl">
-              <strong className="dark:text-teal-300">{'MP'}</strong> 1000/1000
+            <div className='health-bar w-full h-4 mt-2 bg-green-500 rounded' />
+            <span className='text-lg md:text-xl'>
+              <strong className='dark:text-teal-300'>{'MP'}</strong> 1000/1000
             </span>
-            <div className="health-bar w-full h-4 mt-2 bg-blue-500 rounded" />
+            <div className='health-bar w-full h-4 mt-2 bg-blue-500 rounded' />
           </div>
         </section>
 
-        <section className="flex flex-col w-full md:w-3/5 mt-0 mb-auto">
+        <section className='flex flex-col w-full md:w-3/5 mt-0 mb-auto'>
           <p>
             Hi, I'm Kevin, a Full Stack Developer from California. I started off my coding journey
             pretty late into college with the introduction to Computer Science using C++. Although I
@@ -82,18 +82,18 @@ const About: NextPage = () => {
             door and kickstart my career as a developer!
           </p>
 
-          <ul className="mt-4 md:mt-6">
+          <ul className='mt-4 md:mt-6'>
             {technologies.map((tech, key) => (
               <li
                 key={key}
                 title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
-                className="flex flex-col mb-4 text-teal-300"
+                className='flex flex-col mb-4 text-teal-300'
               >
-                <span className="pb-1 text-teal-300">{tech.title}</span>
+                <span className='pb-1 text-teal-300'>{tech.title}</span>
                 <ProgressBar
                   maxPercent={tech.proficiency}
-                  loadSpeed={25}
-                  fillerColor={tech.fillerColor}
+                  color={tech.color}
+                  toggleLoading={() => {}}
                 />
               </li>
             ))}

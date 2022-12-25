@@ -8,9 +8,9 @@ type LayoutProps = {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex h-screen flex-col justify-between">
+    <div className='flex h-screen flex-col justify-between'>
       <Navbar />
-      <main role="main" className="p-5 mt-5">
+      <main role='main' className='p-5 mt-5'>
         {children}
       </main>
       <Footer />

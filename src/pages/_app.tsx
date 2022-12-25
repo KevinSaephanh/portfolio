@@ -8,8 +8,8 @@ import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class">
-      <Seo title="Kevin Saephanh" />
+    <ThemeProvider attribute='class'>
+      <Seo title='Kevin Saephanh' />
       <Layout>
         <Component {...pageProps} />
       </Layout>

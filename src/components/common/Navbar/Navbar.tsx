@@ -44,9 +44,9 @@ const NavLink = ({ href, label, target, styles, icon }: NavLinkProps) => {
         'link-item themed-text text-xl block py-2 hover:underline hover:underline-offset-4',
         styles
       )}
-      aria-current="page"
+      aria-current='page'
     >
-      <i className={clsx('pr-2', icon)} aria-hidden="true" />
+      <i className={clsx('pr-2', icon)} aria-hidden='true' />
       {label}
     </Link>
   );
@@ -56,20 +56,20 @@ export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav className="px-2 sm:px-4 h-16">
-      <div className="h-full flex flex-wrap items-center justify-between">
+    <nav className='px-2 sm:px-4 h-16'>
+      <div className='h-full flex flex-wrap items-center justify-between'>
         <section>
           <Logo />
         </section>
 
-        <section className="flex flex-row md:flex-row-reverse items-center">
+        <section className='flex flex-row md:flex-row-reverse items-center'>
           <ThemeButton />
           <button
-            data-collapse-toggle="mobile-menu"
-            type="button"
-            className="inline-flex items-center p-2 ml-2 themed-text rounded-lg md:hidden"
-            aria-controls="mobile-menu-2"
-            aria-expanded="false"
+            data-collapse-toggle='mobile-menu'
+            type='button'
+            className='inline-flex items-center p-2 ml-2 themed-text rounded-lg md:hidden'
+            aria-controls='mobile-menu-2'
+            aria-expanded='false'
             onClick={() => setOpen(!open)}
           >
             <HamburgerButton
@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
               open ? 'flex' : 'hidden'
             )}
           >
-            <ul className="flex flex-col p-2 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+            <ul className='flex flex-col p-2 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium'>
               {links.map((nav, key) => (
                 <NavLink href={nav.link} label={nav.label} icon={nav.icon} key={key} />
               ))}

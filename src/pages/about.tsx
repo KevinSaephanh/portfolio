@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import React from 'react';
-import { ProgressBar } from '../../components/common/ProgressBar/ProgressBar';
+import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 
 const technologies = [
   {

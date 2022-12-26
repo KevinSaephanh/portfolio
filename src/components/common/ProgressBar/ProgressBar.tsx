@@ -11,7 +11,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ maxPercent, color, tog
 
   useEffect(() => {
     if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), 10);
-    else setTimeout(() => toggleLoading(), 50);
+    else toggleLoading();
   }, [progress]);
 
   return (

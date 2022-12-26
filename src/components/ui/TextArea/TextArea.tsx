@@ -8,14 +8,17 @@ type TextAreaProps = React.InputHTMLAttributes<HTMLTextAreaElement> & {
 };
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ name, label, errors, touched, required, ...props }, ref) => {
+  ({ name, label, value, placeholder, errors, touched, required, onChange, ...props }, ref) => {
     const inputRef = React.useRef<HTMLTextAreaElement>(null);
     React.useImperativeHandle(ref, () => inputRef.current!);
 
     return (
       <>
         <textarea
-          // onChange={handleInput}
+          value={value}
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
           {...props}
         />
       </>

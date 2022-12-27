@@ -16,56 +16,68 @@ const Contact: NextPage = () => {
     inputs.current[name] = value;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(inputs.current);
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs),
+    });
+    if (res.status === 200) {
+      inputs.current = {
+        name: '',
+        email: '',
+        message: '',
+      };
+      setSubmitMessage('Message sent successfully 🦖');
+    } else {
+      setSubmitMessage('Message could not be sent');
+    }
   };
 
   return (
     <div>
-      <h2 className='title'>CONTACT ME</h2>
-      <div className='contact-content'>
-        <div id='slime' title='Slime from Maplestory made with CSS'>
-          <div className='antenna'>∿∿∿</div>
-          <div className='eye1'>+</div>
-          <div className='eye2'>+</div>
-          <div className='mouth'>w</div>
-        </div>
-        <form className='myForm'>
-          <Input
-            type='text'
-            name='name'
-            placeholder='Name'
-            label='Name'
-            minLength={3}
-            maxLength={100}
-            onChange={handleInput}
-            required
-          />
-          <Input
-            type='email'
-            name='email'
-            placeholder='Email'
-            label='Email'
-            minLength={7}
-            maxLength={100}
-            onChange={handleInput}
-            required
-          />
-          <TextArea
-            type='text'
-            name='message'
-            placeholder='Speak your mind 😊'
-            label='Message'
-            minLength={5}
-            maxLength={300}
-            onChange={handleInput}
-            required
-          />
-          <span className='submitMessage'>{submitMessage}</span>
-          <button onClick={handleSubmit}>Send</button>
-        </form>
-      </div>
+      <h2 className='text-center text-lg mb-4 game-font'>CONTACT ME</h2>
+
+      <form className='flex flex-col items-center justify-between' onSubmit={handleSubmit}>
+        <Input
+          type='text'
+          name='name'
+          placeholder='Name'
+          label='Name'
+          minLength={3}
+          maxLength={100}
+          onChange={handleInput}
+          required
+        />
+        <Input
+          type='email'
+          name='email'
+          placeholder='Email'
+          label='Email'
+          minLength={7}
+          maxLength={100}
+          onChange={handleInput}
+          required
+        />
+        <TextArea
+          type='text'
+          name='message'
+          placeholder='Speak your mind 😊'
+          label='Message'
+          minLength={5}
+          maxLength={300}
+          onChange={handleInput}
+          required
+        />
+        <span className='submitMessage'>{submitMessage}</span>
+        <button type='submit' disabled={!!submitMessage}>
+          Send
+        </button>
+      </form>
     </div>
   );
 };

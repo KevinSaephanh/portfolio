@@ -20,10 +20,10 @@ const Home: NextPage = () => {
           </>
         ) : (
           <>
-            <h1 className='text-4xl font-bold tracking-wide pb-8 md:pb-12'>
-              Hello, I'm Kevin Saephanh
-            </h1>
-            <span className='text-3xl font-bold tracking-wide'>I'm a full stack developer</span>
+            <h1 className='game-font text-2xl font-bold tracking-wide pb-4'>Kevin Saephanh</h1>
+            <span className='game-font text-md md:text-lg font-bold tracking-wide'>
+              Full Stack Developer
+            </span>
           </>
         )}
       </div>

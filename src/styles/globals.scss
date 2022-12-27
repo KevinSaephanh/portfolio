@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @layer components {
-  input {
-    @apply text-black font-semibold text-xl rounded-full block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 border-4 focus:ring-blue-500 focus:border-blue-500;
+  input,
+  textarea {
+    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-full md:w-2/4 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
+    border-color: #194642;
   }
 
   .themed-text {
@@ -18,13 +22,23 @@
     @apply themed-text font-semibold;
   }
 
-  a,
-  .link-item {
-    @apply rounded md:bg-transparent md:p-0 hover:text-teal-300;
+  .game-font {
+    font-family: 'Press Start 2P', cursive;
   }
 
-  .social-btn {
-    @apply themed-text hover:text-teal-300 flex items-center justify-center w-full px-4 py-2 text-sm border;
+  h2,
+  a,
+  button,
+  .game-font,
+  .link-item {
+    &:hover {
+      color: #50e4c4;
+    }
+  }
+
+  a,
+  .link-item {
+    @apply rounded md:bg-transparent md:p-0;
   }
 }
 

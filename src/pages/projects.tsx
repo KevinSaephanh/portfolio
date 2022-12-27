@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import React from 'react';
-import config from '../../config/config';
+import config from '../config/config';
 
 const projects = [
   {

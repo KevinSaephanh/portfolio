@@ -74,7 +74,11 @@ const Contact: NextPage = () => {
           required
         />
         <span className='submitMessage'>{submitMessage}</span>
-        <button type='submit' disabled={!!submitMessage}>
+        <button
+          className='text-lg font-bold border-4 px-6 py-2 rounded'
+          type='submit'
+          disabled={!!submitMessage}
+        >
           Send
         </button>
       </form>

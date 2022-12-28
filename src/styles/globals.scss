@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @layer components {
+  .light {
+    background-color: #fffdfc;
+  }
+
   input,
   textarea {
     @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-full md:w-2/4 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
@@ -33,7 +37,12 @@
   .link-item {
     &:hover {
       color: #50e4c4;
+      border-color: #50e4c4;
     }
+  }
+
+  button {
+    border-color: #194642;
   }
 
   a,

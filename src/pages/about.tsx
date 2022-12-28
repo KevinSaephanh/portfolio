@@ -87,9 +87,9 @@ const About: NextPage = () => {
               <li
                 key={key}
                 title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
-                className='flex flex-col mb-4 text-teal-300'
+                className='flex flex-col mb-4'
               >
-                <span className='pb-1 text-teal-300'>{tech.title}</span>
+                <span className='pb-2 font-bold'>{tech.title}</span>
                 <ProgressBar
                   maxPercent={tech.proficiency}
                   color={tech.color}

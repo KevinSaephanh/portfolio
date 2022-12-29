@@ -24,8 +24,9 @@ const Contact: NextPage = () => {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(inputs),
+      body: JSON.stringify(inputs.current),
     });
+
     if (res.status === 200) {
       inputs.current = {
         name: '',
@@ -36,12 +37,19 @@ const Contact: NextPage = () => {
     } else {
       setSubmitMessage('Message could not be sent');
     }
+
+    setTimeout(() => setSubmitMessage(''), 2000);
+  };
+
+  const disabled = () => {
+    const { name, email, message } = inputs.current;
+    return !!submitMessage || !name || !email || !message;
   };
 
   return (
     <div>
       <h2 className='text-center text-lg mb-4 game-font'>CONTACT ME</h2>
-
+      <span className='text-center mb-2'>{submitMessage}</span>
       <form className='flex flex-col items-center justify-between' onSubmit={handleSubmit}>
         <Input
           type='text'
@@ -73,11 +81,10 @@ const Contact: NextPage = () => {
           onChange={handleInput}
           required
         />
-        <span className='submitMessage'>{submitMessage}</span>
         <button
           className='text-lg font-bold border-4 px-6 py-2 rounded'
           type='submit'
-          disabled={!!submitMessage}
+          disabled={disabled()}
         >
           Send
         </button>

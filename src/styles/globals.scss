@@ -32,7 +32,6 @@
 
   h2,
   a,
-  button,
   .game-font,
   .link-item {
     &:hover {
@@ -43,6 +42,15 @@
 
   button {
     border-color: #194642;
+
+    &:hover:enabled {
+      color: #50e4c4;
+      border-color: #50e4c4;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+    }
   }
 
   a,

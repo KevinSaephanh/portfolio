@@ -49,20 +49,20 @@ const About: NextPage = () => {
             className='rounded border-2 border-black dark:border-slate-100 mb-4'
           />
 
-          <div className='flex flex-col w-4/5 md:w-full mb-4 space-y-2'>
+          <div className='flex flex-col w-4/5 md:w-full mb-4 space-y-2 text-lg md:text-xl'>
             <span className='text-2xl md:text-3xl'>Kevin Saephanh</span>
-            <span className='text-lg md:text-xl'>Software Developer</span>
-            <span className='text-lg md:text-xl' title={`I am ${lvl} years old`}>
+            <span>Software Developer</span>
+            <span title={`I am ${lvl} years old`}>
               <strong className='dark:text-teal-300'>LV</strong> {lvl}
             </span>
-            <span className='text-lg md:text-xl'>
+            <span>
               <strong className='dark:text-teal-300'>{'HP'}</strong> 1000/1000
             </span>
-            <div className='health-bar w-full h-4 mt-2 bg-green-500 rounded' />
-            <span className='text-lg md:text-xl'>
+            <div className='health-bar h-4 mt-2 bg-green-500 rounded' />
+            <span>
               <strong className='dark:text-teal-300'>{'MP'}</strong> 1000/1000
             </span>
-            <div className='health-bar w-full h-4 mt-2 bg-blue-500 rounded' />
+            <div className='health-bar h-4 mt-2 bg-blue-500 rounded' />
           </div>
         </section>
 

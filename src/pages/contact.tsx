@@ -47,9 +47,9 @@ const Contact: NextPage = () => {
   };
 
   return (
-    <div>
+    <>
       <h2 className='text-center text-lg mb-4 game-font'>CONTACT ME</h2>
-      <span className='text-center mb-2'>{submitMessage}</span>
+      <span className='mb-2'>{submitMessage}</span>
       <form className='flex flex-col items-center justify-between' onSubmit={handleSubmit}>
         <Input
           type='text'
@@ -89,7 +89,7 @@ const Contact: NextPage = () => {
           Send
         </button>
       </form>
-    </div>
+    </>
   );
 };
 

@@ -15,6 +15,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     subject: `Message from ${name}`,
     text: message,
   };
+
   try {
     await transporter.sendMail(mailOptions);
     return res.status(200).end();

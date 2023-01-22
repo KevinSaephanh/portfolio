@@ -34,7 +34,6 @@ const About: NextPage = () => {
   const getYearDifference = (dateString: string) => {
     return Math.floor((new Date().getTime() - new Date(dateString).getTime()) / 3.15576e10);
   };
-
   const lvl = getYearDifference('1993-12-01');
 
   return (

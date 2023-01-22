@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 type ProgressBarProps = {
   maxPercent: number;
@@ -7,9 +7,9 @@ type ProgressBarProps = {
 };
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({ maxPercent, color, toggleLoading }) => {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (progress < maxPercent) setTimeout(() => setProgress(progress + 1), 10);
     else toggleLoading();
   }, [progress]);

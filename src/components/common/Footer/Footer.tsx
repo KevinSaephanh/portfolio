@@ -4,7 +4,7 @@ import { BsLinkedin, BsGithub, BsTwitter, BsDiscord } from 'react-icons/bs';
 export const Footer: React.FC = () => {
   return (
     <footer className='text-center pb-4'>
-      <div className='flex items-center justify-center text-2xl space-x-2 mb-2'>
+      <div className='flex-center text-2xl space-x-2 mb-2'>
         <a
           href='https://www.linkedin.com/in/kevin-saephanh'
           target='_blank'

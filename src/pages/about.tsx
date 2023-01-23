@@ -40,14 +40,7 @@ const About: NextPage = () => {
     <>
       <div className='flex flex-col md:flex-row items-center justify-between mx-0 md:mx-auto w-full md:w-4/5 lg:w-3/5'>
         <section className='flex flex-col w-full md:w-1/3 items-center md:items-start mt-0 mb-auto'>
-          <Image
-            src='/me.jpg'
-            alt='me'
-            height={300}
-            width={300}
-            className='rounded border-2 border-black dark:border-slate-100 mb-4'
-          />
-
+          <Image src='/me.jpg' alt='me' height={300} width={300} className='mb-4' />
           <div className='flex flex-col w-4/5 md:w-full mb-4 space-y-2 text-lg md:text-xl'>
             <span className='text-2xl md:text-3xl'>Kevin Saephanh</span>
             <span>Software Developer</span>
@@ -57,11 +50,11 @@ const About: NextPage = () => {
             <span>
               <strong className='dark:text-teal-300'>{'HP'}</strong> 1000/1000
             </span>
-            <div className='health-bar h-4 mt-2 bg-green-500 rounded' />
+            <div title='health-bar' className='h-4 mt-2 bg-green-500 rounded' />
             <span>
               <strong className='dark:text-teal-300'>{'MP'}</strong> 1000/1000
             </span>
-            <div className='health-bar h-4 mt-2 bg-blue-500 rounded' />
+            <div title='mana-bar' className='h-4 mt-2 bg-blue-500 rounded' />
           </div>
         </section>
 

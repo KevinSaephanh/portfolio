@@ -38,10 +38,10 @@ const Projects: NextPage = () => {
   const [active, setActive] = React.useState(1);
 
   return (
-    <>
-      <section className='flex-center flex-col md:flex-row mb-4 md:mb-8 themed-border'>
-        <article className='flex flex-row mb-4 md:mb-0 md:flex-col p-2'>
-          <ul>
+    <div className='md:w-2/3 lg:w-2/4 md:mx-auto themed-border'>
+      <section className='flex flex-col md:flex-row'>
+        <article className='flex-center pr-4 border-r-2 border-white'>
+          <ul className='flex flex-row mb-4 md:mb-0 md:flex-col p-2'>
             {projects.map((p, key) => (
               <li
                 key={key}
@@ -67,8 +67,8 @@ const Projects: NextPage = () => {
           </ul>
         </article>
       </section>
-      <section className='flex-center flex-col mb-4 md:mb-8 themed-border p-4'>
-        <article className='flex-center md:w-2/4 md:mx-auto mb-4'>
+      <section className='flex-center flex-col mb-4 md:mb-8 p-4 rounded border-t-2 border-black dark:border-slate-100'>
+        <article className='flex-center px-4 md:mx-auto mb-4'>
           <span className='text-center'>{projects[active].desc}</span>
         </article>
         <article className='flex-center'>
@@ -90,7 +90,7 @@ const Projects: NextPage = () => {
           </a>
         </article>
       </section>
-    </>
+    </div>
   );
 };
 

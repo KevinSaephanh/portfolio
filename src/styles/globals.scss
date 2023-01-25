@@ -9,6 +9,10 @@
     @apply flex items-center justify-center;
   }
 
+  .grid-list-cols {
+    @apply grid grid-flow-col grid-rows-4 gap-x-24;
+  }
+
   .scrollbar::-webkit-scrollbar {
     width: 15px;
     height: 15px;

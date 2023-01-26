@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     path: '/pathfinder.png',
     title: 'Data Generator',
-    desc: 'Create up to 1000 records of mock data for your application, using common properties of entities such as email and names.\nIn addition, create modules for environment variable types to make them type-safe.',
+    desc: 'Create up to 1000 records of mock data for your application, using common properties of entities such as email, names, and encrypted text.\nIn addition, upload .env files to create modules for environment variable types to make them type-safe.',
     stack: ['React', 'Typescript', 'Tailwind'],
     code: 'https://github.com/KevinSaephanh/data-generator',
     site: 'https://inquisitive-entremet-11acdd.netlify.app/',

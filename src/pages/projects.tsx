@@ -18,10 +18,10 @@ const projects = [
     id: 2,
     path: '/pathfinder.png',
     title: 'Pathfinder',
-    desc: `A visualization of maze generation and pathfinding algorithms. Here's how it works:\n\u2022 A maze is first generated in real time.\n\u2022 Then the maze will be traversed, marking each visited cell.\n\u2022 Finally, the optimal path to the escape route will be highlighted.`,
+    desc: `A visualization of maze generation and pathfinding algorithms. Here's how it works:\n\u2022 A maze is first generated in real time using a maze generation algorithm.\n\u2022 Then the maze will be traversed via a pathfinding algorithm, marking each visited cell.\n\u2022 Finally, the optimal path to the escape route will be highlighted.`,
     stack: ['React', 'JavaScript', 'Bootstrap'],
     code: 'https://github.com/KevinSaephanh/Pathfinder',
-    site: 'https://kevinsaephanh.github.io/Pathfinder/',
+    site: 'https://master--sage-youtiao-4202f8.netlify.app/',
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projects = [
     desc: 'A visualization of sorting algorithms.\n\u2022 A graph is displayed containing a random array of bars of varying length.\n\u2022 After starting, bars begin moving left and right to imitate how the sorting algorithm works.\n\u2022 Once sorting is completed, all bars will be highlighted.',
     stack: ['React', 'TypeScript', 'Bootstrap'],
     code: 'https://github.com/KevinSaephanh/Sort_Visualizer',
-    site: 'https://kevinsaephanh.github.io/Sort_Visualizer/',
+    site: 'https://gentle-clafoutis-1e9dfe.netlify.app/',
   },
   {
     id: 4,

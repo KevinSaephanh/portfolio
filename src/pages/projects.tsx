@@ -18,7 +18,7 @@ const projects = [
     id: 2,
     path: '/pathfinder.png',
     title: 'Pathfinder',
-    desc: 'A visualization of maze generation and pathfinding algorithms. A maze is first generated in real time. Then the maze will be traversed, marking each visited cell. Finally, the optimal path to the escape route will be highlighted.',
+    desc: `A visualization of maze generation and pathfinding algorithms. Here's how it works:\n\u2022 A maze is first generated in real time.\n\u2022 Then the maze will be traversed, marking each visited cell.\n\u2022 Finally, the optimal path to the escape route will be highlighted.`,
     stack: ['React', 'JavaScript', 'Bootstrap'],
     code: 'https://github.com/KevinSaephanh/Pathfinder',
     site: 'https://kevinsaephanh.github.io/Pathfinder/',
@@ -27,7 +27,7 @@ const projects = [
     id: 3,
     path: '/sort_visualizer.png',
     title: 'Sort Visualizer',
-    desc: 'This app also produces algorithm visualizations. A graph is displayed containing a random array of bars of varying length. After starting, bars begin moving left and right to imitate how the sorting algorithm works. Once sorting is completed, all bars will be highlighted.',
+    desc: 'A visualization of sorting algorithms.\n\u2022 A graph is displayed containing a random array of bars of varying length.\n\u2022 After starting, bars begin moving left and right to imitate how the sorting algorithm works.\n\u2022 Once sorting is completed, all bars will be highlighted.',
     stack: ['React', 'TypeScript', 'Bootstrap'],
     code: 'https://github.com/KevinSaephanh/Sort_Visualizer',
     site: 'https://kevinsaephanh.github.io/Sort_Visualizer/',
@@ -45,7 +45,7 @@ const projects = [
     id: 5,
     path: '/sort_visualizer.png',
     title: 'AlgoProToday',
-    desc: 'Technical interview prep platform. Level up your skills by tackling popular industry algorithms/data structures questions.\nNote: this was my very first full-stack application.',
+    desc: 'Technical interview prep platform. Level up your skills by tackling popular industry questions regarding data structures and algortihms.\nNote: this was my very first full-stack application.',
     stack: ['React', 'Bootstrap', 'JavaScript', 'Redux', 'Node', 'Express', 'MongoDB'],
     code: 'https://github.com/KevinSaephanh/algoprotoday',
     site: '',
@@ -87,8 +87,8 @@ const Projects: NextPage = () => {
         </article>
       </section>
       <section className='flex-center flex-col md:h-2/4 mb-4 md:mb-8 p-4 rounded border-t-2 border-black dark:border-slate-100'>
-        <article className='flex-center px-4 md:mx-auto mb-4'>
-          <span className='md:text-center whitespace-pre-line'>{active.desc}</span>
+        <article className='flex-center px-4 md:px-12 md:mx-auto mb-4'>
+          <span className='whitespace-pre-line'>{active.desc}</span>
         </article>
         <article className='flex-center'>
           <a className='text-2xl mr-4' href={active.code} target='_blank' rel='noopener noreferrer'>

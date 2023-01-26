@@ -13,22 +13,6 @@
     @apply grid grid-flow-col grid-rows-4 gap-x-24;
   }
 
-  .scrollbar::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    background: #f7f4ed;
-    border-radius: 100vh;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: slategray;
-    border-radius: 100vh;
-    border: 3px solid #f6f7ed;
-  }
-
   input,
   textarea {
     @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-full md:w-2/4 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
@@ -58,6 +42,22 @@
 
 .light {
   background-color: #fffdfc;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f7f4ed;
+  border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: slategray;
+  border-radius: 100vh;
+  border: 3px solid #f6f7ed;
 }
 
 .game-font {

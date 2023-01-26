@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     path: '/pathfinder.png',
     title: 'Data Generator',
-    desc: 'An app that allows users to create mock data (in JSON format) and modules for environment variable types (env.d.ts)',
+    desc: 'Create up to 1000 records of mock data for your application, using common properties of entities such as email and names.\nIn addition, create modules for environment variable types to make them type-safe.',
     stack: ['React', 'Typescript', 'Tailwind'],
     code: 'https://github.com/KevinSaephanh/data-generator',
     site: 'https://inquisitive-entremet-11acdd.netlify.app/',
@@ -56,10 +56,10 @@ const Projects: NextPage = () => {
   const [active, setActive] = React.useState(projects[1]);
 
   return (
-    <div className='md:w-2/3 lg:w-2/4 md:mx-auto themed-border'>
-      <section className='flex flex-col md:flex-row'>
+    <div className='w-full lg:w-2/4 h-670 md:h-500 md:mx-auto themed-border'>
+      <section className='flex flex-col md:flex-row h-3/5 md:h-2/4'>
         <article className='flex-center md:pr-4 md:border-r-2 border-white'>
-          <ul className='scrollbar flex flex-row mb-4 md:mb-0 md:flex-col p-2 overflow-y-auto md:overflow-hidden'>
+          <ul className='scrollbar flex flex-row md:flex-col p-2 overflow-y-auto md:overflow-hidden'>
             {projects.map((p, key) => (
               <li
                 key={key}
@@ -73,21 +73,22 @@ const Projects: NextPage = () => {
             ))}
           </ul>
         </article>
-        <article className='flex-center flex-col md:flex-row p-4'>
-          <div className='md:w-1/3'>
-            asdf
-            {/* <Image src={active.path} alt='' fill={true} className='themed-border' /> */}
+        <article className='flex-center flex-col md:flex-row w-full md:w-2/3 h-full'>
+          <div className='relative w-full h-full'>
+            <Image src={active.path} alt='' fill={true} className='themed-border' />
           </div>
-          <ul className='flex flex-row flex-wrap md:grid-list-cols md:w-2/4 h-full justify-evenly'>
-            {active.stack.map((s) => (
-              <li className='mr-3 md:mr-0'>{s}</li>
+          <ul className='p-4 md:pl-12 flex flex-row flex-wrap md:grid-list-cols md:w-2/4 md:h-full justify-evenly'>
+            {active.stack.map((s, key) => (
+              <li className='mr-3 md:mr-0' key={key}>
+                {s}
+              </li>
             ))}
           </ul>
         </article>
       </section>
-      <section className='flex-center flex-col mb-4 md:mb-8 p-4 rounded border-t-2 border-black dark:border-slate-100'>
+      <section className='flex-center flex-col md:h-2/4 mb-4 md:mb-8 p-4 rounded border-t-2 border-black dark:border-slate-100'>
         <article className='flex-center px-4 md:mx-auto mb-4'>
-          <span className='text-center whitespace-pre-line'>{active.desc}</span>
+          <span className='md:text-center whitespace-pre-line'>{active.desc}</span>
         </article>
         <article className='flex-center'>
           <a className='text-2xl mr-4' href={active.code} target='_blank' rel='noopener noreferrer'>

@@ -11,14 +11,14 @@ export const ThemeButton: React.FC = () => {
     <button
       aria-label='Toggle Dark Mode'
       type='button'
-      className='h-10 w-10 rounded-full p-1 sm:ml-2 hover:border-2 hover:bg-slate-400 dark:hover:bg-slate-700'
+      className='h-10 w-10 rounded-full p-1 mt-1 sm:ml-2 hover:border-2 hover:bg-slate-400 dark:hover:bg-slate-700'
       onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'
         fill='currentColor'
-        className='text-gray-900 dark:text-gray-100 mt-1'
+        className='text-gray-900 dark:text-gray-100'
       >
         {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
           <path

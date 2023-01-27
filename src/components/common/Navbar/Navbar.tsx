@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { HamburgerButton } from '../../ui/Buttons/HamburgerButton';
 import { ThemeButton } from '../../ui/Buttons/ThemeButton';
@@ -21,9 +22,10 @@ const links = [
 
 export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
 
   return (
-    <nav className='h-screen relative px-4 md:h-16 z-50'>
+    <nav className='h-screen relative px-2 lg:px-6 md:h-16 z-50'>
       <div className='flex flex-wrap items-center justify-between'>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />
@@ -42,12 +44,17 @@ export const Navbar: React.FC = () => {
         </section>
 
         <section
-          className={`flex-center flex-col md:flex-row md:flex md:ml-auto w-full md:w-auto md:order-1 
+          className={`flex-center flex-col md:flex-row md:flex md:ml-auto w-full md:w-auto
               ${open ? 'flex' : 'hidden'}`}
         >
           <ul className='flex flex-col md:flex-row list-none p-2 mt-4 md:space-x-8 md:mt-0'>
             {links.map((nav, key) => (
-              <NavLink href={nav.link} label={nav.label} key={key} />
+              <NavLink
+                href={nav.link}
+                label={nav.label}
+                active={router.pathname === nav.link}
+                key={key}
+              />
             ))}
             <NavLink href={'/resume.pdf'} label={'Resume'} target={'_blank'} />
             <ThemeButton />

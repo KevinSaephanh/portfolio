@@ -20,7 +20,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
     <Link
       href={href}
       target={target}
-      className={`link-item flex items-center hover-highlight text-xl py-2 hover:underline hover:underline-offset-4 ${
+      className={`link-item flex items-center font-bold hover-highlight text-xl py-2 hover:underline hover:underline-offset-4 ${
         active ? 'active-link' : ''
       } ${styles}`}
       aria-current='page'

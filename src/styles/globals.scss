@@ -38,6 +38,39 @@
   .themed-border {
     @apply rounded border-2 border-black dark:border-slate-100;
   }
+
+  .game-font {
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .highlight {
+    @apply text-violet-800 dark:text-teal-400 border-violet-800 dark:border-teal-400;
+  }
+
+  .active-link {
+    @apply highlight underline;
+  }
+
+  h2,
+  a,
+  .game-font,
+  .hover-highlight {
+    &:hover {
+      @apply highlight;
+    }
+  }
+
+  button {
+    border-color: #194642;
+
+    &:hover:enabled {
+      @apply highlight;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+    }
+  }
 }
 
 .light {
@@ -58,38 +91,6 @@
   background: slategray;
   border-radius: 100vh;
   border: 3px solid #f6f7ed;
-}
-
-.game-font {
-  font-family: 'Press Start 2P', cursive;
-}
-
-.active-link {
-  color: #50e4c4;
-  text-decoration: underline;
-}
-
-h2,
-a,
-.game-font,
-.hover-highlight {
-  &:hover {
-    color: #50e4c4;
-    border-color: #50e4c4;
-  }
-}
-
-button {
-  border-color: #194642;
-
-  &:hover:enabled {
-    color: #50e4c4;
-    border-color: #50e4c4;
-  }
-
-  &[disabled] {
-    opacity: 0.5;
-  }
 }
 
 // TODO: Replace logo with ThreeJS model

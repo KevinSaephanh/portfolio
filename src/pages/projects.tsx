@@ -75,7 +75,7 @@ const Projects: NextPage = () => {
         </article>
         <article className='flex-center flex-col md:flex-row w-full md:w-2/3 h-full'>
           <div className='relative w-full h-full'>
-            <Image src={active.path} alt='' fill={true} className='themed-border' />
+            <Image src={active.path} alt='' fill={true} className='themed-border' priority={true} />
           </div>
           <ul className='p-4 md:pl-12 flex flex-row flex-wrap md:grid-list-cols md:w-2/4 md:h-full justify-evenly'>
             {active.stack.map((s, key) => (

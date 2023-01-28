@@ -42,6 +42,7 @@ const Contact: NextPage = () => {
   };
 
   const disabled = () => {
+    // TODO: fix
     const { name, email, message } = inputs.current;
     return !!submitMessage || !name || !email || !message;
   };

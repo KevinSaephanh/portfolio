@@ -2,6 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 
+// TODO: Add party models
 const Home: NextPage = () => {
   const [isLoading, setLoading] = React.useState(true);
 

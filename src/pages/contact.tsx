@@ -2,18 +2,22 @@ import React from 'react';
 import { NextPage } from 'next';
 import { Input } from '../components/ui/Input/Input';
 import { TextArea } from '../components/ui/TextArea/TextArea';
-
+// TODO: Add maplestory models
 const Contact: NextPage = () => {
   const inputs = React.useRef({
     name: '',
     email: '',
     message: '',
   });
+  const [submitDisabled, setSubmitDisabled] = React.useState(true);
   const [submitMessage, setSubmitMessage] = React.useState('');
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    inputs.current[name] = value;
+    const { name: key, value } = e.target;
+    inputs.current[key] = value;
+
+    const { name, email, message } = inputs.current;
+    setSubmitDisabled(!name || !email || !message);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,12 +43,6 @@ const Contact: NextPage = () => {
     }
 
     setTimeout(() => setSubmitMessage(''), 2000);
-  };
-
-  const disabled = () => {
-    // TODO: fix
-    const { name, email, message } = inputs.current;
-    return !!submitMessage || !name || !email || !message;
   };
 
   return (
@@ -85,7 +83,7 @@ const Contact: NextPage = () => {
         <button
           className='text-lg font-bold border-4 px-6 py-2 rounded'
           type='submit'
-          disabled={disabled()}
+          disabled={submitDisabled}
         >
           Send
         </button>

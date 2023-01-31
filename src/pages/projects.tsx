@@ -46,26 +46,24 @@ const projects = [
     path: '/assets/sort_visualizer.png',
     title: 'Placeholder',
     desc: 'This app also produces algorithm visualizations. A graph is displayed containing a random array of bars of varying length. After starting, bars begin moving left and right to imitate how the sorting algorithm works. Once sorting is completed, all bars will be highlighted.',
-    stack: ['React', 'TypeScript', 'Bootstrap'],
+    stack: ['React', 'Bootstrap', 'JavaScript', 'Redux', 'Node', 'Express', 'MongoDB'],
     code: 'https://github.com/KevinSaephanh/Sort_Visualizer',
     site: 'https://kevinsaephanh.github.io/Sort_Visualizer/',
   },
 ];
 
 const Projects: NextPage = () => {
-  const [active, setActive] = React.useState(projects[1]);
+  const [active, setActive] = React.useState(projects[0]);
 
   return (
     <div className='w-full lg:w-2/4 h-670 md:h-500 md:mx-auto themed-border'>
       <section className='flex flex-col md:flex-row h-3/5 md:h-2/4'>
-        <article className='flex-center md:pr-4 md:border-r-2 md:w-1/3 border-white'>
-          <ul className='scrollbar flex flex-row md:flex-col p-2 overflow-y-auto md:overflow-hidden'>
+        <article className='md:border-r-2 md:w-1/3 border-white'>
+          <ul className='scrollbar flex flex-row md:flex-col gap-x-5 md:gap-0 p-2 md:mx-auto overflow-y-auto md:overflow-hidden'>
             {projects.map((p, key) => (
               <li
                 key={key}
-                className={`flex-center cursor-pointer p-2 md:p-1 rounded hover:text-teal-300 ${
-                  active.id === key + 1 ? 'bg-slate-500' : ''
-                }`}
+                className={`flex-center cursor-pointer p-2 md:p-1`}
                 onClick={() => setActive(projects[key])}
               >
                 <Image
@@ -73,9 +71,15 @@ const Projects: NextPage = () => {
                   height={30}
                   width={40}
                   alt=''
-                  className={`${active.id === key + 1 ? '' : 'hidden'}`}
+                  className={`md:mr-2 ${active.id === key + 1 ? '' : 'invisible'}`}
                 />
-                <p className='whitespace-nowrap'>{p.title}</p>
+                <p
+                  className={`md:w-2/3 whitespace-nowrap hover:text-violet-700 dark:hover:text-teal-300 ${
+                    active.id === key + 1 ? 'bg-slate-500 p-1 rounded' : ''
+                  }`}
+                >
+                  {p.title}
+                </p>
               </li>
             ))}
           </ul>
@@ -84,7 +88,7 @@ const Projects: NextPage = () => {
           <div className='relative w-full h-full'>
             <Image src={active.path} alt='' fill={true} className='themed-border' priority={true} />
           </div>
-          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols md:w-2/4 md:h-full justify-evenly'>
+          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols md:w-2/4 md:h-4/5 justify-evenly'>
             {active.stack.map((s, key) => (
               <li className='mr-3 md:mr-0' key={key}>
                 {s}

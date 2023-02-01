@@ -48,7 +48,7 @@ const projects = [
     desc: 'This app also produces algorithm visualizations. A graph is displayed containing a random array of bars of varying length. After starting, bars begin moving left and right to imitate how the sorting algorithm works. Once sorting is completed, all bars will be highlighted.',
     stack: ['React', 'Bootstrap', 'JavaScript', 'Redux', 'Node', 'Express', 'MongoDB'],
     code: 'https://github.com/KevinSaephanh/Sort_Visualizer',
-    site: 'https://kevinsaephanh.github.io/Sort_Visualizer/',
+    site: 'https://gentle-clafoutis-1e9dfe.netlify.app/',
   },
 ];
 

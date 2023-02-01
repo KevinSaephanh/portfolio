@@ -12,3 +12,5 @@ export const Model: React.FC<ModelProps> = ({ path }) => {
 
   return <primitive object={gltf.scene} ref={model} />;
 };
+// Lizard: https://sketchfab.com/enalrem
+// vivi: https://sketchfab.com/yton

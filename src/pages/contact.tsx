@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import { Input } from '../components/ui/Input/Input';
 import { TextArea } from '../components/ui/TextArea/TextArea';
-// TODO: Add maplestory models
+
 const Contact: NextPage = () => {
   const inputs = React.useRef({
     name: '',

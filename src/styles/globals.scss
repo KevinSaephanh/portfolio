@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@layer components {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .grid-list-cols {
+    @apply grid grid-flow-col grid-rows-4 gap-x-24;
+  }
+
+  input,
+  textarea {
+    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-full md:w-2/4 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
+    border-color: #194642;
+  }
+
+  .themed-text {
+    @apply text-black dark:text-white;
+  }
+
+  span,
+  h1,
+  li,
+  p {
+    @apply themed-text font-semibold;
+  }
+
+  a,
+  .link-item {
+    @apply rounded md:bg-transparent md:p-0;
+  }
+
+  .themed-border {
+    @apply rounded border-2 border-black dark:border-slate-100;
+  }
+
+  .game-font {
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .highlight {
+    @apply text-violet-800 dark:text-teal-400 border-violet-800 dark:border-teal-400;
+  }
+
+  .active-link {
+    @apply highlight underline;
+  }
+
+  h2,
+  a,
+  .game-font,
+  .hover-highlight {
+    &:hover {
+      @apply highlight;
+    }
+  }
+
+  button {
+    border-color: #194642;
+
+    &:hover:enabled {
+      @apply highlight;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+    }
+  }
+}
+
+.light {
+  background-color: #fffdfc;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f7f4ed;
+  border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: slategray;
+  border-radius: 100vh;
+  border: 3px solid #f6f7ed;
+}
+
+// TODO: Replace logo with ThreeJS model
+#yeti {
+  top: 15px;
+  left: 3px;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #719ece;
+  width: 35px;
+  height: 32px;
+  margin-left: 15px;
+  border-radius: 3px;
+  -webkit-filter: drop-shadow(0 1px 10px rgba(113, 158, 206, 0.8));
+  box-shadow: 0 1px 10px rgba(113, 158, 206, 0.8);
+  filter: drop-shadow(0 1px 10px rgba(113, 158, 206, 0.8));
+  z-index: 9999;
+
+  &::after,
+  &::before {
+    bottom: 100%;
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 5px;
+    left: 50%;
+    margin-left: -5px;
+  }
+
+  &::before {
+    border-color: rgba(113, 158, 206, 0);
+    border-bottom-color: #719ece;
+    border-width: 6px;
+    left: 50%;
+    margin-left: -6px;
+  }
+
+  // Change facial expression of yeti on hover
+  &:hover {
+    .eye {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom: 0;
+      box-sizing: border-box;
+    }
+
+    .mouth {
+      margin-top: -12px;
+    }
+
+    .cheek {
+      display: none;
+    }
+  }
+
+  .eye {
+    height: 7px;
+    width: 7px;
+    background: black;
+    border-radius: 50%;
+  }
+
+  .eye1 {
+    position: absolute;
+    z-index: 10000;
+    margin: 12px;
+    top: -6px;
+    left: 9px;
+  }
+
+  .eye2 {
+    position: relative;
+    margin: 12px;
+    top: -6px;
+    left: -6px;
+  }
+
+  .cheek {
+    height: 5px;
+    width: 8px;
+    background: rgb(253, 179, 192);
+    border-radius: 50%;
+  }
+
+  .cheek1 {
+    position: absolute;
+    z-index: 10000;
+    margin: 12px;
+    top: 3px;
+    left: 10px;
+  }
+
+  .cheek2 {
+    position: relative;
+    margin: 12px;
+    top: -16px;
+    left: -9px;
+  }
+
+  .mouth {
+    width: 11px;
+    height: 5px;
+    color: black;
+    font-size: 7px;
+    letter-spacing: -0.8px;
+    margin: 0 auto;
+    margin-top: -29px;
+    transform: scale(1.5, 1);
+  }
+}
+
+#slime {
+  width: 250px;
+  height: 230px;
+  border-radius: 15% 50% 80% 50%;
+  border: 1px solid green;
+  background: rgb(119, 241, 119);
+  transform: rotate(40deg);
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: 0;
+
+  &::after {
+    content: '';
+    width: 80px;
+    height: 50px;
+    border-radius: 60%;
+    position: absolute;
+    z-index: 1000;
+    transform: rotate(-18deg);
+    left: 5px;
+    top: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(119, 241, 119) 100%);
+  }
+
+  .antenna {
+    width: 300px;
+    position: relative;
+    z-index: 1;
+    transform: rotate(-150deg) scale(7, 1.2);
+    letter-spacing: -3px;
+    margin-top: -10px;
+    top: -35px;
+    right: 215px;
+
+    &::after {
+      content: '';
+      width: 5px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgb(112, 241, 112);
+      position: absolute;
+      z-index: 1000;
+    }
+  }
+
+  .eye1,
+  .eye2 {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background: black;
+    color: yellow;
+    font-size: 5.7rem;
+    line-height: 30px;
+    transform: rotate(-310deg);
+    padding: 17px 12px 0 0;
+  }
+
+  .eye1 {
+    margin-left: 30px;
+    margin-top: 80px;
+    position: absolute;
+    z-index: 10000;
+  }
+
+  .eye2 {
+    margin-top: 20px;
+    margin-left: 100px;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .mouth {
+    font-family: 'Sriracha', cursive;
+    font-weight: normal !important;
+    color: black;
+    position: absolute;
+    z-index: 10000;
+    transform: rotate(-45deg) scale(5.5, 1.5);
+    margin-top: 110px;
+    margin-left: 120px;
+  }
+}

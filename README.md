@@ -1,6 +1,12 @@
 # Portfolio Description
 
-This is my portfolio project built using React. My portfolio gives a little insight about me, my skills (tech stack and proficiency), and personal projects. [Link](https://kevinsaephanh.com/)
+This is my portfolio project built using Next.js: [Link](https://kevinsaephanh.com/)
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- Tailwind
 
 ## Deployment Process
 

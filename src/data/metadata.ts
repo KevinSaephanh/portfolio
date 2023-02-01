@@ -1,0 +1,25 @@
+export default {
+  title: 'Portfolio',
+  author: 'Kevin Saephanh',
+  headerTitle: 'KevinSaephanhPortfolio',
+  description: 'Portfolio site for Kevin Saephanh',
+  language: 'en-us',
+  theme: 'system',
+  siteUrl: 'https://kevinsaephanh.com/',
+  siteRepo: 'https://github.com/KevinSaephanh/portfolio',
+  locale: 'en-US',
+  openGraph: {
+    title: 'Kevin Saephanh',
+    description: 'Portfolio site for Kevin Saephanh',
+    type: 'website',
+    url: 'https://kevinsaephanh.com/',
+    siteName: 'Kevin Saephanh',
+    images: [],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    handle: 'KevCoolio93',
+    site: 'https://twitter.com/KevCoolio93',
+    description: '',
+  },
+};

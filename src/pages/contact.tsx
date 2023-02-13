@@ -37,7 +37,7 @@ const Contact: NextPage = () => {
         email: '',
         message: '',
       };
-      setSubmitMessage('Message sent successfully 🦖');
+      setSubmitMessage('Message sent successfully');
     } else {
       setSubmitMessage('Message could not be sent');
     }
@@ -77,7 +77,7 @@ const Contact: NextPage = () => {
           <TextArea
             type='text'
             name='message'
-            placeholder='Speak your mind 😊'
+            placeholder='Send a message'
             label='Message'
             minLength={5}
             maxLength={300}

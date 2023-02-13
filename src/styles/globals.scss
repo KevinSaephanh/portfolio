@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @layer components {
+  .light {
+    background-color: #fffdfc;
+  }
+
   .flex-center {
     @apply flex items-center justify-center;
   }
@@ -44,11 +48,17 @@
   }
 
   .highlight {
-    @apply text-violet-800 dark:text-teal-400 border-violet-800 dark:border-teal-400;
+    @apply dark:text-teal-400 dark:border-teal-400;
+    color: #6e07f3;
+    border-color: #6e07f3;
   }
 
   .active-link {
     @apply highlight underline;
+  }
+
+  .contact-form {
+    @apply bg-slate-100 dark:bg-neutral-900;
   }
 
   h2,
@@ -71,10 +81,6 @@
       opacity: 0.5;
     }
   }
-}
-
-.light {
-  background-color: #fffdfc;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -108,7 +114,7 @@
     width: 600px;
     max-width: 95vw;
     height: 400px;
-    background: linear-gradient(0deg, transparent, #194642, #194642);
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
   }
@@ -121,7 +127,7 @@
     width: 600px;
     max-width: 95vw;
     height: 400px;
-    background: linear-gradient(0deg, transparent, #194642, #194642);
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;

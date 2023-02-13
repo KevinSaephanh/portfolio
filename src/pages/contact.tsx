@@ -49,9 +49,9 @@ const Contact: NextPage = () => {
     <>
       <h2 className='text-center text-lg mb-4 game-font'>CONTACT ME</h2>
       <span className='mb-2'>{submitMessage}</span>
-      <div className='box relative rounded-md overflow-hidden mx-auto'>
+      <div className='box relative rounded-lg overflow-hidden mx-auto'>
         <form
-          className='contact-form flex flex-col items-center justify-center rounded-md inset-2 absolute z-10'
+          className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
           onSubmit={handleSubmit}
         >
           <Input

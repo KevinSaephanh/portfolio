@@ -47,7 +47,7 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <h2 className='text-center text-lg mb-4 game-font'>CONTACT ME</h2>
+      <h2 className='text-center text-lg mb-4'>CONTACT ME</h2>
       <span className='mb-2'>{submitMessage}</span>
       <div className='box relative rounded-lg overflow-hidden mx-auto'>
         <form

@@ -37,7 +37,7 @@ const Contact: NextPage = () => {
         email: '',
         message: '',
       };
-      setSubmitMessage('Message sent successfully 🦖');
+      setSubmitMessage('Message sent successfully');
     } else {
       setSubmitMessage('Message could not be sent');
     }
@@ -47,47 +47,52 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <h2 className='text-center text-lg mb-4 game-font'>CONTACT ME</h2>
+      <h2 className='text-center text-lg mb-4'>CONTACT ME</h2>
       <span className='mb-2'>{submitMessage}</span>
-      <form className='flex flex-col items-center justify-between' onSubmit={handleSubmit}>
-        <Input
-          type='text'
-          name='name'
-          placeholder='Name'
-          label='Name'
-          minLength={3}
-          maxLength={100}
-          onChange={handleInput}
-          required
-        />
-        <Input
-          type='email'
-          name='email'
-          placeholder='Email'
-          label='Email'
-          minLength={7}
-          maxLength={100}
-          onChange={handleInput}
-          required
-        />
-        <TextArea
-          type='text'
-          name='message'
-          placeholder='Speak your mind 😊'
-          label='Message'
-          minLength={5}
-          maxLength={300}
-          onChange={handleInput}
-          required
-        />
-        <button
-          className='text-lg font-bold border-4 px-6 py-2 rounded'
-          type='submit'
-          disabled={submitDisabled}
+      <div className='box relative rounded-lg overflow-hidden mx-auto'>
+        <form
+          className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
+          onSubmit={handleSubmit}
         >
-          Send
-        </button>
-      </form>
+          <Input
+            type='text'
+            name='name'
+            placeholder='Name'
+            label='Name'
+            minLength={3}
+            maxLength={100}
+            onChange={handleInput}
+            required
+          />
+          <Input
+            type='email'
+            name='email'
+            placeholder='Email'
+            label='Email'
+            minLength={7}
+            maxLength={100}
+            onChange={handleInput}
+            required
+          />
+          <TextArea
+            type='text'
+            name='message'
+            placeholder='Send a message'
+            label='Message'
+            minLength={5}
+            maxLength={300}
+            onChange={handleInput}
+            required
+          />
+          <button
+            className='text-lg font-bold border-4 px-6 py-2 rounded'
+            type='submit'
+            disabled={submitDisabled}
+          >
+            Send
+          </button>
+        </form>
+      </div>
     </>
   );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
+import { Press_Start_2P } from '@next/font/google';
 
-// TODO: Add party models
+const PressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'] });
+
 const Home: NextPage = () => {
   const [isLoading, setLoading] = React.useState(true);
 
@@ -19,8 +21,12 @@ const Home: NextPage = () => {
         </>
       ) : (
         <>
-          <h1 className='game-font text-2xl font-bold tracking-wide pb-4'>Kevin Saephanh</h1>
-          <span className='game-font text-md md:text-lg font-bold tracking-wide'>
+          <h1 className={`${PressStartToPlay.className} text-xl md:text-3xl tracking-wide pb-4`}>
+            Kevin Saephanh
+          </h1>
+          <span
+            className={`${PressStartToPlay.className} text-sm md:text-md md:text-lg tracking-wide`}
+          >
             Full Stack Developer
           </span>
         </>

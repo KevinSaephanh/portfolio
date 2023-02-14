@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
   const router = useRouter();
 
   return (
-    <nav className='h-screen relative px-2 lg:px-6 md:h-16 z-50'>
+    <nav className='relative px-2 lg:px-6 md:h-16 z-20'>
       <div className='flex flex-wrap items-center justify-between'>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />
@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
                 key={key}
               />
             ))}
-            <NavLink href={'/resume.pdf'} label={'Resume'} target={'_blank'} />
+            <NavLink href={'/assets/resume.pdf'} label={'Resume'} target={'_blank'} />
             <ThemeButton />
           </ul>
         </section>

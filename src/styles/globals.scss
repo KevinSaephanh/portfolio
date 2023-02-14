@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 @layer components {
+  .light {
+    background-color: #fffdfc;
+  }
+
   .flex-center {
     @apply flex items-center justify-center;
   }
@@ -15,7 +17,7 @@
 
   input,
   textarea {
-    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-full md:w-2/4 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
+    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-11/12 md:w-5/6 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
     border-color: #194642;
   }
 
@@ -39,21 +41,23 @@
     @apply rounded border-2 border-black dark:border-slate-100;
   }
 
-  .game-font {
-    font-family: 'Press Start 2P', cursive;
-  }
-
   .highlight {
-    @apply text-violet-800 dark:text-teal-400 border-violet-800 dark:border-teal-400;
+    @apply dark:text-teal-400 dark:border-teal-400;
+    color: #6e07f3;
+    border-color: #6e07f3;
   }
 
   .active-link {
     @apply highlight underline;
   }
 
+  .contact-form {
+    @apply bg-slate-100 dark:bg-neutral-900;
+  }
+
+  h1,
   h2,
   a,
-  .game-font,
   .hover-highlight {
     &:hover {
       @apply highlight;
@@ -73,10 +77,6 @@
   }
 }
 
-.light {
-  background-color: #fffdfc;
-}
-
 .scrollbar::-webkit-scrollbar {
   width: 15px;
   height: 15px;
@@ -93,7 +93,41 @@
   border: 3px solid #f6f7ed;
 }
 
-// TODO: Replace logo with ThreeJS model
+// credit: https://www.youtube.com/watch?v=cxm5bCCa9OA&t=608s&ab_channel=OnlineTutorials
+.box {
+  content: '';
+  width: 600px;
+  max-width: 90vw;
+  height: 400px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 600px;
+    max-width: 95vw;
+    height: 400px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 600px;
+    max-width: 95vw;
+    height: 400px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+  }
+}
+
 #yeti {
   top: 15px;
   left: 3px;
@@ -111,9 +145,9 @@
 
   &::after,
   &::before {
+    content: ' ';
     bottom: 100%;
     border: solid transparent;
-    content: ' ';
     height: 0;
     width: 0;
     position: absolute;
@@ -210,87 +244,12 @@
   }
 }
 
-#slime {
-  width: 250px;
-  height: 230px;
-  border-radius: 15% 50% 80% 50%;
-  border: 1px solid green;
-  background: rgb(119, 241, 119);
-  transform: rotate(40deg);
-  margin: 0 auto;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: 0;
-
-  &::after {
-    content: '';
-    width: 80px;
-    height: 50px;
-    border-radius: 60%;
-    position: absolute;
-    z-index: 1000;
-    transform: rotate(-18deg);
-    left: 5px;
-    top: 20px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(119, 241, 119) 100%);
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .antenna {
-    width: 300px;
-    position: relative;
-    z-index: 1;
-    transform: rotate(-150deg) scale(7, 1.2);
-    letter-spacing: -3px;
-    margin-top: -10px;
-    top: -35px;
-    right: 215px;
-
-    &::after {
-      content: '';
-      width: 5px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgb(112, 241, 112);
-      position: absolute;
-      z-index: 1000;
-    }
-  }
-
-  .eye1,
-  .eye2 {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    background: black;
-    color: yellow;
-    font-size: 5.7rem;
-    line-height: 30px;
-    transform: rotate(-310deg);
-    padding: 17px 12px 0 0;
-  }
-
-  .eye1 {
-    margin-left: 30px;
-    margin-top: 80px;
-    position: absolute;
-    z-index: 10000;
-  }
-
-  .eye2 {
-    margin-top: 20px;
-    margin-left: 100px;
-    position: absolute;
-    z-index: 10;
-  }
-
-  .mouth {
-    font-family: 'Sriracha', cursive;
-    font-weight: normal !important;
-    color: black;
-    position: absolute;
-    z-index: 10000;
-    transform: rotate(-45deg) scale(5.5, 1.5);
-    margin-top: 110px;
-    margin-left: 120px;
+  100% {
+    transform: rotate(360deg);
   }
 }

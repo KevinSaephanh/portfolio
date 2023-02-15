@@ -50,7 +50,7 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <h2 className={`${spectral.className} text-center text-lg mb-6`}>CONTACT ME</h2>
+      <h2 className={`${spectral.className} text-center text-2xl mb-6`}>CONTACT</h2>
       <div className='box relative rounded-lg overflow-hidden mx-auto'>
         <form
           className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'

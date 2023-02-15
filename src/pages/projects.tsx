@@ -7,7 +7,7 @@ import { TbWorld } from 'react-icons/tb';
 const projects = [
   {
     id: 1,
-    path: '/assets/pathfinder.png',
+    path: '/assets/data-generator.png',
     title: 'Data Generator',
     desc: 'Create up to 1000 records of mock data for your application, using common properties of entities such as email, names, and encrypted text.\nIn addition, upload .env files to create modules for environment variable types to make them type-safe.',
     stack: ['React', 'Typescript', 'Tailwind'],
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     id: 3,
-    path: '/assets/sort_visualizer.png',
+    path: '/assets/sort-visualizer.png',
     title: 'Sort Visualizer',
     desc: 'A visualization of sorting algorithms.\n\u2022 A graph is displayed containing a random array of bars of varying length.\n\u2022 After starting, bars begin moving left and right to imitate how the sorting algorithm works.\n\u2022 Once sorting is completed, all bars will be highlighted.',
     stack: ['React', 'TypeScript', 'Bootstrap'],
@@ -34,21 +34,12 @@ const projects = [
   },
   {
     id: 4,
-    path: '/assets/sort_visualizer.png',
+    path: '',
     title: 'AlgoProToday',
     desc: 'Technical interview prep platform. Level up your skills by tackling popular industry questions regarding data structures and algortihms.\nNote: this was my very first full-stack application.',
     stack: ['React', 'Bootstrap', 'JavaScript', 'Redux', 'Node', 'Express', 'MongoDB'],
     code: 'https://github.com/KevinSaephanh/algoprotoday',
     site: '',
-  },
-  {
-    id: 5,
-    path: '/assets/sort_visualizer.png',
-    title: 'Placeholder',
-    desc: 'This app also produces algorithm visualizations. A graph is displayed containing a random array of bars of varying length. After starting, bars begin moving left and right to imitate how the sorting algorithm works. Once sorting is completed, all bars will be highlighted.',
-    stack: ['React', 'Bootstrap', 'JavaScript', 'Redux', 'Node', 'Express', 'MongoDB'],
-    code: 'https://github.com/KevinSaephanh/Sort_Visualizer',
-    site: 'https://gentle-clafoutis-1e9dfe.netlify.app/',
   },
 ];
 
@@ -112,6 +103,7 @@ const Projects: NextPage = () => {
             href={active.site}
             target='_blank'
             rel='noopener noreferrer'
+            aria-disabled={!active.site}
           >
             <TbWorld />
           </a>

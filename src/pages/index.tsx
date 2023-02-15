@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 import { Press_Start_2P } from '@next/font/google';
 
-const PressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'] });
+const pressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'] });
 
 const Home: NextPage = () => {
   const [isLoading, setLoading] = React.useState(true);
@@ -21,11 +21,11 @@ const Home: NextPage = () => {
         </>
       ) : (
         <>
-          <h1 className={`${PressStartToPlay.className} text-xl md:text-3xl tracking-wide pb-4`}>
+          <h1 className={`${pressStartToPlay.className} text-xl md:text-3xl tracking-wide pb-4`}>
             Kevin Saephanh
           </h1>
           <span
-            className={`${PressStartToPlay.className} text-sm md:text-md md:text-lg tracking-wide`}
+            className={`${pressStartToPlay.className} text-sm md:text-lg tracking-wide hover:highlight`}
           >
             Full Stack Developer
           </span>

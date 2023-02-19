@@ -57,8 +57,8 @@ export const Navbar: React.FC = () => {
               />
             ))}
             <NavLink href={'/assets/resume.pdf'} label={'Resume'} target={'_blank'} />
-            <ThemeButton />
           </ul>
+          <ThemeButton />
         </section>
       </div>
     </nav>

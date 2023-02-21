@@ -7,22 +7,23 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-const variants = {
-  hidden: { opacity: 0, x: 0, y: 20 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: -0, y: 20 },
-};
-
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const main = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+    },
+  };
+
   return (
     <div className='flex h-screen flex-col justify-between'>
       <Navbar />
       <motion.main
-        variants={variants}
+        variants={main}
         initial='hidden'
-        animate='enter'
+        animate='visible'
         exit='exit'
-        transition={{ duration: 0.4, type: 'easeInOut' }}
         className='p-5 my-5 relative'
       >
         {children}

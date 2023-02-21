@@ -56,7 +56,7 @@ const Contact: NextPage = () => {
           className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
           onSubmit={handleSubmit}
         >
-          <span className='mb-2'>{submitMessage}</span>
+          <span className='mb-2 font-bold text-red-600 dark:text-red-700'>{submitMessage}</span>
           <Input
             type='text'
             name='name'
@@ -88,7 +88,7 @@ const Contact: NextPage = () => {
             required
           />
           <button
-            className='text-lg font-bold border-4 px-6 py-2 rounded'
+            className='text-lg font-bold bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 px-6 py-2 mt-4 rounded'
             type='submit'
             disabled={submitDisabled}
           >

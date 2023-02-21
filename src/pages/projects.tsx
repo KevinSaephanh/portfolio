@@ -65,8 +65,8 @@ const Projects: NextPage = () => {
                   className={`md:mr-2 ${active.id === key + 1 ? '' : 'invisible'}`}
                 />
                 <p
-                  className={`md:w-2/3 whitespace-nowrap hover:text-violet-700 dark:hover:text-teal-300 ${
-                    active.id === key + 1 ? 'bg-slate-500 p-1 rounded' : ''
+                  className={`md:w-2/3 whitespace-nowrap hover:text-teal-300 ${
+                    active.id === key + 1 ? 'bg-slate-300 dark:bg-slate-500 p-1 rounded' : ''
                   }`}
                 >
                   {p.title}

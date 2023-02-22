@@ -1,12 +1,12 @@
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
 import { Model } from '../Model/Model';
 
 export const Scene: React.FC = () => {
   return (
-    <Canvas camera={{ position: [1, 1.5, 2.5], fov: 50 }} shadows>
-      <OrbitControls />
+    <Canvas camera={{ position: [0, 0, 120], fov: 20, zoom: 0.2 }}>
+      <OrbitControls enableZoom={false} />
       <ambientLight />
       <directionalLight
         position={[-5, 5, 5]}
@@ -17,10 +17,6 @@ export const Scene: React.FC = () => {
       <React.Suspense fallback={null}>
         <Model path='/assets/models/me/kevin.fbx' />
       </React.Suspense>
-      <mesh rotation={[-0.5 * Math.PI, 0, 0]} position={[0, -1, 0]} receiveShadow>
-        <planeBufferGeometry args={[10, 10, 1, 1]} />
-        <shadowMaterial transparent opacity={0.2} />
-      </mesh>
     </Canvas>
   );
 };

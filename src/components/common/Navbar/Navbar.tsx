@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className='relative px-2 lg:px-6 md:h-16 z-20'>
+    <nav className='relative flex-none px-2 lg:px-6 md:h-16 z-20'>
       <div className='flex flex-wrap items-center justify-between'>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />

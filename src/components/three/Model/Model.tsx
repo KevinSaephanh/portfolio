@@ -1,4 +1,4 @@
-import { useAnimations } from '@react-three/drei';
+import { useAnimations, useFBX } from '@react-three/drei';
 import { useLoader } from '@react-three/fiber';
 import React from 'react';
 import { AnimationClip, AnimationMixer } from 'three';
@@ -19,6 +19,7 @@ export const Model: React.FC<ModelProps> = ({ path, animations = [] }) => {
     action.play();
   });
   const fbx = useLoader(FBXLoader, path);
+  useLoader.preload(FBXLoader, path);
 
   return <primitive object={fbx} ref={model} />;
 };

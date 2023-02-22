@@ -15,7 +15,7 @@ export const Scene: React.FC = () => {
         shadow-mapSize-height={1024}
       />
       <React.Suspense fallback={null}>
-        <group position={[0, -1, 0]}></group>
+        <Model path='/assets/models/me/kevin.fbx' />
       </React.Suspense>
       <mesh rotation={[-0.5 * Math.PI, 0, 0]} position={[0, -1, 0]} receiveShadow>
         <planeBufferGeometry args={[10, 10, 1, 1]} />

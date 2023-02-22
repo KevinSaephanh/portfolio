@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           <BsDiscord />
         </a>
       </div>
-      <span className='text-md'>© 2022 Kevin Saephanh</span>
+      <span className='text-md hover:highlight'>© 2022 Kevin Saephanh</span>
     </footer>
   );
 };

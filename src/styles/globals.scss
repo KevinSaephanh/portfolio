@@ -17,8 +17,7 @@
 
   input,
   textarea {
-    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg rounded block w-11/12 md:w-5/6 dark:placeholder-gray-400 border-4 focus:ring-teal-200 focus:border-teal-200;
-    border-color: #194642;
+    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg bg-transparent border-b-2 border-teal-600 dark:border-teal-400 block w-11/12 md:w-5/6 dark:placeholder-gray-400 focus:outline-none focus:bg-teal-400 dark:focus:bg-teal-700 focus:rounded focus:py-2;
   }
 
   .themed-text {
@@ -42,9 +41,7 @@
   }
 
   .highlight {
-    @apply dark:text-teal-400 dark:border-teal-400;
-    color: #6e07f3;
-    border-color: #6e07f3;
+    @apply text-teal-600 dark:text-teal-400 border-teal-600 dark:border-teal-400;
   }
 
   .active-link {
@@ -65,14 +62,9 @@
   }
 
   button {
-    border-color: #194642;
-
-    &:hover:enabled {
-      @apply highlight;
-    }
-
     &[disabled] {
       opacity: 0.5;
+      pointer-events: none;
     }
   }
 }

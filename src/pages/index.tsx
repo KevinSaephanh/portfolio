@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 import { Press_Start_2P } from '@next/font/google';
 import { motion } from 'framer-motion';
+import { Scene } from '../components/three/Scene/Scene';
 
 const pressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'] });
 
@@ -47,6 +48,7 @@ const Home: NextPage = () => {
         </>
       ) : (
         <motion.div variants={container} initial='hidden' animate='visible' className='text-center'>
+          <Scene />
           <motion.h1
             variants={text}
             className={`${pressStartToPlay.className} text-xl md:text-3xl tracking-wide pb-4`}

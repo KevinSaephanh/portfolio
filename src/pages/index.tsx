@@ -3,10 +3,9 @@ import type { NextPage } from 'next';
 import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 import { Press_Start_2P } from '@next/font/google';
 import { Scene } from '../components/three/Scene/Scene';
-import { Text } from '@react-three/drei';
 import { motion } from 'framer-motion';
 
-const pressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'] });
+const pressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'], display: 'swap' });
 
 const Home: NextPage = () => {
   const [isLoading, setLoading] = React.useState(true);
@@ -35,39 +34,38 @@ const Home: NextPage = () => {
       },
     },
   };
+
   const toggleLoading = () => {
     setTimeout(() => setLoading(false), 1000);
   };
 
   return (
-    <div className='container flex-center flex-col mx-auto'>
+    <div className='h-full container flex flex-col items-center mx-auto'>
       {isLoading ? (
         <>
-          <ProgressBar maxPercent={100} color={'#0dba86'} toggleLoading={toggleLoading} />
-          <span>LOADING....</span>
+          <ProgressBar maxPercent={100} color={'rgb(13 148 136)'} toggleLoading={toggleLoading} />
         </>
       ) : (
         <>
-          <Scene />
-          <motion.div
+          <section className='h-3/5 w-full md:w-4/5 mx-auto'>
+            <Scene />
+          </section>
+          <motion.section
             variants={container}
             initial='hidden'
             animate='visible'
-            className='text-center'
+            className={`${pressStartToPlay.className} text-center`}
           >
-            <motion.h1
-              variants={text}
-              className={`${pressStartToPlay.className} text-xl md:text-3xl tracking-wide pb-4`}
-            >
+            <motion.h1 variants={text} className={`text-2xl md:text-3xl tracking-wide pb-4`}>
               Kevin Saephanh
             </motion.h1>
             <motion.span
               variants={text}
-              className={`${pressStartToPlay.className} text-sm md:text-lg tracking-wide hover:highlight`}
+              className={`text-sm md:text-lg tracking-wide hover:highlight`}
             >
               Full Stack Developer
             </motion.span>
-          </motion.div>
+          </motion.section>
         </>
       )}
     </div>

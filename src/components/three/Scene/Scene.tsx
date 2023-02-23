@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
-import { Vector3 } from 'three';
+import { AnimationClip, Vector3 } from 'three';
 import { Model } from '../Model/Model';
 
 export const Scene: React.FC = () => {
@@ -16,7 +16,11 @@ export const Scene: React.FC = () => {
         shadow-mapSize-height={1024}
       />
       <React.Suspense fallback={null}>
-        <Model path='/assets/models/me/me.fbx' />
+        {/* <Model path='/assets/models/me/kevin.fbx' /> */}
+        <Model
+          path='/assets/models/test/sword_and_shield_guy.fbx'
+          animations={[new AnimationClip('assets/test/attack1.fbx')]}
+        />
       </React.Suspense>
     </Canvas>
   );

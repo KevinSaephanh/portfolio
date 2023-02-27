@@ -17,14 +17,14 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
 
   return (
-    <div className='flex h-screen flex-col justify-between'>
+    <div className='flex h-screen flex-col'>
       <Navbar />
       <motion.main
         variants={main}
         initial='hidden'
         animate='visible'
         exit='exit'
-        className='p-5 my-5 relative'
+        className='p-5 my-5 relative flex-auto'
       >
         {children}
       </motion.main>

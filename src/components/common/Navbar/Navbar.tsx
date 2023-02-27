@@ -25,7 +25,11 @@ export const Navbar: React.FC = () => {
   const router = useRouter();
 
   return (
-    <nav className='w-full fixed flex-none px-2 lg:px-6 md:h-16 z-20'>
+    <nav
+      className={`w-full flex-none px-2 lg:px-6 md:h-16 z-20 ${
+        open ? 'fixed bg-white dark:bg-zinc-900 pb-4' : 'relative'
+      }`}
+    >
       <div className='flex flex-wrap items-center justify-between'>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />

@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { motion } from 'framer-motion';
 import { HamburgerButton } from '../../ui/Buttons/HamburgerButton';
 import { ThemeButton } from '../../ui/Buttons/ThemeButton';
 import { Logo } from '../Logo/Logo';
@@ -24,20 +23,9 @@ const links = [
 export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
-  const item = {
-    exit: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        ease: 'easeInOut',
-        duration: 0.3,
-        delay: 1.2,
-      },
-    },
-  };
 
   return (
-    <nav className='relative flex-none px-2 lg:px-6 md:h-16 z-20'>
+    <nav className='w-full fixed flex-none px-2 lg:px-6 md:h-16 z-20'>
       <div className='flex flex-wrap items-center justify-between'>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />

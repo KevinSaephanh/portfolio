@@ -2,7 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 import { Press_Start_2P } from '@next/font/google';
-import { Scene } from '../components/three/Scene/Scene';
+import { Scene } from '../components/canvas/Scene';
 import { motion } from 'framer-motion';
 
 const pressStartToPlay = Press_Start_2P({ weight: '400', subsets: ['latin'], display: 'swap' });
@@ -47,14 +47,14 @@ const Home: NextPage = () => {
         </>
       ) : (
         <>
-          <section className='h-3/5 w-full md:w-4/5 mx-auto'>
+          {/* <section className='h-3/5 w-full md:w-4/5 mx-auto'>
             <Scene />
-          </section>
+          </section> */}
           <motion.section
             variants={container}
             initial='hidden'
             animate='visible'
-            className={`${pressStartToPlay.className} text-center`}
+            className={`${pressStartToPlay.className} text-center my-auto`}
           >
             <motion.h1 variants={text} className={`text-2xl md:text-3xl tracking-wide pb-4`}>
               Kevin Saephanh

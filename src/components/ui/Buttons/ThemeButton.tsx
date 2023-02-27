@@ -11,7 +11,7 @@ export const ThemeButton: React.FC = () => {
     <button
       aria-label='Toggle Dark Mode'
       type='button'
-      className='h-10 w-10 rounded-full p-1 mt-1 sm:ml-2 hover:border-2 hover:bg-slate-400 dark:hover:bg-slate-700'
+      className='h-12 w-12 rounded-full p-1 sm:ml-2 hover:border-2 hover:bg-slate-400 dark:hover:bg-slate-700'
       onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       <svg

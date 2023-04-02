@@ -46,15 +46,15 @@ const Home: NextPage = () => {
           <ProgressBar maxPercent={100} color={'rgb(13 148 136)'} toggleLoading={toggleLoading} />
         </>
       ) : (
-        <>
-          {/* <section className='h-3/5 w-full md:w-4/5 mx-auto'>
+        <div className='m-auto flex-center flex-col'>
+          <section className='w-full md:w-4/5'>
             <Scene />
-          </section> */}
+          </section>
           <motion.section
             variants={container}
             initial='hidden'
             animate='visible'
-            className={`${pressStartToPlay.className} text-center my-auto`}
+            className={`${pressStartToPlay.className} text-center`}
           >
             <motion.h1 variants={text} className={`text-2xl md:text-3xl tracking-wide pb-4`}>
               Kevin Saephanh
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
               Full Stack Developer
             </motion.span>
           </motion.section>
-        </>
+        </div>
       )}
     </div>
   );

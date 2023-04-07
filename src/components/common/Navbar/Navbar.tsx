@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React from 'react';
 import { HamburgerButton } from '../../ui/Buttons/HamburgerButton';
 import { ThemeButton } from '../../ui/Buttons/ThemeButton';
@@ -20,9 +19,12 @@ const links = [
   },
 ];
 
-export const Navbar: React.FC = () => {
+type NavbarProps = {
+  route: string;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({ route }) => {
   const [open, setOpen] = React.useState(false);
-  const router = useRouter();
 
   return (
     <nav
@@ -53,12 +55,7 @@ export const Navbar: React.FC = () => {
         >
           <ul className='flex flex-col md:flex-row list-none p-2 mt-4 md:space-x-8 md:mt-0'>
             {links.map((nav, key) => (
-              <NavLink
-                href={nav.link}
-                label={nav.label}
-                active={router.pathname === nav.link}
-                key={key}
-              />
+              <NavLink href={nav.link} label={nav.label} active={route === nav.link} key={key} />
             ))}
             <NavLink href={'/assets/resume.pdf'} label={'Resume'} target={'_blank'} />
           </ul>

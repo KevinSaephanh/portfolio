@@ -3,7 +3,7 @@ import { BsLinkedin, BsGithub, BsTwitter, BsDiscord } from 'react-icons/bs';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className='text-center pb-4 flex-none'>
+    <footer className='text-center pb-4 flex-none relative'>
       <div className='flex-center text-2xl space-x-2 mb-2'>
         <a
           href='https://www.linkedin.com/in/kevin-saephanh'
@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         <a href='https://github.com/KevinSaephanh' target='_blank' rel='noopener noreferrer'>
           <BsGithub />
         </a>
-        <a href='https://twitter.com/KevCoolio93' target='_blank' rel='noopener noreferrer'>
+        <a href='https://twitter.com/KevCoolio' target='_blank' rel='noopener noreferrer'>
           <BsTwitter />
         </a>
         <a

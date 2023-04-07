@@ -18,8 +18,8 @@ export default {
   },
   twitter: {
     card: 'summary_large_image',
-    handle: 'KevCoolio93',
-    site: 'https://twitter.com/KevCoolio93',
+    handle: 'KevCoolio',
+    site: 'https://twitter.com/KevCoolio',
     description: '',
   },
 };

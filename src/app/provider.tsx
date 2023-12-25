@@ -8,5 +8,5 @@ type Props = {
 };
 
 export default function Provider({ children }: Props) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return <ThemeProvider attribute='class'>{children}</ThemeProvider>;
 }

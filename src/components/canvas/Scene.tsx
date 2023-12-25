@@ -8,6 +8,8 @@ import { Terrain } from './Terrain';
 export const Scene: React.FC = () => {
   return (
     <Canvas
+      flat
+      linear
       camera={{
         fov: 75,
         near: 0.1,

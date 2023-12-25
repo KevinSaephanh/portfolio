@@ -1,7 +1,8 @@
-import { NextPage } from 'next';
+'use client';
+
+import { ProgressBar } from '@/components/ProgressBar/ProgressBar';
 import Image from 'next/image';
 import React from 'react';
-import { ProgressBar } from '../components/common/ProgressBar/ProgressBar';
 
 const technologies = [
   {
@@ -30,9 +31,11 @@ const technologies = [
   },
 ];
 
-const About: NextPage = () => {
+export default function Page() {
   const getYearDifference = (dateString: string) => {
-    return Math.floor((new Date().getTime() - new Date(dateString).getTime()) / 3.15576e10);
+    return Math.floor(
+      (new Date().getTime() - new Date(dateString).getTime()) / 3.15576e10
+    );
   };
   const lvl = getYearDifference('1993-12-01');
 
@@ -66,18 +69,20 @@ const About: NextPage = () => {
 
         <section className='flex flex-col w-full md:w-3/5 mt-0 mb-auto'>
           <p>
-            Hi, I'm Kevin, a Full Stack Developer from California. I started off my coding journey
-            pretty late into college with the introduction to Computer Science using C++. Although I
-            wasn't able to make the switch in major to CS, I still enrolled in as many courses as I
-            would be allowed. Through these courses, I was able learn the basics of programming by
-            creating beginner-level programs such as payroll systems, calculators, and console
-            games.
+            Hi, I&apos;m Kevin, a Full Stack Developer from California. I
+            started off my coding journey pretty late into college with the
+            introduction to Computer Science using C++. Although I wasn&apos;t
+            able to make the switch in major to CS, I still enrolled in as many
+            courses as I would be allowed. Through these courses, I was able
+            learn the basics of programming by creating beginner-level programs
+            such as payroll systems, calculators, and console games.
             <br />
             <br />
-            My continued interest eventually motivated me to try and pursue a career in software
-            development. Fortunately for me, I was able to attend a coding bootcamp after college to
-            learn new technologies and network with others. This enabled me to get my foot in the
-            door and kickstart my career as a developer!
+            My continued interest eventually motivated me to try and pursue a
+            career in software development. Fortunately for me, I was able to
+            attend a coding bootcamp after college to learn new technologies and
+            network with others. This enabled me to get my foot in the door and
+            kickstart my career as a developer!
           </p>
 
           <ul className='mt-4 md:mt-6'>
@@ -88,11 +93,7 @@ const About: NextPage = () => {
                 className='flex flex-col mb-4'
               >
                 <span className='pb-2 font-bold'>{tech.title}</span>
-                <ProgressBar
-                  maxPercent={tech.proficiency}
-                  color={tech.color}
-                  toggleLoading={() => {}}
-                />
+                <ProgressBar maxPercent={tech.proficiency} color={tech.color} />
               </li>
             ))}
           </ul>
@@ -100,6 +101,4 @@ const About: NextPage = () => {
       </div>
     </>
   );
-};
-
-export default About;
+}

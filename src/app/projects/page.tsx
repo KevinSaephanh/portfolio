@@ -1,4 +1,5 @@
-import { NextPage } from 'next';
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import { BsGithub } from 'react-icons/bs';
@@ -37,13 +38,21 @@ const projects = [
     path: '',
     title: 'AlgoProToday',
     desc: 'Technical interview prep platform. Level up your skills by tackling popular industry questions regarding data structures and algortihms.\nNote: this was my very first full-stack application.',
-    stack: ['React', 'Bootstrap', 'JavaScript', 'Redux', 'Node', 'Express', 'MongoDB'],
+    stack: [
+      'React',
+      'Bootstrap',
+      'JavaScript',
+      'Redux',
+      'Node',
+      'Express',
+      'MongoDB',
+    ],
     code: 'https://github.com/KevinSaephanh/algoprotoday',
     site: '',
   },
 ];
 
-const Projects: NextPage = () => {
+export default function Page() {
   const [active, setActive] = React.useState(projects[0]);
 
   return (
@@ -62,11 +71,15 @@ const Projects: NextPage = () => {
                   height={30}
                   width={40}
                   alt=''
-                  className={`md:mr-2 ${active.id === key + 1 ? '' : 'invisible'}`}
+                  className={`md:mr-2 ${
+                    active.id === key + 1 ? '' : 'invisible'
+                  }`}
                 />
                 <p
                   className={`md:w-2/3 whitespace-nowrap hover:text-teal-300 ${
-                    active.id === key + 1 ? 'bg-slate-300 dark:bg-slate-500 p-1 rounded' : ''
+                    active.id === key + 1
+                      ? 'bg-slate-300 dark:bg-slate-500 p-1 rounded'
+                      : ''
                   }`}
                 >
                   {p.title}
@@ -77,7 +90,13 @@ const Projects: NextPage = () => {
         </article>
         <article className='flex-center flex-col md:flex-row w-full md:w-2/3 h-full'>
           <div className='relative w-full h-full'>
-            <Image src={active.path} alt='' fill={true} className='themed-border' priority={true} />
+            <Image
+              src={active.path}
+              alt=''
+              fill={true}
+              className='themed-border'
+              priority={true}
+            />
           </div>
           <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols md:w-2/4 md:h-4/5 justify-evenly'>
             {active.stack.map((s, key) => (
@@ -93,7 +112,12 @@ const Projects: NextPage = () => {
           <span className='whitespace-pre-line'>{active.desc}</span>
         </article>
         <article className='flex-center'>
-          <a className='text-2xl mr-4' href={active.code} target='_blank' rel='noopener noreferrer'>
+          <a
+            className='text-2xl mr-4'
+            href={active.code}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <BsGithub />
           </a>
           <a
@@ -111,6 +135,4 @@ const Projects: NextPage = () => {
       </section>
     </div>
   );
-};
-
-export default Projects;
+}

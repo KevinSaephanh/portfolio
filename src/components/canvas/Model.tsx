@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
+import * as THREE from 'three';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
-import { AnimationMixer } from 'three';
 import { useLoader } from '@react-three/fiber';
 
 type ModelProps = {
@@ -12,7 +14,7 @@ export const Model: React.FC<ModelProps> = ({ path, animations = [] }) => {
   const loader = new FBXLoader();
   const scene = useLoader(FBXLoader, path);
   const model = React.useRef<THREE.Mesh>(null);
-  const mixers: AnimationMixer[] = [];
+  const mixers: THREE.AnimationMixer[] = [];
 
   try {
     loader.setPath(path);
@@ -25,7 +27,7 @@ export const Model: React.FC<ModelProps> = ({ path, animations = [] }) => {
       const anim = new FBXLoader();
       anim.setPath(path);
       anim.load(animations[0], (anim) => {
-        const m = new AnimationMixer(obj);
+        const m = new THREE.AnimationMixer(obj);
         mixers.push(m);
         const idle = m.clipAction(anim.animations[0]);
         idle.play();
@@ -34,7 +36,7 @@ export const Model: React.FC<ModelProps> = ({ path, animations = [] }) => {
       scene.add(obj);
     });
   } catch (err) {
-    console.error('Error loading model into scene');
+    console.error('Error loading model into scene ', err);
     if (process.env.NODE_ENV === 'development') {
       console.error(err);
     }

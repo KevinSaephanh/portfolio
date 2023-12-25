@@ -1,3 +1,5 @@
+'use client';
+
 import { OrbitControls, Preload } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React from 'react';

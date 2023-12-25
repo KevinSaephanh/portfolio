@@ -1,28 +1,24 @@
+'use client';
+
 import Link from 'next/link';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+import * as React from 'react';
 
 type NavLinkProps = {
   href: string;
   label: string;
-  active?: boolean;
   target?: string;
-  styles?: string;
 };
 
-export const NavLink: React.FC<NavLinkProps> = ({
-  href,
-  label,
-  active,
-  target,
-  styles,
-}: NavLinkProps) => {
+export const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
+  const pathname = usePathname();
+
   return (
     <Link
       href={href}
-      target={target}
       className={`link-item flex items-center font-bold hover-highlight text-xl py-2 hover:underline hover:underline-offset-4 ${
-        active ? 'active-link' : ''
-      } ${styles}`}
+        pathname === href ? 'active-link' : ''
+      }`}
       aria-current='page'
     >
       {label}

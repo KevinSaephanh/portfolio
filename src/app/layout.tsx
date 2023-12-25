@@ -55,6 +55,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Navbar />
           <main
             role='main'
+            className='w-full h-full'
             // className={`${
             //   pathname !== '/'
             //     ? 'p-5 my-5 flex-auto'

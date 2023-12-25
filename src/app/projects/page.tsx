@@ -98,7 +98,7 @@ export default function Page() {
               priority={true}
             />
           </div>
-          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols md:w-2/4 md:h-4/5 justify-evenly'>
+          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols w-full md:h-4/5 justify-evenly'>
             {active.stack.map((s, key) => (
               <li className='mr-3 md:mr-0' key={key}>
                 {s}

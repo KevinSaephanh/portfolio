@@ -10,7 +10,7 @@ type NavLinkProps = {
   target?: string;
 };
 
-export const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
+export const NavLink: React.FC<NavLinkProps> = ({ href, label, target }) => {
   const pathname = usePathname();
 
   return (
@@ -20,6 +20,7 @@ export const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
         pathname === href ? 'active-link' : ''
       }`}
       aria-current='page'
+      target={target}
     >
       {label}
     </Link>

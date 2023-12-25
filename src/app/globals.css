@@ -85,39 +85,39 @@
   border: 3px solid #f6f7ed;
 }
 
-// credit: https://www.youtube.com/watch?v=cxm5bCCa9OA&t=608s&ab_channel=OnlineTutorials
+/* credit: https://www.youtube.com/watch?v=cxm5bCCa9OA&t=608s&ab_channel=OnlineTutorials */
 .box {
   content: '';
   width: 600px;
   max-width: 90vw;
   height: 400px;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 600px;
-    max-width: 95vw;
-    height: 400px;
-    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-  }
+.box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 600px;
+  max-width: 95vw;
+  height: 400px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 600px;
-    max-width: 95vw;
-    height: 400px;
-    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-    animation-delay: -3s;
-  }
+.box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 600px;
+  max-width: 95vw;
+  height: 400px;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
 }
 
 #yeti {
@@ -134,51 +134,6 @@
   box-shadow: 0 1px 10px rgba(113, 158, 206, 0.8);
   filter: drop-shadow(0 1px 10px rgba(113, 158, 206, 0.8));
   z-index: 9999;
-
-  &::after,
-  &::before {
-    content: ' ';
-    bottom: 100%;
-    border: solid transparent;
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-  }
-
-  &::after {
-    border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: #ffffff;
-    border-width: 5px;
-    left: 50%;
-    margin-left: -5px;
-  }
-
-  &::before {
-    border-color: rgba(113, 158, 206, 0);
-    border-bottom-color: #719ece;
-    border-width: 6px;
-    left: 50%;
-    margin-left: -6px;
-  }
-
-  // Change facial expression of yeti on hover
-  &:hover {
-    .eye {
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      border-bottom: 0;
-      box-sizing: border-box;
-    }
-
-    .mouth {
-      margin-top: -12px;
-    }
-
-    .cheek {
-      display: none;
-    }
-  }
 
   .eye {
     height: 7px;
@@ -233,6 +188,50 @@
     margin: 0 auto;
     margin-top: -29px;
     transform: scale(1.5, 1);
+  }
+}
+
+#yeti::after,
+#yeti::before {
+  content: ' ';
+  bottom: 100%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+#yeti::after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+  border-width: 5px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+#yeti::before {
+  border-color: rgba(113, 158, 206, 0);
+  border-bottom-color: #719ece;
+  border-width: 6px;
+  left: 50%;
+  margin-left: -6px;
+}
+
+#yeti:hover {
+  .eye {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 0;
+    box-sizing: border-box;
+  }
+
+  .mouth {
+    margin-top: -12px;
+  }
+
+  .cheek {
+    display: none;
   }
 }
 

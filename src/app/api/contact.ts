@@ -3,7 +3,7 @@ import * as nodemailer from 'nodemailer';
 import { Options } from 'nodemailer/lib/mailer';
 require('dotenv').config();
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const transporter = nodemailer.createTransport({
     url: process.env.SMTP_URL,
     secure: true,

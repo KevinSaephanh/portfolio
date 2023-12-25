@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { useTheme } from 'next-themes';
 
@@ -11,8 +13,12 @@ export const ThemeButton: React.FC = () => {
     <button
       aria-label='Toggle Dark Mode'
       type='button'
-      className='h-12 w-12 rounded-full p-1 sm:ml-2 hover:border-2 hover:bg-slate-400 dark:hover:bg-slate-700'
-      onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
+      className='h-10 w-10 m-auto rounded-full p-1 sm:ml-2 hover:border-2 hover:bg-slate-400 dark:hover:bg-slate-700'
+      onClick={() =>
+        setTheme(
+          theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark'
+        )
+      }
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

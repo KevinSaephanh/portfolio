@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
-import { HamburgerButton } from '../../ui/Buttons/HamburgerButton';
-import { ThemeButton } from '../../ui/Buttons/ThemeButton';
+import { HamburgerButton } from '../Buttons/HamburgerButton';
+import { ThemeButton } from '../Buttons/ThemeButton';
 import { Logo } from '../Logo/Logo';
 import { NavLink } from './NavLink';
 
@@ -19,11 +21,7 @@ const links = [
   },
 ];
 
-type NavbarProps = {
-  route: string;
-};
-
-export const Navbar: React.FC<NavbarProps> = ({ route }) => {
+export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -44,7 +42,9 @@ export const Navbar: React.FC<NavbarProps> = ({ route }) => {
             onClick={() => setOpen(!open)}
           >
             <HamburgerButton
-              path={`${!open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12'}`}
+              path={`${
+                !open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12'
+              }`}
             />
           </button>
         </section>
@@ -55,9 +55,13 @@ export const Navbar: React.FC<NavbarProps> = ({ route }) => {
         >
           <ul className='flex flex-col md:flex-row list-none p-2 mt-4 md:space-x-8 md:mt-0'>
             {links.map((nav, key) => (
-              <NavLink href={nav.link} label={nav.label} active={route === nav.link} key={key} />
+              <NavLink href={nav.link} label={nav.label} key={key} />
             ))}
-            <NavLink href={'/assets/resume.pdf'} label={'Resume'} target={'_blank'} />
+            <NavLink
+              href={'/assets/resume.pdf'}
+              label={'Resume'}
+              target={'_blank'}
+            />
           </ul>
           <ThemeButton />
         </section>

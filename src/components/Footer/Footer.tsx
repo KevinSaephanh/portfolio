@@ -12,10 +12,18 @@ export const Footer: React.FC = () => {
         >
           <BsLinkedin />
         </a>
-        <a href='https://github.com/KevinSaephanh' target='_blank' rel='noopener noreferrer'>
+        <a
+          href='https://github.com/KevinSaephanh'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <BsGithub />
         </a>
-        <a href='https://twitter.com/KevCoolio' target='_blank' rel='noopener noreferrer'>
+        <a
+          href='https://twitter.com/Kevcoolio'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <BsTwitter />
         </a>
         <a

@@ -1,13 +1,14 @@
+'use client';
+
 import React from 'react';
-import { NextPage } from 'next';
-import { Input } from '../components/ui/Input/Input';
-import { TextArea } from '../components/ui/TextArea/TextArea';
-import { Spectral } from '@next/font/google';
+import { Spectral } from 'next/font/google';
+import { Input } from '@/components/Form/Input';
+import { TextArea } from '@/components/Form/TextArea';
 
 const spectral = Spectral({ weight: '600', subsets: ['cyrillic'] });
 
-const Contact: NextPage = () => {
-  const inputs = React.useRef({
+export default function Page() {
+  const inputs = React.useRef<{ [key: string]: string }>({
     name: '',
     email: '',
     message: '',
@@ -15,7 +16,9 @@ const Contact: NextPage = () => {
   const [submitDisabled, setSubmitDisabled] = React.useState(true);
   const [submitMessage, setSubmitMessage] = React.useState('');
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name: key, value } = e.target;
     inputs.current[key] = value;
 
@@ -50,13 +53,17 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <h2 className={`${spectral.className} text-center text-2xl mb-6`}>CONTACT</h2>
+      <h2 className={`${spectral.className} text-center text-2xl mb-6`}>
+        CONTACT
+      </h2>
       <div className='box relative rounded-lg overflow-hidden mx-auto'>
         <form
           className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
           onSubmit={handleSubmit}
         >
-          <span className='mb-2 font-bold text-red-600 dark:text-red-700'>{submitMessage}</span>
+          <span className='mb-2 font-bold text-red-600 dark:text-red-700'>
+            {submitMessage}
+          </span>
           <Input
             type='text'
             name='name'
@@ -98,6 +105,4 @@ const Contact: NextPage = () => {
       </div>
     </>
   );
-};
-
-export default Contact;
+}

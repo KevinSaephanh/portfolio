@@ -1,8 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Model } from '@/components/Canvas/Model';
-import { Scene } from '@/components/Canvas/Scene';
+import { Model } from '@/components/Scene/Model';
+import { Scene } from '@/components/Scene/Scene';
 
 export default function Page() {
   return (

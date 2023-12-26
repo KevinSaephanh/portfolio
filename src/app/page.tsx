@@ -1,5 +1,5 @@
-import { Scene } from '@/components/Canvas/Scene';
-import { Terrain } from '@/components/Canvas/Terrain';
+import { Scene } from '@/components/Scene/Scene';
+import { Terrain } from '@/components/Scene/Terrain';
 import * as React from 'react';
 
 export default function Home() {

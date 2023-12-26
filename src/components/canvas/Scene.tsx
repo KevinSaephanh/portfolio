@@ -1,11 +1,22 @@
 'use client';
 
-import { OrbitControls, Preload } from '@react-three/drei';
+import { OrbitControls, Preload, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React from 'react';
-import { Terrain } from './Terrain';
+import * as React from 'react';
 
-export const Scene: React.FC = () => {
+type SceneProps = {
+  children: React.ReactNode;
+  autoRotate?: boolean;
+  enablePan?: boolean;
+  enableZoom?: boolean;
+};
+
+export const Scene: React.FC<SceneProps> = ({
+  children,
+  autoRotate,
+  enablePan,
+  enableZoom,
+}) => {
   return (
     <Canvas
       flat
@@ -17,17 +28,18 @@ export const Scene: React.FC = () => {
       }}
     >
       <OrbitControls
-        autoRotate={true}
+        autoRotate={autoRotate}
         autoRotateSpeed={0.1}
         rotateSpeed={0.1}
-        enablePan={false}
-        enableZoom={false}
+        enablePan={enablePan}
+        enableZoom={enableZoom}
       />
       <ambientLight intensity={0.3} />
-      <directionalLight position={[0, 0, 5]} />
       <Preload all />
       <React.Suspense fallback={null}>
-        <Terrain />
+        <Stage preset='rembrandt' intensity={1} environment='sunset'>
+          {children}
+        </Stage>
       </React.Suspense>
     </Canvas>
   );

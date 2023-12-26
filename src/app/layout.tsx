@@ -1,14 +1,10 @@
-// 'use client';
-
 import * as React from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer } from '@/components/Footer/Footer';
 import { Navbar } from '@/components/Navbar/Navbar';
-// import { AnimatePresence } from 'framer-motion';
-// import { usePathname } from 'next/navigation';
 import Provider from './provider';
-import './globals.css';
+import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,37 +31,17 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  // const pathname = usePathname();
-
   return (
     <html lang='en'>
-      {/* <head>
-        <title>Kevin Saephanh</title>
-        <meta name='description' content='Description' />
-      </head> */}
       <body
         className={`flex h-screen flex-col justify-between ${inter.className}`}
       >
         <Provider>
-          {/* <AnimatePresence
-          mode='wait'
-          initial={true}
-          onExitComplete={() => window.scrollTo(0, 0)}
-        > */}
           <Navbar />
-          <main
-            role='main'
-            className='w-full h-full'
-            // className={`${
-            //   pathname !== '/'
-            //     ? 'p-5 my-5 flex-auto'
-            //     : 'h-screen w-screen absolute'
-            // }`}
-          >
+          <main role='main' className='w-full h-full'>
             {children}
           </main>
           <Footer />
-          {/* </AnimatePresence> */}
         </Provider>
       </body>
     </html>

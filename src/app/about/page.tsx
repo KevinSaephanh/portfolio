@@ -6,38 +6,36 @@ import React from 'react';
 
 const technologies = [
   {
+    title: 'AWS',
+    proficiency: 60,
+    color: 'rgb(0, 230, 0)',
+  },
+  {
     title: 'React',
-    icon: 'react',
     proficiency: 80,
-    color: 'rgb(156, 54, 252)',
+    color: 'rgb(135, 206, 235)',
   },
   {
     title: 'Angular',
-    icon: 'angular',
     proficiency: 90,
     color: 'rgb(45, 212, 196)',
   },
   {
     title: 'NodeJS',
-    icon: 'node',
     proficiency: 90,
-    color: 'rgb(0, 230, 0)',
+    color: 'rgb(156, 54, 252)',
   },
   {
     title: 'Spring Boot',
-    icon: 'springBoot',
     proficiency: 90,
     color: 'rgb(255, 37, 37)',
   },
 ];
 
 export default function Page() {
-  const getYearDifference = (dateString: string) => {
-    return Math.floor(
-      (new Date().getTime() - new Date(dateString).getTime()) / 3.15576e10
-    );
-  };
-  const lvl = getYearDifference('1993-12-01');
+  const lvl = Math.floor(
+    (new Date().getTime() - new Date('1993-12-01').getTime()) / 3.15576e10
+  );
 
   return (
     <div className='p-5 flex flex-col md:flex-row items-center justify-between mx-0 md:mx-auto w-full md:w-4/5 lg:w-3/5'>

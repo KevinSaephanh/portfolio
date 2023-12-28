@@ -29,7 +29,7 @@ export const Scene: React.FC<SceneProps> = ({
     >
       <OrbitControls
         autoRotate={autoRotate}
-        autoRotateSpeed={0.1}
+        autoRotateSpeed={0.3}
         rotateSpeed={0.1}
         enablePan={enablePan}
         enableZoom={enableZoom}

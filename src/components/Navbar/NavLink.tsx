@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
@@ -22,7 +23,9 @@ export const NavLink: React.FC<NavLinkProps> = ({ href, label, target }) => {
       aria-current='page'
       target={target}
     >
-      {label}
+      <motion.span whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+        {label}
+      </motion.span>
     </Link>
   );
 };

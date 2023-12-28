@@ -69,16 +69,13 @@ export default function Page() {
           Hi, I&apos;m Kevin, a Full Stack Developer from California. I started
           off my coding journey pretty late into college with the introduction
           to Computer Science using C++. Although I wasn&apos;t able to make the
-          switch in major to CS, I still enrolled in as many courses as I would
-          be allowed. Through these courses, I was able learn the basics of
-          programming by creating beginner-level programs such as payroll
-          systems, calculators, and console games.
+          switch in major to CS, I still enrolled in as many courses as I could.
           <br />
           <br />
-          My continued interest eventually motivated me to try and pursue a
-          career in software development. Fortunately for me, I was able to
-          attend a coding bootcamp after college to learn new technologies and
-          network with others. This enabled me to get my foot in the door and
+          My continued interest eventually motivated me to pursue a career in
+          software development. Fortunately for me, I was able to attend a
+          coding bootcamp after college that expanded both my technical
+          knowledge and network. This enabled me to get my foot in the door and
           kickstart my career as a developer!
         </p>
 
@@ -89,7 +86,9 @@ export default function Page() {
               title={`Proficieny with ${tech.title}: ${tech.proficiency}`}
               className='flex flex-col mb-4'
             >
-              <span className='pb-2 font-bold'>{tech.title}</span>
+              <span className='pb-2 font-bold text-sm md:text-md'>
+                {tech.title}
+              </span>
               <ProgressBar maxPercent={tech.proficiency} color={tech.color} />
             </li>
           ))}

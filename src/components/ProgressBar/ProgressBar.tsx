@@ -19,7 +19,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   }, [progress]);
 
   return (
-    <div className='w-4/5 max-w-2xl my-auto bg-gray-200 rounded-full h-6 dark:bg-gray-700 border-2 border-black dark:border-white shadow-lg shadow-slate-900 dark:shadow-zinc-200'>
+    <div className='w-4/5 max-w-2xl my-auto bg-gray-200 rounded-full h-4 md:h-6 dark:bg-gray-700 border-2 border-black dark:border-white shadow-lg shadow-slate-900 dark:shadow-zinc-200'>
       <div
         className={'h-full rounded-full'}
         style={{ width: `${progress}%`, backgroundColor: color }}

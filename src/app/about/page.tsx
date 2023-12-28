@@ -38,29 +38,37 @@ export default function Page() {
   );
 
   return (
-    <div className='p-5 flex flex-col md:flex-row items-center justify-between mx-0 md:mx-auto w-full md:w-4/5 lg:w-3/5'>
+    <div className='about p-5 flex flex-col md:flex-row items-center justify-between mx-0 md:mx-auto w-full md:w-4/5 lg:w-3/5'>
       <section className='flex flex-col w-full md:w-1/3 items-center md:items-start mt-0 mb-auto'>
         <Image
           src='/assets/me.jpg'
           alt='me'
           height={300}
           width={300}
-          className='themed-border mb-4'
+          className='themed-border mb-4 h-64 md:h-80 w-5/6 md:w-80'
         />
         <div className='flex flex-col w-4/5 md:w-full mb-4 space-y-2 text-lg md:text-xl'>
-          <span className='text-2xl md:text-3xl'>Kevin Saephanh</span>
+          <h3 className='themed-text font-semibold text-2xl md:text-3xl'>
+            Kevin Saephanh
+          </h3>
           <span>Software Developer</span>
           <span title={`I am ${lvl} years old`}>
-            <strong className='dark:text-teal-300'>LV</strong> {lvl}
+            <strong>LV</strong> {lvl}
           </span>
           <span>
-            <strong className='dark:text-teal-300'>{'HP'}</strong> 1000/1000
+            <strong>{'HP'}</strong> 1000/1000
           </span>
-          <div title='health-bar' className='h-4 mt-2 bg-green-500 rounded' />
+          <div
+            title='health-bar'
+            className='h-3 md:h-4 mt-2 bg-green-500 rounded'
+          />
           <span>
-            <strong className='dark:text-teal-300'>{'MP'}</strong> 1000/1000
+            <strong>{'MP'}</strong> 1000/1000
           </span>
-          <div title='mana-bar' className='h-4 mt-2 bg-blue-500 rounded' />
+          <div
+            title='mana-bar'
+            className='h-3 md:h-4 mt-2 bg-blue-500 rounded'
+          />
         </div>
       </section>
 

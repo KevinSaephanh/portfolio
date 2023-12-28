@@ -5,7 +5,6 @@ import { HamburgerButton } from '../Buttons/HamburgerButton';
 import { ThemeButton } from '../Buttons/ThemeButton';
 import { Logo } from '../Logo/Logo';
 import { NavLink } from './NavLink';
-import { motion } from 'framer-motion';
 
 const links = [
   {
@@ -21,15 +20,6 @@ const links = [
     link: '/contact',
   },
 ];
-
-const variants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-};
 
 export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
@@ -61,12 +51,18 @@ export const Navbar: React.FC = () => {
         >
           <ul className='flex flex-col md:flex-row list-none p-2 mt-4 md:space-x-8 md:mt-0'>
             {links.map((nav, key) => (
-              <NavLink href={nav.link} label={nav.label} key={key} />
+              <NavLink
+                href={nav.link}
+                label={nav.label}
+                key={key}
+                onClick={setOpen}
+              />
             ))}
             <NavLink
               href={'/assets/resume.pdf'}
               label={'Resume'}
               target={'_blank'}
+              onClick={setOpen}
             />
           </ul>
           <ThemeButton />

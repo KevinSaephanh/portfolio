@@ -5,6 +5,7 @@ import { HamburgerButton } from '../Buttons/HamburgerButton';
 import { ThemeButton } from '../Buttons/ThemeButton';
 import { Logo } from '../Logo/Logo';
 import { NavLink } from './NavLink';
+import { motion } from 'framer-motion';
 
 const links = [
   {
@@ -21,16 +22,21 @@ const links = [
   },
 ];
 
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+
 export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav
-      className={`w-full flex-none px-2 lg:px-6 md:h-16 z-20 ${
-        open ? 'fixed bg-white dark:bg-zinc-900 pb-4' : 'relative'
-      }`}
-    >
-      <div className='flex flex-wrap items-center justify-between'>
+    <nav className={`${open ? 'absolute w-full h-full bg-gray-950 z-50' : ''}`}>
+      <div className={`w-full flex flex-wrap items-center justify-between`}>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />
           <button

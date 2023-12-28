@@ -52,6 +52,20 @@
     @apply bg-slate-100 dark:bg-neutral-900;
   }
 
+  .about {
+    section {
+      &:first-child {
+        span {
+          @apply text-base md:text-lg;
+        }
+
+        strong {
+          @apply dark:text-teal-300;
+        }
+      }
+    }
+  }
+
   h1,
   h2,
   a,
@@ -225,7 +239,7 @@
   }
 
   .mouth {
-    width: 11px;
+    width: 14px;
     height: 5px;
     color: black;
     font-size: 7px;

@@ -34,11 +34,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <body
-        className={`flex h-screen flex-col justify-between ${inter.className}`}
+        className={`h-screen flex flex-col justify-between ${inter.className}`}
       >
         <Provider>
           <Navbar />
-          <main role='main' className='w-full h-full'>
+          <main
+            role='main'
+            className='w-full min-h-fit md:min-h-full flex flex-col justify-center relative'
+          >
             {children}
           </main>
           <Footer />

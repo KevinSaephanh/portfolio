@@ -25,12 +25,8 @@ export const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav
-      className={`w-full flex-none px-2 lg:px-6 md:h-16 z-20 ${
-        open ? 'fixed bg-white dark:bg-zinc-900 pb-4' : 'relative'
-      }`}
-    >
-      <div className='flex flex-wrap items-center justify-between'>
+    <nav className={`${open ? 'absolute w-full h-full bg-gray-950 z-50' : ''}`}>
+      <div className={`w-full flex flex-wrap items-center justify-between`}>
         <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />
           <button
@@ -55,12 +51,18 @@ export const Navbar: React.FC = () => {
         >
           <ul className='flex flex-col md:flex-row list-none p-2 mt-4 md:space-x-8 md:mt-0'>
             {links.map((nav, key) => (
-              <NavLink href={nav.link} label={nav.label} key={key} />
+              <NavLink
+                href={nav.link}
+                label={nav.label}
+                key={key}
+                onClick={setOpen}
+              />
             ))}
             <NavLink
               href={'/assets/resume.pdf'}
               label={'Resume'}
               target={'_blank'}
+              onClick={setOpen}
             />
           </ul>
           <ThemeButton />

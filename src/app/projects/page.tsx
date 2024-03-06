@@ -28,7 +28,7 @@ const projects = [
     id: 3,
     path: '/assets/sort-visualizer.png',
     title: 'Sort Visualizer',
-    desc: 'A visualization of sorting algorithms.\n\u2022 A graph is displayed containing a random array of bars of varying length.\n\u2022 After starting, bars begin moving left and right to imitate how the sorting algorithm works.\n\u2022 Once sorting is completed, all bars will be highlighted.',
+    desc: 'A visualization of sorting algorithms.\n\u2022 A graph is generated using an array of numbers.\n\u2022 The generated bars begin moving left and right, imitating the sorting algorithm.\n\u2022 Once sorting is completed, all bars will be highlighted.',
     stack: ['React', 'TypeScript', 'Bootstrap'],
     code: 'https://github.com/KevinSaephanh/Sort_Visualizer',
     site: 'https://gentle-clafoutis-1e9dfe.netlify.app/',

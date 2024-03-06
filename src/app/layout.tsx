@@ -40,7 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Navbar />
           <main
             role='main'
-            className='w-full min-h-fit md:h-full flex flex-col justify-center relative'
+            className='w-full md:h-full flex flex-col justify-center relative'
           >
             {children}
           </main>

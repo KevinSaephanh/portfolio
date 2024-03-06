@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       height: {
         500: '500px',
-        670: '670px',
+        700: '700px',
       },
     },
   },

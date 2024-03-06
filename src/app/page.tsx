@@ -4,7 +4,7 @@ import * as React from 'react';
 
 export default function Home() {
   return (
-    <div className='h-full max-h-96 md:max-h-full w-full'>
+    <div className='h-full max-h-80 md:max-h-full w-full'>
       <Scene autoRotate={true}>
         <Terrain />
       </Scene>

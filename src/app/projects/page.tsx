@@ -19,7 +19,7 @@ const projects = [
     id: 2,
     path: '/assets/pathfinder.png',
     title: 'Pathfinder',
-    desc: `A visualization of maze generation and pathfinding algorithms. Here's how it works:\n\u2022 A maze is first generated in real time using a maze generation algorithm.\n\u2022 Then the maze will be traversed via a pathfinding algorithm, marking each visited cell.\n\u2022 Finally, the optimal path to the escape route will be highlighted.`,
+    desc: `A visualization of maze generation and pathfinding algorithms. How it works:\n\u2022 A maze is first generated in real time using a maze generation algorithm.\n\u2022 A pathfinding algorithm traverses the maze, marking each visited cell.\n\u2022 The optimal path to the escape route will be highlighted.`,
     stack: ['React', 'JavaScript', 'Bootstrap'],
     code: 'https://github.com/KevinSaephanh/Pathfinder',
     site: 'https://master--sage-youtiao-4202f8.netlify.app/',

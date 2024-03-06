@@ -56,7 +56,7 @@ export default function Page() {
   const [active, setActive] = React.useState(projects[0]);
 
   return (
-    <div className='w-11/12 lg:w-3/5 h-700 md:h-500 mx-auto themed-border'>
+    <div className='w-11/12 lg:w-3/5 h-720 md:h-500 mx-auto themed-border'>
       <section className='flex flex-col md:flex-row h-3/5 md:h-2/4'>
         <article className='md:border-r-2 md:w-1/3 border-white'>
           <ul className='scrollbar flex flex-row md:flex-col gap-x-5 md:gap-0 p-2 md:mx-auto overflow-y-auto md:overflow-hidden'>

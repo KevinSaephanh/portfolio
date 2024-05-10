@@ -5,8 +5,14 @@ require('dotenv').config();
 
 export async function POST(req: Request) {
   const transporter = nodemailer.createTransport({
-    url: process.env.SMTP_URL,
+    service: 'Gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
     secure: true,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASSWORD,
+    },
   });
   const { name, email, message } = await req.json();
   const mailOptions: Options = {

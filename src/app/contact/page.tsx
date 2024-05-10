@@ -15,6 +15,7 @@ export default function Page() {
   });
   const [submitDisabled, setSubmitDisabled] = React.useState(true);
   const [submitMessage, setSubmitMessage] = React.useState('');
+  const [submitSuccess, setSubmitSuccess] = React.useState(false);
 
   const handleInput = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,18 +38,21 @@ export default function Page() {
       body: JSON.stringify(inputs.current),
     });
 
+    const { message } = await res.json();
     if (res.status === 200) {
       inputs.current = {
         name: '',
         email: '',
         message: '',
       };
-      setSubmitMessage('Message sent successfully');
+      setSubmitSuccess(true);
+      setSubmitMessage(message);
     } else {
-      setSubmitMessage('Message could not be sent');
+      setSubmitSuccess(false);
+      setSubmitMessage(message);
     }
 
-    setTimeout(() => setSubmitMessage(''), 2000);
+    setTimeout(() => setSubmitMessage(''), 3000);
   };
 
   return (
@@ -61,7 +65,11 @@ export default function Page() {
           className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
           onSubmit={handleSubmit}
         >
-          <span className='mb-2 font-bold text-red-600 dark:text-red-700'>
+          <span
+            className={`mb-2 font-bold ${
+              submitSuccess ? 'success-text' : 'error-text'
+            }`}
+          >
             {submitMessage}
           </span>
           <Input

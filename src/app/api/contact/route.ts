@@ -1,15 +1,14 @@
-import { NextApiRequest } from 'next';
 import { NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer';
 import { Options } from 'nodemailer/lib/mailer';
 require('dotenv').config();
 
-export default async function POST(req: NextApiRequest) {
+export async function POST(req: Request) {
   const transporter = nodemailer.createTransport({
     url: process.env.SMTP_URL,
     secure: true,
   });
-  const { name, email, message } = req.body;
+  const { name, email, message } = await req.json();
   const mailOptions: Options = {
     from: email,
     to: process.env.EMAIL,

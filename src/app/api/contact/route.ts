@@ -1,4 +1,5 @@
 import { NextApiRequest } from 'next';
+import { NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer';
 import { Options } from 'nodemailer/lib/mailer';
 require('dotenv').config();
@@ -18,8 +19,11 @@ export default async function POST(req: NextApiRequest) {
 
   try {
     await transporter.sendMail(mailOptions);
-    return Response.json({ message: 'Email sent successfully' });
+    return NextResponse.json({
+      status: 200,
+      message: 'Email sent successfully',
+    });
   } catch (err) {
-    return Response.json({ message: 'Email failed to send' });
+    return NextResponse.json({ status: 400, message: 'Email failed to send' });
   }
 }

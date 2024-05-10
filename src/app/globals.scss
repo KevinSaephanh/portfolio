@@ -48,6 +48,14 @@
     @apply highlight underline;
   }
 
+  .success-text {
+    @apply text-green-600 dark:text-green-700;
+  }
+
+  .error-text {
+    @apply text-red-600 dark:text-red-700;
+  }
+
   .contact-form {
     @apply bg-slate-100 dark:bg-neutral-900;
   }

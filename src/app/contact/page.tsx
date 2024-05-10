@@ -38,8 +38,8 @@ export default function Page() {
       body: JSON.stringify(inputs.current),
     });
 
-    const { message } = await res.json();
-    if (res.status === 200) {
+    const { status, message } = await res.json();
+    if (status === 200) {
       inputs.current = {
         name: '',
         email: '',
@@ -52,7 +52,7 @@ export default function Page() {
       setSubmitMessage(message);
     }
 
-    setTimeout(() => setSubmitMessage(''), 3000);
+    setTimeout(() => setSubmitMessage(''), 5000);
   };
 
   return (

@@ -15,7 +15,7 @@ export const Projects = () => {
         <h3 className='section-title'>Projects</h3>
         <article className='md:border-r-2 md:w-1/3 border-white'>
           <ul className='scrollbar flex flex-row md:flex-col gap-x-5 md:gap-0 p-2 md:mx-auto overflow-y-auto md:overflow-hidden'>
-            {projects.map((p, key) => (
+            {projects.map((project, key) => (
               <li
                 key={key}
                 className={`flex-center cursor-pointer p-2 md:p-1`}
@@ -37,17 +37,8 @@ export const Projects = () => {
                       : ''
                   }`}
                 >
-                  {p.title}
+                  {project.title}
                 </p>
-              </li>
-            ))}
-          </ul>
-        </article>
-        <article className='flex-center flex-col md:flex-row w-full md:w-2/3 h-full'>
-          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols w-full md:h-4/5 justify-evenly'>
-            {active.stack.map((s, key) => (
-              <li className='mr-3 md:mr-0' key={key}>
-                {s}
               </li>
             ))}
           </ul>
@@ -56,6 +47,13 @@ export const Projects = () => {
       <section className='flex-center flex-col md:h-2/4 mb-4 md:mb-8 p-4 rounded border-t-2 border-black dark:border-slate-100'>
         <article className='flex-center px-2 md:px-12 md:mx-auto mb-4'>
           <span className='whitespace-pre-line'>{active.desc}</span>
+          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols w-full md:h-4/5 justify-evenly'>
+            {active.technologies.map((tech, key) => (
+              <li className='mr-3 md:mr-0' key={key}>
+                {tech}
+              </li>
+            ))}
+          </ul>
         </article>
         <article className='flex-center'>
           <a
@@ -66,19 +64,17 @@ export const Projects = () => {
           >
             <BsGithub />
           </a>
-          {active.site.length ? (
-            <>
-              <a
-                className='text-3xl'
-                href={active.site}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-disabled={!active.site}
-              >
-                <TbWorld />
-              </a>
-            </>
-          ) : null}
+          <a
+            className={`text-3xl ${
+              !active.website.length ? 'pointer-events-none opacity-50' : ''
+            }`}
+            href={active.website}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-disabled={!active.website}
+          >
+            <TbWorld />
+          </a>
         </article>
       </section>
     </>

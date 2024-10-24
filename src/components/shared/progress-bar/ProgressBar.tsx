@@ -6,14 +6,19 @@ type ProgressBarProps = {
   onMaxPercentReached: Function;
 };
 
-export const ProgressBar: FC<ProgressBarProps> = ({ maxPercent, color }) => {
+export const ProgressBar: FC<ProgressBarProps> = ({
+  maxPercent,
+  color,
+  onMaxPercentReached,
+}) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (progress < maxPercent) {
-      setTimeout(() => setProgress(progress + 1), 5);
+      setTimeout(() => setProgress(progress + 1), 40);
+    } else {
+      onMaxPercentReached();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress]);
 
   return (

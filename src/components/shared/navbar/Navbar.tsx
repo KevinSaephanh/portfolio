@@ -17,7 +17,7 @@ export const Navbar = () => {
           <button
             data-collapse-toggle='mobile-menu'
             type='button'
-            className='mt-2 inline-flex items-center p-2 ml-2 themed-text rounded-lg md:hidden'
+            className='mt-2 inline-flex items-center p-2 ml-2 rounded-lg md:hidden'
             aria-controls='mobile-menu-2'
             aria-expanded='false'
             onClick={() => setOpen(!open)}

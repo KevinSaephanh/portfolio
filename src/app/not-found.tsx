@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Model } from '@/components/shared/scene/Model';
 import { Scene } from '@/components/shared/scene/Scene';
 
-export default function Page() {
+export default function NotFound() {
   const router = useRouter();
 
   useEffect(() => {

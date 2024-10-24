@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { FC, useRef } from 'react';
 import * as THREE from 'three';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import { useLoader } from '@react-three/fiber';
@@ -10,10 +10,10 @@ type ModelProps = {
   animations?: string[];
 };
 
-export const Model: React.FC<ModelProps> = ({ path, animations = [] }) => {
+export const Model: FC<ModelProps> = ({ path, animations = [] }) => {
   const loader = new FBXLoader();
   const scene = useLoader(FBXLoader, path);
-  const model = React.useRef<THREE.Mesh>(null);
+  const model = useRef<THREE.Mesh>(null);
   const mixers: THREE.AnimationMixer[] = [];
 
   try {

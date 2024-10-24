@@ -1,17 +1,17 @@
 'use client';
 
+import { ReactNode, FC, Suspense } from 'react';
 import { OrbitControls, Preload, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import * as React from 'react';
 
 type SceneProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   autoRotate?: boolean;
   enablePan?: boolean;
   enableZoom?: boolean;
 };
 
-export const Scene: React.FC<SceneProps> = ({
+export const Scene: FC<SceneProps> = ({
   children,
   autoRotate,
   enablePan,
@@ -36,11 +36,11 @@ export const Scene: React.FC<SceneProps> = ({
       />
       <ambientLight intensity={0.3} />
       <Preload all />
-      <React.Suspense fallback={null}>
+      <Suspense fallback={null}>
         <Stage preset='rembrandt' intensity={1} environment='sunset'>
           {children}
         </Stage>
-      </React.Suspense>
+      </Suspense>
     </Canvas>
   );
 };

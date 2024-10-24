@@ -1,24 +1,24 @@
 'use client';
 
-import React from 'react';
+import { useRef, useState, ChangeEvent, FormEvent } from 'react';
 import { Spectral } from 'next/font/google';
-import { Input } from '@/components/Form/Input';
-import { TextArea } from '@/components/Form/TextArea';
+import { Input } from '@/components/shared/form/Input';
+import { TextArea } from '@/components/shared/form/TextArea';
 
 const spectral = Spectral({ weight: '600', subsets: ['cyrillic'] });
 
 export default function Page() {
-  const inputs = React.useRef<{ [key: string]: string }>({
+  const inputs = useRef<{ [key: string]: string }>({
     name: '',
     email: '',
     message: '',
   });
-  const [submitDisabled, setSubmitDisabled] = React.useState(true);
-  const [submitMessage, setSubmitMessage] = React.useState('');
-  const [submitSuccess, setSubmitSuccess] = React.useState(false);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleInput = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name: key, value } = e.target;
     inputs.current[key] = value;
@@ -27,7 +27,7 @@ export default function Page() {
     setSubmitDisabled(!name || !email || !message);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await fetch('/api/contact', {
       method: 'POST',

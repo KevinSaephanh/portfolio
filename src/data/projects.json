@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "path": "/assets/data-generator.png",
+      "title": "Data Generator",
+      "desc": "Create up to 1000 records of mock data for your application, using common properties of entities such as email, names, and encrypted text.\nIn addition, upload .env files to create modules for environment variable types to make them type-safe.",
+      "stack": ["React", "Typescript", "Tailwind"],
+      "code": "https://github.com/KevinSaephanh/data-generator",
+      "site": "https://inquisitive-entremet-11acdd.netlify.app/"
+    },
+    {
+      "id": 2,
+      "path": "/assets/pathfinder.png",
+      "title": "Pathfinder",
+      "desc": "A visualization of maze generation and pathfinding algorithms. How it works:\n• A maze is generated in real time using a maze generation algorithm.\n• A pathfinding algorithm traverses the maze, marking each visited cell.\n• The optimal path to the escape route will be highlighted.",
+      "stack": ["React", "JavaScript", "Bootstrap"],
+      "code": "https://github.com/KevinSaephanh/Pathfinder",
+      "site": "https://master--sage-youtiao-4202f8.netlify.app/"
+    },
+    {
+      "id": 3,
+      "path": "/assets/sort-visualizer.png",
+      "title": "Sort Visualizer",
+      "desc": "A visualization of sorting algorithms.\n• A graph is generated using an array of numbers.\n• The generated bars begin moving left and right, imitating the sorting algorithm.\n• Once sorting is completed, all bars will be highlighted.",
+      "stack": ["React", "TypeScript", "Bootstrap"],
+      "code": "https://github.com/KevinSaephanh/Sort_Visualizer",
+      "site": "https://gentle-clafoutis-1e9dfe.netlify.app/"
+    }
+]

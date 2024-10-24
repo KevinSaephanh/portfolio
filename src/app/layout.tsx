@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Footer } from '@/components/Footer/Footer';
-import { Navbar } from '@/components/Navbar/Navbar';
+import { Footer } from '@/components/shared/footer/Footer';
+import { Navbar } from '@/components/shared/navbar/Navbar';
 import Provider from './provider';
 import './globals.scss';
 
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 type RootLayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {

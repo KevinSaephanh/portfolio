@@ -1,10 +1,20 @@
 'use client';
 
-import * as React from 'react';
-import { Model } from '@/components/Scene/Model';
-import { Scene } from '@/components/Scene/Scene';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { Model } from '@/components/shared/scene/Model';
+import { Scene } from '@/components/shared/scene/Scene';
 
 export default function Page() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/');
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [router]);
+
   return (
     <div
       className='w-full h-4/5 flex flex-col items-center'
@@ -14,6 +24,7 @@ export default function Page() {
         <Model path='/assets/models/lizard_mage.fbx' />
       </Scene>
       <span className='text-lg pt-6'>Hey, this page doesn&apos;t exist!</span>
+      <span className='text-lg text-center'>Redirecting...</span>
     </div>
   );
 }

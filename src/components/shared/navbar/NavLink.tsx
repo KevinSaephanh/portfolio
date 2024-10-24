@@ -1,9 +1,9 @@
 'use client';
 
+import { FC } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import * as React from 'react';
 
 type NavLinkProps = {
   href: string;
@@ -12,12 +12,7 @@ type NavLinkProps = {
   target?: string;
 };
 
-export const NavLink: React.FC<NavLinkProps> = ({
-  href,
-  label,
-  target,
-  onClick,
-}) => {
+export const NavLink: FC<NavLinkProps> = ({ href, label, target, onClick }) => {
   const pathname = usePathname();
 
   return (

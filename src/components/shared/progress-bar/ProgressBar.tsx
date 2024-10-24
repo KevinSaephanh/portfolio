@@ -1,19 +1,17 @@
-import React from 'react';
+import { FC, useEffect, useState } from 'react';
 
 type ProgressBarProps = {
   maxPercent: number;
   color: string;
+  onMaxPercentReached: Function;
 };
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
-  maxPercent,
-  color,
-}) => {
-  const [progress, setProgress] = React.useState(0);
+export const ProgressBar: FC<ProgressBarProps> = ({ maxPercent, color }) => {
+  const [progress, setProgress] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (progress < maxPercent) {
-      setTimeout(() => setProgress(progress + 1), 10);
+      setTimeout(() => setProgress(progress + 1), 5);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress]);

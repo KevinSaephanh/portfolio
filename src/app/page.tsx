@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { ProgressBar } from '@/components/shared/progress-bar/ProgressBar';
 import { Scene } from '@/components/shared/scene/Scene';
@@ -18,12 +20,12 @@ export default function Home() {
           </Scene>
           <ProgressBar
             maxPercent={100}
-            color={'rgb(255, 37, 37)'}
+            color={'rgb(64,224,208)'}
             onMaxPercentReached={() => setIsLoading(false)}
           />
         </div>
       ) : (
-        <div>
+        <div className='w-full md:w-3/5 mx-auto px-4'>
           <About />
           <WorkExperience />
           <Projects />

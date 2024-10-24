@@ -1,10 +1,10 @@
 'use client';
 
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
 
 type Props = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 export default function Provider({ children }: Props) {

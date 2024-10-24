@@ -1,13 +1,18 @@
-import React from 'react';
+import {
+  forwardRef,
+  InputHTMLAttributes,
+  useImperativeHandle,
+  useRef,
+} from 'react';
 
-type TextAreaProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type TextAreaProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   errors?: Record<string, unknown>;
   touched?: Record<string, unknown>;
   name: string;
 };
 
-export const Input = React.forwardRef<HTMLInputElement, TextAreaProps>(
+export const Input = forwardRef<HTMLInputElement, TextAreaProps>(
   (
     {
       name,
@@ -22,8 +27,8 @@ export const Input = React.forwardRef<HTMLInputElement, TextAreaProps>(
     },
     ref
   ) => {
-    const inputRef = React.useRef<HTMLInputElement>(null);
-    React.useImperativeHandle(ref, () => inputRef.current!);
+    const inputRef = useRef<HTMLInputElement>(null);
+    useImperativeHandle(ref, () => inputRef.current!);
 
     return (
       <>

@@ -1,13 +1,13 @@
 'use client';
 
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
-export const ThemeButton: React.FC = () => {
-  const [mounted, setMounted] = React.useState(false);
+export const ThemeButton = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
 
-  React.useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), []);
 
   return (
     <button

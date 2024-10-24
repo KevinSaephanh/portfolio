@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsLinkedin, BsGithub, BsTwitter, BsDiscord } from 'react-icons/bs';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
     <footer className='text-center mt-6 pb-4 flex-none relative'>
       <div className='flex-center text-2xl space-x-2 mb-2'>

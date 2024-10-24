@@ -3,7 +3,7 @@
 import React from 'react';
 import { useTexture } from '@react-three/drei';
 
-export const Terrain: React.FC = () => {
+export const Terrain = () => {
   const texture = useTexture('/assets/anime-rpg-landscape.jpg');
 
   return (

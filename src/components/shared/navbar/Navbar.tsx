@@ -1,28 +1,13 @@
 'use client';
 
-import React from 'react';
-import { HamburgerButton } from '../Buttons/HamburgerButton';
-import { ThemeButton } from '../Buttons/ThemeButton';
-import { Logo } from '../Logo/Logo';
+import { useState } from 'react';
+import { HamburgerButton } from '../buttons/HamburgerButton';
+import { ThemeButton } from '../buttons/ThemeButton';
+import { Logo } from '../logo/Logo';
 import { NavLink } from './NavLink';
 
-const links = [
-  {
-    label: 'About',
-    link: '/about',
-  },
-  {
-    label: 'Projects',
-    link: '/projects',
-  },
-  {
-    label: 'Contact',
-    link: '/contact',
-  },
-];
-
-export const Navbar: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
+export const Navbar = () => {
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className={`${open ? 'absolute w-full h-full bg-gray-950 z-50' : ''}`}>
@@ -50,14 +35,7 @@ export const Navbar: React.FC = () => {
               ${open ? 'flex' : 'hidden'}`}
         >
           <ul className='flex flex-col md:flex-row list-none p-2 mt-4 md:space-x-8 md:mt-0'>
-            {links.map((nav, key) => (
-              <NavLink
-                href={nav.link}
-                label={nav.label}
-                key={key}
-                onClick={setOpen}
-              />
-            ))}
+            <NavLink href={'/contact'} label={'Contact'} onClick={setOpen} />
             <NavLink
               href={'/assets/resume.pdf'}
               label={'Resume'}

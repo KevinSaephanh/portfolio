@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import '@/app/styles/logo.scss';
 
 export const Logo = () => {
   return (

@@ -11,10 +11,10 @@ export const Projects = () => {
 
   return (
     <>
-      <section className='flex flex-col md:flex-row h-3/5 md:h-2/4'>
-        <h3 className='section-title'>Projects</h3>
-        <article className='md:border-r-2 md:w-1/3 border-white'>
-          <ul className='scrollbar flex flex-row md:flex-col gap-x-5 md:gap-0 p-2 md:mx-auto overflow-y-auto md:overflow-hidden'>
+      <h3 className='section-title'>Projects</h3>
+      <div className='flex flex-col md:flex-row'>
+        <section className='flex-1 items-start overflow-x-auto md:overflow-hidden'>
+          <ul className='scrollbar flex flex-row md:flex-col p-2 overflow-y-auto md:overflow-hidden'>
             {projects.map((project, key) => (
               <li
                 key={key}
@@ -42,41 +42,39 @@ export const Projects = () => {
               </li>
             ))}
           </ul>
-        </article>
-      </section>
-      <section className='flex-center flex-col md:h-2/4 mb-4 md:mb-8 p-4 rounded border-t-2 border-black dark:border-slate-100'>
-        <article className='flex-center px-2 md:px-12 md:mx-auto mb-4'>
-          <span className='whitespace-pre-line'>{active.desc}</span>
-          <ul className='p-4 flex flex-row flex-wrap md:grid-list-cols w-full md:h-4/5 justify-evenly'>
+        </section>
+        <section className='flex-1'>
+          <span className='whitespace-pre-line font-normal'>{active.desc}</span>
+          <ul className='py-2 md:py-4 flex flex-row flex-wrap justify-evenly'>
             {active.technologies.map((tech, key) => (
               <li className='mr-3 md:mr-0' key={key}>
                 {tech}
               </li>
             ))}
           </ul>
-        </article>
-        <article className='flex-center'>
-          <a
-            className='text-2xl mr-4'
-            href={active.code}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <BsGithub />
-          </a>
-          <a
-            className={`text-3xl ${
-              !active.website.length ? 'pointer-events-none opacity-50' : ''
-            }`}
-            href={active.website}
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-disabled={!active.website}
-          >
-            <TbWorld />
-          </a>
-        </article>
-      </section>
+          <div className='flex flex-row'>
+            <a
+              className='text-2xl mr-4'
+              href={active.code}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <BsGithub />
+            </a>
+            <a
+              className={`text-3xl ${
+                !active.website.length ? 'pointer-events-none opacity-50' : ''
+              }`}
+              href={active.website}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-disabled={!active.website}
+            >
+              <TbWorld />
+            </a>
+          </div>
+        </section>
+      </div>
     </>
   );
 };

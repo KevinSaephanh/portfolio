@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsLinkedin, BsGithub, BsTwitter, BsDiscord } from 'react-icons/bs';
+import { BsLinkedin, BsGithub, BsDiscord } from 'react-icons/bs';
 
 export const Footer = () => {
   return (
@@ -20,13 +20,6 @@ export const Footer = () => {
           <BsGithub />
         </a>
         <a
-          href='https://twitter.com/Kevcoolio'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <BsTwitter />
-        </a>
-        <a
           href='https://www.discord.com/users/360657658270973956'
           target='_blank'
           rel='noopener noreferrer'
@@ -34,7 +27,9 @@ export const Footer = () => {
           <BsDiscord />
         </a>
       </div>
-      <span className='text-md hover:highlight'>© 2022 Kevin Saephanh</span>
+      <span className='text-md hover:highlight'>
+        © {new Date().getFullYear()} Kevin Saephanh
+      </span>
     </footer>
   );
 };

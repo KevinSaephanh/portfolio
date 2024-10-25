@@ -2,8 +2,12 @@
   {
     "id": 1,
     "title": "Stock Market ETL",
-    "desc": "",
-    "technologies": ["Python", "Kafka", "AWS"],
+    "desc": "Sed sollicitudin est ipsum, sit amet dignissim turpis vehicula ut. Duis mattis porttitor auctor. Nam ut ligula ultricies sapien accumsan iaculis. Aenean eget dui nec diam dictum efficitur. Mauris tincidunt velit ut tortor ultrices, non congue purus elementum.",
+    "technologies": [
+      "Python",
+      "Kafka",
+      "AWS"
+    ],
     "code": "https://github.com/KevinSaephanh/stock-market-etl-consumer",
     "website": ""
   },
@@ -11,7 +15,11 @@
     "id": 2,
     "title": "Data Generator",
     "desc": "Create up to 1000 records of mock data for your application, using common properties of entities such as email, names, and encrypted text.\nIn addition, upload .env files to create modules for environment variable types to make them type-safe.",
-    "technologies": ["React", "Typescript", "Tailwind"],
+    "technologies": [
+      "React",
+      "Typescript",
+      "Tailwind"
+    ],
     "code": "https://github.com/KevinSaephanh/data-generator",
     "website": "https://inquisitive-entremet-11acdd.netlify.app/"
   },
@@ -19,7 +27,11 @@
     "id": 3,
     "title": "Pathfinder",
     "desc": "A visualization of maze generation and pathfinding algorithms. How it works:\n• A maze is generated in real time using a maze generation algorithm.\n• A pathfinding algorithm traverses the maze, marking each visited cell.\n• The optimal path to the escape route will be highlighted.",
-    "technologies": ["React", "JavaScript", "Bootstrap"],
+    "technologies": [
+      "React",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "code": "https://github.com/KevinSaephanh/Pathfinder",
     "website": "https://master--sage-youtiao-4202f8.netlify.app/"
   },
@@ -27,7 +39,11 @@
     "id": 4,
     "title": "Sort Visualizer",
     "desc": "A visualization of sorting algorithms.\n• A graph is generated using an array of numbers.\n• The generated bars begin moving left and right, imitating the sorting algorithm.\n• Once sorting is completed, all bars will be highlighted.",
-    "technologies": ["React", "TypeScript", "Bootstrap"],
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
     "code": "https://github.com/KevinSaephanh/Sort_Visualizer",
     "website": "https://gentle-clafoutis-1e9dfe.netlify.app/"
   }

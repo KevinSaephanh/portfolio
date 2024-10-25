@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import { Footer } from '@/components/shared/footer/Footer';
 import { Navbar } from '@/components/shared/navbar/Navbar';
 import Provider from './provider';
-import './globals.scss';
+import '@/app/styles/globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,11 +17,6 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://kevinsaephanh.com/',
     siteName: 'Kevin Saephanh',
-    images: '/images/og.png',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: 'https://twitter.com/Kevcoolio',
     images: '/images/og.png',
   },
 };

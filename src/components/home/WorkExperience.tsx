@@ -1,42 +1,22 @@
 import React from 'react';
-
-const jobs = [
-  {
-    date: 'Jul 2024 - Current',
-    title: 'Software Engineer III',
-    company: 'JPMorgan Chase',
-    desc: '',
-  },
-  {
-    date: 'Jan 2020 - Jan 2024',
-    title: 'Full Stack Engineer',
-    company: 'Cognizant',
-    desc: '',
-  },
-  {
-    date: 'Oct 2019 - Jan 2020',
-    title: 'Full Stack Engineer',
-    company: 'Revature',
-    desc: '',
-  },
-];
+import career from '@/data/career.json';
 
 export const WorkExperience = () => {
   return (
-    <>
+    <div className='fading-border mb-4 md:mb-6'>
       <h3 className='section-title'>Work Experience</h3>
       <ul>
-        {jobs.map(({ date, title, company, desc }, key) => (
-          <li key={key}>
-            <div className=''>
-              <span>{company}</span>
-              <span>{date}</span>
+        {career.map(({ date, title, company, desc }, key) => (
+          <li key={key} className='pb-2 md:pb-4'>
+            <div className='flex justify-between items-center'>
+              <span className='text-left font-bold'>{company}</span>
+              <span className='text-right font-normal'>{date}</span>
             </div>
-            <span>{title}</span>
-            <p>{desc}</p>
+            <span className='font-normal'>{title}</span>
+            <p className='font-normal pt-2'>{desc}</p>
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };

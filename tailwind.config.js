@@ -11,6 +11,9 @@ module.exports = {
         500: '500px',
         720: '720px',
       },
+      fontFamily: {
+        'press-start': ['"Press Start 2P"', 'cursive'],
+      }
     },
   },
   plugins: [],

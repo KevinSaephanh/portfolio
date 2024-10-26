@@ -6,7 +6,8 @@ import { Scene } from '@/components/shared/scene/Scene';
 import { Projects } from '@/components/home/Projects';
 import { Career } from '@/components/home/Career';
 import { About } from '@/components/home/About';
-import { Terrain } from '@/components/shared/scene/Terrain';
+import { FbxModel } from '@/components/shared/scene/FbxModel';
+import { GlbModel } from '@/components/shared/scene/GlbModel';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,7 @@ export default function Home() {
       {isLoading ? (
         <div className='flex-center flex-col h-full'>
           <Scene autoRotate={true}>
-            <Terrain texturePath='/assets/anime-rpg-landscape.jpg' />
+            <GlbModel path='/assets/models/dragon.glb' />
           </Scene>
           <LoadingBar
             maxPercent={100}

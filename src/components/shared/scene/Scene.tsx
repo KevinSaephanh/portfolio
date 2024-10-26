@@ -36,10 +36,10 @@ export const Scene: FC<SceneProps> = ({
         enablePan={enablePan}
         enableZoom={enableZoom}
       />
-      <ambientLight intensity={0.3} />
+      <ambientLight intensity={0.6} />
       <Preload all />
       <Suspense fallback={null}>
-        <Stage preset='rembrandt' intensity={1} environment='sunset'>
+        <Stage preset='soft' intensity={1.5} environment='sunset'>
           {children}
         </Stage>
       </Suspense>

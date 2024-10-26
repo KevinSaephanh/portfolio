@@ -5,12 +5,12 @@ import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import { useLoader } from '@react-three/fiber';
 import { AnimationMixer, Mesh } from 'three';
 
-type ModelProps = {
+type FbxModelProps = {
   path: string;
   animations?: string[];
 };
 
-export const Model: FC<ModelProps> = ({ path, animations = [] }) => {
+export const FbxModel: FC<FbxModelProps> = ({ path, animations = [] }) => {
   const loader = new FBXLoader();
   const scene = useLoader(FBXLoader, path);
   const model = useRef<Mesh>(null);

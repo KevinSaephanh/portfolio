@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        turquoise: '#30b4a0',
+      },
       height: {
         500: '500px',
         720: '720px',

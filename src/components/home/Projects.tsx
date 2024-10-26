@@ -10,10 +10,10 @@ export const Projects = () => {
   const [active, setActive] = useState(projects[0]);
 
   return (
-    <>
+    <div className='fading-border'>
       <h3 className='section-title'>Projects</h3>
       <div className='flex flex-col md:flex-row'>
-        <section className='flex-1 items-start overflow-x-auto md:overflow-hidden'>
+        <section className='w-full md:w-2/5 items-start overflow-x-auto md:overflow-hidden'>
           <ul className='scrollbar flex flex-row md:flex-col p-2 overflow-y-auto md:overflow-hidden'>
             {projects.map((project, key) => (
               <li
@@ -43,18 +43,21 @@ export const Projects = () => {
             ))}
           </ul>
         </section>
-        <section className='flex-1'>
+        <section className='w-full md:w-3/5 mt-4 md:mt-2'>
           <span className='whitespace-pre-line font-normal'>{active.desc}</span>
-          <ul className='py-2 md:py-4 flex flex-row flex-wrap'>
+          <ul className='py-4 flex flex-row flex-wrap'>
             {active.technologies.map((tech, key) => (
-              <li className='mr-4' key={key}>
+              <li
+                className='rounded-full px-3 py-1 bg-turquoise mr-4'
+                key={key}
+              >
                 {tech}
               </li>
             ))}
           </ul>
-          <div className='flex-center'>
+          <div className='flex items-start justify-start mb-4 md:mb-6'>
             <a
-              className='text-2xl mr-4'
+              className='text-3xl mr-4'
               href={active.code}
               target='_blank'
               rel='noopener noreferrer'
@@ -75,6 +78,6 @@ export const Projects = () => {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 };

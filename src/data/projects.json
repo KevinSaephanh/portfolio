@@ -6,6 +6,7 @@
     "technologies": [
       "Python",
       "Kafka",
+      "Cassandra",
       "AWS"
     ],
     "code": "https://github.com/KevinSaephanh/stock-market-etl-consumer",
@@ -14,7 +15,7 @@
   {
     "id": 2,
     "title": "Data Generator",
-    "desc": "Create up to 1000 records of mock data for your application, using common properties of entities such as email, names, and encrypted text.\nIn addition, upload .env files to create modules for environment variable types to make them type-safe.",
+    "desc": "• Create large sets of mock data for your application, using common properties such as emails and encrypted passwords.\n• Upload .env files to create modules for type-safe environment variables.",
     "technologies": [
       "React",
       "Typescript",
@@ -26,7 +27,7 @@
   {
     "id": 3,
     "title": "Pathfinder",
-    "desc": "A visualization of maze generation and pathfinding algorithms. How it works:\n• A maze is generated in real time using a maze generation algorithm.\n• A pathfinding algorithm traverses the maze, marking each visited cell.\n• The optimal path to the escape route will be highlighted.",
+    "desc": "A visualization of popular pathfinding algorithms traversing randomly generated mazes, highlighting cells visited and the optimal path to reach the end.",
     "technologies": [
       "React",
       "JavaScript",
@@ -38,7 +39,7 @@
   {
     "id": 4,
     "title": "Sort Visualizer",
-    "desc": "A visualization of sorting algorithms.\n• A graph is generated using an array of numbers.\n• The generated bars begin moving left and right, imitating the sorting algorithm.\n• Once sorting is completed, all bars will be highlighted.",
+    "desc": "A visualization of popular sorting algorithms using a bar chart.",
     "technologies": [
       "React",
       "TypeScript",

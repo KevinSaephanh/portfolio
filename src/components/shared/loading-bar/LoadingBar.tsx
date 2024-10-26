@@ -16,7 +16,7 @@ export const LoadingBar: FC<LoadingBarProps> = ({
 
   useEffect(() => {
     if (progress < maxPercent) {
-      const timeoutId = setTimeout(() => setProgress(progress + 1), 70);
+      const timeoutId = setTimeout(() => setProgress(progress + 1), 50);
       return () => clearTimeout(timeoutId);
     } else {
       onMaxPercentReached();

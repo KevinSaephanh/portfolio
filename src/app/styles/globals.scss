@@ -29,7 +29,13 @@
 
   input,
   textarea {
-    @apply my-4 pl-2 text-black dark:text-white font-semibold text-lg bg-transparent border-b-2 border-teal-600 dark:border-teal-400 block w-11/12 md:w-5/6 dark:placeholder-gray-400 focus:outline-none focus:bg-teal-400 dark:focus:bg-teal-700 focus:rounded focus:py-2;
+    @apply my-4 pl-2 font-semibold text-lg bg-transparent border-b-2 w-11/12 md:w-5/6 focus:outline-none block focus:rounded focus:py-2;
+  
+    /* Light mode */
+    @apply border-teal-600 focus:bg-teal-400;
+
+    /* Dark mode */
+    @apply dark:border-teal-400 dark:placeholder-gray-400 dark:focus:bg-teal-700; 
   }
 
   span,
@@ -75,10 +81,16 @@
   .fading-border {
     @apply relative border-b-2 border-transparent;
   }
-
+  
   .fading-border::after {
     content: "";
-    @apply absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-b rounded-br-lg from-white to-transparent;
+    @apply absolute bottom-0 left-0 right-0 h-1 rounded-br-lg;
+    
+    /* Dark mode */
+    @apply bg-gradient-to-b dark:from-white dark:to-transparent;
+  
+    /* Light mode */
+    @apply from-gray-800 to-transparent;
   }
 }
 

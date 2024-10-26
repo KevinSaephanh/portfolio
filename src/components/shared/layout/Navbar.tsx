@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { NavLink } from './NavLink';
 import { HamburgerButton } from '../buttons/HamburgerButton';
 import { ThemeButton } from '../buttons/ThemeButton';
 import { Logo } from '../logo/Logo';
-import { NavLink } from './NavLink';
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);

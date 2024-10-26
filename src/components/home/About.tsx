@@ -6,7 +6,7 @@ export const About = () => {
   };
 
   return (
-    <div className='flex-col md:flex-center md:flex-row fading-border mb-4 md:mb-6'>
+    <div className='flex-col md:flex-center md:flex-row fading-border mb-4 md:mb-6 mt-6 md:mt-16'>
       <Image
         src='/assets/me.jpg'
         alt='me'

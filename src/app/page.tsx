@@ -1,33 +1,33 @@
 'use client';
 
 import { useState } from 'react';
-import { ProgressBar } from '@/components/shared/progress-bar/ProgressBar';
+import { LoadingBar } from '@/components/shared/loading-bar/LoadingBar';
 import { Scene } from '@/components/shared/scene/Scene';
 import { Terrain } from '@/components/shared/scene/Terrain';
 import { Projects } from '@/components/home/Projects';
-import { WorkExperience } from '@/components/home/WorkExperience';
+import { Career } from '@/components/home/Career';
 import { About } from '@/components/home/About';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className='h-full w-full'>
+    <div className='h-full'>
       {isLoading ? (
-        <div className='max-h-80 md:max-h-full'>
+        <div className='flex-center flex-col h-full'>
           <Scene autoRotate={true}>
             <Terrain />
           </Scene>
-          <ProgressBar
+          <LoadingBar
             maxPercent={100}
-            color={'rgb(64,224,208)'}
+            color={'rgb(38, 216, 103)'}
             onMaxPercentReached={() => setIsLoading(false)}
           />
         </div>
       ) : (
         <div className='w-full md:w-3/5 mx-auto px-4'>
           <About />
-          <WorkExperience />
+          <Career />
           <Projects />
         </div>
       )}

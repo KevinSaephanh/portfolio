@@ -45,14 +45,14 @@ export const Projects = () => {
         </section>
         <section className='flex-1'>
           <span className='whitespace-pre-line font-normal'>{active.desc}</span>
-          <ul className='py-2 md:py-4 flex flex-row flex-wrap justify-evenly'>
+          <ul className='py-2 md:py-4 flex flex-row flex-wrap'>
             {active.technologies.map((tech, key) => (
-              <li className='mr-3 md:mr-0' key={key}>
+              <li className='mr-4' key={key}>
                 {tech}
               </li>
             ))}
           </ul>
-          <div className='flex flex-row'>
+          <div className='flex-center'>
             <a
               className='text-2xl mr-4'
               href={active.code}

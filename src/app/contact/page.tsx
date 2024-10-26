@@ -4,7 +4,7 @@ import { useRef, useState, ChangeEvent, FormEvent } from 'react';
 import { Spectral } from 'next/font/google';
 import { Input } from '@/components/shared/form/Input';
 import { TextArea } from '@/components/shared/form/TextArea';
-import '@/app/styles/boxAnimation.scss';
+import styles from '@/app/styles/contact.module.scss';
 
 const spectral = Spectral({ weight: '600', subsets: ['cyrillic'] });
 
@@ -61,9 +61,11 @@ export default function Page() {
       <h2 className={`${spectral.className} text-center text-2xl mb-6`}>
         CONTACT
       </h2>
-      <div className='box-animation relative rounded-lg overflow-hidden mx-auto'>
+      <div
+        className={`${styles.boxAnimation} relative rounded-lg overflow-hidden mx-auto`}
+      >
         <form
-          className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
+          className='bg-slate-100 dark:bg-neutral-900 flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
           onSubmit={handleSubmit}
         >
           <span

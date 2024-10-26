@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Portfolio site',
-  metadataBase: null,
   openGraph: {
     title: 'Kevin Saephanh',
     type: 'website',
@@ -29,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <body
-        className={`h-screen flex flex-col justify-between ${inter.className}`}
+        className={`min-h-screen flex flex-col justify-between ${inter.className}`}
       >
         <Provider>
           <Navbar />

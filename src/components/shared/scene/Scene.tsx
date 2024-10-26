@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, FC, Suspense } from 'react';
+import { ReactNode, FC, Suspense, useEffect, useState } from 'react';
 import { OrbitControls, Preload, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
@@ -17,6 +17,16 @@ export const Scene: FC<SceneProps> = ({
   enablePan = true,
   enableZoom = true,
 }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <Canvas
       flat

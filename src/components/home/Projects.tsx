@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { BsGithub } from 'react-icons/bs';
+import { FaCode } from 'react-icons/fa6';
 import { TbWorld } from 'react-icons/tb';
 import projects from '@/data/projects.json';
 
@@ -48,7 +48,7 @@ export const Projects = () => {
           <ul className='py-4 flex flex-row flex-wrap'>
             {active.technologies.map((tech, key) => (
               <li
-                className='rounded-full px-3 py-1 bg-turquoise mr-4'
+                className='rounded-full px-3 py-1 bg-violet-500 dark:bg-turquoise mr-4 hover:bg-cyan-500'
                 key={key}
               >
                 {tech}
@@ -62,7 +62,7 @@ export const Projects = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <BsGithub />
+              <FaCode />
             </a>
             <a
               className={`text-3xl ${

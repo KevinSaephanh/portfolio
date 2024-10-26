@@ -21,7 +21,7 @@ export const About = () => {
         <span className='font-press-start responsive-text md:text-xl'>
           Software Engineer
         </span>
-        <p className='2xl:w-4/5 md:leading-5'>
+        <p className='2xl:w-4/5 md:leading-5 pb-3 md:pb-0'>
           I have {getYearsOfExp()} years of experience in both enterprise and
           startup work environments. I kicked off my career in full stack
           development and continue to do so, but my expertise and preference

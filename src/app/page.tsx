@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import { LoadingBar } from '@/components/shared/loading-bar/LoadingBar';
 import { Scene } from '@/components/shared/scene/Scene';
-import { Terrain } from '@/components/shared/scene/Terrain';
 import { Projects } from '@/components/home/Projects';
 import { Career } from '@/components/home/Career';
 import { About } from '@/components/home/About';
+import { Terrain } from '@/components/shared/scene/Terrain';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +16,7 @@ export default function Home() {
       {isLoading ? (
         <div className='flex-center flex-col h-full'>
           <Scene autoRotate={true}>
-            <Terrain />
+            <Terrain texturePath='/assets/anime-rpg-landscape.jpg' />
           </Scene>
           <LoadingBar
             maxPercent={100}

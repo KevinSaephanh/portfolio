@@ -5,7 +5,7 @@ export const Career = () => {
   return (
     <div className='fading-border mb-4 md:mb-6'>
       <h3 className='section-title'>Work Experience</h3>
-      <ul>
+      <ul className='pb-2 md:pb-0'>
         {career.map(({ date, title, company, desc }, key) => (
           <li key={key} className='pb-2 md:pb-4'>
             <div className='flex justify-between items-center'>

@@ -1,9 +1,14 @@
 'use client';
 
 import { useTexture } from '@react-three/drei';
+import { FC } from 'react';
 
-export const Terrain = () => {
-  const texture = useTexture('/assets/anime-rpg-landscape.jpg');
+type TerrainProps = {
+  texturePath: string;
+};
+
+export const Terrain: FC<TerrainProps> = ({ texturePath }) => {
+  const texture = useTexture(texturePath);
 
   return (
     <mesh scale={[3, 3, 3]}>

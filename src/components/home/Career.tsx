@@ -1,7 +1,7 @@
 import React from 'react';
 import career from '@/data/career.json';
 
-export const WorkExperience = () => {
+export const Career = () => {
   return (
     <div className='fading-border mb-4 md:mb-6'>
       <h3 className='section-title'>Work Experience</h3>

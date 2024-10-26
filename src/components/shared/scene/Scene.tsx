@@ -13,9 +13,9 @@ type SceneProps = {
 
 export const Scene: FC<SceneProps> = ({
   children,
-  autoRotate,
-  enablePan,
-  enableZoom,
+  autoRotate = false,
+  enablePan = true,
+  enableZoom = true,
 }) => {
   return (
     <Canvas
@@ -26,10 +26,12 @@ export const Scene: FC<SceneProps> = ({
         near: 0.1,
         far: 1000,
       }}
+      style={{ width: '70vw', height: '70vh' }}
+      className='flex-none'
     >
       <OrbitControls
         autoRotate={autoRotate}
-        autoRotateSpeed={0.3}
+        autoRotateSpeed={0.5}
         rotateSpeed={0.1}
         enablePan={enablePan}
         enableZoom={enableZoom}

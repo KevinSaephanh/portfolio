@@ -18,7 +18,7 @@ export const Projects = () => {
             {projects.map((project, key) => (
               <li
                 key={key}
-                className={`flex-center cursor-pointer p-2 md:p-1`}
+                className={`flex-center cursor-pointer p-2 md:p-1 mr-4 md:mr-0`}
                 onClick={() => setActive(projects[key])}
               >
                 <Image
@@ -45,10 +45,10 @@ export const Projects = () => {
         </section>
         <section className='w-full md:w-3/5 mt-4 md:mt-2'>
           <span className='whitespace-pre-line font-normal'>{active.desc}</span>
-          <ul className='py-4 flex flex-row flex-wrap'>
+          <ul className='py-2 md:py-4 flex flex-row flex-wrap'>
             {active.technologies.map((tech, key) => (
               <li
-                className='rounded-full px-3 py-1 bg-violet-500 dark:bg-turquoise mr-4 hover:bg-cyan-500'
+                className='rounded-full px-3 py-1 mb-3 bg-violet-500 dark:bg-turquoise mr-4 hover:bg-cyan-500'
                 key={key}
               >
                 {tech}

@@ -10,7 +10,9 @@ export const Career = () => {
         {career.map(({ date, title, company, desc, tech }, key) => (
           <li key={key} className='pb-2 md:pb-4'>
             <div className='flex justify-between items-center'>
-              <span className='text-left font-bold'>{company}</span>
+              <span className='text-left font-extrabold hover:text-cyan-500'>
+                {company}
+              </span>
               <span className='text-right font-normal'>{date}</span>
             </div>
             <span className='font-normal'>{title}</span>

@@ -2,9 +2,10 @@
   {
     "id": 1,
     "title": "Stock Market ETL",
-    "desc": "Sed sollicitudin est ipsum, sit amet dignissim turpis vehicula ut. Duis mattis porttitor auctor. Nam ut ligula ultricies sapien accumsan iaculis. Aenean eget dui nec diam dictum efficitur. Mauris tincidunt velit ut tortor ultrices, non congue purus elementum.",
+    "desc": "Poll historical stock data via Alpha Vantage API and perform a simple ETL job with Pandas, AstraDB, and AWS S3.",
     "technologies": [
       "Python",
+      "FastAPI",
       "Kafka",
       "Cassandra",
       "AWS"
@@ -47,5 +48,17 @@
     ],
     "code": "https://github.com/KevinSaephanh/Sort_Visualizer",
     "website": "https://gentle-clafoutis-1e9dfe.netlify.app/"
+  },
+  {
+    "id": 5,
+    "title": "Portfolio",
+    "desc": "My portfolio site that offers a little insight into my background including my work experience and notable projects.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "code": "https://github.com/KevinSaephanh/portfolio",
+    "website": "https://kevinsaephanh.com"
   }
 ]

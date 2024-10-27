@@ -1,24 +1,25 @@
 'use client';
 
-import React from 'react';
+import { useRef, useState, ChangeEvent, FormEvent } from 'react';
 import { Spectral } from 'next/font/google';
-import { Input } from '@/components/Form/Input';
-import { TextArea } from '@/components/Form/TextArea';
+import { Input } from '@/components/ui/form/Input';
+import { TextArea } from '@/components/ui/form/TextArea';
+import styles from '@/app/styles/contact.module.scss';
 
 const spectral = Spectral({ weight: '600', subsets: ['cyrillic'] });
 
 export default function Page() {
-  const inputs = React.useRef<{ [key: string]: string }>({
+  const inputs = useRef<{ [key: string]: string }>({
     name: '',
     email: '',
     message: '',
   });
-  const [submitDisabled, setSubmitDisabled] = React.useState(true);
-  const [submitMessage, setSubmitMessage] = React.useState('');
-  const [submitSuccess, setSubmitSuccess] = React.useState(false);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleInput = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name: key, value } = e.target;
     inputs.current[key] = value;
@@ -27,7 +28,7 @@ export default function Page() {
     setSubmitDisabled(!name || !email || !message);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await fetch('/api/contact', {
       method: 'POST',
@@ -60,9 +61,11 @@ export default function Page() {
       <h2 className={`${spectral.className} text-center text-2xl mb-6`}>
         CONTACT
       </h2>
-      <div className='box relative rounded-lg overflow-hidden mx-auto'>
+      <div
+        className={`${styles.boxAnimation} relative rounded-lg overflow-hidden mx-auto`}
+      >
         <form
-          className='contact-form flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
+          className='bg-slate-100 dark:bg-neutral-900 flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
           onSubmit={handleSubmit}
         >
           <span

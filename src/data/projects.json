@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "title": "Stock Market ETL",
+    "desc": "Poll historical stock data via Alpha Vantage API and perform a simple ETL job with Pandas, AstraDB, and AWS S3.",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Kafka",
+      "Cassandra",
+      "AWS"
+    ],
+    "code": "https://github.com/KevinSaephanh/stock-market-etl-consumer",
+    "website": ""
+  },
+  {
+    "id": 2,
+    "title": "Data Generator",
+    "desc": "• Create large sets of mock data for your application, using common properties such as emails and encrypted passwords.\n• Upload .env files to create modules for type-safe environment variables.",
+    "technologies": [
+      "React",
+      "Typescript",
+      "Tailwind"
+    ],
+    "code": "https://github.com/KevinSaephanh/data-generator",
+    "website": "https://inquisitive-entremet-11acdd.netlify.app/"
+  },
+  {
+    "id": 3,
+    "title": "Pathfinder",
+    "desc": "A visualization of popular pathfinding algorithms traversing randomly generated mazes, highlighting cells visited and the optimal path to reach the end.",
+    "technologies": [
+      "React",
+      "JavaScript",
+      "Bootstrap"
+    ],
+    "code": "https://github.com/KevinSaephanh/Pathfinder",
+    "website": "https://master--sage-youtiao-4202f8.netlify.app/"
+  },
+  {
+    "id": 4,
+    "title": "Sort Visualizer",
+    "desc": "A visualization of popular sorting algorithms using a bar chart.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "code": "https://github.com/KevinSaephanh/Sort_Visualizer",
+    "website": "https://gentle-clafoutis-1e9dfe.netlify.app/"
+  },
+  {
+    "id": 5,
+    "title": "Portfolio",
+    "desc": "My portfolio site that offers a little insight into my background including my work experience and notable projects.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "code": "https://github.com/KevinSaephanh/portfolio",
+    "website": "https://kevinsaephanh.com"
+  }
+]

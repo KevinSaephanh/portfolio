@@ -1,0 +1,45 @@
+/* credit: https://www.youtube.com/watch?v=cxm5bCCa9OA&t=608s&ab_channel=OnlineTutorials */
+.boxAnimation {
+    content: '';
+    width: 600px;
+    max-width: 90vw;
+    height: 400px;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 600px;
+      max-width: 95vw;
+      height: 400px;
+      background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 600px;
+      max-width: 95vw;
+      height: 400px;
+      background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -3s;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

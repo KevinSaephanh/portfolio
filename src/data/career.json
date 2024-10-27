@@ -1,0 +1,56 @@
+[
+  {
+    "date": "Jul 2024 - Current",
+    "title": "Software Engineer III",
+    "company": "JPMorgan Chase",
+    "desc": "Currently working on scaling and optimizing a large distributed batch processing system through distributed logging and event-driven communication.",
+    "tech": [
+      "Java",
+      "Spring Boot",
+      "Kafka",
+      "Oracle",
+      "AWS"
+    ]
+  },
+  {
+    "date": "Aug 2022 - Feb 2024",
+    "title": "Backend Engineer",
+    "company": "Great Lakes Reality Labs",
+    "desc": "Built and deployed the API for a flagship job search application using Nest.js, PostgreSQL, and Digital Ocean.",
+    "tech": [
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Digital Ocean"
+    ]
+  },
+  {
+    "date": "Jan 2020 - Jan 2024",
+    "title": "Full Stack Engineer",
+    "company": "Cognizant",
+    "desc": "Built and maintained features across the whole stack for a large financial auto loans and investigations application.",
+    "tech": [
+      "Java",
+      "Spring Boot",
+      "Kafka",
+      "TypeScript",
+      "Angular",
+      "PostgreSQL",
+      "AWS"
+    ]
+  },
+  {
+    "date": "Oct 2019 - Jan 2020",
+    "title": "Full Stack Engineer",
+    "company": "Revature",
+    "desc": "Attended a coding bootcamp focused on modern web development, wrapping up by designing and implementing a notification system for an enterprise application.",
+    "tech": [
+      "Java",
+      "Spring Boot",
+      "TypeScript",
+      "Angular",
+      "PostgreSQL",
+      "AWS"
+    ]
+  }
+]

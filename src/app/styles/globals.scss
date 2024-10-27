@@ -1,0 +1,118 @@
+// Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+// Tailwind directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .light {
+    background-color: #fffdfc;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .grid-list-cols {
+    @apply grid grid-flow-col grid-rows-4 gap-x-24;
+  }
+
+  .section-title {
+    @apply underline underline-offset-4 font-bold text-xl mb-2 md:mb-4;
+  }
+
+  .responsive-text {
+    @apply text-center md:text-left;
+  }
+
+  input,
+  textarea {
+    @apply my-4 pl-2 font-semibold text-lg bg-transparent border-b-2 w-11/12 md:w-5/6 focus:outline-none block focus:rounded focus:py-2;
+  
+    /* Light mode */
+    @apply border-teal-600 focus:bg-teal-400;
+
+    /* Dark mode */
+    @apply dark:border-teal-400 dark:placeholder-gray-400 dark:focus:bg-teal-700; 
+  }
+
+  span,
+  li,
+  p {
+    @apply font-semibold;
+  }
+
+  a,
+  .link-item {
+    @apply rounded md:bg-transparent md:p-0;
+  }
+
+  .themed-border {
+    @apply rounded border-2 border-black dark:border-slate-100;
+  }
+
+  .highlight {
+    @apply text-teal-600 dark:text-teal-400 border-teal-600 dark:border-teal-400;
+  }
+
+  .active-link {
+    @apply highlight underline;
+  }
+
+  .success-text {
+    @apply text-green-600 dark:text-green-700;
+  }
+
+  .error-text {
+    @apply text-red-600 dark:text-red-700;
+  }
+
+  h1,
+  h2,
+  a,
+  .hover-highlight {
+    &:hover {
+      @apply highlight;
+    }
+  }
+
+  .fading-border {
+    @apply relative border-b-2 border-transparent;
+  }
+  
+  .fading-border::after {
+    content: "";
+    @apply absolute bottom-0 left-0 right-0 h-1 rounded-br-lg;
+    
+    /* Dark mode */
+    @apply bg-gradient-to-b dark:from-white dark:to-transparent;
+  
+    /* Light mode */
+    @apply from-gray-800 to-transparent;
+  }
+}
+
+button {
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f7f4ed;
+  border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: slategray;
+  border-radius: 100vh;
+  border: 3px solid #f6f7ed;
+}

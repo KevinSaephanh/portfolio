@@ -1,19 +1,22 @@
 'use client';
 
-import * as React from 'react';
-import { Model } from '@/components/Scene/Model';
-import { Scene } from '@/components/Scene/Scene';
+import { Scene } from '@/components/ui/scene/Scene';
+import { Terrain } from '@/components/ui/scene/Terrain';
+import Link from 'next/link';
 
-export default function Page() {
+export default function NotFound() {
   return (
-    <div
-      className='w-full h-4/5 flex flex-col items-center'
-      title='Credit Boolkas on sketchfab: https://sketchfab.com/3d-models/lizard-mage-animated-f1cd260da5534351adcbb109e98ac0b5'
-    >
-      <Scene>
-        <Model path='/assets/models/lizard_mage.fbx' />
+    <div className='w-full h-4/5 flex flex-col items-center'>
+      <Scene autoRotate={true}>
+        <Terrain texturePath='/assets/anime-rpg-landscape.jpg' />
       </Scene>
-      <span className='text-lg pt-6'>Hey, this page doesn&apos;t exist!</span>
+      <span className='text-lg pt-6 pb-2'>404 nothing to show here</span>
+      <Link
+        href='/'
+        className='text-lg text-center font-bold border-2 py-1 px-4 rounded dark:bg-slate-700'
+      >
+        Home
+      </Link>
     </div>
   );
 }

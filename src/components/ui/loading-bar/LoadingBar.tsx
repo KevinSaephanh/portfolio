@@ -5,18 +5,23 @@ type LoadingBarProps = {
   maxPercent: number;
   color: string;
   onMaxPercentReached: Function;
+  progressSpeed?: number;
 };
 
 export const LoadingBar: FC<LoadingBarProps> = ({
   maxPercent,
   color,
   onMaxPercentReached,
+  progressSpeed = 50,
 }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (progress < maxPercent) {
-      const timeoutId = setTimeout(() => setProgress(progress + 1), 50);
+      const timeoutId = setTimeout(
+        () => setProgress(progress + 1),
+        progressSpeed
+      );
       return () => clearTimeout(timeoutId);
     } else {
       onMaxPercentReached();

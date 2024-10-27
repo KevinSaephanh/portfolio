@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { FaCode } from 'react-icons/fa6';
 import { TbWorld } from 'react-icons/tb';
 import projects from '@/data/projects.json';
+import { Badge } from '../ui/badge/Badge';
 
 export const Projects = () => {
   const [active, setActive] = useState(projects[0]);
@@ -33,7 +34,7 @@ export const Projects = () => {
                 <p
                   className={`md:w-2/3 whitespace-nowrap hover:text-teal-300 ${
                     active.id === key + 1
-                      ? 'bg-slate-300 dark:bg-slate-500 p-1 rounded'
+                      ? 'bg-soft-lilac dark:bg-turquoise hover:text-slate-500 hover:dark:text-slate-700 p-1 rounded'
                       : ''
                   }`}
                 >
@@ -47,12 +48,11 @@ export const Projects = () => {
           <span className='whitespace-pre-line font-normal'>{active.desc}</span>
           <ul className='py-2 md:py-4 flex flex-row flex-wrap'>
             {active.technologies.map((tech, key) => (
-              <li
-                className='rounded-full px-3 py-1 mb-3 bg-violet-500 dark:bg-turquoise mr-4 hover:bg-cyan-500'
+              <Badge
+                text={tech}
                 key={key}
-              >
-                {tech}
-              </li>
+                colorStyles='bg-soft-lilac dark:bg-turquoise'
+              />
             ))}
           </ul>
           <div className='flex items-start justify-start mb-4 md:mb-6'>

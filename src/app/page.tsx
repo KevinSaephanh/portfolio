@@ -1,13 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { LoadingBar } from '@/components/shared/loading-bar/LoadingBar';
-import { Scene } from '@/components/shared/scene/Scene';
+import { LoadingBar } from '@/components/ui/loading-bar/LoadingBar';
+import { Scene } from '@/components/ui/scene/Scene';
 import { Projects } from '@/components/home/Projects';
 import { Career } from '@/components/home/Career';
 import { About } from '@/components/home/About';
-import { FbxModel } from '@/components/shared/scene/FbxModel';
-import { GlbModel } from '@/components/shared/scene/GlbModel';
+import { GlbModel } from '@/components/ui/scene/GlbModel';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,14 +14,18 @@ export default function Home() {
   return (
     <div className='h-full'>
       {isLoading ? (
-        <div className='flex-center flex-col h-full'>
-          <Scene autoRotate={true}>
+        <div
+          className='flex-center flex-col h-full'
+          title='3D model credit: https://sketchfab.com/HallowDragon'
+        >
+          <Scene autoRotate={true} autoRotateSpeed={2.5}>
             <GlbModel path='/assets/models/dragon.glb' />
           </Scene>
           <LoadingBar
             maxPercent={100}
             color={'rgb(38, 216, 103)'}
             onMaxPercentReached={() => setIsLoading(false)}
+            progressSpeed={75}
           />
         </div>
       ) : (

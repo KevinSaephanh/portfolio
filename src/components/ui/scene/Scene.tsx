@@ -7,6 +7,7 @@ import { Canvas } from '@react-three/fiber';
 type SceneProps = {
   children: ReactNode;
   autoRotate?: boolean;
+  autoRotateSpeed?: number;
   enablePan?: boolean;
   enableZoom?: boolean;
 };
@@ -14,6 +15,7 @@ type SceneProps = {
 export const Scene: FC<SceneProps> = ({
   children,
   autoRotate = false,
+  autoRotateSpeed = 0.5,
   enablePan = true,
   enableZoom = true,
 }) => {
@@ -31,7 +33,7 @@ export const Scene: FC<SceneProps> = ({
     >
       <OrbitControls
         autoRotate={autoRotate}
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={autoRotateSpeed}
         rotateSpeed={0.1}
         enablePan={enablePan}
         enableZoom={enableZoom}

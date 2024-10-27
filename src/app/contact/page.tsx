@@ -2,8 +2,8 @@
 
 import { useRef, useState, ChangeEvent, FormEvent } from 'react';
 import { Spectral } from 'next/font/google';
-import { Input } from '@/components/shared/form/Input';
-import { TextArea } from '@/components/shared/form/TextArea';
+import { Input } from '@/components/ui/form/Input';
+import { TextArea } from '@/components/ui/form/TextArea';
 import styles from '@/app/styles/contact.module.scss';
 
 const spectral = Spectral({ weight: '600', subsets: ['cyrillic'] });

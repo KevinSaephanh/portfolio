@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Footer } from '@/components/shared/layout/Footer';
-import { Navbar } from '@/components/shared/layout/Navbar';
+import { Footer } from '@/components/ui/layout/Footer';
+import { Navbar } from '@/components/ui/layout/Navbar';
 import Provider from './provider';
 import '@/app/styles/globals.scss';
 

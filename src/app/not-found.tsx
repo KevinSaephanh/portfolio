@@ -1,7 +1,7 @@
 'use client';
 
-import { Scene } from '@/components/shared/scene/Scene';
-import { Terrain } from '@/components/shared/scene/Terrain';
+import { Scene } from '@/components/ui/scene/Scene';
+import { Terrain } from '@/components/ui/scene/Terrain';
 import Link from 'next/link';
 
 export default function NotFound() {

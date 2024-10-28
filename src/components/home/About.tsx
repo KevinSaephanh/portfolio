@@ -26,7 +26,7 @@ export const About = () => {
           initial='hidden'
           animate='visible'
           transition={{ duration: 0.5 }}
-          className='font-press-start font-bold responsive-text text-2xl md:text-3xl'
+          className='font-press-start font-bold responsive-text text-2xl md:text-3xl hover:text-electric-blue'
         >
           Kevin Saephanh
         </motion.h3>
@@ -35,7 +35,7 @@ export const About = () => {
           initial='hidden'
           animate='visible'
           transition={{ duration: 0.5, delay: 0.2 }}
-          className='font-press-start responsive-text md:text-xl'
+          className='font-press-start responsive-text md:text-xl hover:text-electric-blue'
         >
           Software Engineer
         </motion.span>

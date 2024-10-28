@@ -2,8 +2,10 @@
 
 This is my portfolio project built using Next.js: [Link](https://kevinsaephanh.com/)
 
-## Tech Stack
+## Technologies
 
-- Next.js
 - TypeScript
+- Next.js
+- Three.js
+- Framer Motion
 - Tailwind

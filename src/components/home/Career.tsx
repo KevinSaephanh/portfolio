@@ -1,6 +1,12 @@
 import React from 'react';
 import career from '@/data/career.json';
 import { Badge } from '../ui/badge/Badge';
+import { motion } from 'framer-motion';
+
+const slideIn = {
+  hidden: { x: -100, opacity: 0 },
+  show: { x: 0, opacity: 1 },
+};
 
 export const Career = () => {
   return (
@@ -8,7 +14,14 @@ export const Career = () => {
       <h3 className='section-title'>Work Experience</h3>
       <ul className='pb-2 md:pb-0'>
         {career.map(({ date, title, company, desc, tech }, key) => (
-          <li key={key} className='pb-2 md:pb-4'>
+          <motion.li
+            initial='hidden'
+            animate='show'
+            variants={slideIn}
+            transition={{ duration: 0.5, delay: key * 0.2 }}
+            key={key}
+            className='pb-2 md:pb-4'
+          >
             <div className='flex justify-between items-center'>
               <span className='text-left font-extrabold hover:text-cyan-500'>
                 {company}
@@ -26,7 +39,7 @@ export const Career = () => {
                 />
               ))}
             </ul>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>

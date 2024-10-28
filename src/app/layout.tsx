@@ -27,6 +27,12 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
+      <head>
+        <link
+          href='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'
+          rel='stylesheet'
+        />
+      </head>
       <body
         className={`min-h-screen flex flex-col justify-between ${inter.className}`}
       >

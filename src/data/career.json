@@ -3,7 +3,7 @@
     "date": "Jul 2024 - Current",
     "title": "Software Engineer III",
     "company": "JPMorgan Chase",
-    "desc": "Currently working on scaling and optimizing a large distributed batch processing system through distributed logging and event-driven communication.",
+    "desc": "Currently working on scaling and optimizing a large distributed batch processing system by implementing performant and parallel processing among other things.",
     "tech": [
       "Java",
       "Spring Boot",

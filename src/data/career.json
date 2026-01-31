@@ -1,9 +1,22 @@
 [
   {
-    "date": "Jul 2024 - Current",
+    "date": "Jul 2025 - Current",
+    "title": "Senior Software Engineer",
+    "company": "Capital One",
+    "desc": "Boosted performance of microservices via query optimization and integrated cross-team observability. Currently advocating for AI Agent implementation within system to automate remediations and offload manual tasks",
+    "tech": [
+      "Java",
+      "Spring Boot",
+      "Python",
+      "Go",
+      "AWS"
+    ]
+  },
+  {
+    "date": "Jul 2024 - Jul 2025",
     "title": "Software Engineer III",
     "company": "JPMorgan Chase",
-    "desc": "Currently working on scaling and optimizing a large distributed batch processing system by implementing performant and parallel processing among other things.",
+    "desc": "Scaled and optimized a large distributed batch processing system by implementing performant and parallel processing among other things.",
     "tech": [
       "Java",
       "Spring Boot",

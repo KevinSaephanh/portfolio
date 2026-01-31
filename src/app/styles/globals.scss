@@ -4,8 +4,25 @@
 @tailwind utilities;
 
 @layer components {
-  .light {
-    background-color: #fffdfc;
+  body {
+    /* Default to Light Mode */
+    @apply bg-[#fffdfc] text-gray-900 transition-colors duration-300;
+    
+    /* Grid lines for light mode (very faint gray/teal) */
+    --grid-color: rgba(20, 184, 166, 0.05);
+    
+    /* Dark Mode Overrides */
+    @apply dark:bg-black dark:text-slate-100;
+    
+    background-image: 
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Update the grid color variable specifically for dark mode */
+  .dark body {
+    --grid-color: rgba(20, 184, 166, 0.1); 
   }
 
   .flex-center {
@@ -89,6 +106,16 @@
     /* Light mode */
     @apply from-gray-800 to-transparent;
   }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: #000000; 
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-teal-600; 
+    border: 3px solid #000000;
+    border-radius: 10px;
+  }
 }
 
 button {
@@ -101,15 +128,4 @@ button {
 .scrollbar::-webkit-scrollbar {
   width: 15px;
   height: 15px;
-}
-
-.scrollbar::-webkit-scrollbar-track {
-  background: #f7f4ed;
-  border-radius: 100vh;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  background: slategray;
-  border-radius: 100vh;
-  border: 3px solid #f6f7ed;
 }

@@ -9,6 +9,7 @@
       "Spring Boot",
       "Python",
       "Go",
+      "PostgreSQL",
       "AWS"
     ]
   },
@@ -27,7 +28,7 @@
   },
   {
     "date": "Aug 2022 - Feb 2024",
-    "title": "Backend Engineer",
+    "title": "Backend Engineer (Contract)",
     "company": "Great Lakes Reality Labs",
     "desc": "Built the API for a flagship job search application catered to high schools and colleges. Some notable features include dynamic searches, cron jobs, and RDBAC.",
     "tech": [

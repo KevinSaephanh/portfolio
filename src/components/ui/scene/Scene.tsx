@@ -21,8 +21,6 @@ export const Scene: FC<SceneProps> = ({
 }) => {
   return (
     <Canvas
-      flat
-      linear
       camera={{
         fov: 75,
         near: 0.1,
@@ -34,14 +32,14 @@ export const Scene: FC<SceneProps> = ({
       <OrbitControls
         autoRotate={autoRotate}
         autoRotateSpeed={autoRotateSpeed}
-        rotateSpeed={0.1}
+        rotateSpeed={0.5}
         enablePan={enablePan}
         enableZoom={enableZoom}
       />
       <ambientLight intensity={0.6} />
       <Preload all />
       <Suspense fallback={null}>
-        <Stage preset='soft' intensity={1.5} environment='sunset'>
+        <Stage preset='soft' intensity={1.5} environment='night'>
           {children}
         </Stage>
       </Suspense>

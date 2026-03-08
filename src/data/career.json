@@ -3,7 +3,7 @@
     "date": "Jul 2025 - Current",
     "title": "Senior Software Engineer",
     "company": "Capital One",
-    "desc": "Boosted performance of microservices via query optimization and integrated cross-team observability. Currently advocating for AI Agent implementation within system to automate remediations and offload manual tasks",
+    "desc": "Building AI agents to auto-remediate security findings and a RAG chatbot so engineers stop pinging the platform team for answers they could just ask a bot.",
     "tech": [
       "Java",
       "Spring Boot",

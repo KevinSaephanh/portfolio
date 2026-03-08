@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { LoadingBar } from '@/components/ui/loading-bar/LoadingBar';
 import { Scene } from '@/components/ui/scene/Scene';
 import { Projects } from '@/components/home/Projects';
@@ -13,28 +14,33 @@ export default function Home() {
 
   return (
     <div className='h-full'>
-      {isLoading ? (
-        <div
-          className='flex-center flex-col h-full'
-          title='3D model credit: https://sketchfab.com/HallowDragon'
-        >
-          <Scene autoRotate={true} autoRotateSpeed={2.5}>
-            <GlbModel path='/assets/models/dragon.glb' />
-          </Scene>
-          <LoadingBar
-            maxPercent={100}
-            color={'rgb(38, 216, 103)'}
-            onMaxPercentReached={() => setIsLoading(false)}
-            progressSpeed={75}
-          />
-        </div>
-      ) : (
-        <div className='w-full md:w-3/5 mx-auto px-4'>
-          <About />
-          <Career />
-          <Projects />
-        </div>
-      )}
+      <AnimatePresence mode='wait'>
+        {isLoading ? (
+          <motion.div
+            key='loader'
+            className='flex-center flex-col h-full'
+            title='3D model credit: https://sketchfab.com/HallowDragon'
+            exit={{ opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
+          >
+            <Scene autoRotate={true} autoRotateSpeed={2.5}>
+              <GlbModel path='/assets/models/dragon.glb' />
+            </Scene>
+            <LoadingBar onComplete={() => setIsLoading(false)} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key='content'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className='w-full md:w-3/5 mx-auto px-4'
+          >
+            <About />
+            <Career />
+            <Projects />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

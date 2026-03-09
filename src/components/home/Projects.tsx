@@ -7,12 +7,13 @@ import { TbWorld } from 'react-icons/tb';
 import projects from '@/data/projects.json';
 import { Badge } from '../ui/badge/Badge';
 import { motion, AnimatePresence } from 'framer-motion';
+import { TiltCard } from '@/components/ui/tilt-card/TiltCard';
 
 export const Projects = () => {
   const [active, setActive] = useState(projects[0]);
 
   return (
-    <div className='fading-border'>
+    <div id='projects' className='fading-border'>
       <h3 className='section-title'>Projects</h3>
       <div className='flex flex-col md:flex-row gap-4 mt-4'>
         {/* Project list — game menu style */}
@@ -53,13 +54,14 @@ export const Projects = () => {
 
         {/* Project details */}
         <AnimatePresence mode='wait'>
-          <motion.section
+          <TiltCard
             key={active.id}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22 }}
-            className='w-full md:w-3/5 bento-card p-5'
+            className='w-full md:w-3/5 p-5'
+            tiltAmount={4}
           >
             <p className='whitespace-pre-line font-normal text-sm leading-relaxed dark:text-slate-300 mb-3'>
               {active.desc}
@@ -95,7 +97,7 @@ export const Projects = () => {
                 </a>
               )}
             </div>
-          </motion.section>
+          </TiltCard>
         </AnimatePresence>
       </div>
     </div>

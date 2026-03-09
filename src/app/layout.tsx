@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer } from '@/components/ui/layout/Footer';
 import { Navbar } from '@/components/ui/layout/Navbar';
+import { KonamiEasterEgg } from '@/components/ui/konami/KonamiEasterEgg';
 import Provider from './provider';
 import '@/app/styles/globals.scss';
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <head>
+        <meta name='x-hint' content='the old ways still work — ↑↑↓↓←→←→BA' />
         <link
           href='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'
           rel='stylesheet'
@@ -37,6 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`min-h-screen flex flex-col justify-between ${inter.className}`}
       >
         <Provider>
+          <KonamiEasterEgg />
           <Navbar />
           <main
             role='main'

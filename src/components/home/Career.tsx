@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import career from '@/data/career.json';
 import { Badge } from '../ui/badge/Badge';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 export const Career = () => {
+  const lineRef = useRef(null);
+  const lineInView = useInView(lineRef, { once: true, amount: 0.1 });
+
   return (
-    <div className='fading-border mb-4 md:mb-6'>
+    <div id='career' className='fading-border mb-4 md:mb-6'>
       <h3 className='section-title'>Work Experience</h3>
       <ul className='relative mt-6 pb-2 md:pb-0'>
         {/* Vertical neon timeline line */}
-        <div
+        <motion.div
+          ref={lineRef}
           className='absolute left-[4px] top-2 bottom-0 w-px'
           style={{
             background: 'linear-gradient(to bottom, rgba(45,212,191,0.7), rgba(45,212,191,0.1) 85%, transparent)',
+            transformOrigin: 'top',
           }}
+          initial={{ scaleY: 0 }}
+          animate={lineInView ? { scaleY: 1 } : { scaleY: 0 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
         />
 
         {career.map(({ date, title, company, desc, tech }, key) => (

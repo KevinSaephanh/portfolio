@@ -27,6 +27,7 @@ export const About = () => {
 
   return (
     <motion.div
+      id='about'
       initial="hidden"
       animate="visible"
       className='grid grid-cols-1 md:grid-cols-12 gap-4 mt-6 md:mt-16 fading-border pb-8'

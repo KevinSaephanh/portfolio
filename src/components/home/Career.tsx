@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import career from '@/data/career.json';
 import { Badge } from '../ui/badge/Badge';
 import { motion, useInView } from 'framer-motion';
+import { TiltCard } from '@/components/ui/tilt-card/TiltCard';
 
 export const Career = () => {
   const lineRef = useRef(null);
@@ -36,7 +37,7 @@ export const Career = () => {
             <div className='timeline-dot absolute left-0 top-[6px]' />
 
             {/* Card */}
-            <div className='bento-card p-4 md:p-5'>
+            <TiltCard className='p-4 md:p-5' tiltAmount={5}>
               <div className='flex justify-between items-start flex-wrap gap-1 mb-1'>
                 <span className='font-press-start text-xs highlight'>{company}</span>
                 <span className='font-mono text-xs dark:text-slate-400 text-slate-500'>{date}</span>
@@ -54,7 +55,7 @@ export const Career = () => {
                   />
                 ))}
               </ul>
-            </div>
+            </TiltCard>
           </motion.li>
         ))}
       </ul>

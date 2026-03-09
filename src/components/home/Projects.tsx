@@ -12,7 +12,7 @@ export const Projects = () => {
   const [active, setActive] = useState(projects[0]);
 
   return (
-    <div className='fading-border'>
+    <div id='projects' className='fading-border'>
       <h3 className='section-title'>Projects</h3>
       <div className='flex flex-col md:flex-row gap-4 mt-4'>
         {/* Project list — game menu style */}

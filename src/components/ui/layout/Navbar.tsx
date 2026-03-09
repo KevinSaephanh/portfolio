@@ -12,12 +12,12 @@ export const Navbar = () => {
   return (
     <nav className={`${open ? 'absolute w-full h-full bg-gray-950 z-50' : ''}`}>
       <div className={`w-full flex flex-wrap items-center justify-between`}>
-        <section className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
+        <section className='w-full relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Logo />
           <button
             data-collapse-toggle='mobile-menu'
             type='button'
-            className='mt-2 inline-flex items-center p-2 ml-2 rounded-lg md:hidden'
+            className='inline-flex items-center p-2 ml-2 rounded-lg md:hidden'
             aria-controls='mobile-menu-2'
             aria-expanded='false'
             onClick={() => setOpen(!open)}

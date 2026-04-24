@@ -1,13 +1,47 @@
 'use client';
 
-import { useRef, useState, ChangeEvent, FormEvent } from 'react';
+import { useRef, useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Input } from '@/components/ui/form/Input';
 import { TextArea } from '@/components/ui/form/TextArea';
 import styles from '@/app/styles/contact.module.scss';
 import { BsLinkedin, BsGithub, BsDiscord } from 'react-icons/bs';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const BOOT_LINES = [
+  '> initializing contact protocol...',
+  '> establishing secure channel... [OK]',
+  '> loading encryption keys......... [OK]',
+  '> pinging target... [CONNECTED]',
+  '> ready.',
+];
+
+function BootLine({ text }: { text: string }) {
+  const okIdx = text.indexOf('[OK]');
+  const connIdx = text.indexOf('[CONNECTED]');
+
+  if (okIdx !== -1) {
+    return (
+      <p>
+        {text.slice(0, okIdx)}
+        <span className='text-teal-400'>[OK]</span>
+      </p>
+    );
+  }
+  if (connIdx !== -1) {
+    return (
+      <p>
+        {text.slice(0, connIdx)}
+        <span className='text-teal-400'>[CONNECTED]</span>
+      </p>
+    );
+  }
+  return <p>{text}</p>;
+}
 
 export default function Page() {
+  const [booting, setBooting] = useState(true);
+  const [bootLines, setBootLines] = useState<string[]>([]);
+
   const inputs = useRef<{ [key: string]: string }>({
     name: '',
     email: '',
@@ -16,6 +50,22 @@ export default function Page() {
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  useEffect(() => {
+    let idx = 0;
+    const showNext = () => {
+      if (idx < BOOT_LINES.length) {
+        const line = BOOT_LINES[idx];
+        idx++;
+        setBootLines(prev => [...prev, line]);
+        setTimeout(showNext, 400);
+      } else {
+        setTimeout(() => setBooting(false), 600);
+      }
+    };
+    const t = setTimeout(showNext, 300);
+    return () => clearTimeout(t);
+  }, []);
 
   const handleInput = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -99,60 +149,87 @@ export default function Page() {
         </a>
       </div>
 
-      {/* Animated form */}
-      <div
-        className={`${styles.boxAnimation} relative rounded-lg overflow-hidden mx-auto`}
-      >
-        <form
-          className='bg-slate-100 dark:bg-neutral-900 flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
-          onSubmit={handleSubmit}
-        >
-          <span
-            className={`mb-2 font-bold text-sm ${
-              submitSuccess ? 'success-text' : 'error-text'
-            }`}
+      {/* Boot sequence / Form */}
+      <AnimatePresence mode='wait'>
+        {booting ? (
+          <motion.div
+            key='boot'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className='bento-card w-full max-w-md px-5 py-4'
           >
-            {submitMessage}
-          </span>
-          <Input
-            type='text'
-            name='name'
-            placeholder='Name'
-            label='Name'
-            minLength={3}
-            maxLength={100}
-            onChange={handleInput}
-            required
-          />
-          <Input
-            type='email'
-            name='email'
-            placeholder='Email'
-            label='Email'
-            minLength={7}
-            maxLength={100}
-            onChange={handleInput}
-            required
-          />
-          <TextArea
-            type='text'
-            name='message'
-            placeholder='Message'
-            label='Message'
-            minLength={5}
-            maxLength={300}
-            onChange={handleInput}
-            required
-          />
-          <button
-            className='font-press-start text-xs bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 px-6 py-2 mt-4 rounded'
-            type='submit'
-            disabled={submitDisabled}
+            <p className='font-press-start text-[10px] neon-text mb-4'>&gt;_ contact.exe</p>
+            <div className='font-mono text-sm dark:text-slate-300 text-slate-600 space-y-1'>
+              {bootLines.map((line, i) => (
+                <BootLine key={i} text={line} />
+              ))}
+              {bootLines.length === BOOT_LINES.length && (
+                <span className='inline-block w-2 h-4 bg-teal-400 cursor-blink align-middle ml-1' />
+              )}
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key='form'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className={`${styles.boxAnimation} relative rounded-lg overflow-hidden mx-auto`}
           >
-            Send
-          </button>
-        </form>
-      </div>
+            <form
+              className='bg-slate-100 dark:bg-neutral-900 flex flex-col items-center justify-center rounded-md inset-0.5 absolute z-10'
+              onSubmit={handleSubmit}
+            >
+              <span
+                className={`mb-2 font-bold text-sm ${
+                  submitSuccess ? 'success-text' : 'error-text'
+                }`}
+              >
+                {submitMessage}
+              </span>
+              <Input
+                type='text'
+                name='name'
+                placeholder='Name'
+                label='Name'
+                minLength={3}
+                maxLength={100}
+                onChange={handleInput}
+                required
+              />
+              <Input
+                type='email'
+                name='email'
+                placeholder='Email'
+                label='Email'
+                minLength={7}
+                maxLength={100}
+                onChange={handleInput}
+                required
+              />
+              <TextArea
+                type='text'
+                name='message'
+                placeholder='Message'
+                label='Message'
+                minLength={5}
+                maxLength={300}
+                onChange={handleInput}
+                required
+              />
+              <button
+                className='font-press-start text-xs bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 px-6 py-2 mt-4 rounded'
+                type='submit'
+                disabled={submitDisabled}
+              >
+                Send
+              </button>
+            </form>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

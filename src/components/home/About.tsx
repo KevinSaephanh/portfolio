@@ -115,10 +115,8 @@ export const About = () => {
           Senior Software Engineer with{' '}
           <span className='highlight font-semibold'>{getYearsOfExp()} years of experience</span>{' '}
           specializing in{' '}
-          <span className='highlight font-semibold'>architecting and optimizing high-throughput distributed systems</span>.
-          From high-stakes <span className='highlight font-semibold'>fintech</span> to
-          fast-moving <span className='highlight font-semibold'>edtech</span> —
-          full stack by range, backend by discipline.
+          <span className='highlight font-semibold'>architecting and optimizing distributed systems</span>.
+          {' '}Off the clock: training MMA and hitting the gym, catching UFC cards, getting lost in sci-fi audiobooks, and exploring aquariums and museums whenever I get the chance.
         </p>
       </TiltCard>
 
@@ -153,6 +151,42 @@ export const About = () => {
             <span className='text-yellow-600 dark:text-yellow-300'>&quot;</span>
             <span className='dark:text-slate-400 text-slate-500'>;</span>
           </span>
+        </div>
+      </TiltCard>
+
+      {/* RPG Stat Bars */}
+      <TiltCard
+        variants={fadeIn}
+        transition={{ delay: 0.5 }}
+        className='md:col-span-12 p-5 md:p-6'
+      >
+        <span className='font-mono text-xs dark:text-slate-500 text-slate-400 block mb-4'>
+          // stats
+        </span>
+        <div className='flex flex-col gap-3'>
+          {[
+            { stat: 'Java / Spring',            value: 95 },
+            { stat: 'Python / FastAPI',         value: 95 },
+            { stat: 'JavaScript / TypeScript',  value: 85 },
+            { stat: 'AWS',                      value: 85 },
+            { stat: 'React / Angular',          value: 75 },
+            { stat: 'Go',                       value: 75 },
+          ].map(({ stat, value }, index) => (
+            <div key={stat} className='flex items-center gap-3'>
+              <span className='font-mono text-xs dark:text-slate-300 text-slate-600 w-32 shrink-0'>
+                {stat}
+              </span>
+              <div className='flex-1 h-2.5 rounded-sm bg-slate-200 dark:bg-slate-800 overflow-hidden'>
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: `${value}%` }}
+                  transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
+                  className='h-full rounded-sm bg-teal-500/70'
+                  style={{ boxShadow: '0 0 6px rgba(45,212,191,0.6)' }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </TiltCard>
     </motion.div>

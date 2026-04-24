@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Footer } from '@/components/ui/layout/Footer';
 import { Navbar } from '@/components/ui/layout/Navbar';
 import { KonamiEasterEgg } from '@/components/ui/konami/KonamiEasterEgg';
+import { Terminal } from '@/components/ui/terminal/Terminal';
 import Provider from './provider';
 import '@/app/styles/globals.scss';
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <Provider>
           <KonamiEasterEgg />
+          <Terminal />
           <Navbar />
           <main
             role='main'

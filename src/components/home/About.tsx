@@ -92,12 +92,10 @@ export const About = () => {
           className='neon-ring object-cover'
         />
         <h3
-          className='font-press-start text-xs md:text-sm highlight text-center leading-loose cursor-pointer select-none'
+          className='font-press-start text-sm md:text-base highlight text-center leading-loose cursor-pointer select-none'
           onMouseEnter={triggerGlitch}
         >
-          {first}
-          <br />
-          {second}
+          {first}&nbsp;{second}
         </h3>
       </TiltCard>
 
@@ -116,7 +114,7 @@ export const About = () => {
           <span className='highlight font-semibold'>{getYearsOfExp()} years of experience</span>{' '}
           specializing in{' '}
           <span className='highlight font-semibold'>architecting and optimizing distributed systems</span>.
-          {' '}Off the clock: training MMA and hitting the gym, catching UFC cards, getting lost in sci-fi audiobooks, and exploring aquariums and museums whenever I get the chance.
+          {' '}Off the clock: training MMA and hitting the gym, catching UFC cards, watching anime, getting lost in philosophical sci-fi audiobooks, and exploring aquariums and museums whenever I get the chance.
         </p>
       </TiltCard>
 
@@ -127,7 +125,7 @@ export const About = () => {
         className='md:col-span-4 p-6 flex-center flex-col gap-2'
       >
         <span className='font-press-start text-4xl md:text-5xl neon-text'>{getYearsOfExp()}+</span>
-        <span className='text-xs uppercase tracking-widest font-mono dark:text-slate-400 text-slate-500'>
+        <span className='text-sm uppercase tracking-widest font-mono dark:text-slate-400 text-slate-500'>
           Years Experience
         </span>
       </TiltCard>
@@ -138,7 +136,7 @@ export const About = () => {
         transition={{ delay: 0.4 }}
         className='md:col-span-8 p-5 md:p-6 flex items-center overflow-hidden'
       >
-        <div className='font-mono text-xs md:text-sm leading-loose w-full'>
+        <div className='font-mono text-sm md:text-base leading-loose w-full'>
           <span className='dark:text-slate-500 text-slate-400 text-xs block mb-1'>
             // current role
           </span>
@@ -173,7 +171,7 @@ export const About = () => {
             { stat: 'Go',                       value: 75 },
           ].map(({ stat, value }, index) => (
             <div key={stat} className='flex items-center gap-3'>
-              <span className='font-mono text-xs dark:text-slate-300 text-slate-600 w-32 shrink-0'>
+              <span className='font-mono text-sm dark:text-slate-300 text-slate-600 w-36 shrink-0'>
                 {stat}
               </span>
               <div className='flex-1 h-2.5 rounded-sm bg-slate-200 dark:bg-slate-800 overflow-hidden'>

@@ -9,7 +9,7 @@ type GlbModelProps = {
 
 export const GlbModel: FC<GlbModelProps> = ({ path }) => {
   const model = useLoader(GLTFLoader, path);
-  const mixer = useRef<AnimationMixer>();
+  const mixer = useRef<AnimationMixer | null>(null);
 
   useEffect(() => {
     if (model.animations?.length) {

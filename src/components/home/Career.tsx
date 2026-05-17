@@ -3,14 +3,18 @@ import career from '@/data/career.json';
 import { Badge } from '../ui/badge/Badge';
 import { motion, useInView } from 'framer-motion';
 import { TiltCard } from '@/components/ui/tilt-card/TiltCard';
+import { useGlitchText } from '@/hooks/useGlitchText';
 
 export const Career = () => {
   const lineRef = useRef(null);
   const lineInView = useInView(lineRef, { once: true, amount: 0.1 });
+  const titleRef = useRef(null);
+  const titleInView = useInView(titleRef, { once: true, amount: 1 });
+  const { display: glitchTitle, triggerGlitch } = useGlitchText('Work Experience', titleInView);
 
   return (
     <div id='career' className='fading-border mb-4 md:mb-6'>
-      <h3 className='section-title'>Work Experience</h3>
+      <h3 className='section-title' ref={titleRef} onMouseEnter={triggerGlitch}>{glitchTitle}</h3>
       <ul className='relative mt-6 pb-2 md:pb-0'>
         {/* Vertical neon timeline line */}
         <motion.div
@@ -39,13 +43,13 @@ export const Career = () => {
             {/* Card */}
             <TiltCard className='p-4 md:p-5' tiltAmount={5}>
               <div className='flex justify-between items-start flex-wrap gap-1 mb-1'>
-                <span className='font-press-start text-xs highlight'>{company}</span>
-                <span className='font-mono text-xs dark:text-slate-400 text-slate-500'>{date}</span>
+                <span className='font-press-start text-sm highlight'>{company}</span>
+                <span className='font-mono text-sm dark:text-slate-400 text-slate-500'>{date}</span>
               </div>
               <span className='font-mono text-xs dark:text-slate-400 text-slate-500 block mb-2'>
                 // {title}
               </span>
-              <p className='font-normal text-sm leading-relaxed dark:text-slate-300'>{desc}</p>
+              <p className='font-normal text-sm md:text-base leading-relaxed dark:text-slate-300'>{desc}</p>
               <ul className='pt-3 flex flex-row flex-wrap'>
                 {tech.map((t, i) => (
                   <Badge

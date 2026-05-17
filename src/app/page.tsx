@@ -40,7 +40,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className='w-full md:w-3/5 mx-auto px-4'
+            className='w-full md:w-4/5 mx-auto px-4'
           >
             <About />
             <Career />

@@ -242,6 +242,12 @@ button {
   }
 }
 
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 .scrollbar::-webkit-scrollbar {
   width: 15px;
   height: 15px;

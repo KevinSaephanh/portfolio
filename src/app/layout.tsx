@@ -5,6 +5,8 @@ import { Footer } from '@/components/ui/layout/Footer';
 import { Navbar } from '@/components/ui/layout/Navbar';
 import { KonamiEasterEgg } from '@/components/ui/konami/KonamiEasterEgg';
 import { Terminal } from '@/components/ui/terminal/Terminal';
+import { ScrollProgress } from '@/components/ui/scroll-progress/ScrollProgress';
+import { CustomCursor } from '@/components/ui/cursor/CustomCursor';
 import Provider from './provider';
 import '@/app/styles/globals.scss';
 
@@ -28,7 +30,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <head>
         <meta name='x-hint' content='the old ways still work — ↑↑↓↓←→←→BA' />
         <link
@@ -38,7 +40,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body
         className={`min-h-screen flex flex-col justify-between ${inter.className}`}
+        suppressHydrationWarning
       >
+        <ScrollProgress />
+        <CustomCursor />
         <Provider>
           <KonamiEasterEgg />
           <Terminal />

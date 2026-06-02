@@ -5,50 +5,9 @@
 
 @layer components {
   body {
-    /* Default to Light Mode */
-    @apply bg-[#fffdfc] text-gray-900 transition-colors duration-300;
-    
-    /* Grid lines for light mode (very faint gray/teal) */
-    --grid-color: rgba(20, 184, 166, 0.05);
-    
-    /* Dark Mode Overrides */
-    @apply dark:bg-black dark:text-slate-100;
-    
-    background-image: 
-      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* CRT scanlines overlay */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9998;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(0, 0, 0, 0.025) 2px,
-      rgba(0, 0, 0, 0.025) 4px
-    );
-  }
-
-  /* Update the grid color variable specifically for dark mode */
-  .dark body {
-    --grid-color: rgba(20, 184, 166, 0.1);
-  }
-
-  .dark body::after {
-    background: repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(0, 0, 0, 0.045) 2px,
-      rgba(0, 0, 0, 0.045) 4px
-    );
+    @apply text-gray-900 transition-colors duration-300;
+    @apply dark:text-slate-100;
+    background: transparent;
   }
 
   .flex-center {
@@ -60,7 +19,7 @@
   }
 
   .section-title {
-    @apply font-press-start font-bold text-base md:text-lg mb-6 md:mb-8;
+    @apply font-rajdhani font-bold text-base md:text-lg mb-6 md:mb-8;
     position: relative;
     display: inline-block;
     padding-bottom: 8px;
@@ -80,17 +39,21 @@
   .bento-card {
     border-radius: 12px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background: rgba(248, 250, 252, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
     &:hover {
-      border-color: rgba(20, 184, 166, 0.35);
+      border-color: rgba(225, 29, 72, 0.45);
+      box-shadow: 0 4px 20px rgba(225, 29, 72, 0.1);
     }
   }
 
   .dark .bento-card {
-    background: rgba(8, 8, 8, 0.85);
-    border: 1px solid rgba(20, 184, 166, 0.15);
+    background: rgba(8, 8, 8, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(45, 212, 191, 0.15);
 
     &:hover {
       border-color: rgba(45, 212, 191, 0.45);
@@ -107,7 +70,7 @@
     text-shadow: 0 0 8px rgba(45, 212, 191, 0.8), 0 0 20px rgba(45, 212, 191, 0.4);
   }
 
-  /* Circular neon ring for profile photo */
+  /* Circular neon ring for profile photo — teal aura + sakura secondary */
   .neon-ring {
     border-radius: 50%;
     border: 3px solid rgba(45, 212, 191, 0.4);
@@ -117,7 +80,7 @@
     border-color: rgba(45, 212, 191, 0.7);
     box-shadow:
       0 0 16px rgba(45, 212, 191, 0.5),
-      0 0 36px rgba(45, 212, 191, 0.22),
+      0 0 36px rgba(249, 168, 212, 0.25),
       inset 0 0 12px rgba(45, 212, 191, 0.04);
     animation: neon-pulse 2.8s ease-in-out infinite;
   }
@@ -138,7 +101,7 @@
   }
 
   .dark .timeline-dot {
-    box-shadow: 0 0 8px rgba(45, 212, 191, 0.7), 0 0 16px rgba(45, 212, 191, 0.3);
+    box-shadow: 0 0 8px rgba(45, 212, 191, 0.7), 0 0 16px rgba(249, 168, 212, 0.3);
   }
 
   .responsive-text {
@@ -148,12 +111,12 @@
   input,
   textarea {
     @apply my-4 pl-2 font-semibold text-lg bg-transparent border-b-2 w-11/12 md:w-5/6 focus:outline-none block focus:rounded focus:py-2;
-  
+
     /* Light mode */
     @apply border-teal-600 focus:bg-teal-400;
 
     /* Dark mode */
-    @apply dark:border-teal-400 dark:placeholder-gray-400 dark:focus:bg-teal-700; 
+    @apply dark:border-teal-400 dark:placeholder-gray-400 dark:focus:bg-teal-700;
   }
 
   span,
@@ -199,14 +162,14 @@
   .fading-border {
     @apply relative border-b-2 border-transparent;
   }
-  
+
   .fading-border::after {
     content: "";
     @apply absolute bottom-0 left-0 right-0 h-1 rounded-br-lg;
-    
+
     /* Dark mode */
     @apply bg-gradient-to-b dark:from-white dark:to-transparent;
-  
+
     /* Light mode */
     @apply from-gray-800 to-transparent;
   }
@@ -225,11 +188,11 @@
   }
 
   .scrollbar::-webkit-scrollbar-track {
-    background: #000000; 
+    background: #000000;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-teal-600; 
+    @apply bg-teal-600;
     border: 3px solid #000000;
     border-radius: 10px;
   }
@@ -242,12 +205,6 @@ button {
   }
 }
 
-@media (pointer: fine) {
-  *, *::before, *::after {
-    cursor: none !important;
-  }
-}
-
 .scrollbar::-webkit-scrollbar {
   width: 15px;
   height: 15px;
@@ -257,13 +214,13 @@ button {
   0%, 100% {
     box-shadow:
       0 0 16px rgba(45, 212, 191, 0.5),
-      0 0 36px rgba(45, 212, 191, 0.22),
+      0 0 36px rgba(249, 168, 212, 0.25),
       inset 0 0 12px rgba(45, 212, 191, 0.04);
   }
   50% {
     box-shadow:
       0 0 24px rgba(45, 212, 191, 0.8),
-      0 0 52px rgba(45, 212, 191, 0.38),
+      0 0 52px rgba(249, 168, 212, 0.4),
       inset 0 0 20px rgba(45, 212, 191, 0.08);
   }
 }

@@ -12,7 +12,7 @@ export const ScrollProgress = () => {
 
   return (
     <motion.div
-      className='fixed top-0 left-0 right-0 h-[2px] origin-left pointer-events-none z-[9999] bg-teal-400'
+      className='fixed top-0 left-0 right-0 h-[2px] origin-left pointer-events-none z-[9999] bg-gradient-to-r from-teal-400 to-sakura'
       style={{
         scaleX,
         boxShadow:

@@ -25,3 +25,5 @@ yarn-error.log*
 .env.*
 
 .next
+# TypeScript incremental build cache
+*.tsbuildinfo

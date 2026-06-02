@@ -12,6 +12,7 @@
     "node": "24.x"
   },
   "dependencies": {
+    "@pixiv/three-vrm": "^3.5.3",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@testing-library/jest-dom": "^6.6.2",

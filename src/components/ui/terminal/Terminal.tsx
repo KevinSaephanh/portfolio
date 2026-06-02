@@ -13,6 +13,7 @@ const COMMANDS: Record<string, string | string[]> = {
     '  ls             — list sections',
     '  cat resume.txt — highlights',
     '  sudo hire-me   — make the call',
+    '  play           — launch Void Crawler',
     '  clear          — clear terminal',
     '  exit           — close terminal',
   ],
@@ -30,7 +31,9 @@ const COMMANDS: Record<string, string | string[]> = {
   ],
 };
 
-export const Terminal = () => {
+type TerminalProps = { onPlay?: () => void };
+
+export const Terminal = ({ onPlay }: TerminalProps) => {
   const [open, setOpen] = useState(false);
   const [lines, setLines] = useState<Line[]>([
     { role: 'output', text: 'Type "help" for available commands.' },
@@ -67,6 +70,20 @@ export const Terminal = () => {
       setLines(prev => [...prev, inputLine]);
       setInput('');
       setTimeout(() => setOpen(false), 300);
+      return;
+    }
+
+    if (cmd === 'play') {
+      setLines(prev => [
+        ...prev,
+        inputLine,
+        { role: 'output', text: 'Launching Void Crawler...' },
+      ]);
+      setInput('');
+      setTimeout(() => {
+        setOpen(false);
+        onPlay?.();
+      }, 400);
       return;
     }
 
@@ -113,7 +130,7 @@ export const Terminal = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
             onClick={() => setOpen(true)}
-            className='fixed bottom-6 right-6 z-[9997] hidden md:block font-press-start text-[10px] px-3 py-2 rounded border border-teal-400/60 bg-black/90 text-teal-400 hover:shadow-[0_0_14px_rgba(45,212,191,0.5)] transition-shadow duration-200'
+            className='fixed bottom-6 right-6 z-[9997] hidden md:block font-rajdhani text-[10px] px-3 py-2 rounded border border-teal-400/60 bg-black/90 text-teal-400 hover:shadow-[0_0_14px_rgba(45,212,191,0.5)] transition-shadow duration-200'
           >
             &gt;_
           </motion.button>
@@ -132,7 +149,7 @@ export const Terminal = () => {
           >
             {/* Header */}
             <div className='flex items-center justify-between px-3 py-2 border-b border-teal-900/40 shrink-0'>
-              <span className='font-press-start text-[10px] text-teal-400'>
+              <span className='font-rajdhani text-[10px] text-teal-400'>
                 &gt;_ terminal
               </span>
               <button

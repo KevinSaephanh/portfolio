@@ -8,10 +8,12 @@ import { Projects } from '@/components/home/Projects';
 import { Career } from '@/components/home/Career';
 import { About } from '@/components/home/About';
 import { GlbModel } from '@/components/ui/scene/GlbModel';
+import { useScene } from '@/context/SceneContext';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const { contentVisible } = useScene();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -21,6 +23,13 @@ export default function Home() {
 
   return (
     <div className='h-full'>
+      {!isLoading && (
+        <div
+          className='fixed inset-0 -z-[2] bg-cover bg-center pointer-events-none'
+          style={{ backgroundImage: "url('/assets/anime-rpg-landscape.jpg')" }}
+        />
+      )}
+
       <AnimatePresence mode='wait'>
         {isLoading ? (
           <motion.div
@@ -40,13 +49,27 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className='w-full md:w-4/5 mx-auto px-4'
           >
-            <About />
-            <Career />
-            <Projects />
+            <motion.div
+              className='fixed inset-0 -z-[1] bg-black pointer-events-none'
+              animate={{ opacity: contentVisible ? 0.6 : 0 }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+            />
+
+            <motion.div
+              animate={{ opacity: contentVisible ? 1 : 0 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              style={{ pointerEvents: contentVisible ? 'auto' : 'none' }}
+            >
+              <div className='relative w-full md:w-4/5 mx-auto px-4'>
+                <About />
+                <Career />
+                <Projects />
+              </div>
+            </motion.div>
+
             <AnimatePresence>
-              {!scrolled && (
+              {!scrolled && contentVisible && (
                 <motion.div
                   className='fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none z-10'
                   initial={{ opacity: 0 }}

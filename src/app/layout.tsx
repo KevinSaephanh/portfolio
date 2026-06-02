@@ -4,9 +4,7 @@ import { Inter } from 'next/font/google';
 import { Footer } from '@/components/ui/layout/Footer';
 import { Navbar } from '@/components/ui/layout/Navbar';
 import { KonamiEasterEgg } from '@/components/ui/konami/KonamiEasterEgg';
-import { Terminal } from '@/components/ui/terminal/Terminal';
 import { ScrollProgress } from '@/components/ui/scroll-progress/ScrollProgress';
-import { CustomCursor } from '@/components/ui/cursor/CustomCursor';
 import Provider from './provider';
 import '@/app/styles/globals.scss';
 
@@ -34,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <meta name='x-hint' content='the old ways still work — ↑↑↓↓←→←→BA' />
         <link
-          href='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'
+          href='https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap'
           rel='stylesheet'
         />
       </head>
@@ -42,11 +40,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`min-h-screen flex flex-col justify-between ${inter.className}`}
         suppressHydrationWarning
       >
+        {/* Anime RPG landscape — fixed behind all content */}
+        <div
+          className='fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat'
+          style={{ backgroundImage: "url('/assets/anime-rpg-landscape.jpg')" }}
+        />
+        {/* Overlay: light in light mode, dark in dark mode */}
+        <div className='fixed inset-0 -z-[9] bg-white/30 dark:bg-black/60' />
         <ScrollProgress />
-        <CustomCursor />
         <Provider>
           <KonamiEasterEgg />
-          <Terminal />
           <Navbar />
           <main
             role='main'

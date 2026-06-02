@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { TiltCard } from '@/components/ui/tilt-card/TiltCard';
+import { VrmFlipCard } from '@/components/ui/vrm-flip-card/VrmFlipCard';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -83,16 +83,9 @@ export const About = () => {
         transition={{ delay: 0.1 }}
         className='md:col-span-4 flex-center flex-col p-6 gap-4'
       >
-        <Image
-          src='/assets/me.jpeg'
-          alt='Kevin Saephanh'
-          height={220}
-          width={220}
-          priority
-          className='neon-ring object-cover'
-        />
+        <VrmFlipCard />
         <h3
-          className='font-press-start text-sm md:text-base highlight text-center leading-loose cursor-pointer select-none'
+          className='font-rajdhani text-sm md:text-base highlight text-center leading-loose cursor-pointer select-none'
           onMouseEnter={triggerGlitch}
         >
           {first}&nbsp;{second}
@@ -105,7 +98,7 @@ export const About = () => {
         transition={{ delay: 0.2 }}
         className='md:col-span-8 p-6 md:p-8 flex flex-col justify-center gap-4'
       >
-        <div className='font-press-start text-sm md:text-base flex items-center gap-0.5 min-h-[1.5em]'>
+        <div className='font-rajdhani text-sm md:text-base flex items-center gap-0.5 min-h-[1.5em]'>
           <span className='neon-text'>{displayedTitle}</span>
           <span className='neon-text cursor-blink'>_</span>
         </div>
@@ -124,7 +117,7 @@ export const About = () => {
         transition={{ delay: 0.3 }}
         className='md:col-span-4 p-6 flex-center flex-col gap-2'
       >
-        <span className='font-press-start text-4xl md:text-5xl neon-text'>{getYearsOfExp()}+</span>
+        <span className='font-rajdhani text-4xl md:text-5xl neon-text'>{getYearsOfExp()}+</span>
         <span className='text-sm uppercase tracking-widest font-mono dark:text-slate-400 text-slate-500'>
           Years Experience
         </span>
@@ -179,7 +172,7 @@ export const About = () => {
                   initial={{ width: 0 }}
                   animate={{ width: `${value}%` }}
                   transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
-                  className='h-full rounded-sm bg-teal-500/70'
+                  className='h-full rounded-sm bg-gradient-to-r from-teal-500/80 to-sakura/60'
                   style={{ boxShadow: '0 0 6px rgba(45,212,191,0.6)' }}
                 />
               </div>

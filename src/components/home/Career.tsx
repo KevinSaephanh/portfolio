@@ -43,7 +43,7 @@ export const Career = () => {
             {/* Card */}
             <TiltCard className='p-4 md:p-5' tiltAmount={5}>
               <div className='flex justify-between items-start flex-wrap gap-1 mb-1'>
-                <span className='font-press-start text-sm highlight'>{company}</span>
+                <span className='font-rajdhani text-sm highlight'>{company}</span>
                 <span className='font-mono text-sm dark:text-slate-400 text-slate-500'>{date}</span>
               </div>
               <span className='font-mono text-xs dark:text-slate-400 text-slate-500 block mb-2'>

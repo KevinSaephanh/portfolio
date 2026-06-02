@@ -11,6 +11,9 @@
 # production
 /build
 
+# large assets (tracked separately)
+public/assets/Kev.vrm
+
 # misc
 .DS_Store
 .env.local
@@ -25,3 +28,5 @@ yarn-error.log*
 .env.*
 
 .next
+# TypeScript incremental build cache
+*.tsbuildinfo

@@ -5,11 +5,11 @@ import { NavLink } from './NavLink';
 import { HamburgerButton } from '../buttons/HamburgerButton';
 import { ThemeButton } from '../buttons/ThemeButton';
 import { Logo } from '../logo/Logo';
-import { useScene } from '@/context/SceneContext';
+import { useUI } from '@/context/UIContext';
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { contentVisible, toggle } = useScene();
+  const { contentVisible, toggle } = useUI();
 
   return (
     <nav className={`${open ? 'absolute w-full h-full bg-gray-950 z-50' : ''}`}>

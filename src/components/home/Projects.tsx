@@ -14,11 +14,12 @@ export const Projects = () => {
   const [active, setActive] = useState(projects[0]);
   const titleRef = useRef(null);
   const titleInView = useInView(titleRef, { once: true, amount: 1 });
-  const { display: glitchTitle, triggerGlitch } = useGlitchText('Projects', titleInView);
+  const { display: glitchTitle, triggerGlitch } = useGlitchText('QUEST LOG', titleInView);
 
   return (
     <div id='projects' className='fading-border'>
       <h3 className='section-title' ref={titleRef} onMouseEnter={triggerGlitch}>{glitchTitle}</h3>
+      <p className='font-mono text-xs dark:text-slate-500 text-slate-400 mb-2'>// completed</p>
       <div className='flex flex-col md:flex-row gap-4 mt-4'>
         {/* Project list — game menu style */}
         <section className='w-full md:w-2/5'>
@@ -67,6 +68,11 @@ export const Projects = () => {
             className='w-full md:w-3/5 p-5'
             tiltAmount={4}
           >
+            {'difficulty' in active && (
+              <p className='font-mono text-sm text-amber-400 mb-2' style={{ textShadow: '0 0 6px rgba(251,191,36,0.5)' }}>
+                {active.difficulty as string}
+              </p>
+            )}
             <p className='whitespace-pre-line font-normal text-sm md:text-base leading-relaxed dark:text-slate-300 mb-3'>
               {active.desc}
             </p>

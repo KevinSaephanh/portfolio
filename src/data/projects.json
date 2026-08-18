@@ -2,7 +2,8 @@
   {
     "id": 1,
     "title": "Stock Market ETL",
-    "desc": "Poll historical stock data via Alpha Vantage API and perform a simple ETL job with Pandas, AstraDB, and AWS S3.",
+    "desc": "Streams live stock data from the Alpha Vantage API through a Kafka pipeline, applies transformations with Pandas, and persists results to both AstraDB and AWS S3. Built to handle continuous ingestion without data loss under high-volume market conditions.",
+    "difficulty": "★★★★☆",
     "technologies": [
       "Python",
       "FastAPI",
@@ -16,7 +17,8 @@
   {
     "id": 2,
     "title": "Data Generator",
-    "desc": "• Create large sets of mock data for your application, using common properties such as emails and encrypted passwords.\n• Upload .env files to create modules for type-safe environment variables.",
+    "desc": "Generates large sets of typed mock data — emails, passwords, IDs, and more — for rapid prototyping and testing. Also parses uploaded .env files to produce type-safe environment variable modules.",
+    "difficulty": "★★★☆☆",
     "technologies": [
       "React",
       "Typescript",
@@ -28,7 +30,8 @@
   {
     "id": 3,
     "title": "Pathfinder",
-    "desc": "A visualization of popular pathfinding algorithms traversing randomly generated mazes, highlighting cells visited and the optimal path to reach the end.",
+    "desc": "Visualizes classic pathfinding algorithms — Dijkstra, A*, BFS, DFS — navigating randomly generated mazes in real time. Highlights visited cells and traces the optimal route from start to finish.",
+    "difficulty": "★★★☆☆",
     "technologies": [
       "React",
       "JavaScript",
@@ -40,7 +43,8 @@
   {
     "id": 4,
     "title": "Sort Visualizer",
-    "desc": "A visualization of popular sorting algorithms using a bar chart.",
+    "desc": "Animates popular sorting algorithms — Bubble, Merge, Quick, and more — as a live bar chart. Lets you adjust array size and speed to see how each algorithm behaves at different scales.",
+    "difficulty": "★★☆☆☆",
     "technologies": [
       "React",
       "TypeScript",
@@ -52,7 +56,8 @@
   {
     "id": 5,
     "title": "Portfolio",
-    "desc": "My portfolio site that offers a little insight into my background including my work experience and notable projects.",
+    "desc": "This site — an anime/RPG-themed portfolio built with Next.js and Three.js. Features a VRM character, glitch animations, a terminal easter egg, and a Konami code secret.",
+    "difficulty": "★★★★☆",
     "technologies": [
       "Next.js",
       "TypeScript",

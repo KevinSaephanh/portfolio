@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { TiltCard } from '@/components/ui/tilt-card/TiltCard';
 import { VrmFlipCard } from '@/components/ui/vrm-flip-card/VrmFlipCard';
@@ -67,6 +67,9 @@ export const About = () => {
     timeoutId = setTimeout(() => { triggerGlitch(); schedule(); }, 3000);
     return () => clearTimeout(timeoutId);
   }, [triggerGlitch]);
+
+  const skillsRef = useRef(null);
+  const skillsInView = useInView(skillsRef, { once: true, amount: 0.2 });
 
   const [first, second] = glitchName.split(' ');
 
@@ -145,39 +148,51 @@ export const About = () => {
         </div>
       </TiltCard>
 
-      {/* RPG Stat Bars */}
+      {/* RPG Skill Tree */}
       <TiltCard
         variants={fadeIn}
         transition={{ delay: 0.5 }}
         className='md:col-span-12 p-5 md:p-6'
       >
         <span className='font-mono text-xs dark:text-slate-500 text-slate-400 block mb-4'>
-          // stats
+          // skill tree
         </span>
-        <div className='flex flex-col gap-3'>
+        <div ref={skillsRef} className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
           {[
-            { stat: 'Java / Spring',            value: 95 },
-            { stat: 'Python / FastAPI',         value: 95 },
-            { stat: 'JavaScript / TypeScript',  value: 85 },
-            { stat: 'AWS',                      value: 85 },
-            { stat: 'React / Angular',          value: 75 },
-            { stat: 'Go',                       value: 75 },
-          ].map(({ stat, value }, index) => (
-            <div key={stat} className='flex items-center gap-3'>
-              <span className='font-mono text-sm dark:text-slate-300 text-slate-600 w-36 shrink-0'>
-                {stat}
-              </span>
-              <div className='flex-1 h-2.5 rounded-sm bg-slate-200 dark:bg-slate-800 overflow-hidden'>
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${value}%` }}
-                  transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
-                  className='h-full rounded-sm bg-gradient-to-r from-teal-500/80 to-sakura/60'
-                  style={{ boxShadow: '0 0 6px rgba(45,212,191,0.6)' }}
-                />
-              </div>
-            </div>
-          ))}
+            { rank: 'S', skill: 'Java / Spring Boot' },
+            { rank: 'S', skill: 'Python / FastAPI' },
+            { rank: 'A', skill: 'TypeScript / JS' },
+            { rank: 'A', skill: 'AWS' },
+            { rank: 'B', skill: 'React / Angular' },
+            { rank: 'B', skill: 'Go' },
+          ].map(({ rank, skill }, index) => {
+            const rankStyle =
+              rank === 'S'
+                ? { color: 'text-amber-400', glow: '0 0 8px rgba(251,191,36,0.7)' }
+                : rank === 'A'
+                ? { color: 'text-purple-400', glow: '0 0 8px rgba(192,132,252,0.7)' }
+                : { color: 'text-blue-400', glow: '0 0 8px rgba(96,165,250,0.7)' };
+
+            return (
+              <motion.div
+                key={skill}
+                initial={{ opacity: 0, x: -10 }}
+                animate={skillsInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className='flex items-center gap-3 bento-card px-4 py-3'
+              >
+                <span
+                  className={`font-press-start text-base ${rankStyle.color} shrink-0 w-5 text-center`}
+                  style={{ textShadow: rankStyle.glow }}
+                >
+                  {rank}
+                </span>
+                <span className='font-mono text-sm dark:text-slate-300 text-slate-600'>
+                  {skill}
+                </span>
+              </motion.div>
+            );
+          })}
         </div>
       </TiltCard>
     </motion.div>

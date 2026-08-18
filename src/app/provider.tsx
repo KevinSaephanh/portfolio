@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes';
 import { AnimatePresence } from 'framer-motion';
 import { Terminal } from '@/components/ui/terminal/Terminal';
 import { VoidCrawler } from '@/components/ui/void-crawler/VoidCrawler';
-import { SceneProvider } from '@/context/SceneContext';
+import { UIProvider } from '@/context/UIContext';
 
 type Props = {
   children?: ReactNode;
@@ -16,13 +16,13 @@ export default function Provider({ children }: Props) {
 
   return (
     <ThemeProvider attribute='class'>
-      <SceneProvider>
+      <UIProvider>
         <Terminal onPlay={() => setGameOpen(true)} />
         <AnimatePresence>
           {gameOpen && <VoidCrawler onClose={() => setGameOpen(false)} />}
         </AnimatePresence>
         {children}
-      </SceneProvider>
+      </UIProvider>
     </ThemeProvider>
   );
 }

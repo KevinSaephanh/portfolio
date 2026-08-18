@@ -11,6 +11,7 @@ import '@/app/styles/globals.scss';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kevinsaephanh.com'),
   title: 'Portfolio',
   description: 'Portfolio site',
   openGraph: {

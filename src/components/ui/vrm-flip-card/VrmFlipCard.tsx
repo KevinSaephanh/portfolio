@@ -1,12 +1,7 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { VrmModel } from '@/components/ui/scene/VrmModel';
-
-const KEV_VRM_URL = process.env.NEXT_PUBLIC_KEV_VRM_URL ?? '/assets/Kev.vrm';
 
 export const VrmFlipCard = () => {
   const [flipped, setFlipped] = useState(false);
@@ -43,24 +38,15 @@ export const VrmFlipCard = () => {
           />
         </div>
 
-        {/* Back — VRM portrait */}
+        {/* Back — empty */}
         <div
-          className='neon-ring overflow-hidden absolute inset-0 flex items-center justify-center bg-black/80'
+          className='neon-ring absolute inset-0 bg-black/80'
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
           }}
-        >
-          <Canvas camera={{ position: [0, 0.5, 1.0], fov: 25 }} gl={{ alpha: true }} style={{ width: '100%', height: '100%' }}>
-            <OrbitControls target={[0, 0.5, 0]} enableZoom={false} enablePan={false} enableRotate={false} />
-            <ambientLight intensity={2.5} />
-            <directionalLight position={[1, 2, 1]} intensity={1.2} />
-            <Suspense fallback={null}>
-              <VrmModel url={KEV_VRM_URL} yOffset={-1.17} />
-            </Suspense>
-          </Canvas>
-        </div>
+        />
       </div>
     </div>
   );

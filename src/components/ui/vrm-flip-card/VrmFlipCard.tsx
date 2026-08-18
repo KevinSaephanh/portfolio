@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import Image from 'next/image';
-// VRM imports — re-enable once Kev.vrm is available (too large for git, tracked separately)
-// import { Suspense } from 'react';
-// import { Canvas } from '@react-three/fiber';
-// import { OrbitControls } from '@react-three/drei';
-// import { VrmModel } from '@/components/ui/scene/VrmModel';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { VrmModel } from '@/components/ui/scene/VrmModel';
+
+const KEV_VRM_URL = process.env.NEXT_PUBLIC_KEV_VRM_URL ?? '/assets/Kev.vrm';
 
 export const VrmFlipCard = () => {
   const [flipped, setFlipped] = useState(false);
@@ -43,7 +43,7 @@ export const VrmFlipCard = () => {
           />
         </div>
 
-        {/* Back — VRM portrait (disabled until Kev.vrm is available) */}
+        {/* Back — VRM portrait */}
         <div
           className='neon-ring overflow-hidden absolute inset-0 flex items-center justify-center bg-black/80'
           style={{
@@ -52,19 +52,14 @@ export const VrmFlipCard = () => {
             transform: 'rotateY(180deg)',
           }}
         >
-          <span className='font-mono text-xs text-slate-500 text-center px-4'>
-            VRM coming soon
-          </span>
-          {/* Re-enable when Kev.vrm is tracked:
           <Canvas camera={{ position: [0, 0.5, 1.0], fov: 25 }} gl={{ alpha: true }} style={{ width: '100%', height: '100%' }}>
             <OrbitControls target={[0, 0.5, 0]} enableZoom={false} enablePan={false} enableRotate={false} />
             <ambientLight intensity={2.5} />
             <directionalLight position={[1, 2, 1]} intensity={1.2} />
             <Suspense fallback={null}>
-              <VrmModel url='/assets/Kev.vrm' yOffset={-1.17} />
+              <VrmModel url={KEV_VRM_URL} yOffset={-1.17} />
             </Suspense>
           </Canvas>
-          */}
         </div>
       </div>
     </div>

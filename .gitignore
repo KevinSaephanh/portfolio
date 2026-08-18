@@ -30,3 +30,5 @@ yarn-error.log*
 .next
 # TypeScript incremental build cache
 *.tsbuildinfo
+.vercel
+.env*
